@@ -62,7 +62,7 @@
             this.btnStatistic});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1344, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1344, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -203,11 +203,11 @@
             // 
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.HotTrack = true;
-            this.tabControl.Location = new System.Drawing.Point(0, 28);
+            this.tabControl.Location = new System.Drawing.Point(0, 30);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1344, 712);
+            this.tabControl.Size = new System.Drawing.Size(1344, 710);
             this.tabControl.TabIndex = 1;
             // 
             // label1
@@ -216,9 +216,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(480, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 32);
+            this.label1.Size = new System.Drawing.Size(142, 32);
             this.label1.TabIndex = 2;
-            this.label1.Text = "TEST";
+            this.label1.Text = "TESTING";
             // 
             // MainForm
             // 
