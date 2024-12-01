@@ -128,7 +128,26 @@
             // 
             this.cmbTypeOfStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTypeOfStaff.FormattingEnabled = true;
-            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 93);
+            this.cmbTypeOfStaff.Items.AddRange(new object[] {
+            "Bác sĩ Đa khoa",
+            "Bác sĩ Nội khoa",
+            "Bác sĩ Ngoại khoa",
+            "Bác sĩ Tim mạch",
+            "Bác sĩ Thần kinh",
+            "Bác sĩ Da liễu",
+            "Bác sĩ Ung bứu",
+            "Bác sĩ Nhi khoa",
+            "Điều dưỡng Tổng quát",
+            "Điều dưỡng ICU",
+            "Điều dưỡng Sản khoa",
+            "Kỹ thuật viên Xét nghiệm",
+            "Kỹ thuật viên Hình ảnh",
+            "Kỹ thuật viên Vật lý trị liệu",
+            "Dược sĩ",
+            "Hộ lý",
+            "Nhân viên Nghiên cứu Y khoa",
+            "Giảng viên Y khoa"});
+            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 88);
             this.cmbTypeOfStaff.Name = "cmbTypeOfStaff";
             this.cmbTypeOfStaff.Size = new System.Drawing.Size(369, 33);
             this.cmbTypeOfStaff.TabIndex = 26;
@@ -341,7 +360,7 @@
             // 
             this.cmbDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDepartmentID.FormattingEnabled = true;
-            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 93);
+            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 88);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
             this.cmbDepartmentID.Size = new System.Drawing.Size(369, 33);
             this.cmbDepartmentID.TabIndex = 25;
