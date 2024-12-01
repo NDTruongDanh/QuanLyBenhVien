@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAddOrUpdateDepartment = new System.Windows.Forms.Button();
+            this.btnRefreshDepartment = new System.Windows.Forms.Button();
+            this.btnFindDepartment = new System.Windows.Forms.Button();
+            this.btnRemoveDepartment = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.txtHeadDepartmentID = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDepartmentName = new System.Windows.Forms.TextBox();
@@ -46,65 +47,64 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtDepartmentID = new System.Windows.Forms.TextBox();
             this.txtEmployeeNumber = new System.Windows.Forms.TextBox();
-            this.txtHeadDepartmentID = new System.Windows.Forms.TextBox();
-            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button3
+            // btnAddOrUpdateDepartment
             // 
-            this.button3.BackColor = System.Drawing.Color.Silver;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.Location = new System.Drawing.Point(532, 4);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(256, 38);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Thêm/Sửa";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAddOrUpdateDepartment.BackColor = System.Drawing.Color.Silver;
+            this.btnAddOrUpdateDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddOrUpdateDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnAddOrUpdateDepartment.Location = new System.Drawing.Point(532, 4);
+            this.btnAddOrUpdateDepartment.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddOrUpdateDepartment.Name = "btnAddOrUpdateDepartment";
+            this.btnAddOrUpdateDepartment.Size = new System.Drawing.Size(256, 38);
+            this.btnAddOrUpdateDepartment.TabIndex = 2;
+            this.btnAddOrUpdateDepartment.Text = "Thêm/Sửa";
+            this.btnAddOrUpdateDepartment.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnRefreshDepartment
             // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(268, 4);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(256, 38);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Làm mới";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnRefreshDepartment.BackColor = System.Drawing.Color.Silver;
+            this.btnRefreshDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefreshDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnRefreshDepartment.Location = new System.Drawing.Point(268, 4);
+            this.btnRefreshDepartment.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefreshDepartment.Name = "btnRefreshDepartment";
+            this.btnRefreshDepartment.Size = new System.Drawing.Size(256, 38);
+            this.btnRefreshDepartment.TabIndex = 1;
+            this.btnRefreshDepartment.Text = "Làm mới";
+            this.btnRefreshDepartment.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnFindDepartment
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(4, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 38);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Tìm";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnFindDepartment.BackColor = System.Drawing.Color.Silver;
+            this.btnFindDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFindDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnFindDepartment.Location = new System.Drawing.Point(4, 4);
+            this.btnFindDepartment.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFindDepartment.Name = "btnFindDepartment";
+            this.btnFindDepartment.Size = new System.Drawing.Size(256, 38);
+            this.btnFindDepartment.TabIndex = 4;
+            this.btnFindDepartment.Text = "Tìm";
+            this.btnFindDepartment.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnRemoveDepartment
             // 
-            this.button4.BackColor = System.Drawing.Color.Silver;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button4.Location = new System.Drawing.Point(796, 4);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(259, 38);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Xóa";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnRemoveDepartment.BackColor = System.Drawing.Color.Silver;
+            this.btnRemoveDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemoveDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnRemoveDepartment.Location = new System.Drawing.Point(796, 4);
+            this.btnRemoveDepartment.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemoveDepartment.Name = "btnRemoveDepartment";
+            this.btnRemoveDepartment.Size = new System.Drawing.Size(259, 38);
+            this.btnRemoveDepartment.TabIndex = 3;
+            this.btnRemoveDepartment.Text = "Xóa";
+            this.btnRemoveDepartment.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel3
             // 
@@ -113,10 +113,10 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button4, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button3, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button2, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnFindDepartment, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnRemoveDepartment, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnAddOrUpdateDepartment, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnRefreshDepartment, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 226);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
@@ -146,17 +146,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 554);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 280);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1059, 270);
-            this.dataGridView1.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -192,6 +181,30 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1059, 214);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLocation.BackColor = System.Drawing.Color.LightGray;
+            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtLocation.Location = new System.Drawing.Point(719, 158);
+            this.txtLocation.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLocation.Multiline = true;
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(336, 40);
+            this.txtLocation.TabIndex = 22;
+            // 
+            // txtHeadDepartmentID
+            // 
+            this.txtHeadDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtHeadDepartmentID.BackColor = System.Drawing.Color.LightGray;
+            this.txtHeadDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtHeadDepartmentID.Location = new System.Drawing.Point(198, 86);
+            this.txtHeadDepartmentID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHeadDepartmentID.Multiline = true;
+            this.txtHeadDepartmentID.Name = "txtHeadDepartmentID";
+            this.txtHeadDepartmentID.Size = new System.Drawing.Size(335, 40);
+            this.txtHeadDepartmentID.TabIndex = 21;
             // 
             // txtPhoneNumber
             // 
@@ -326,29 +339,16 @@
             this.txtEmployeeNumber.Size = new System.Drawing.Size(335, 40);
             this.txtEmployeeNumber.TabIndex = 18;
             // 
-            // txtHeadDepartmentID
+            // dataGridView1
             // 
-            this.txtHeadDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHeadDepartmentID.BackColor = System.Drawing.Color.LightGray;
-            this.txtHeadDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtHeadDepartmentID.Location = new System.Drawing.Point(198, 86);
-            this.txtHeadDepartmentID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtHeadDepartmentID.Multiline = true;
-            this.txtHeadDepartmentID.Name = "txtHeadDepartmentID";
-            this.txtHeadDepartmentID.Size = new System.Drawing.Size(335, 40);
-            this.txtHeadDepartmentID.TabIndex = 21;
-            // 
-            // txtLocation
-            // 
-            this.txtLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLocation.BackColor = System.Drawing.Color.LightGray;
-            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtLocation.Location = new System.Drawing.Point(719, 158);
-            this.txtLocation.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLocation.Multiline = true;
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(336, 40);
-            this.txtLocation.TabIndex = 22;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 280);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1059, 270);
+            this.dataGridView1.TabIndex = 1;
             // 
             // DepartmentForm
             // 
@@ -361,16 +361,16 @@
             this.Text = "KHOA";
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddOrUpdateDepartment;
+        private System.Windows.Forms.Button btnRefreshDepartment;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDepartmentName;
         private System.Windows.Forms.Label label1;
@@ -378,8 +378,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnFindDepartment;
+        private System.Windows.Forms.Button btnRemoveDepartment;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox txtDepartmentID;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
