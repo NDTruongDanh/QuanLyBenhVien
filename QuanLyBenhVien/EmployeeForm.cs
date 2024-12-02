@@ -18,7 +18,7 @@ namespace QuanLyBenhVien
             InitializeComponent();
         }
 
-        private readonly string connStr = "Data Source=ADMIN-PC\\MSSQLSERVER01;Initial Catalog=HospitalDB;Integrated Security=True;";
+        private readonly string connStr = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
         private SqlConnection conn;
         private SqlDataAdapter employeeAdapter;
         private DataSet employeeDataset;
