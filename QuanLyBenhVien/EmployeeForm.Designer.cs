@@ -147,7 +147,7 @@
             "Hộ lý",
             "Nhân viên Nghiên cứu Y khoa",
             "Giảng viên Y khoa"});
-            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 93);
+            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 88);
             this.cmbTypeOfStaff.Name = "cmbTypeOfStaff";
             this.cmbTypeOfStaff.Size = new System.Drawing.Size(369, 33);
             this.cmbTypeOfStaff.TabIndex = 26;
@@ -263,7 +263,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 42);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Chức vụ";
+            this.label6.Text = "Loại NV";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtStaffID
@@ -360,7 +360,7 @@
             // 
             this.cmbDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDepartmentID.FormattingEnabled = true;
-            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 93);
+            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 88);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
             this.cmbDepartmentID.Size = new System.Drawing.Size(369, 33);
             this.cmbDepartmentID.TabIndex = 25;
