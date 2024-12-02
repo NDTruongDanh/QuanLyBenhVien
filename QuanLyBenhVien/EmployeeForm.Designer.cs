@@ -50,7 +50,7 @@
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.txtDateOfBirth = new System.Windows.Forms.TextBox();
             this.cmbDepartmentID = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnFindStaff = new System.Windows.Forms.Button();
             this.btnRemoveStaff = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.btnRefreshStaff = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dgvEmployee, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -147,7 +147,7 @@
             "Hộ lý",
             "Nhân viên Nghiên cứu Y khoa",
             "Giảng viên Y khoa"});
-            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 88);
+            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 93);
             this.cmbTypeOfStaff.Name = "cmbTypeOfStaff";
             this.cmbTypeOfStaff.Size = new System.Drawing.Size(369, 33);
             this.cmbTypeOfStaff.TabIndex = 26;
@@ -360,21 +360,21 @@
             // 
             this.cmbDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDepartmentID.FormattingEnabled = true;
-            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 88);
+            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 93);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
             this.cmbDepartmentID.Size = new System.Drawing.Size(369, 33);
             this.cmbDepartmentID.TabIndex = 25;
             // 
-            // dataGridView1
+            // dgvEmployee
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 280);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1059, 270);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEmployee.Location = new System.Drawing.Point(4, 280);
+            this.dgvEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvEmployee.Name = "dgvEmployee";
+            this.dgvEmployee.RowHeadersWidth = 51;
+            this.dgvEmployee.Size = new System.Drawing.Size(1059, 270);
+            this.dgvEmployee.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
@@ -453,10 +453,11 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeForm";
             this.Text = "NHÂN VIÊN";
+            this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -471,7 +472,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEmployee;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.TextBox txtStaffID;

@@ -148,3 +148,6 @@ ADD CONSTRAINT FK_WE_STA FOREIGN KEY (StaffID) REFERENCES STAFF(StaffID)
 
 ALTER TABLE WEEKLYASSIGNMENT
 ADD CONSTRAINT FK_WE_DE FOREIGN KEY (DepartmentID) REFERENCES DEPARTMENT(DepartmentID) 
+
+INSERT INTO STAFF (StaffID, FullName, TypeOfStaff, Gender, DateOfBirth, PhoneNumber, DateOfJoining, Email, Salary, DepartmentID)
+VALUES ('ST0001', N'Nguyễn Văn A', N'Bác sĩ', N'Nam', '1990-01-01', '0987654321', '2023-01-01', 'nguyenvana@gmail.com', 10000000, 'DEPT01');
