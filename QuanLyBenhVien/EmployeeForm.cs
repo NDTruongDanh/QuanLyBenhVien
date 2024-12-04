@@ -80,7 +80,7 @@ namespace QuanLyBenhVien
             if(CommonChecks.HasDigit(txtFullName.Text))
                 isValid = false;
             //Check Email
-            if(CommonChecks.IsEmail(txtEmail.Text))
+            if(!CommonChecks.IsEmail(txtEmail.Text))
                 isValid = false;
             //Check PhoneNumber
             if (!CommonChecks.IsNumber(txtPhoneNumber.Text))
