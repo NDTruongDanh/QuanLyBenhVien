@@ -5,9 +5,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyBenhVien.Classes;
 
 namespace QuanLyBenhVien
 {
@@ -66,29 +68,28 @@ namespace QuanLyBenhVien
             }
         }
 
-        //private void ExecuteQuery(string query, Dictionary<string, object> parameters)
-        //{
-        //    try
-        //    {
-        //        OpenConnection();
-        //        using (SqlCommand command = new SqlCommand(query, conn))
-        //        {
-        //            foreach (var param in parameters)
-        //            {
-        //                command.Parameters.AddWithValue(param.Key, param.Value);
-        //            }
-        //            command.ExecuteNonQuery();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Lỗi khi thực thi: {ex.Message}");
-        //    }
-        //    finally
-        //    {
-        //        CloseConnection();
-        //    }
-        //}
+        private bool IsValid()
+        {
+            bool isValid = true;
+            if (txtStaffID.Text.Length == 0 || txtFullName.Text.Length == 0 || txtEmail.Text.Length == 0
+                || txtPhoneNumber.Text.Length == 0 || txtSalary.Text.Length == 0 || cmbDepartmentID.Text.Length == 0
+                || cmbGender.Text.Length == 0 || cmbTypeOfStaff.Text.Length == 0)
+                isValid = false;
+
+            //Check FullName
+            if(CommonChecks.HasDigit(txtFullName.Text))
+                isValid = false;
+            //Check Email
+            if(CommonChecks.IsEmail(txtEmail.Text))
+                isValid = false;
+            //Check PhoneNumber
+            if (!CommonChecks.IsNumber(txtPhoneNumber.Text))
+                isValid = false;
+            //Check Salary
+            if(!CommonChecks.IsNumber(txtSalary.Text))
+                isValid = false;
+            return isValid;
+        }
 
     }
 }
