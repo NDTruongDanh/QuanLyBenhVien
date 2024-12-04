@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CommonChecks.cs" />
     <Compile Include="DepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
