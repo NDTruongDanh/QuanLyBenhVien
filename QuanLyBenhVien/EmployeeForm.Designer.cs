@@ -30,6 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
             this.cmbTypeOfStaff = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.btnRemoveStaff = new System.Windows.Forms.Button();
             this.btnAddOrUpdateStaff = new System.Windows.Forms.Button();
             this.btnRefreshStaff = new System.Windows.Forms.Button();
-            this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
@@ -123,6 +123,16 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1059, 213);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // dtpBirthday
+            // 
+            this.dtpBirthday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBirthday.Location = new System.Drawing.Point(688, 48);
+            this.dtpBirthday.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpBirthday.Name = "dtpBirthday";
+            this.dtpBirthday.Size = new System.Drawing.Size(367, 30);
+            this.dtpBirthday.TabIndex = 27;
             // 
             // cmbTypeOfStaff
             // 
@@ -425,6 +435,7 @@
             this.btnAddOrUpdateStaff.TabIndex = 2;
             this.btnAddOrUpdateStaff.Text = "Thêm/Sửa";
             this.btnAddOrUpdateStaff.UseVisualStyleBackColor = true;
+            this.btnAddOrUpdateStaff.Click += new System.EventHandler(this.btnAddOrUpdateStaff_Click);
             // 
             // btnRefreshStaff
             // 
@@ -437,16 +448,6 @@
             this.btnRefreshStaff.TabIndex = 1;
             this.btnRefreshStaff.Text = "Làm mới";
             this.btnRefreshStaff.UseVisualStyleBackColor = true;
-            // 
-            // dtpBirthday
-            // 
-            this.dtpBirthday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBirthday.Location = new System.Drawing.Point(688, 48);
-            this.dtpBirthday.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpBirthday.Name = "dtpBirthday";
-            this.dtpBirthday.Size = new System.Drawing.Size(367, 30);
-            this.dtpBirthday.TabIndex = 27;
             // 
             // EmployeeForm
             // 

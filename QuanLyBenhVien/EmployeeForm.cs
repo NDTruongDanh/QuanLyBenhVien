@@ -91,5 +91,59 @@ namespace QuanLyBenhVien
             return isValid;
         }
 
+        private void btnAddOrUpdateStaff_Click(object sender, EventArgs e)
+        {
+            if (!IsValid())
+            {
+                MessageBox.Show("Vui long nhap dung thong tin");
+                return;
+            }
+
+            try
+            {
+                conn = new SqlConnection(connStr);
+                conn.Open();
+
+                string sqlStr = @"INSERT INTO STAFF values (@StaffID, @FullName, @TypeOfStaff, @Gender, @DateOfBirth, @PhoneNumber, @DateOfJoining, @Email, @Salary, @DepartmentID)";
+
+                SqlCommand comm = new SqlCommand(sqlStr, conn);
+                comm.Parameters.Add("@StaffID", SqlDbType.Char).Value = txtStaffID.Text;
+                comm.Parameters.Add("@FullName", SqlDbType.NVarChar).Value = txtFullName.Text;
+                comm.Parameters.Add("@TypeOfStaff", SqlDbType.NVarChar).Value = cmbTypeOfStaff.Text;
+                comm.Parameters.Add("@Gender", SqlDbType.NVarChar).Value = cmbGender.Text;
+                comm.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = dtpBirthday.Value.Date;
+                comm.Parameters.Add("@PhoneNumber", SqlDbType.VarChar).Value = txtPhoneNumber.Text;
+                comm.Parameters.Add("@DateOfJoining", SqlDbType.Date).Value = dtpDateOfJoining.Value.Date;
+                comm.Parameters.Add("@Email", SqlDbType.VarChar).Value = txtEmail.Text;
+                comm.Parameters.Add("@Salary", SqlDbType.Money).Value = txtSalary.Text;
+                comm.Parameters.Add("@DepartmentID", SqlDbType.Char).Value = cmbDepartmentID.Text;
+
+                int count = comm.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    MessageBox.Show("Staff added successfully");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add staff");
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Database error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+            finally
+            {
+                if (conn != null && conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }
