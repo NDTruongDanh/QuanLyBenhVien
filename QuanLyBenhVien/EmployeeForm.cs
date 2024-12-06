@@ -70,28 +70,7 @@ namespace QuanLyBenhVien
             return true;
         }
 
-        private void ExecuteQuery(string query, Dictionary<string, object> parameters)
-        {
-            using (var conn = new SqlConnection(connStr))
-            {
-                try
-                {
-                    conn.Open();
-                    using (var command = new SqlCommand(query, conn))
-                    {
-                        foreach (var param in parameters)
-                        {
-                            command.Parameters.AddWithValue(param.Key, param.Value);
-                        }
-                        command.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Lỗi khi thực thi: {ex.Message}");
-                }
-            }
-        }
+
 
         private void btnAddOrUpdateStaff_Click(object sender, EventArgs e)
         {
@@ -123,7 +102,7 @@ namespace QuanLyBenhVien
                 {"@DepartmentID", cmbDepartmentID.Text}
             };
 
-            ExecuteQuery(query, parameters);
+            CommonQuery.ExecuteQuery(query, parameters);
             LoadData();
         }
 
@@ -213,7 +192,7 @@ namespace QuanLyBenhVien
             string query = "DELETE FROM STAFF WHERE StaffID = @StaffID";
             var parameters = new Dictionary<string, object> { { "@StaffID", txtStaffID.Text } };
 
-            ExecuteQuery(query, parameters);
+            CommonQuery.ExecuteQuery(query, parameters);
             LoadData();
         }
 
@@ -231,6 +210,25 @@ namespace QuanLyBenhVien
             cmbTypeOfStaff.SelectedIndex = -1;
             dtpBirthday.Value = DateTime.Today;
             dtpDateOfJoining.Value = DateTime.Today;
+        }
+
+        private void dgvEmployee_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvEmployee.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvEmployee.SelectedRows[0];
+
+                txtStaffID.Text = selectedRow.Cells[0].Value.ToString();
+                txtFullName.Text = selectedRow.Cells[1].Value.ToString();
+                cmbTypeOfStaff.Text = selectedRow.Cells[2].Value.ToString();
+                cmbGender.Text = selectedRow.Cells[3].Value.ToString();
+                dtpBirthday.Text = selectedRow.Cells[4].Value.ToString();
+                txtPhoneNumber.Text = selectedRow.Cells[5].Value.ToString();
+                dtpDateOfJoining.Text = selectedRow.Cells[6].Value.ToString();
+                txtEmail.Text = selectedRow.Cells[7].Value.ToString();
+                txtSalary.Text = selectedRow.Cells[8].Value.ToString();
+                cmbDepartmentID.Text = selectedRow.Cells[9].Value.ToString();
+            }
         }
     }
 }
