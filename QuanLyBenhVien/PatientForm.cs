@@ -109,7 +109,7 @@ namespace QuanLyBenhVien
 
         private void btnFindPatient_Click(object sender, EventArgs e)
         {
-            using (var conn = new SqlConnection(connStr))
+            using (SqlConnection conn = new SqlConnection(connStr))
             {
                 try
                 {
@@ -133,7 +133,11 @@ namespace QuanLyBenhVien
                         query += " AND RoomID = @RoomID";
                         parameters.Add("@RoomID", txtRoomID.Text.Trim());
                     }
-
+                    if (!string.IsNullOrEmpty(cmbGender.Text))
+                    {
+                        query += " AND Gender = @Gender";
+                        parameters.Add("@Gender", cmbGender.Text);
+                    }
                     using (SqlCommand command = new SqlCommand(query, conn))
                     {
                         foreach (var param in parameters)

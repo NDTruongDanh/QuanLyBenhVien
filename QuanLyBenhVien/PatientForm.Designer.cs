@@ -49,6 +49,7 @@
             this.dtpAdmissionDate = new System.Windows.Forms.DateTimePicker();
             this.dtpDischargeDate = new System.Windows.Forms.DateTimePicker();
             this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,7 +57,6 @@
             this.btnFindPatient = new System.Windows.Forms.Button();
             this.btnRemovePatient = new System.Windows.Forms.Button();
             this.btnAddOrUpdatePatient = new System.Windows.Forms.Button();
-            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
@@ -334,10 +334,18 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Nữ",
             "Nam"});
-            this.cmbGender.Location = new System.Drawing.Point(186, 47);
+            this.cmbGender.Location = new System.Drawing.Point(186, 51);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(342, 33);
             this.cmbGender.TabIndex = 21;
+            // 
+            // dtpDateOfBirth
+            // 
+            this.dtpDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(700, 48);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(343, 30);
+            this.dtpDateOfBirth.TabIndex = 22;
             // 
             // dgvPatient
             // 
@@ -437,14 +445,6 @@
             this.btnAddOrUpdatePatient.Text = "Thêm/Sửa";
             this.btnAddOrUpdatePatient.UseVisualStyleBackColor = true;
             this.btnAddOrUpdatePatient.Click += new System.EventHandler(this.btnAddOrUpdatePatient_Click);
-            // 
-            // dtpDateOfBirth
-            // 
-            this.dtpDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpDateOfBirth.Location = new System.Drawing.Point(700, 52);
-            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(343, 30);
-            this.dtpDateOfBirth.TabIndex = 22;
             // 
             // PatientForm
             // 
