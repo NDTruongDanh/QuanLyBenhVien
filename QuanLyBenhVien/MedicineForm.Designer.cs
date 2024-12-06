@@ -45,20 +45,20 @@
             this.txtQuantityInStock = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.dtpHSD = new System.Windows.Forms.DateTimePicker();
-            this.dtpNSX = new System.Windows.Forms.DateTimePicker();
-            this.txtCategory = new System.Windows.Forms.TextBox();
+            this.dtpManufacturingDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpExpiryDate = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnRemoveMedication = new System.Windows.Forms.Button();
             this.btnAddOrUpdateMedication = new System.Windows.Forms.Button();
             this.btnRefreshMedication = new System.Windows.Forms.Button();
             this.btnFindMedication = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMedicine = new System.Windows.Forms.DataGridView();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -67,7 +67,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dgvMedicine, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -103,7 +103,7 @@
             this.tableLayoutPanel2.Controls.Add(this.txtQuantityInStock, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtPrice, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.txtCategory, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.cmbCategory, 3, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
@@ -303,8 +303,8 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.dtpHSD, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.dtpNSX, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.dtpManufacturingDate, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.dtpExpiryDate, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(195, 162);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -314,42 +314,30 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(318, 48);
             this.tableLayoutPanel4.TabIndex = 23;
             // 
-            // dtpHSD
+            // dtpManufacturingDate
             // 
-            this.dtpHSD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpHSD.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpHSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpHSD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHSD.Location = new System.Drawing.Point(163, 5);
-            this.dtpHSD.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpHSD.Name = "dtpHSD";
-            this.dtpHSD.Size = new System.Drawing.Size(151, 38);
-            this.dtpHSD.TabIndex = 21;
+            this.dtpManufacturingDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpManufacturingDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpManufacturingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpManufacturingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpManufacturingDate.Location = new System.Drawing.Point(163, 5);
+            this.dtpManufacturingDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpManufacturingDate.Name = "dtpManufacturingDate";
+            this.dtpManufacturingDate.Size = new System.Drawing.Size(151, 38);
+            this.dtpManufacturingDate.TabIndex = 21;
             // 
-            // dtpNSX
+            // dtpExpiryDate
             // 
-            this.dtpNSX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpNSX.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpNSX.CalendarMonthBackground = System.Drawing.Color.White;
-            this.dtpNSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpNSX.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNSX.Location = new System.Drawing.Point(4, 5);
-            this.dtpNSX.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpNSX.Name = "dtpNSX";
-            this.dtpNSX.Size = new System.Drawing.Size(151, 38);
-            this.dtpNSX.TabIndex = 20;
-            // 
-            // txtCategory
-            // 
-            this.txtCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCategory.BackColor = System.Drawing.Color.LightGray;
-            this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCategory.Location = new System.Drawing.Point(692, 57);
-            this.txtCategory.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCategory.Multiline = true;
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(363, 44);
-            this.txtCategory.TabIndex = 9;
+            this.dtpExpiryDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpExpiryDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpExpiryDate.CalendarMonthBackground = System.Drawing.Color.White;
+            this.dtpExpiryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpExpiryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpExpiryDate.Location = new System.Drawing.Point(4, 5);
+            this.dtpExpiryDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpExpiryDate.Name = "dtpExpiryDate";
+            this.dtpExpiryDate.Size = new System.Drawing.Size(151, 38);
+            this.dtpExpiryDate.TabIndex = 20;
             // 
             // tableLayoutPanel3
             // 
@@ -384,6 +372,7 @@
             this.btnRemoveMedication.TabIndex = 3;
             this.btnRemoveMedication.Text = "Xóa";
             this.btnRemoveMedication.UseVisualStyleBackColor = false;
+            this.btnRemoveMedication.Click += new System.EventHandler(this.btnRemoveMedication_Click);
             // 
             // btnAddOrUpdateMedication
             // 
@@ -397,6 +386,7 @@
             this.btnAddOrUpdateMedication.TabIndex = 2;
             this.btnAddOrUpdateMedication.Text = "Thêm/Sửa";
             this.btnAddOrUpdateMedication.UseVisualStyleBackColor = false;
+            this.btnAddOrUpdateMedication.Click += new System.EventHandler(this.btnAddOrUpdateMedicine_Click);
             // 
             // btnRefreshMedication
             // 
@@ -410,6 +400,7 @@
             this.btnRefreshMedication.TabIndex = 1;
             this.btnRefreshMedication.Text = "Làm mới";
             this.btnRefreshMedication.UseVisualStyleBackColor = false;
+            this.btnRefreshMedication.Click += new System.EventHandler(this.btnRefreshMedication_Click);
             // 
             // btnFindMedication
             // 
@@ -423,17 +414,39 @@
             this.btnFindMedication.TabIndex = 0;
             this.btnFindMedication.Text = "Tìm";
             this.btnFindMedication.UseVisualStyleBackColor = false;
+            this.btnFindMedication.Click += new System.EventHandler(this.btnFindMedicine_Click);
             // 
-            // dataGridView1
+            // dgvMedicine
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 280);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1059, 270);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMedicine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMedicine.Location = new System.Drawing.Point(4, 280);
+            this.dgvMedicine.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMedicine.Name = "dgvMedicine";
+            this.dgvMedicine.RowHeadersWidth = 51;
+            this.dgvMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMedicine.Size = new System.Drawing.Size(1059, 270);
+            this.dgvMedicine.TabIndex = 2;
+            this.dgvMedicine.SelectionChanged += new System.EventHandler(this.dgvMedicine_SelectionChanged);
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.BackColor = System.Drawing.Color.LightGray;
+            this.cmbCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Items.AddRange(new object[] {
+            "Thuốc Kháng sinh",
+            "Thuốc Giảm đau, Hạ sốt",
+            "Thuốc Tim mạch",
+            "Thuốc Chống dị ứng",
+            "Thuốc Tiêu hóa",
+            "Thuốc Thần kinh"});
+            this.cmbCategory.Location = new System.Drawing.Point(691, 56);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(365, 44);
+            this.cmbCategory.TabIndex = 26;
             // 
             // MedicineForm
             // 
@@ -444,12 +457,13 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MedicineForm";
             this.Text = "THUỐC";
+            this.Load += new System.EventHandler(this.MedicineForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,7 +477,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.TextBox txtDosage;
         private System.Windows.Forms.TextBox txtMedicationName;
         private System.Windows.Forms.TextBox txtMedicationID;
@@ -472,7 +485,7 @@
         private System.Windows.Forms.Button btnAddOrUpdateMedication;
         private System.Windows.Forms.Button btnRefreshMedication;
         private System.Windows.Forms.Button btnFindMedication;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMedicine;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtQuantityInStock;
@@ -480,7 +493,8 @@
         private System.Windows.Forms.TextBox txtManufacturer;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.DateTimePicker dtpHSD;
-        private System.Windows.Forms.DateTimePicker dtpNSX;
+        private System.Windows.Forms.DateTimePicker dtpManufacturingDate;
+        private System.Windows.Forms.DateTimePicker dtpExpiryDate;
+        private System.Windows.Forms.ComboBox cmbCategory;
     }
 }
