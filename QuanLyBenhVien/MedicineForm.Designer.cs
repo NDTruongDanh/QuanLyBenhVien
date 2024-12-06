@@ -47,13 +47,13 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dtpManufacturingDate = new System.Windows.Forms.DateTimePicker();
             this.dtpExpiryDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnRemoveMedication = new System.Windows.Forms.Button();
             this.btnAddOrUpdateMedication = new System.Windows.Forms.Button();
             this.btnRefreshMedication = new System.Windows.Forms.Button();
             this.btnFindMedication = new System.Windows.Forms.Button();
             this.dgvMedicine = new System.Windows.Forms.DataGridView();
-            this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -339,6 +339,24 @@
             this.dtpExpiryDate.Size = new System.Drawing.Size(151, 38);
             this.dtpExpiryDate.TabIndex = 20;
             // 
+            // cmbCategory
+            // 
+            this.cmbCategory.BackColor = System.Drawing.Color.LightGray;
+            this.cmbCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Items.AddRange(new object[] {
+            "Thuốc Kháng sinh",
+            "Thuốc Giảm đau, Hạ sốt",
+            "Thuốc Tim mạch",
+            "Thuốc Chống dị ứng",
+            "Thuốc Tiêu hóa",
+            "Thuốc Thần kinh"});
+            this.cmbCategory.Location = new System.Drawing.Point(691, 56);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(365, 44);
+            this.cmbCategory.TabIndex = 26;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 4;
@@ -429,24 +447,6 @@
             this.dgvMedicine.Size = new System.Drawing.Size(1059, 270);
             this.dgvMedicine.TabIndex = 2;
             this.dgvMedicine.SelectionChanged += new System.EventHandler(this.dgvMedicine_SelectionChanged);
-            // 
-            // cmbCategory
-            // 
-            this.cmbCategory.BackColor = System.Drawing.Color.LightGray;
-            this.cmbCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Items.AddRange(new object[] {
-            "Thuốc Kháng sinh",
-            "Thuốc Giảm đau, Hạ sốt",
-            "Thuốc Tim mạch",
-            "Thuốc Chống dị ứng",
-            "Thuốc Tiêu hóa",
-            "Thuốc Thần kinh"});
-            this.cmbCategory.Location = new System.Drawing.Point(691, 56);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(365, 44);
-            this.cmbCategory.TabIndex = 26;
             // 
             // MedicineForm
             // 

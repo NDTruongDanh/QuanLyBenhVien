@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
@@ -53,9 +53,9 @@
             this.cmbDepartmentID = new System.Windows.Forms.ComboBox();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnFindStaff = new System.Windows.Forms.Button();
             this.btnRemoveStaff = new System.Windows.Forms.Button();
             this.btnAddOrUpdateStaff = new System.Windows.Forms.Button();
-            this.btnFindStaff = new System.Windows.Forms.Button();
             this.btnRefreshStaff = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -160,7 +160,7 @@
             "Hộ lý",
             "Nhân viên Nghiên cứu Y khoa",
             "Giảng viên Y khoa"});
-            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 88);
+            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 93);
             this.cmbTypeOfStaff.Name = "cmbTypeOfStaff";
             this.cmbTypeOfStaff.Size = new System.Drawing.Size(369, 33);
             this.cmbTypeOfStaff.TabIndex = 26;
@@ -369,7 +369,7 @@
             this.cmbDepartmentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbDepartmentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDepartmentID.FormattingEnabled = true;
-            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 88);
+            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 93);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
             this.cmbDepartmentID.Size = new System.Drawing.Size(369, 33);
             this.cmbDepartmentID.TabIndex = 25;
@@ -377,14 +377,14 @@
             // dgvEmployee
             // 
             this.dgvEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmployee.Location = new System.Drawing.Point(4, 280);
@@ -403,10 +403,10 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.btnRefreshStaff, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnFindStaff, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnRemoveStaff, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnAddOrUpdateStaff, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnFindStaff, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnRefreshStaff, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 225);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
@@ -415,6 +415,19 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1059, 47);
             this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // btnFindStaff
+            // 
+            this.btnFindStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFindStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnFindStaff.Location = new System.Drawing.Point(4, 4);
+            this.btnFindStaff.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFindStaff.Name = "btnFindStaff";
+            this.btnFindStaff.Size = new System.Drawing.Size(256, 39);
+            this.btnFindStaff.TabIndex = 4;
+            this.btnFindStaff.Text = "Tìm";
+            this.btnFindStaff.UseVisualStyleBackColor = true;
+            this.btnFindStaff.Click += new System.EventHandler(this.btnFindStaff_Click);
             // 
             // btnRemoveStaff
             // 
@@ -442,28 +455,15 @@
             this.btnAddOrUpdateStaff.UseVisualStyleBackColor = true;
             this.btnAddOrUpdateStaff.Click += new System.EventHandler(this.btnAddOrUpdateStaff_Click);
             // 
-            // btnFindStaff
-            // 
-            this.btnFindStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFindStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnFindStaff.Location = new System.Drawing.Point(268, 4);
-            this.btnFindStaff.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFindStaff.Name = "btnFindStaff";
-            this.btnFindStaff.Size = new System.Drawing.Size(256, 39);
-            this.btnFindStaff.TabIndex = 1;
-            this.btnFindStaff.Text = "Tìm";
-            this.btnFindStaff.UseVisualStyleBackColor = true;
-            this.btnFindStaff.Click += new System.EventHandler(this.btnFindStaff_Click);
-            // 
             // btnRefreshStaff
             // 
             this.btnRefreshStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRefreshStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnRefreshStaff.Location = new System.Drawing.Point(4, 4);
+            this.btnRefreshStaff.Location = new System.Drawing.Point(268, 4);
             this.btnRefreshStaff.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefreshStaff.Name = "btnRefreshStaff";
             this.btnRefreshStaff.Size = new System.Drawing.Size(256, 39);
-            this.btnRefreshStaff.TabIndex = 4;
+            this.btnRefreshStaff.TabIndex = 1;
             this.btnRefreshStaff.Text = "Làm mới";
             this.btnRefreshStaff.UseVisualStyleBackColor = true;
             this.btnRefreshStaff.Click += new System.EventHandler(this.btnRefreshStaff_Click);
@@ -515,7 +515,7 @@
         private System.Windows.Forms.ComboBox cmbTypeOfStaff;
         private System.Windows.Forms.ComboBox cmbDepartmentID;
         private System.Windows.Forms.DateTimePicker dtpBirthday;
-        private System.Windows.Forms.Button btnFindStaff;
         private System.Windows.Forms.Button btnRefreshStaff;
+        private System.Windows.Forms.Button btnFindStaff;
     }
 }
