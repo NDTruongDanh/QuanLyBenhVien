@@ -1,4 +1,6 @@
-﻿CREATE DATABASE HospitalDB
+﻿DROP DATABASE HospitalDB
+
+CREATE DATABASE HospitalDB
 
 USE HospitalDB
 
@@ -28,11 +30,12 @@ CREATE TABLE STAFF (
     DateOfJoining DATE,
     Email VARCHAR(255),
     Salary MONEY,
-    DepartmentID CHAR(6)
+    DepartmentID VARCHAR(6)
 )
 
+
 CREATE TABLE DEPARTMENT (
-    DepartmentID CHAR(6) PRIMARY KEY,
+    DepartmentID VARCHAR(6) PRIMARY KEY,
     DepartmentName NVARCHAR(255) NOT NULL,
     EmployeeNumber INT,
     HeadDepartmentID CHAR(6),  -- Trưởng khoa (là StaffID)
@@ -40,14 +43,16 @@ CREATE TABLE DEPARTMENT (
     LocationDPM NVARCHAR(255)
 )
 
+
 CREATE TABLE APPOINTMENT (
     AppointmentID CHAR(6) PRIMARY KEY,
     PatientID CHAR(6),
     DoctorID CHAR(6),  -- Bác sĩ điều trị
-    DepartmentID CHAR(6),
+    DepartmentID VARCHAR(6),
     AppointmentDateTime DATETIME,  -- Thời gian hẹn khám (ngày + giờ)
     AppointmentStatus NVARCHAR(50)  -- Trạng thái cuộc hẹn: đã xác nhận, hủy, hoàn thành, v.v.
 )
+
 
 CREATE TABLE MEDICALRECORD (
     RecordID CHAR(6) PRIMARY KEY,
@@ -89,19 +94,21 @@ CREATE TABLE MEDICATION (
 
 CREATE TABLE ROOM (
     RoomID CHAR(6) PRIMARY KEY,
-    DepartmentID CHAR(6),
+    DepartmentID VARCHAR(6),
     BedCount INT,  -- Số giường trong phòng
     RoomType NVARCHAR(50)  -- Loại phòng: thường, VIP, hồi sức, v.v.
 )
 
+
 CREATE TABLE WEEKLYASSIGNMENT (
     AssignmentID CHAR(6) PRIMARY KEY,
     StaffID CHAR(6),
-    DepartmentID CHAR(6),
+    DepartmentID VARCHAR(6),
     WeekStartDate DATE,
     WeekEndDate DATE,
     ShiftType NVARCHAR(50)  -- Loại ca: Sáng, Chiều, Tối
 )
+
 
 --THÊM KHOÁ NGOẠI--
 ALTER TABLE PATIENT
@@ -149,5 +156,3 @@ ADD CONSTRAINT FK_WE_STA FOREIGN KEY (StaffID) REFERENCES STAFF(StaffID)
 ALTER TABLE WEEKLYASSIGNMENT
 ADD CONSTRAINT FK_WE_DE FOREIGN KEY (DepartmentID) REFERENCES DEPARTMENT(DepartmentID) 
 
-INSERT INTO STAFF (StaffID, FullName, TypeOfStaff, Gender, DateOfBirth, PhoneNumber, DateOfJoining, Email, Salary, DepartmentID)
-VALUES ('ST0001', N'Nguyễn Văn A', N'Bác sĩ', N'Nam', '1990-01-01', '0987654321', '2023-01-01', 'nguyenvana@gmail.com', 10000000, 'DEPT01');
