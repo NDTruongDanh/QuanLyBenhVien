@@ -15,135 +15,222 @@ namespace QuanLyBenhVien
 {
     public partial class EmployeeForm : Form
     {
+        private readonly string connStr = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
+
         public EmployeeForm()
         {
             InitializeComponent();
         }
-
-        private readonly string connStr = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
-        private SqlConnection conn;
-        private SqlDataAdapter employeeAdapter;
-        private DataSet employeeDataset;
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
             LoadData();
         }
 
-        private void OpenConnection()
-        {
-            if (conn == null)
-                conn = new SqlConnection(connStr);
-
-            if (conn.State == ConnectionState.Closed)
-                conn.Open();
-        }
-
-        private void CloseConnection()
-        {
-            if (conn != null && conn.State == ConnectionState.Open)
-                conn.Close();
-        }
-
         private void LoadData()
         {
-            try
+            using (var conn = new SqlConnection(connStr))
             {
-                OpenConnection();
-                string sqlStr = "SELECT * FROM STAFF";
-
-                employeeAdapter = new SqlDataAdapter(sqlStr, conn);
-                employeeDataset = new DataSet();
-                employeeAdapter.Fill(employeeDataset, "STAFF");
-
-                dgvEmployee.DataSource = employeeDataset.Tables["STAFF"];
+                try
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM STAFF";
+                    var adapter = new SqlDataAdapter(sql, conn);
+                    var dataset = new DataSet();
+                    adapter.Fill(dataset, "STAFF");
+                    dgvEmployee.DataSource = dataset.Tables["STAFF"];
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}");
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}");
-            }
-            finally
-            {
-                CloseConnection();
-            }
+               
         }
 
         private bool IsValid()
         {
-            bool isValid = true;
-            if (txtStaffID.Text.Length == 0 || txtFullName.Text.Length == 0 || txtEmail.Text.Length == 0
-                || txtPhoneNumber.Text.Length == 0 || txtSalary.Text.Length == 0 || cmbDepartmentID.Text.Length == 0
-                || cmbGender.Text.Length == 0 || cmbTypeOfStaff.Text.Length == 0)
-                isValid = false;
+            if (string.IsNullOrEmpty(txtStaffID.Text) || string.IsNullOrEmpty(txtFullName.Text) ||
+                string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtPhoneNumber.Text) ||
+                string.IsNullOrEmpty(txtSalary.Text) || string.IsNullOrEmpty(cmbDepartmentID.Text) ||
+                string.IsNullOrEmpty(cmbGender.Text) || string.IsNullOrEmpty(cmbTypeOfStaff.Text))
+            { 
+                return false; 
+            }
 
-            //Check FullName
-            if(CommonChecks.HasDigit(txtFullName.Text))
-                isValid = false;
-            //Check Email
-            if(!CommonChecks.IsEmail(txtEmail.Text))
-                isValid = false;
-            //Check PhoneNumber
-            if (!CommonChecks.IsNumber(txtPhoneNumber.Text))
-                isValid = false;
-            //Check Salary
-            if(!CommonChecks.IsNumber(txtSalary.Text))
-                isValid = false;
-            return isValid;
+
+            if (CommonChecks.HasDigit(txtFullName.Text) ||
+                !CommonChecks.IsEmail(txtEmail.Text) ||
+                !CommonChecks.IsNumber(txtPhoneNumber.Text) ||
+                !CommonChecks.IsNumber(txtSalary.Text))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void ExecuteQuery(string query, Dictionary<string, object> parameters)
+        {
+            using (var conn = new SqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    using (var command = new SqlCommand(query, conn))
+                    {
+                        foreach (var param in parameters)
+                        {
+                            command.Parameters.AddWithValue(param.Key, param.Value);
+                        }
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi thực thi: {ex.Message}");
+                }
+            }
         }
 
         private void btnAddOrUpdateStaff_Click(object sender, EventArgs e)
         {
             if (!IsValid())
             {
-                MessageBox.Show("Vui long nhap dung thong tin");
+                MessageBox.Show("Vui lòng nhập đúng thông tin");
                 return;
             }
 
-            try
-            {
-                conn = new SqlConnection(connStr);
-                conn.Open();
+            string query = @"IF EXISTS (SELECT 1 FROM STAFF WHERE StaffID = @StaffID)
+                             UPDATE STAFF SET FullName = @FullName, TypeOfStaff = @TypeOfStaff, Gender = @Gender, 
+                             DateOfBirth = @DateOfBirth, PhoneNumber = @PhoneNumber, DateOfJoining = @DateOfJoining, 
+                             Email = @Email, Salary = @Salary, DepartmentID = @DepartmentID WHERE StaffID = @StaffID
+                             ELSE
+                             INSERT INTO STAFF (StaffID, FullName, TypeOfStaff, Gender, DateOfBirth, PhoneNumber, DateOfJoining, Email, Salary, DepartmentID)
+                             VALUES (@StaffID, @FullName, @TypeOfStaff, @Gender, @DateOfBirth, @PhoneNumber, @DateOfJoining, @Email, @Salary, @DepartmentID)";
 
-                string sqlStr = @"INSERT INTO STAFF values (@StaffID, @FullName, @TypeOfStaff, @Gender, @DateOfBirth, @PhoneNumber, @DateOfJoining, @Email, @Salary, @DepartmentID)";
+            var parameters = new Dictionary<string, object>
+            {
+                {"@StaffID", txtStaffID.Text},
+                {"@FullName", txtFullName.Text},
+                {"@TypeOfStaff", cmbTypeOfStaff.Text},
+                {"@Gender", cmbGender.Text},
+                {"@DateOfBirth", dtpBirthday.Value.Date},
+                {"@PhoneNumber", txtPhoneNumber.Text},
+                {"@DateOfJoining", dtpDateOfJoining.Value.Date},
+                {"@Email", txtEmail.Text},
+                {"@Salary", txtSalary.Text},
+                {"@DepartmentID", cmbDepartmentID.Text}
+            };
 
-                SqlCommand comm = new SqlCommand(sqlStr, conn);
-                comm.Parameters.Add("@StaffID", SqlDbType.Char).Value = txtStaffID.Text;
-                comm.Parameters.Add("@FullName", SqlDbType.NVarChar).Value = txtFullName.Text;
-                comm.Parameters.Add("@TypeOfStaff", SqlDbType.NVarChar).Value = cmbTypeOfStaff.Text;
-                comm.Parameters.Add("@Gender", SqlDbType.NVarChar).Value = cmbGender.Text;
-                comm.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = dtpBirthday.Value.Date;
-                comm.Parameters.Add("@PhoneNumber", SqlDbType.VarChar).Value = txtPhoneNumber.Text;
-                comm.Parameters.Add("@DateOfJoining", SqlDbType.Date).Value = dtpDateOfJoining.Value.Date;
-                comm.Parameters.Add("@Email", SqlDbType.VarChar).Value = txtEmail.Text;
-                comm.Parameters.Add("@Salary", SqlDbType.Money).Value = txtSalary.Text;
-                comm.Parameters.Add("@DepartmentID", SqlDbType.Char).Value = cmbDepartmentID.Text;
+            ExecuteQuery(query, parameters);
+            LoadData();
+        }
 
-                int count = comm.ExecuteNonQuery();
-                if (count > 0)
-                {
-                    MessageBox.Show("Staff added successfully");
-                    LoadData();
-                }
-                else
-                {
-                    MessageBox.Show("Failed to add staff");
-                }
-            }
-            catch (SqlException ex)
+        private void btnFindStaff_Click(object sender, EventArgs e)
+        {
+            using (var conn = new SqlConnection(connStr))
             {
-                MessageBox.Show($"Database error: {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
-            finally
-            {
-                if (conn != null && conn.State == ConnectionState.Open)
+                try
                 {
-                    conn.Close();
+                    conn.Open();
+
+                    // Bắt đầu xây dựng truy vấn SQL động
+                    string query = "SELECT * FROM STAFF WHERE 1=1"; // 1=1 giúp tránh lỗi cú pháp khi không có điều kiện
+                    var parameters = new Dictionary<string, object>();
+
+                    // Kiểm tra từng trường và thêm vào điều kiện truy vấn nếu không rỗng
+                    if (!string.IsNullOrEmpty(txtStaffID.Text))
+                    {
+                        query += " AND StaffID = @StaffID";
+                        parameters.Add("@StaffID", txtStaffID.Text);
+                    }
+                    if (!string.IsNullOrEmpty(txtFullName.Text))
+                    {
+                        query += " AND FullName LIKE @FullName";
+                        parameters.Add("@FullName", $"%{txtFullName.Text}%"); // Sử dụng LIKE để tìm kiếm gần đúng
+                    }
+                    if (!string.IsNullOrEmpty(txtSalary.Text))
+                    {
+                        query += " AND Salary = @Salary";
+                        parameters.Add("@Salary", txtSalary.Text);
+                    }
+                    if (!string.IsNullOrEmpty(cmbGender.Text))
+                    {
+                        query += " AND Gender = @Gender";
+                        parameters.Add("@Gender", cmbGender.Text);
+                    }
+                    if (!string.IsNullOrEmpty(cmbTypeOfStaff.Text))
+                    {
+                        query += " AND TypeOfStaff = @TypeOfStaff";
+                        parameters.Add("@TypeOfStaff", cmbTypeOfStaff.Text);
+                    }
+                    if (!string.IsNullOrEmpty(cmbDepartmentID.Text))
+                    {
+                        query += " AND DepartmentID = @DepartmentID";
+                        parameters.Add("@DepartmentID", cmbDepartmentID.Text);
+                    }
+
+                    // Thực hiện truy vấn
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        foreach (var param in parameters)
+                        {
+                            command.Parameters.AddWithValue(param.Key, param.Value);
+                        }
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable resultTable = new DataTable();
+                        adapter.Fill(resultTable);
+
+                        // Hiển thị kết quả
+                        dgvEmployee.DataSource = resultTable;
+
+                        // Thông báo nếu không có kết quả
+                        if (resultTable.Rows.Count == 0)
+                        {
+                            MessageBox.Show("Không tìm thấy kết quả nào phù hợp với điều kiện tìm kiếm.",
+                                            "Thông báo",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý lỗi
+                    MessageBox.Show($"Lỗi khi tìm kiếm: {ex.Message}",
+                                    "Lỗi",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
                 }
             }
+        }
+
+
+        private void btnRemoveStaff_Click(object sender, EventArgs e)
+        {
+            string query = "DELETE FROM STAFF WHERE StaffID = @StaffID";
+            var parameters = new Dictionary<string, object> { { "@StaffID", txtStaffID.Text } };
+
+            ExecuteQuery(query, parameters);
+            LoadData();
+        }
+
+
+
+        private void btnRefreshStaff_Click(object sender, EventArgs e)
+        {
+            txtStaffID.Clear();
+            txtFullName.Clear();
+            txtEmail.Clear();
+            txtPhoneNumber.Clear();
+            txtSalary.Clear();
+            cmbDepartmentID.SelectedIndex = -1;
+            cmbGender.SelectedIndex = -1;
+            cmbTypeOfStaff.SelectedIndex = -1;
+            dtpBirthday.Value = DateTime.Today;
+            dtpDateOfJoining.Value = DateTime.Today;
         }
     }
 }
