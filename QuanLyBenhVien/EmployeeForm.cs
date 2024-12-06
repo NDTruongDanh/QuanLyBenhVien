@@ -79,8 +79,8 @@ namespace QuanLyBenhVien
         {
             if (string.IsNullOrEmpty(txtStaffID.Text) || string.IsNullOrEmpty(txtFullName.Text) ||
                 string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtPhoneNumber.Text) ||
-                string.IsNullOrEmpty(txtSalary.Text) || string.IsNullOrEmpty(cmbDepartmentID.Text) ||
-                string.IsNullOrEmpty(cmbGender.Text) || string.IsNullOrEmpty(cmbTypeOfStaff.Text))
+                string.IsNullOrEmpty(txtSalary.Text) || string.IsNullOrEmpty(cmbGender.Text) || 
+                string.IsNullOrEmpty(cmbTypeOfStaff.Text))
             { 
                 return false; 
             }

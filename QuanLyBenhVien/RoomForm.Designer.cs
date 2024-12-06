@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvRoom = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtEmptyBed = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,11 +42,12 @@
             this.cmbDepartmentID = new System.Windows.Forms.ComboBox();
             this.cmbRoomType = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnRemoveRoom = new System.Windows.Forms.Button();
             this.btnAddOrUpdateRoom = new System.Windows.Forms.Button();
+            this.btnFindRoom = new System.Windows.Forms.Button();
             this.btnRefreshRoom = new System.Windows.Forms.Button();
+            this.btnRemoveRoom = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -55,12 +56,12 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dgvRoom, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
@@ -69,16 +70,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 481);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvRoom
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 244);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1059, 233);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRoom.Location = new System.Drawing.Point(4, 244);
+            this.dgvRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvRoom.Name = "dgvRoom";
+            this.dgvRoom.RowHeadersWidth = 51;
+            this.dgvRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRoom.Size = new System.Drawing.Size(1059, 233);
+            this.dgvRoom.TabIndex = 0;
+            this.dgvRoom.SelectionChanged += new System.EventHandler(this.dgvRoom_SelectionChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -101,7 +105,7 @@
             this.tableLayoutPanel2.Controls.Add(this.cmbRoomType, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -116,7 +120,7 @@
             this.txtEmptyBed.BackColor = System.Drawing.Color.LightGray;
             this.txtEmptyBed.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtEmptyBed.Location = new System.Drawing.Point(235, 130);
-            this.txtEmptyBed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmptyBed.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmptyBed.Multiline = true;
             this.txtEmptyBed.Name = "txtEmptyBed";
             this.txtEmptyBed.Size = new System.Drawing.Size(293, 46);
@@ -184,7 +188,7 @@
             this.txtRoomID.BackColor = System.Drawing.Color.LightGray;
             this.txtRoomID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtRoomID.Location = new System.Drawing.Point(235, 7);
-            this.txtRoomID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRoomID.Margin = new System.Windows.Forms.Padding(4);
             this.txtRoomID.Multiline = true;
             this.txtRoomID.Name = "txtRoomID";
             this.txtRoomID.Size = new System.Drawing.Size(293, 46);
@@ -196,7 +200,7 @@
             this.txtBedCount.BackColor = System.Drawing.Color.LightGray;
             this.txtBedCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtBedCount.Location = new System.Drawing.Point(761, 68);
-            this.txtBedCount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBedCount.Margin = new System.Windows.Forms.Padding(4);
             this.txtBedCount.Multiline = true;
             this.txtBedCount.Name = "txtBedCount";
             this.txtBedCount.Size = new System.Drawing.Size(294, 46);
@@ -223,7 +227,7 @@
             this.cmbDepartmentID.BackColor = System.Drawing.Color.LightGray;
             this.cmbDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbDepartmentID.FormattingEnabled = true;
-            this.cmbDepartmentID.Location = new System.Drawing.Point(760, 11);
+            this.cmbDepartmentID.Location = new System.Drawing.Point(760, 8);
             this.cmbDepartmentID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
             this.cmbDepartmentID.Size = new System.Drawing.Size(296, 44);
@@ -256,47 +260,52 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Controls.Add(this.btnRemoveRoom, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnAddOrUpdateRoom, 1, 0);
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Controls.Add(this.btnRemoveRoom, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnAddOrUpdateRoom, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnFindRoom, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnRefreshRoom, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 196);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1059, 40);
             this.tableLayoutPanel3.TabIndex = 2;
-            // 
-            // btnRemoveRoom
-            // 
-            this.btnRemoveRoom.BackColor = System.Drawing.Color.Silver;
-            this.btnRemoveRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemoveRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveRoom.Location = new System.Drawing.Point(710, 4);
-            this.btnRemoveRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnRemoveRoom.Name = "btnRemoveRoom";
-            this.btnRemoveRoom.Size = new System.Drawing.Size(345, 32);
-            this.btnRemoveRoom.TabIndex = 2;
-            this.btnRemoveRoom.Text = "Xóa";
-            this.btnRemoveRoom.UseVisualStyleBackColor = false;
             // 
             // btnAddOrUpdateRoom
             // 
             this.btnAddOrUpdateRoom.BackColor = System.Drawing.Color.Silver;
             this.btnAddOrUpdateRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddOrUpdateRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOrUpdateRoom.Location = new System.Drawing.Point(357, 4);
-            this.btnAddOrUpdateRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddOrUpdateRoom.Location = new System.Drawing.Point(532, 4);
+            this.btnAddOrUpdateRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddOrUpdateRoom.Name = "btnAddOrUpdateRoom";
-            this.btnAddOrUpdateRoom.Size = new System.Drawing.Size(345, 32);
-            this.btnAddOrUpdateRoom.TabIndex = 1;
+            this.btnAddOrUpdateRoom.Size = new System.Drawing.Size(256, 32);
+            this.btnAddOrUpdateRoom.TabIndex = 2;
             this.btnAddOrUpdateRoom.Text = "Thêm/Sửa";
             this.btnAddOrUpdateRoom.UseVisualStyleBackColor = false;
+            this.btnAddOrUpdateRoom.Click += new System.EventHandler(this.btnAddOrUpdateRoom_Click);
+            // 
+            // btnFindRoom
+            // 
+            this.btnFindRoom.BackColor = System.Drawing.Color.Silver;
+            this.btnFindRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFindRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindRoom.Location = new System.Drawing.Point(268, 4);
+            this.btnFindRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFindRoom.Name = "btnFindRoom";
+            this.btnFindRoom.Size = new System.Drawing.Size(256, 32);
+            this.btnFindRoom.TabIndex = 1;
+            this.btnFindRoom.Text = "Tìm";
+            this.btnFindRoom.UseVisualStyleBackColor = false;
+            this.btnFindRoom.Click += new System.EventHandler(this.btnFindRoom_Click);
             // 
             // btnRefreshRoom
             // 
@@ -304,12 +313,27 @@
             this.btnRefreshRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRefreshRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefreshRoom.Location = new System.Drawing.Point(4, 4);
-            this.btnRefreshRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefreshRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefreshRoom.Name = "btnRefreshRoom";
-            this.btnRefreshRoom.Size = new System.Drawing.Size(345, 32);
+            this.btnRefreshRoom.Size = new System.Drawing.Size(256, 32);
             this.btnRefreshRoom.TabIndex = 0;
             this.btnRefreshRoom.Text = "Làm mới";
             this.btnRefreshRoom.UseVisualStyleBackColor = false;
+            this.btnRefreshRoom.Click += new System.EventHandler(this.btnRefreshRoom_Click);
+            // 
+            // btnRemoveRoom
+            // 
+            this.btnRemoveRoom.BackColor = System.Drawing.Color.Silver;
+            this.btnRemoveRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemoveRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveRoom.Location = new System.Drawing.Point(796, 4);
+            this.btnRemoveRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemoveRoom.Name = "btnRemoveRoom";
+            this.btnRemoveRoom.Size = new System.Drawing.Size(259, 32);
+            this.btnRemoveRoom.TabIndex = 3;
+            this.btnRemoveRoom.Text = "Xoá";
+            this.btnRemoveRoom.UseVisualStyleBackColor = false;
+            this.btnRemoveRoom.Click += new System.EventHandler(this.btnRemoveRoom_Click);
             // 
             // RoomForm
             // 
@@ -317,11 +341,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 481);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RoomForm";
             this.Text = "PHÒNG BỆNH";
+            this.Load += new System.EventHandler(this.RoomForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -332,15 +357,15 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvRoom;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRoomID;
         private System.Windows.Forms.TextBox txtBedCount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button btnRemoveRoom;
         private System.Windows.Forms.Button btnAddOrUpdateRoom;
+        private System.Windows.Forms.Button btnFindRoom;
         private System.Windows.Forms.Button btnRefreshRoom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbDepartmentID;
@@ -348,5 +373,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEmptyBed;
+        private System.Windows.Forms.Button btnRemoveRoom;
     }
 }
