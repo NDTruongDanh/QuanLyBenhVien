@@ -32,7 +32,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtDateOfBirth = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,17 +48,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpAdmissionDate = new System.Windows.Forms.DateTimePicker();
             this.dtpDischargeDate = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnRefreshPatient = new System.Windows.Forms.Button();
             this.btnFindPatient = new System.Windows.Forms.Button();
             this.btnRemovePatient = new System.Windows.Forms.Button();
             this.btnAddOrUpdatePatient = new System.Windows.Forms.Button();
-            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -69,12 +69,12 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dgvPatient, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
@@ -92,7 +92,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.txtEmail, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.label10, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtDateOfBirth, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtFullName, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
@@ -110,9 +109,10 @@
             this.tableLayoutPanel2.Controls.Add(this.dtpAdmissionDate, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.dtpDischargeDate, 3, 4);
             this.tableLayoutPanel2.Controls.Add(this.cmbGender, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dtpDateOfBirth, 3, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(13, 2, 13, 2);
             this.tableLayoutPanel2.RowCount = 5;
@@ -129,7 +129,7 @@
             // 
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Location = new System.Drawing.Point(701, 89);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(341, 30);
             this.txtEmail.TabIndex = 20;
@@ -147,20 +147,11 @@
             this.label10.Text = "Email";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtDateOfBirth
-            // 
-            this.txtDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateOfBirth.Location = new System.Drawing.Point(701, 48);
-            this.txtDateOfBirth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDateOfBirth.Name = "txtDateOfBirth";
-            this.txtDateOfBirth.Size = new System.Drawing.Size(341, 30);
-            this.txtDateOfBirth.TabIndex = 15;
-            // 
             // txtFullName
             // 
             this.txtFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFullName.Location = new System.Drawing.Point(701, 7);
-            this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(341, 30);
             this.txtFullName.TabIndex = 14;
@@ -273,7 +264,7 @@
             // 
             this.txtPatientID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPatientID.Location = new System.Drawing.Point(187, 7);
-            this.txtPatientID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPatientID.Margin = new System.Windows.Forms.Padding(4);
             this.txtPatientID.Name = "txtPatientID";
             this.txtPatientID.Size = new System.Drawing.Size(340, 30);
             this.txtPatientID.TabIndex = 9;
@@ -282,7 +273,7 @@
             // 
             this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAddress.Location = new System.Drawing.Point(187, 89);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(340, 30);
             this.txtAddress.TabIndex = 11;
@@ -291,7 +282,7 @@
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneNumber.Location = new System.Drawing.Point(187, 130);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(340, 30);
             this.txtPhoneNumber.TabIndex = 12;
@@ -300,7 +291,7 @@
             // 
             this.txtRoomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRoomID.Location = new System.Drawing.Point(701, 130);
-            this.txtRoomID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRoomID.Margin = new System.Windows.Forms.Padding(4);
             this.txtRoomID.Name = "txtRoomID";
             this.txtRoomID.Size = new System.Drawing.Size(341, 30);
             this.txtRoomID.TabIndex = 16;
@@ -322,7 +313,7 @@
             // 
             this.dtpAdmissionDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpAdmissionDate.Location = new System.Drawing.Point(187, 173);
-            this.dtpAdmissionDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpAdmissionDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpAdmissionDate.Name = "dtpAdmissionDate";
             this.dtpAdmissionDate.Size = new System.Drawing.Size(340, 30);
             this.dtpAdmissionDate.TabIndex = 17;
@@ -331,21 +322,35 @@
             // 
             this.dtpDischargeDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDischargeDate.Location = new System.Drawing.Point(701, 173);
-            this.dtpDischargeDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDischargeDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDischargeDate.Name = "dtpDischargeDate";
             this.dtpDischargeDate.Size = new System.Drawing.Size(341, 30);
             this.dtpDischargeDate.TabIndex = 18;
             // 
-            // dataGridView1
+            // cmbGender
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 280);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1059, 270);
-            this.dataGridView1.TabIndex = 1;
+            this.cmbGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "Nữ",
+            "Nam"});
+            this.cmbGender.Location = new System.Drawing.Point(186, 47);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(342, 33);
+            this.cmbGender.TabIndex = 21;
+            // 
+            // dgvPatient
+            // 
+            this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPatient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPatient.Location = new System.Drawing.Point(4, 280);
+            this.dgvPatient.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPatient.Name = "dgvPatient";
+            this.dgvPatient.RowHeadersWidth = 51;
+            this.dgvPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPatient.Size = new System.Drawing.Size(1059, 270);
+            this.dgvPatient.TabIndex = 1;
+            this.dgvPatient.SelectionChanged += new System.EventHandler(this.dgvPatient_SelectionChanged);
             // 
             // panel1
             // 
@@ -353,7 +358,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(4, 225);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1059, 47);
             this.panel1.TabIndex = 2;
@@ -371,7 +376,7 @@
             this.tableLayoutPanel3.Controls.Add(this.btnAddOrUpdatePatient, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -383,12 +388,13 @@
             this.btnRefreshPatient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRefreshPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRefreshPatient.Location = new System.Drawing.Point(268, 4);
-            this.btnRefreshPatient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefreshPatient.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefreshPatient.Name = "btnRefreshPatient";
             this.btnRefreshPatient.Size = new System.Drawing.Size(256, 39);
             this.btnRefreshPatient.TabIndex = 3;
             this.btnRefreshPatient.Text = "Làm mới";
             this.btnRefreshPatient.UseVisualStyleBackColor = true;
+            this.btnRefreshPatient.Click += new System.EventHandler(this.btnRefreshStaff_Click);
             // 
             // btnFindPatient
             // 
@@ -396,12 +402,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFindPatient.Location = new System.Drawing.Point(4, 4);
-            this.btnFindPatient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFindPatient.Margin = new System.Windows.Forms.Padding(4);
             this.btnFindPatient.Name = "btnFindPatient";
             this.btnFindPatient.Size = new System.Drawing.Size(256, 39);
             this.btnFindPatient.TabIndex = 0;
             this.btnFindPatient.Text = "Tìm";
             this.btnFindPatient.UseVisualStyleBackColor = true;
+            this.btnFindPatient.Click += new System.EventHandler(this.btnFindPatient_Click);
             // 
             // btnRemovePatient
             // 
@@ -409,12 +416,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemovePatient.Location = new System.Drawing.Point(796, 4);
-            this.btnRemovePatient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRemovePatient.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemovePatient.Name = "btnRemovePatient";
             this.btnRemovePatient.Size = new System.Drawing.Size(259, 39);
             this.btnRemovePatient.TabIndex = 2;
             this.btnRemovePatient.Text = "Xóa";
             this.btnRemovePatient.UseVisualStyleBackColor = true;
+            this.btnRemovePatient.Click += new System.EventHandler(this.btnRemovePatient_Click);
             // 
             // btnAddOrUpdatePatient
             // 
@@ -422,24 +430,21 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddOrUpdatePatient.Location = new System.Drawing.Point(532, 4);
-            this.btnAddOrUpdatePatient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddOrUpdatePatient.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddOrUpdatePatient.Name = "btnAddOrUpdatePatient";
             this.btnAddOrUpdatePatient.Size = new System.Drawing.Size(256, 39);
             this.btnAddOrUpdatePatient.TabIndex = 1;
             this.btnAddOrUpdatePatient.Text = "Thêm/Sửa";
             this.btnAddOrUpdatePatient.UseVisualStyleBackColor = true;
+            this.btnAddOrUpdatePatient.Click += new System.EventHandler(this.btnAddOrUpdatePatient_Click);
             // 
-            // cmbGender
+            // dtpDateOfBirth
             // 
-            this.cmbGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Items.AddRange(new object[] {
-            "Nữ",
-            "Nam"});
-            this.cmbGender.Location = new System.Drawing.Point(186, 51);
-            this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(342, 33);
-            this.cmbGender.TabIndex = 21;
+            this.dtpDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(700, 52);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(343, 30);
+            this.dtpDateOfBirth.TabIndex = 22;
             // 
             // PatientForm
             // 
@@ -447,13 +452,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PatientForm";
             this.Text = "BỆNH NHÂN";
+            this.Load += new System.EventHandler(this.PatientForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -464,7 +470,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox txtDateOfBirth;
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -480,7 +485,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpAdmissionDate;
         private System.Windows.Forms.DateTimePicker dtpDischargeDate;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPatient;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button btnRemovePatient;
@@ -491,5 +496,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
     }
 }
