@@ -47,11 +47,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtDepartmentID = new System.Windows.Forms.TextBox();
             this.txtEmployeeNumber = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDepartment = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddOrUpdateDepartment
@@ -66,6 +66,7 @@
             this.btnAddOrUpdateDepartment.TabIndex = 2;
             this.btnAddOrUpdateDepartment.Text = "Thêm/Sửa";
             this.btnAddOrUpdateDepartment.UseVisualStyleBackColor = false;
+            this.btnAddOrUpdateDepartment.Click += new System.EventHandler(this.btnAddOrUpdateDepartment_Click);
             // 
             // btnRefreshDepartment
             // 
@@ -79,6 +80,7 @@
             this.btnRefreshDepartment.TabIndex = 1;
             this.btnRefreshDepartment.Text = "Làm mới";
             this.btnRefreshDepartment.UseVisualStyleBackColor = false;
+            this.btnRefreshDepartment.Click += new System.EventHandler(this.btnRefreshDepartment_Click);
             // 
             // btnFindDepartment
             // 
@@ -92,6 +94,7 @@
             this.btnFindDepartment.TabIndex = 4;
             this.btnFindDepartment.Text = "Tìm";
             this.btnFindDepartment.UseVisualStyleBackColor = false;
+            this.btnFindDepartment.Click += new System.EventHandler(this.btnFindDepartment_Click);
             // 
             // btnRemoveDepartment
             // 
@@ -105,6 +108,7 @@
             this.btnRemoveDepartment.TabIndex = 3;
             this.btnRemoveDepartment.Text = "Xóa";
             this.btnRemoveDepartment.UseVisualStyleBackColor = false;
+            this.btnRemoveDepartment.Click += new System.EventHandler(this.btnRemoveDepartment_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -131,7 +135,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dgvDepartment, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -339,16 +343,19 @@
             this.txtEmployeeNumber.Size = new System.Drawing.Size(260, 44);
             this.txtEmployeeNumber.TabIndex = 18;
             // 
-            // dataGridView1
+            // dgvDepartment
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 280);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1059, 270);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDepartment.Location = new System.Drawing.Point(4, 280);
+            this.dgvDepartment.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDepartment.Name = "dgvDepartment";
+            this.dgvDepartment.RowHeadersWidth = 51;
+            this.dgvDepartment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDepartment.Size = new System.Drawing.Size(1059, 270);
+            this.dgvDepartment.TabIndex = 1;
+            this.dgvDepartment.SelectionChanged += new System.EventHandler(this.dgvDepartment_SelectionChanged);
             // 
             // DepartmentForm
             // 
@@ -359,11 +366,12 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DepartmentForm";
             this.Text = "KHOA";
+            this.Load += new System.EventHandler(this.DepartmentForm_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -385,7 +393,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox txtEmployeeNumber;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDepartment;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.TextBox txtHeadDepartmentID;
