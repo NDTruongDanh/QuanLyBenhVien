@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CommonChecks.cs" />
+    <Compile Include="Classes\CommonControls.cs" />
     <Compile Include="Classes\CommonQuery.cs" />
     <Compile Include="DepartmentForm.cs">
       <SubType>Form</SubType>

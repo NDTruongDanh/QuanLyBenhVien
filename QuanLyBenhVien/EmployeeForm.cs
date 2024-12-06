@@ -73,7 +73,6 @@ namespace QuanLyBenhVien
                     MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}");
                 }
             }
-               
         }
 
         private bool IsValid()
@@ -132,6 +131,7 @@ namespace QuanLyBenhVien
 
             CommonQuery.ExecuteQuery(query, parameters);
             LoadData();
+            CommonControls.ResetInputFields(Parent);
         }
 
         private void btnFindStaff_Click(object sender, EventArgs e)
@@ -223,21 +223,10 @@ namespace QuanLyBenhVien
             CommonQuery.ExecuteQuery(query, parameters);
             LoadData();
         }
-
-
-
+    
         private void btnRefreshStaff_Click(object sender, EventArgs e)
         {
-            txtStaffID.Clear();
-            txtFullName.Clear();
-            txtEmail.Clear();
-            txtPhoneNumber.Clear();
-            txtSalary.Clear();
-            cmbDepartmentID.SelectedIndex = -1;
-            cmbGender.SelectedIndex = -1;
-            cmbTypeOfStaff.SelectedIndex = -1;
-            dtpBirthday.Value = DateTime.Today;
-            dtpDateOfJoining.Value = DateTime.Today;
+            CommonControls.ResetInputFields(Parent);
         }
 
         private void dgvEmployee_SelectionChanged(object sender, EventArgs e)
