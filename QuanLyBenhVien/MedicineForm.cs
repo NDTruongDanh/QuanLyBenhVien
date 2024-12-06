@@ -112,8 +112,8 @@ namespace QuanLyBenhVien
 
                     if (!string.IsNullOrEmpty(txtMedicationID.Text))
                     {
-                        query += " AND MedicationID = @MedicationID";
-                        parameters.Add("@MedicationID", txtMedicationID.Text.Trim());
+                        query += " AND MedicationID LIKE @MedicationID";
+                        parameters.Add("@MedicationID", $"%{txtMedicationID.Text.Trim()}%");
                     }
                     if (!string.IsNullOrEmpty(txtMedicationName.Text))
                     {

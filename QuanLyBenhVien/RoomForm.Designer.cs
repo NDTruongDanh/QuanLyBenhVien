@@ -42,10 +42,10 @@
             this.cmbDepartmentID = new System.Windows.Forms.ComboBox();
             this.cmbRoomType = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAddOrUpdateRoom = new System.Windows.Forms.Button();
-            this.btnFindRoom = new System.Windows.Forms.Button();
-            this.btnRefreshRoom = new System.Windows.Forms.Button();
             this.btnRemoveRoom = new System.Windows.Forms.Button();
+            this.btnAddOrUpdateRoom = new System.Windows.Forms.Button();
+            this.btnRefreshRoom = new System.Windows.Forms.Button();
+            this.btnFindRoom = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -267,8 +267,8 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Controls.Add(this.btnRemoveRoom, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnAddOrUpdateRoom, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnFindRoom, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnRefreshRoom, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnRefreshRoom, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnFindRoom, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 196);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
@@ -278,6 +278,20 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1059, 40);
             this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // btnRemoveRoom
+            // 
+            this.btnRemoveRoom.BackColor = System.Drawing.Color.Silver;
+            this.btnRemoveRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemoveRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveRoom.Location = new System.Drawing.Point(796, 4);
+            this.btnRemoveRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemoveRoom.Name = "btnRemoveRoom";
+            this.btnRemoveRoom.Size = new System.Drawing.Size(259, 32);
+            this.btnRemoveRoom.TabIndex = 3;
+            this.btnRemoveRoom.Text = "Xoá";
+            this.btnRemoveRoom.UseVisualStyleBackColor = false;
+            this.btnRemoveRoom.Click += new System.EventHandler(this.btnRemoveRoom_Click);
             // 
             // btnAddOrUpdateRoom
             // 
@@ -293,47 +307,33 @@
             this.btnAddOrUpdateRoom.UseVisualStyleBackColor = false;
             this.btnAddOrUpdateRoom.Click += new System.EventHandler(this.btnAddOrUpdateRoom_Click);
             // 
-            // btnFindRoom
-            // 
-            this.btnFindRoom.BackColor = System.Drawing.Color.Silver;
-            this.btnFindRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFindRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindRoom.Location = new System.Drawing.Point(268, 4);
-            this.btnFindRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFindRoom.Name = "btnFindRoom";
-            this.btnFindRoom.Size = new System.Drawing.Size(256, 32);
-            this.btnFindRoom.TabIndex = 1;
-            this.btnFindRoom.Text = "Tìm";
-            this.btnFindRoom.UseVisualStyleBackColor = false;
-            this.btnFindRoom.Click += new System.EventHandler(this.btnFindRoom_Click);
-            // 
             // btnRefreshRoom
             // 
             this.btnRefreshRoom.BackColor = System.Drawing.Color.Silver;
             this.btnRefreshRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRefreshRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshRoom.Location = new System.Drawing.Point(4, 4);
+            this.btnRefreshRoom.Location = new System.Drawing.Point(268, 4);
             this.btnRefreshRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefreshRoom.Name = "btnRefreshRoom";
             this.btnRefreshRoom.Size = new System.Drawing.Size(256, 32);
-            this.btnRefreshRoom.TabIndex = 0;
+            this.btnRefreshRoom.TabIndex = 1;
             this.btnRefreshRoom.Text = "Làm mới";
             this.btnRefreshRoom.UseVisualStyleBackColor = false;
             this.btnRefreshRoom.Click += new System.EventHandler(this.btnRefreshRoom_Click);
             // 
-            // btnRemoveRoom
+            // btnFindRoom
             // 
-            this.btnRemoveRoom.BackColor = System.Drawing.Color.Silver;
-            this.btnRemoveRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemoveRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveRoom.Location = new System.Drawing.Point(796, 4);
-            this.btnRemoveRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRemoveRoom.Name = "btnRemoveRoom";
-            this.btnRemoveRoom.Size = new System.Drawing.Size(259, 32);
-            this.btnRemoveRoom.TabIndex = 3;
-            this.btnRemoveRoom.Text = "Xoá";
-            this.btnRemoveRoom.UseVisualStyleBackColor = false;
-            this.btnRemoveRoom.Click += new System.EventHandler(this.btnRemoveRoom_Click);
+            this.btnFindRoom.BackColor = System.Drawing.Color.Silver;
+            this.btnFindRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFindRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindRoom.Location = new System.Drawing.Point(4, 4);
+            this.btnFindRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFindRoom.Name = "btnFindRoom";
+            this.btnFindRoom.Size = new System.Drawing.Size(256, 32);
+            this.btnFindRoom.TabIndex = 0;
+            this.btnFindRoom.Text = "Tìm";
+            this.btnFindRoom.UseVisualStyleBackColor = false;
+            this.btnFindRoom.Click += new System.EventHandler(this.btnFindRoom_Click);
             // 
             // RoomForm
             // 
@@ -365,8 +365,8 @@
         private System.Windows.Forms.TextBox txtBedCount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button btnAddOrUpdateRoom;
-        private System.Windows.Forms.Button btnFindRoom;
         private System.Windows.Forms.Button btnRefreshRoom;
+        private System.Windows.Forms.Button btnFindRoom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbDepartmentID;
         private System.Windows.Forms.ComboBox cmbRoomType;
