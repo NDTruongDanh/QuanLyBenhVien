@@ -20,6 +20,34 @@ namespace QuanLyBenhVien
         public EmployeeForm()
         {
             InitializeComponent();
+            InitializeCmbDepartment();
+        }
+
+        private void InitializeCmbDepartment()
+        {
+            string query = "SELECT DepartmentID FROM DEPARTMENT";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbDepartmentID.Items.Add(reader["DepartmentID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private void EmployeeForm_Load(object sender, EventArgs e)
