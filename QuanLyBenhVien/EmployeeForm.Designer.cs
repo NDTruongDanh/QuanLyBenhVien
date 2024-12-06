@@ -157,7 +157,7 @@
             "Hộ lý",
             "Nhân viên Nghiên cứu Y khoa",
             "Giảng viên Y khoa"});
-            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 88);
+            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 93);
             this.cmbTypeOfStaff.Name = "cmbTypeOfStaff";
             this.cmbTypeOfStaff.Size = new System.Drawing.Size(369, 33);
             this.cmbTypeOfStaff.TabIndex = 26;
@@ -364,7 +364,7 @@
             // 
             this.cmbDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDepartmentID.FormattingEnabled = true;
-            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 88);
+            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 93);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
             this.cmbDepartmentID.Size = new System.Drawing.Size(369, 33);
             this.cmbDepartmentID.TabIndex = 25;
@@ -411,6 +411,7 @@
             this.btnFindStaff.TabIndex = 4;
             this.btnFindStaff.Text = "Tìm";
             this.btnFindStaff.UseVisualStyleBackColor = true;
+            this.btnFindStaff.Click += new System.EventHandler(this.btnFindStaff_Click);
             // 
             // btnRemoveStaff
             // 
@@ -423,6 +424,7 @@
             this.btnRemoveStaff.TabIndex = 3;
             this.btnRemoveStaff.Text = "Xóa";
             this.btnRemoveStaff.UseVisualStyleBackColor = true;
+            this.btnRemoveStaff.Click += new System.EventHandler(this.btnRemoveStaff_Click);
             // 
             // btnAddOrUpdateStaff
             // 
@@ -448,6 +450,7 @@
             this.btnRefreshStaff.TabIndex = 1;
             this.btnRefreshStaff.Text = "Làm mới";
             this.btnRefreshStaff.UseVisualStyleBackColor = true;
+            this.btnRefreshStaff.Click += new System.EventHandler(this.btnRefreshStaff_Click);
             // 
             // EmployeeForm
             // 
