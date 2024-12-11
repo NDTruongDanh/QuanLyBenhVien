@@ -73,5 +73,11 @@ namespace QuanLyBenhVien
             DepartmentForm departmentForm = new DepartmentForm();   
             AddFormToTab(departmentForm, departmentForm.Text);
         }
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            BillForm billForm = new BillForm();
+            AddFormToTab(billForm, billForm.Text);
+        }
     }
 }

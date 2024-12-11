@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QuanLyBenhVien
 {
-    public partial class MedBillForm : Form
+    public partial class BillDetailForm : Form
     {
-        public MedBillForm()
+        public BillDetailForm()
         {
             InitializeComponent();
+        }
+        public BillDetailForm(BillForm bf)
+        {
+            InitializeComponent();
+            lblBillNumber.Text = bf.BillNumber;
         }
     }
 }

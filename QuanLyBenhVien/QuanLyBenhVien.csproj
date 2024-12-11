@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillDetailForm.Designer.cs">
+      <DependentUpon>BillDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillForm.Designer.cs">
+      <DependentUpon>BillForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\CommonChecks.cs" />
     <Compile Include="Classes\CommonControls.cs" />
     <Compile Include="Classes\CommonQuery.cs" />
@@ -67,11 +79,11 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MedBillForm.cs">
+    <Compile Include="MedicalRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MedBillForm.Designer.cs">
-      <DependentUpon>MedBillForm.cs</DependentUpon>
+    <Compile Include="MedicalRecord.Designer.cs">
+      <DependentUpon>MedicalRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="MedicineForm.cs">
       <SubType>Form</SubType>
@@ -99,6 +111,12 @@
     <Compile Include="RoomForm.Designer.cs">
       <DependentUpon>RoomForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BillDetailForm.resx">
+      <DependentUpon>BillDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillForm.resx">
+      <DependentUpon>BillForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DepartmentForm.resx">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,9 +125,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MedBillForm.resx">
-      <DependentUpon>MedBillForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MedicineForm.resx">
       <DependentUpon>MedicineForm.cs</DependentUpon>

@@ -40,7 +40,6 @@
             this.khoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicine = new System.Windows.Forms.ToolStripMenuItem();
             this.btnManager = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnMedBill = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStatistic = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicineStat = new System.Windows.Forms.ToolStripMenuItem();
@@ -144,23 +143,17 @@
             // btnManager
             // 
             this.btnManager.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnMedBill,
             this.btnBill});
             this.btnManager.Name = "btnManager";
-            this.btnManager.Size = new System.Drawing.Size(73, 24);
+            this.btnManager.Size = new System.Drawing.Size(73, 26);
             this.btnManager.Text = "Quản lý";
-            // 
-            // btnMedBill
-            // 
-            this.btnMedBill.Name = "btnMedBill";
-            this.btnMedBill.Size = new System.Drawing.Size(161, 26);
-            this.btnMedBill.Text = "Đơn thuốc";
             // 
             // btnBill
             // 
             this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(161, 26);
+            this.btnBill.Size = new System.Drawing.Size(224, 26);
             this.btnBill.Text = "Hóa đơn";
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
             // btnStatistic
             // 
@@ -240,7 +233,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnRoom;
         private System.Windows.Forms.ToolStripMenuItem btnMedicine;
         private System.Windows.Forms.ToolStripMenuItem btnManager;
-        private System.Windows.Forms.ToolStripMenuItem btnMedBill;
         private System.Windows.Forms.ToolStripMenuItem btnStatistic;
         private System.Windows.Forms.ToolStripMenuItem btnBill;
         private System.Windows.Forms.ToolStripMenuItem btnMedicineStat;
