@@ -346,12 +346,13 @@
             this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Items.AddRange(new object[] {
-            "Thuốc Kháng sinh",
-            "Thuốc Giảm đau, Hạ sốt",
-            "Thuốc Tim mạch",
-            "Thuốc Chống dị ứng",
-            "Thuốc Tiêu hóa",
-            "Thuốc Thần kinh"});
+            "Kháng sinh",
+            "Giảm đau",
+            "Hạ sốt",
+            "Tim mạch",
+            "Chống dị ứng",
+            "Tiêu hóa",
+            "Thần kinh"});
             this.cmbCategory.Location = new System.Drawing.Point(691, 56);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(365, 44);
