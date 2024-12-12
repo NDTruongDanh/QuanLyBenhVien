@@ -79,5 +79,11 @@ namespace QuanLyBenhVien
             BillForm billForm = new BillForm();
             AddFormToTab(billForm, billForm.Text);
         }
+
+        private void btnMedicalRecord_Click(object sender, EventArgs e)
+        {
+            MedicalRecord medicalRecord = new MedicalRecord();
+            AddFormToTab(medicalRecord, medicalRecord.Text);
+        }
     }
 }

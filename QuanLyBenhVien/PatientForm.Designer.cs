@@ -349,6 +349,7 @@
             // 
             // dgvPatient
             // 
+            this.dgvPatient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPatient.Location = new System.Drawing.Point(4, 280);

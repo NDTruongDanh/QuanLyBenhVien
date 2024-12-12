@@ -61,7 +61,7 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string query = "SELECT * FROM ROOM";
+                    string query = "SELECT \r\n    phong.RoomID AS \"Mã phòng\", \r\n    phong.DepartmentID AS \"Mã khoa\", \r\n    phong.BedCount AS \"Số giường\", \r\n    phong.RoomType AS \"Loại phòng\"\r\nFROM \r\n    ROOM AS phong;\r\n";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     DataSet dataSet = new DataSet();
                     adapter.Fill(dataSet, "ROOM");
@@ -126,7 +126,7 @@ namespace QuanLyBenhVien
                 {
                     conn.Open();
 
-                    string query = "SELECT * FROM ROOM WHERE 1=1";
+                    string query = "SELECT \r\n    phong.RoomID AS \"Mã phòng\", \r\n    phong.DepartmentID AS \"Mã khoa\", \r\n    phong.BedCount AS \"Số giường\", \r\n    phong.RoomType AS \"Loại phòng\"\r\nFROM \r\n    ROOM AS phong\r\n WHERE 1=1";
                     var parameters = new Dictionary<string, object>();
 
                     if (!string.IsNullOrEmpty(txtRoomID.Text))

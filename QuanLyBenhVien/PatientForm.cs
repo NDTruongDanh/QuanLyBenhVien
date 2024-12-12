@@ -33,7 +33,7 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM PATIENT";
+                    string sql = "SELECT    bn.PatientID AS \"Mã bệnh nhân\", \r\n    bn.FullName AS \"Họ và tên\", \r\n    bn.DateOfBirth AS \"Ngày sinh\", \r\n    bn.Gender AS \"Giới tính\", \r\n    bn.PhoneNumber AS \"Số điện thoại\", \r\n    bn.AddressPatient AS \"Địa chỉ\", \r\n    bn.Email AS \"Email\", \r\n    bn.AdmissionDate AS \"Ngày nhập viện\", \r\n    bn.DischargeDate AS \"Ngày xuất viện\", \r\n    bn.RoomID AS \"Mã phòng\"\r\nFROM \r\n    PATIENT AS bn;\r\n";
                     SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
                     DataSet dataset = new DataSet();
                     adapter.Fill(dataset, "PATIENT");
@@ -115,7 +115,7 @@ namespace QuanLyBenhVien
                 {
                     conn.Open();
 
-                    string query = "SELECT * FROM PATIENT WHERE 1=1"; // 1=1 giúp nối dễ dàng các điều kiện
+                    string query = "SELECT \r\n    bn.PatientID AS \"Mã bệnh nhân\", \r\n    bn.FullName AS \"Họ và tên\", \r\n    bn.DateOfBirth AS \"Ngày sinh\", \r\n    bn.Gender AS \"Giới tính\", \r\n    bn.PhoneNumber AS \"Số điện thoại\", \r\n    bn.AddressPatient AS \"Địa chỉ\", \r\n    bn.Email AS \"Email\", \r\n    bn.AdmissionDate AS \"Ngày nhập viện\", \r\n    bn.DischargeDate AS \"Ngày xuất viện\", \r\n    bn.RoomID AS \"Mã phòng\"\r\nFROM \r\n    PATIENT AS bn\r\n WHERE 1=1"; // 1=1 giúp nối dễ dàng các điều kiện
                     var parameters = new Dictionary<string, object>();
 
                     if (!string.IsNullOrEmpty(txtPatientID.Text))

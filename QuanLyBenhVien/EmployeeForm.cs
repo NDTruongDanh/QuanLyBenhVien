@@ -62,7 +62,7 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM STAFF";
+                    string sql = "SELECT \r\n    nv.StaffID AS \"Mã nhân viên\", \r\n    nv.FullName AS \"Họ và tên\", \r\n    nv.TypeOfStaff AS \"Loại nhân viên\", \r\n    nv.Gender AS \"Giới tính\", \r\n    nv.DateOfBirth AS \"Ngày sinh\", \r\n    nv.PhoneNumber AS \"Số điện thoại\", \r\n    nv.DateOfJoining AS \"Ngày vào làm\", \r\n    nv.Email AS \"Email\", \r\n    nv.Salary AS \"Lương\", \r\n    nv.DepartmentID AS \"Mã khoa\"\r\nFROM \r\n    STAFF AS nv;";
                     var adapter = new SqlDataAdapter(sql, conn);
                     var dataset = new DataSet();
                     adapter.Fill(dataset, "STAFF");
@@ -143,7 +143,7 @@ namespace QuanLyBenhVien
                     conn.Open();
 
                     // Bắt đầu xây dựng truy vấn SQL động
-                    string query = "SELECT * FROM STAFF WHERE 1=1"; // 1=1 giúp tránh lỗi cú pháp khi không có điều kiện
+                    string query = "SELECT \r\n    nv.StaffID AS \"Mã nhân viên\", \r\n    nv.FullName AS \"Họ và tên\", \r\n    nv.TypeOfStaff AS \"Loại nhân viên\", \r\n    nv.Gender AS \"Giới tính\", \r\n    nv.DateOfBirth AS \"Ngày sinh\", \r\n    nv.PhoneNumber AS \"Số điện thoại\", \r\n    nv.DateOfJoining AS \"Ngày vào làm\", \r\n    nv.Email AS \"Email\", \r\n    nv.Salary AS \"Lương\", \r\n    nv.DepartmentID AS \"Mã khoa\"\r\nFROM \r\n    STAFF AS nv\r\n WHERE 1=1"; // 1=1 giúp tránh lỗi cú pháp khi không có điều kiện
                     var parameters = new Dictionary<string, object>();
 
                     // Kiểm tra từng trường và thêm vào điều kiện truy vấn nếu không rỗng
