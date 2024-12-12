@@ -89,8 +89,10 @@
             this.dgvMedicalRecord.Name = "dgvMedicalRecord";
             this.dgvMedicalRecord.RowHeadersWidth = 51;
             this.dgvMedicalRecord.RowTemplate.Height = 24;
+            this.dgvMedicalRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicalRecord.Size = new System.Drawing.Size(1240, 277);
             this.dgvMedicalRecord.TabIndex = 0;
+            this.dgvMedicalRecord.SelectionChanged += new System.EventHandler(this.dgvMedicalRecord_SelectionChanged);
             // 
             // tableLayoutPanel2
             // 

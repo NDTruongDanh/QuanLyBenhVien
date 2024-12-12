@@ -31,6 +31,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvBill = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbStaffID = new System.Windows.Forms.ComboBox();
+            this.cmbRecordID = new System.Windows.Forms.ComboBox();
+            this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.RecordID = new System.Windows.Forms.Label();
@@ -44,9 +47,6 @@
             this.btnAddOrUpdate = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
-            this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
-            this.cmbRecordID = new System.Windows.Forms.ComboBox();
-            this.cmbStaffID = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -79,8 +79,10 @@
             this.dgvBill.Name = "dgvBill";
             this.dgvBill.RowHeadersWidth = 51;
             this.dgvBill.RowTemplate.Height = 24;
+            this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBill.Size = new System.Drawing.Size(875, 249);
             this.dgvBill.TabIndex = 0;
+            this.dgvBill.SelectionChanged += new System.EventHandler(this.dgvBill_SelectionChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -108,6 +110,36 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(875, 196);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // cmbStaffID
+            // 
+            this.cmbStaffID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStaffID.FormattingEnabled = true;
+            this.cmbStaffID.Location = new System.Drawing.Point(663, 81);
+            this.cmbStaffID.Name = "cmbStaffID";
+            this.cmbStaffID.Size = new System.Drawing.Size(209, 33);
+            this.cmbStaffID.TabIndex = 15;
+            // 
+            // cmbRecordID
+            // 
+            this.cmbRecordID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbRecordID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRecordID.FormattingEnabled = true;
+            this.cmbRecordID.Location = new System.Drawing.Point(250, 81);
+            this.cmbRecordID.Name = "cmbRecordID";
+            this.cmbRecordID.Size = new System.Drawing.Size(208, 33);
+            this.cmbRecordID.TabIndex = 14;
+            // 
+            // cmbPaymentMethod
+            // 
+            this.cmbPaymentMethod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPaymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPaymentMethod.FormattingEnabled = true;
+            this.cmbPaymentMethod.Location = new System.Drawing.Point(250, 146);
+            this.cmbPaymentMethod.Name = "cmbPaymentMethod";
+            this.cmbPaymentMethod.Size = new System.Drawing.Size(208, 33);
+            this.cmbPaymentMethod.TabIndex = 12;
             // 
             // label5
             // 
@@ -272,36 +304,6 @@
             this.btnFind.Text = "Tìm";
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFindBill_Click);
-            // 
-            // cmbPaymentMethod
-            // 
-            this.cmbPaymentMethod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbPaymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPaymentMethod.FormattingEnabled = true;
-            this.cmbPaymentMethod.Location = new System.Drawing.Point(250, 146);
-            this.cmbPaymentMethod.Name = "cmbPaymentMethod";
-            this.cmbPaymentMethod.Size = new System.Drawing.Size(208, 33);
-            this.cmbPaymentMethod.TabIndex = 12;
-            // 
-            // cmbRecordID
-            // 
-            this.cmbRecordID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbRecordID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRecordID.FormattingEnabled = true;
-            this.cmbRecordID.Location = new System.Drawing.Point(250, 81);
-            this.cmbRecordID.Name = "cmbRecordID";
-            this.cmbRecordID.Size = new System.Drawing.Size(208, 33);
-            this.cmbRecordID.TabIndex = 14;
-            // 
-            // cmbStaffID
-            // 
-            this.cmbStaffID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbStaffID.FormattingEnabled = true;
-            this.cmbStaffID.Location = new System.Drawing.Point(663, 81);
-            this.cmbStaffID.Name = "cmbStaffID";
-            this.cmbStaffID.Size = new System.Drawing.Size(209, 33);
-            this.cmbStaffID.TabIndex = 15;
             // 
             // BillForm
             // 
