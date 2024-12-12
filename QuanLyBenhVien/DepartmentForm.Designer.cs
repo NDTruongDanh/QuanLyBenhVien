@@ -351,6 +351,7 @@
             this.dgvDepartment.Location = new System.Drawing.Point(4, 280);
             this.dgvDepartment.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDepartment.Name = "dgvDepartment";
+            this.dgvDepartment.ReadOnly = true;
             this.dgvDepartment.RowHeadersWidth = 51;
             this.dgvDepartment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDepartment.Size = new System.Drawing.Size(1059, 270);

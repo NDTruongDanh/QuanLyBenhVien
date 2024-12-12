@@ -87,6 +87,7 @@
             this.dgvMedicalRecord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMedicalRecord.Location = new System.Drawing.Point(3, 284);
             this.dgvMedicalRecord.Name = "dgvMedicalRecord";
+            this.dgvMedicalRecord.ReadOnly = true;
             this.dgvMedicalRecord.RowHeadersWidth = 51;
             this.dgvMedicalRecord.RowTemplate.Height = 24;
             this.dgvMedicalRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

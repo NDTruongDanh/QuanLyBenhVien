@@ -247,5 +247,7 @@ namespace QuanLyBenhVien
                 cmbDepartmentID.Text = selectedRow.Cells[9].Value.ToString();
             }
         }
+
+        
     }
 }
