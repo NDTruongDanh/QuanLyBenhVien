@@ -392,6 +392,7 @@
             this.dgvEmployee.Location = new System.Drawing.Point(4, 280);
             this.dgvEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEmployee.Name = "dgvEmployee";
+            this.dgvEmployee.ReadOnly = true;
             this.dgvEmployee.RowHeadersWidth = 51;
             this.dgvEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmployee.Size = new System.Drawing.Size(1059, 270);

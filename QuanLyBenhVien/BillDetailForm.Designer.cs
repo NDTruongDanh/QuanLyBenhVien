@@ -36,12 +36,12 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvBillDetail = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTransactionID = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbMedicationID = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblTransactionID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbMedicationID = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetail)).BeginInit();
@@ -146,6 +146,7 @@
             this.dgvBillDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBillDetail.Location = new System.Drawing.Point(3, 162);
             this.dgvBillDetail.Name = "dgvBillDetail";
+            this.dgvBillDetail.ReadOnly = true;
             this.dgvBillDetail.RowHeadersWidth = 51;
             this.dgvBillDetail.RowTemplate.Height = 24;
             this.dgvBillDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -177,47 +178,15 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(859, 100);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
-            // label1
+            // txtAmount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 100);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Số hoá đơn:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTransactionID
-            // 
-            this.lblTransactionID.AutoSize = true;
-            this.lblTransactionID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTransactionID.Location = new System.Drawing.Point(146, 0);
-            this.lblTransactionID.Name = "lblTransactionID";
-            this.lblTransactionID.Size = new System.Drawing.Size(137, 100);
-            this.lblTransactionID.TabIndex = 1;
-            this.lblTransactionID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(289, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 100);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Mã thuốc";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmbMedicationID
-            // 
-            this.cmbMedicationID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbMedicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMedicationID.FormattingEnabled = true;
-            this.cmbMedicationID.Location = new System.Drawing.Point(432, 36);
-            this.cmbMedicationID.Name = "cmbMedicationID";
-            this.cmbMedicationID.Size = new System.Drawing.Size(137, 33);
-            this.cmbMedicationID.TabIndex = 3;
+            this.txtAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.Location = new System.Drawing.Point(719, 35);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(136, 30);
+            this.txtAmount.TabIndex = 7;
             // 
             // label3
             // 
@@ -230,15 +199,49 @@
             this.label3.Text = "Số lượng";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtAmount
+            // label2
             // 
-            this.txtAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(719, 35);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(136, 30);
-            this.txtAmount.TabIndex = 7;
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(289, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 100);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Mã thuốc";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTransactionID
+            // 
+            this.lblTransactionID.AutoSize = true;
+            this.lblTransactionID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTransactionID.Location = new System.Drawing.Point(146, 0);
+            this.lblTransactionID.Name = "lblTransactionID";
+            this.lblTransactionID.Size = new System.Drawing.Size(137, 100);
+            this.lblTransactionID.TabIndex = 1;
+            this.lblTransactionID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 100);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Số hoá đơn:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbMedicationID
+            // 
+            this.cmbMedicationID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbMedicationID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbMedicationID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbMedicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMedicationID.FormattingEnabled = true;
+            this.cmbMedicationID.Location = new System.Drawing.Point(432, 33);
+            this.cmbMedicationID.Name = "cmbMedicationID";
+            this.cmbMedicationID.Size = new System.Drawing.Size(137, 33);
+            this.cmbMedicationID.TabIndex = 3;
             // 
             // BillDetailForm
             // 

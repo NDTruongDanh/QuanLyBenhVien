@@ -25,6 +25,34 @@ namespace QuanLyBenhVien
             InitializeComponent();
             lblTransactionID.Text = bf.BillNumber;
             LoadBillDetailData();
+            InitializCmbMedicationID();
+        }
+
+        private void InitializCmbMedicationID()
+        {
+            string query = "SELECT MedicationID FROM MEDICATION";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbMedicationID.Items.Add(reader["MedicationID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private void LoadBillDetailData()

@@ -334,7 +334,7 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Nữ",
             "Nam"});
-            this.cmbGender.Location = new System.Drawing.Point(186, 51);
+            this.cmbGender.Location = new System.Drawing.Point(186, 47);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(342, 33);
             this.cmbGender.TabIndex = 21;
@@ -355,6 +355,7 @@
             this.dgvPatient.Location = new System.Drawing.Point(4, 280);
             this.dgvPatient.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPatient.Name = "dgvPatient";
+            this.dgvPatient.ReadOnly = true;
             this.dgvPatient.RowHeadersWidth = 51;
             this.dgvPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPatient.Size = new System.Drawing.Size(1059, 270);
