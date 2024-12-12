@@ -162,13 +162,13 @@ namespace QuanLyBenhVien
             if (dgvMedicalRecord.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dgvMedicalRecord.SelectedRows[0];
-                txtRecordID.Text = selectedRow.Cells["RecordID"].Value.ToString();
-                cmbPatientID.Text = selectedRow.Cells["PatientID"].Value.ToString();
-                cmbDoctorID.Text = selectedRow.Cells["DoctorID"].Value.ToString();
-                dtpVisitDate.Value = Convert.ToDateTime(selectedRow.Cells["VisitDate"].Value);
-                txtDiagnosis.Text = selectedRow.Cells["Diagnosis"].Value.ToString();
-                txtTestResults.Text = selectedRow.Cells["TestResults"].Value.ToString();
-                txtTreatmentPlan.Text = selectedRow.Cells["TreatmentPlan"].Value.ToString();
+                txtRecordID.Text = selectedRow.Cells[0].Value.ToString();
+                cmbPatientID.Text = selectedRow.Cells[1].Value.ToString();
+                cmbDoctorID.Text = selectedRow.Cells[2].Value.ToString();
+                dtpVisitDate.Text = selectedRow.Cells[3].Value.ToString();
+                txtDiagnosis.Text = selectedRow.Cells[4].Value.ToString();
+                txtTestResults.Text = selectedRow.Cells[5].Value.ToString();
+                txtTreatmentPlan.Text = selectedRow.Cells[6].Value.ToString();
             }
         }
 

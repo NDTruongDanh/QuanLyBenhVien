@@ -28,6 +28,7 @@ namespace QuanLyBenhVien
             this.Enabled = false;
             billDetailForm.ShowDialog();
             this.Enabled = true;
+            LoadBills();
         }
 
         private void LoadBills()
@@ -163,11 +164,11 @@ namespace QuanLyBenhVien
             if (dgvBill.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dgvBill.SelectedRows[0];
-                txtTransactionID.Text = selectedRow.Cells["TransactionID"].Value.ToString();
-                cmbRecordID.Text = selectedRow.Cells["RecordID"].Value.ToString();
-                cmbStaffID.Text = selectedRow.Cells["StaffID"].Value.ToString();
-                dtpTransactionDate.Value = Convert.ToDateTime(selectedRow.Cells["TransactionDate"].Value);
-                cmbPaymentMethod.Text = selectedRow.Cells["PaymentMethod"].Value.ToString();
+                txtTransactionID.Text = selectedRow.Cells[0].Value.ToString();
+                cmbRecordID.Text = selectedRow.Cells[1].Value.ToString();
+                cmbStaffID.Text = selectedRow.Cells[2].Value.ToString();
+                dtpTransactionDate.Text = selectedRow.Cells[3].Value.ToString();
+                cmbPaymentMethod.Text = selectedRow.Cells[4].Value.ToString();
             }
         }
 

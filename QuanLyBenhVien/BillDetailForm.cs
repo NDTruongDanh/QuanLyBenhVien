@@ -23,7 +23,7 @@ namespace QuanLyBenhVien
         public BillDetailForm(BillForm bf)
         {
             InitializeComponent();
-            lblBillNumber.Text = bf.BillNumber;
+            lblTransactionID.Text = bf.BillNumber;
             LoadBillDetailData();
         }
 
@@ -34,7 +34,7 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = $"SELECT MedicationID AS [Mã thuốc], Amount AS[Số lượng] FROM BILLDETAIL WHERE TransactionID = '{lblBillNumber.Text}'";
+                    string sql = $"SELECT MedicationID AS [Mã thuốc], Amount AS[Số lượng] FROM BILLDETAIL WHERE TransactionID = '{lblTransactionID.Text}'";
                     var adapter = new SqlDataAdapter(sql, conn);
                     var dataset = new DataSet();
                     adapter.Fill(dataset, "BILLDETAIL");
@@ -65,26 +65,26 @@ namespace QuanLyBenhVien
                 return;
             }
 
-            string query = @"IF EXISTS (SELECT 1 FROM BILLDETAIL WHERE TransactionID = @TransactionID AND MedicationID = @MedicationID)
-                     UPDATE BILLDETAIL SET Amount = @Amount
+            string query = $@"IF EXISTS (SELECT 1 FROM BILLDETAIL WHERE TransactionID = '{lblTransactionID.Text}' AND MedicationID = '{cmbMedicationID.Text}')
+                     UPDATE BILLDETAIL SET Amount = {txtAmount.Text} WHERE MedicationID = '{cmbMedicationID.Text}'
                      ELSE
-                     INSERT INTO BILLDETAIL (TransactionID, MedicationID, Amount) VALUES (@TransactionID, @MedicationID, @Amount)";
+                     INSERT INTO BILLDETAIL (TransactionID, MedicationID, Amount) VALUES ('{lblTransactionID.Text}', '{cmbMedicationID.Text}', {txtAmount.Text})";
 
             var parameters = new Dictionary<string, object>
             {
-                {"@TransactionID", lblBillNumber.Text},
+                {lblTransactionID.Text, lblTransactionID.Text},
                 {"@MedicationID", cmbMedicationID.Text},
                 {"@Amount", txtAmount.Text}
             };
 
             CommonQuery.ExecuteQuery(query, parameters);
             LoadBillDetailData();
-            CommonControls.ResetInputFields(Parent);
+            //CommonControls.ResetInputFields(Parent);
         }
 
         private void btnRemoveBillDetail_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(lblBillNumber.Text) || string.IsNullOrEmpty(cmbMedicationID.Text))
+            if (string.IsNullOrEmpty(lblTransactionID.Text) || string.IsNullOrEmpty(cmbMedicationID.Text))
             {
                 MessageBox.Show("Vui lòng chọn một dòng để xóa.");
                 return;
@@ -93,7 +93,7 @@ namespace QuanLyBenhVien
             string query = "DELETE FROM BILLDETAIL WHERE TransactionID = @TransactionID AND MedicationID = @MedicationID";
             var parameters = new Dictionary<string, object>
             {
-                {"@TransactionID", lblBillNumber.Text},
+                {"@TransactionID", lblTransactionID.Text},
                 {"@MedicationID", cmbMedicationID.Text}
             };
 
@@ -155,8 +155,8 @@ namespace QuanLyBenhVien
             {
                 DataGridViewRow selectedRow = dgvBillDetail.SelectedRows[0];
 
-                cmbMedicationID.Text = selectedRow.Cells["MedicationID"].Value.ToString();
-                txtAmount.Text = selectedRow.Cells["Amount"].Value.ToString();
+                cmbMedicationID.Text = selectedRow.Cells[0].Value.ToString();
+                txtAmount.Text = selectedRow.Cells[1].Value.ToString();
             }
         }
 

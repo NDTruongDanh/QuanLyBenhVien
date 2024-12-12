@@ -77,7 +77,6 @@ CREATE TABLE BILLDETAIL (
     TransactionID CHAR(6),
     MedicationID CHAR(6),
     Amount INT,  -- Số lượng thuốc
-	TotelOfDetail MONEY,
     PRIMARY KEY (TransactionID, MedicationID)
 )
 
@@ -219,14 +218,17 @@ VALUES
 ('BI0004', 'MR0004', 'ST0004', '2024-12-06', N'Tiền mặt', 280000)
 
 -- Chèn dữ liệu vào bảng BILLDETAIL
-INSERT INTO BILLDETAIL (TransactionID, MedicationID, Amount, TotelOfDetail)
+INSERT INTO BILLDETAIL (TransactionID, MedicationID, Amount)
 VALUES
-('BI0001', 'ME0001', 2, 100000),
-('BI0001', 'ME0002', 3, 240000),
-('BI0002', 'ME0003', 1, 120000),
-('BI0003', 'ME0004', 5, 300000),
-('BI0003', 'ME0005', 2, 80000),
-('BI0004', 'ME0006', 4, 280000);
+('BI0001', 'ME0001', 2),
+('BI0001', 'ME0002', 3),
+('BI0002', 'ME0003', 1),
+('BI0003', 'ME0004', 5),
+('BI0003', 'ME0005', 2),
+('BI0004', 'ME0006', 4);
+
+SELECT * FROM BILLDETAIL
+
 
 -- Chèn dữ liệu vào bảng MEDICATION
 INSERT INTO MEDICATION (MedicationID, MedicationName, Dosage, Category, QuantityInStock, Price, ExpiryDate, ManufacturingDate, Manufacturer)
@@ -260,3 +262,18 @@ VALUES
 ('WA0005', 'ST0005', 'DP0005', '2024-12-01', '2024-12-07', N'Chiều'),
 ('WA0006', 'ST0006', 'DP0006', '2024-12-01', '2024-12-07', N'Tối');
 
+CREATE TRIGGER TOTALMONEY_BD_IU
+ON BILLDETAIL
+AFTER INSERT, DELETE, UPDATE
+AS
+	UPDATE BILL
+	SET Total = (SELECT SUM(Amount*Price) 
+				FROM BILLDETAIL b JOIN MEDICATION m ON b.MedicationID = m.MedicationID 
+				WHERE BILL.TransactionID=b.TransactionID)
+
+	DROP TRIGGER TOTALMONEY_BD_IU
+
+
+SELECT * FROM BILLDETAIL
+
+SELECT * FROM BILL
