@@ -31,7 +31,7 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM DEPARTMENT";
+                    string sql = "SELECT \r\n    khoa.DepartmentID AS \"Mã khoa\", \r\n    khoa.DepartmentName AS \"Tên khoa\", \r\n    khoa.EmployeeNumber AS \"Số lượng nhân viên\", \r\n    khoa.HeadDepartmentID AS \"Mã trưởng khoa\", \r\n    khoa.PhoneNumber AS \"Số điện thoại\", \r\n    khoa.LocationDPM AS \"Vị trí\"\r\nFROM \r\n    DEPARTMENT AS khoa;\r\n";
                     SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
                     DataSet dataSet = new DataSet();
                     adapter.Fill(dataSet, "DEPARTMENT");
@@ -96,7 +96,7 @@ namespace QuanLyBenhVien
                 {
                     conn.Open();
 
-                    string query = "SELECT * FROM DEPARTMENT WHERE 1=1"; // 1=1 tránh lỗi cú pháp khi không có điều kiện
+                    string query = "SELECT \r\n    khoa.DepartmentID AS \"Mã khoa\", \r\n    khoa.DepartmentName AS \"Tên khoa\", \r\n    khoa.EmployeeNumber AS \"Số lượng nhân viên\", \r\n    khoa.HeadDepartmentID AS \"Mã trưởng khoa\", \r\n    khoa.PhoneNumber AS \"Số điện thoại\", \r\n    khoa.LocationDPM AS \"Vị trí\"\r\nFROM \r\n    DEPARTMENT AS khoa\r\n WHERE 1=1"; // 1=1 tránh lỗi cú pháp khi không có điều kiện
                     Dictionary<string, object> parameters = new Dictionary<string, object>();
 
 

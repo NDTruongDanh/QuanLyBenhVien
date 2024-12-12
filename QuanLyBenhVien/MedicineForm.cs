@@ -33,7 +33,7 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM MEDICATION";
+                    string sql = "SELECT \r\n    thuoc.MedicationID AS \"Mã thuốc\", \r\n    thuoc.MedicationName AS \"Tên thuốc\", \r\n    thuoc.Dosage AS \"Liều lượng\", \r\n    thuoc.Category AS \"Loại thuốc\", \r\n    thuoc.QuantityInStock AS \"Số lượng tồn kho\", \r\n    thuoc.Price AS \"Giá\", \r\n    thuoc.ExpiryDate AS \"Ngày hết hạn\", \r\n    thuoc.ManufacturingDate AS \"Ngày sản xuất\", \r\n    thuoc.Manufacturer AS \"Nhà sản xuất\"\r\nFROM \r\n    MEDICATION AS thuoc;\r\n";
                     SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
                     DataSet dataset = new DataSet();
                     adapter.Fill(dataset, "MEDICATION");
@@ -107,7 +107,7 @@ namespace QuanLyBenhVien
                 {
                     conn.Open();
 
-                    string query = "SELECT * FROM MEDICATION WHERE 1=1";
+                    string query = "SELECT \r\n    thuoc.MedicationID AS \"Mã thuốc\", \r\n    thuoc.MedicationName AS \"Tên thuốc\", \r\n    thuoc.Dosage AS \"Liều lượng\", \r\n    thuoc.Category AS \"Loại thuốc\", \r\n    thuoc.QuantityInStock AS \"Số lượng tồn kho\", \r\n    thuoc.Price AS \"Giá\", \r\n    thuoc.ExpiryDate AS \"Ngày hết hạn\", \r\n    thuoc.ManufacturingDate AS \"Ngày sản xuất\", \r\n    thuoc.Manufacturer AS \"Nhà sản xuất\"\r\nFROM \r\n    MEDICATION AS thuoc\r\n WHERE 1=1";
                     var parameters = new Dictionary<string, object>();
 
                     if (!string.IsNullOrEmpty(txtMedicationID.Text))
