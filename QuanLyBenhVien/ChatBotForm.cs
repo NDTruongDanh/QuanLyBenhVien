@@ -55,13 +55,14 @@ namespace QuanLyBenhVien
                     txtPrompt.Clear();
                     chatHistory.Add(new ChatMessage(ChatRole.User, userPrompt));
 
-
+                    txtPrompt.ReadOnly = true;
                     WaitingMessage("Chatbot is typing...");
 
                     var response = await client.CompleteAsync(chatHistory);
                     var chatbotResponse = response.ToString();
                     chatHistory.Add(new ChatMessage(ChatRole.Assistant, chatbotResponse));
                     txtPrompt.Clear();
+                    txtPrompt.ReadOnly = false;
                     AppendFormattedText("\nChatbot:\n", Color.Green, FontStyle.Bold);
                     AppendFormattedText(FormatResponse(chatbotResponse) + Environment.NewLine, Color.Black, FontStyle.Regular);
                 }
