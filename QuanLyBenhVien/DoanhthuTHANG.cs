@@ -58,7 +58,7 @@ namespace QuanLyBenhVien
                 DateTime ngay = Convert.ToDateTime(row["Ngay"]); // Chuyển cột Ngay thành DateTime
                 string ngayHienThi = ngay.Day.ToString(); // Lấy ngày (1-31)
 
-                chart1.Series["DoanhThu"].Points.AddXY(ngayHienThi, row["DoanhThu"]);
+                chart1.Series["DoanhThu"].Points.AddXY(ngayHienThi, row["DoanhThu"]); 
 
                 tongDoanhThu = Convert.ToDouble(row["TongDoanhThu"]);
             }
