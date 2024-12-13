@@ -28,25 +28,25 @@ namespace QuanLyBenhVien
                 }
             }
             TabPage tabPage = new TabPage(tabName);
-            childForm.TopLevel = false; 
+            childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill; 
+            childForm.Dock = DockStyle.Fill;
             tabPage.Controls.Add(childForm);
-            tabControl.TabPages.Add(tabPage); 
+            tabControl.TabPages.Add(tabPage);
             childForm.Size = tabControl.Size;
-            childForm.Show(); 
+            childForm.Show();
             tabControl.SelectedTab = tabPage;
         }
 
         private void btnPatient_Click(object sender, EventArgs e)
         {
-           PatientForm patientForm = new PatientForm();
-           AddFormToTab(patientForm, patientForm.Text);
+            PatientForm patientForm = new PatientForm();
+            AddFormToTab(patientForm, patientForm.Text);
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            EmployeeForm employeeForm = new EmployeeForm(); 
+            EmployeeForm employeeForm = new EmployeeForm();
             AddFormToTab(employeeForm, employeeForm.Text);
         }
 
@@ -70,7 +70,7 @@ namespace QuanLyBenhVien
 
         private void khoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DepartmentForm departmentForm = new DepartmentForm();   
+            DepartmentForm departmentForm = new DepartmentForm();
             AddFormToTab(departmentForm, departmentForm.Text);
         }
 
@@ -97,7 +97,7 @@ namespace QuanLyBenhVien
         {
             DoanhthuNAM dtn = new DoanhthuNAM();
             dtn.Show();
-
+        }
         private void btnAIChatBot_Click(object sender, EventArgs e)
         {
             ChatBotForm chatBotForm = new ChatBotForm();
