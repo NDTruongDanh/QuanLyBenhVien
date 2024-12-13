@@ -36,7 +36,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtLocation = new System.Windows.Forms.TextBox();
-            this.txtHeadDepartmentID = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDepartmentName = new System.Windows.Forms.TextBox();
@@ -47,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtDepartmentID = new System.Windows.Forms.TextBox();
             this.txtEmployeeNumber = new System.Windows.Forms.TextBox();
+            this.cmbHeadDepartmentID = new System.Windows.Forms.ComboBox();
             this.dgvDepartment = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -161,7 +161,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.72561F));
             this.tableLayoutPanel2.Controls.Add(this.txtLocation, 3, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtHeadDepartmentID, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtPhoneNumber, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtDepartmentName, 3, 0);
@@ -172,6 +171,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label6, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtDepartmentID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtEmployeeNumber, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cmbHeadDepartmentID, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
@@ -197,18 +197,6 @@
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(318, 44);
             this.txtLocation.TabIndex = 22;
-            // 
-            // txtHeadDepartmentID
-            // 
-            this.txtHeadDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHeadDepartmentID.BackColor = System.Drawing.Color.LightGray;
-            this.txtHeadDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtHeadDepartmentID.Location = new System.Drawing.Point(268, 84);
-            this.txtHeadDepartmentID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtHeadDepartmentID.Multiline = true;
-            this.txtHeadDepartmentID.Name = "txtHeadDepartmentID";
-            this.txtHeadDepartmentID.Size = new System.Drawing.Size(260, 44);
-            this.txtHeadDepartmentID.TabIndex = 21;
             // 
             // txtPhoneNumber
             // 
@@ -343,6 +331,19 @@
             this.txtEmployeeNumber.Size = new System.Drawing.Size(260, 44);
             this.txtEmployeeNumber.TabIndex = 18;
             // 
+            // cmbHeadDepartmentID
+            // 
+            this.cmbHeadDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbHeadDepartmentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbHeadDepartmentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbHeadDepartmentID.BackColor = System.Drawing.Color.LightGray;
+            this.cmbHeadDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbHeadDepartmentID.FormattingEnabled = true;
+            this.cmbHeadDepartmentID.Location = new System.Drawing.Point(267, 84);
+            this.cmbHeadDepartmentID.Name = "cmbHeadDepartmentID";
+            this.cmbHeadDepartmentID.Size = new System.Drawing.Size(262, 44);
+            this.cmbHeadDepartmentID.TabIndex = 23;
+            // 
             // dgvDepartment
             // 
             this.dgvDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -396,6 +397,6 @@
         private System.Windows.Forms.DataGridView dgvDepartment;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtLocation;
-        private System.Windows.Forms.TextBox txtHeadDepartmentID;
+        private System.Windows.Forms.ComboBox cmbHeadDepartmentID;
     }
 }

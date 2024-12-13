@@ -44,12 +44,12 @@
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.txtRoomID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpAdmissionDate = new System.Windows.Forms.DateTimePicker();
             this.dtpDischargeDate = new System.Windows.Forms.DateTimePicker();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.cmbRoomID = new System.Windows.Forms.ComboBox();
             this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -104,12 +104,12 @@
             this.tableLayoutPanel2.Controls.Add(this.txtPatientID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtAddress, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtPhoneNumber, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.txtRoomID, 3, 3);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.dtpAdmissionDate, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.dtpDischargeDate, 3, 4);
             this.tableLayoutPanel2.Controls.Add(this.cmbGender, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.dtpDateOfBirth, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.cmbRoomID, 3, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
@@ -287,15 +287,6 @@
             this.txtPhoneNumber.Size = new System.Drawing.Size(340, 30);
             this.txtPhoneNumber.TabIndex = 12;
             // 
-            // txtRoomID
-            // 
-            this.txtRoomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRoomID.Location = new System.Drawing.Point(701, 130);
-            this.txtRoomID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRoomID.Name = "txtRoomID";
-            this.txtRoomID.Size = new System.Drawing.Size(341, 30);
-            this.txtRoomID.TabIndex = 16;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -330,6 +321,8 @@
             // cmbGender
             // 
             this.cmbGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbGender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbGender.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Items.AddRange(new object[] {
             "Nữ",
@@ -346,6 +339,17 @@
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(343, 30);
             this.dtpDateOfBirth.TabIndex = 22;
+            // 
+            // cmbRoomID
+            // 
+            this.cmbRoomID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbRoomID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbRoomID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbRoomID.FormattingEnabled = true;
+            this.cmbRoomID.Location = new System.Drawing.Point(700, 128);
+            this.cmbRoomID.Name = "cmbRoomID";
+            this.cmbRoomID.Size = new System.Drawing.Size(343, 33);
+            this.cmbRoomID.TabIndex = 23;
             // 
             // dgvPatient
             // 
@@ -482,7 +486,6 @@
         private System.Windows.Forms.TextBox txtPatientID;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhoneNumber;
-        private System.Windows.Forms.TextBox txtRoomID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpAdmissionDate;
         private System.Windows.Forms.DateTimePicker dtpDischargeDate;
@@ -498,5 +501,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
+        private System.Windows.Forms.ComboBox cmbRoomID;
     }
 }
