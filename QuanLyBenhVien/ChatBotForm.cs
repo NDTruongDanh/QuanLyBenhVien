@@ -27,8 +27,7 @@ namespace QuanLyBenhVien
         {
             string systemMessage = "Your name is Tâm and you are a helpful medical assistant with a friendly and approachable personality." +
                 "Answer the user's questions and assist them in a clear, friendly manner." +
-                "Only answer questions about medication and answer in Vietnamese. If there are any questions unrelated to medication, say 'Xin lỗi. Tôi Không thể giúp bạn câu hỏi này" +
-                "'";
+                "Only answer questions about medical field and answer in Vietnamese. If there are any questions unrelated to medication, say 'Xin lỗi. Tôi Không thể giúp bạn câu hỏi này'";
 
 
             chatHistory.Add(new ChatMessage(ChatRole.System, systemMessage));
@@ -36,7 +35,7 @@ namespace QuanLyBenhVien
 
         private string FormatResponse(string responseText)
         {
-            // Handle line breaks and ensure formatting appears correctly in the TextBox
+    
             return responseText.Replace("\n", Environment.NewLine);
         }
 
@@ -44,16 +43,25 @@ namespace QuanLyBenhVien
         {
             try
             {
-                txtResponse.Text = "Generating...";
-                var userPrompt = txtPrompt.Text;
                 btnGenerate.Enabled = false;
-                chatHistory.Add(new ChatMessage(ChatRole.User, userPrompt));
 
-                var response = await client.CompleteAsync(chatHistory);
-                chatHistory.Add(new ChatMessage(ChatRole.Assistant, response.ToString()));
-                txtResponse.Text = FormatResponse(response.ToString());
-                txtPrompt.Clear();
-                btnGenerate.Enabled = true;
+                var userPrompt = txtPrompt.Text;
+                if (!string.IsNullOrWhiteSpace(userPrompt))
+                {
+                    AppendFormattedText("User:\n", Color.Blue, FontStyle.Bold);
+                    AppendFormattedText(userPrompt + Environment.NewLine, Color.Black, FontStyle.Regular);
+
+                    txtPrompt.Clear();
+
+                    chatHistory.Add(new ChatMessage(ChatRole.User, userPrompt));
+
+                    var response = await client.CompleteAsync(chatHistory);
+                    var chatbotResponse = response.ToString();
+                    chatHistory.Add(new ChatMessage(ChatRole.Assistant, chatbotResponse));
+
+                    AppendFormattedText("Chatbot:\n", Color.Green, FontStyle.Bold);
+                    AppendFormattedText(FormatResponse(chatbotResponse) + Environment.NewLine, Color.Black, FontStyle.Regular);
+                }
             }
             catch (Exception ex)
             {
@@ -64,7 +72,16 @@ namespace QuanLyBenhVien
             {
                 btnGenerate.Enabled = true;
             }
-
         }
+        private void AppendFormattedText(string text, Color color, FontStyle fontStyle)
+        {
+            txtChat.SelectionStart = txtChat.TextLength;
+            txtChat.SelectionLength = 0;
+            txtChat.SelectionColor = color;
+            txtChat.SelectionFont = new Font(txtChat.Font, fontStyle);
+            txtChat.AppendText(text);
+            txtChat.SelectionColor = txtChat.ForeColor; // Reset color
+        }
+
     }
 }
