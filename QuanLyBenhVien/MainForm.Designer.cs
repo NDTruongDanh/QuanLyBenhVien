@@ -46,12 +46,13 @@
             this.btnMedicineStat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPatientStat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicineReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.tồnKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnIncomeReport = new System.Windows.Forms.ToolStripMenuItem();
             this.thángToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nămToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tồnKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hạnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +67,8 @@
             this.trợLýẢoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1344, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1008, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -197,10 +199,18 @@
             // btnMedicineReport
             // 
             this.btnMedicineReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tồnKhoToolStripMenuItem});
+            this.tồnKhoToolStripMenuItem,
+            this.hạnSửDụngToolStripMenuItem});
             this.btnMedicineReport.Name = "btnMedicineReport";
             this.btnMedicineReport.Size = new System.Drawing.Size(226, 26);
             this.btnMedicineReport.Text = "Báo cáo thuốc ";
+            // 
+            // tồnKhoToolStripMenuItem
+            // 
+            this.tồnKhoToolStripMenuItem.Name = "tồnKhoToolStripMenuItem";
+            this.tồnKhoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tồnKhoToolStripMenuItem.Text = "Tồn kho";
+            this.tồnKhoToolStripMenuItem.Click += new System.EventHandler(this.tồnKhoToolStripMenuItem_Click);
             // 
             // btnIncomeReport
             // 
@@ -237,29 +247,27 @@
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.HotTrack = true;
             this.tabControl.Location = new System.Drawing.Point(0, 28);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1344, 712);
+            this.tabControl.Size = new System.Drawing.Size(1008, 573);
             this.tabControl.TabIndex = 1;
             // 
-            // tồnKhoToolStripMenuItem
+            // hạnSửDụngToolStripMenuItem
             // 
-            this.tồnKhoToolStripMenuItem.Name = "tồnKhoToolStripMenuItem";
-            this.tồnKhoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.tồnKhoToolStripMenuItem.Text = "Tồn kho";
-            this.tồnKhoToolStripMenuItem.Click += new System.EventHandler(this.tồnKhoToolStripMenuItem_Click);
+            this.hạnSửDụngToolStripMenuItem.Name = "hạnSửDụngToolStripMenuItem";
+            this.hạnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.hạnSửDụngToolStripMenuItem.Text = "Hạn sử dụng";
+            this.hạnSửDụngToolStripMenuItem.Click += new System.EventHandler(this.hạnSửDụngToolStripMenuItem_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(1344, 740);
+            this.ClientSize = new System.Drawing.Size(1008, 601);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "QUẢN LÝ BỆNH VIỆN";
             this.menuStrip1.ResumeLayout(false);
@@ -297,6 +305,7 @@
         private System.Windows.Forms.ToolStripMenuItem trợLýẢoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lịchKhámToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tồnKhoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hạnSửDụngToolStripMenuItem;
     }
 }
 

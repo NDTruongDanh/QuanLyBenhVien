@@ -115,5 +115,11 @@ namespace QuanLyBenhVien
             KiemtraThuocTonKho ktt = new KiemtraThuocTonKho();
             ktt.Show();
         }
+
+        private void hạnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KiemtraHANTHUOC ktht = new KiemtraHANTHUOC();
+            ktht.Show();
+        }
     }
 }
