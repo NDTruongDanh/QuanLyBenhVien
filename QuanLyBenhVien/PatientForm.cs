@@ -24,6 +24,7 @@ namespace QuanLyBenhVien
         private void PatientForm_Load(object sender, EventArgs e)
         {
             LoadData();
+            InitializeCmbRoomID();
         }
 
         private void LoadData()
@@ -45,6 +46,33 @@ namespace QuanLyBenhVien
                 }
             }
 
+        }
+
+        private void InitializeCmbRoomID()
+        {
+            string query = "SELECT RoomID FROM ROOM";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbRoomID.Items.Add(reader["RoomID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private bool IsValid()
@@ -99,7 +127,7 @@ namespace QuanLyBenhVien
                 {"@Email", txtEmail.Text},
                 {"@AdmissionDate", dtpAdmissionDate.Value},
                 {"@DischargeDate", dtpDischargeDate.Value},
-                {"@RoomID", txtRoomID.Text}
+                {"@RoomID", cmbRoomID.Text}
             };
 
             CommonQuery.ExecuteQuery(query, parameters);
@@ -128,10 +156,10 @@ namespace QuanLyBenhVien
                         query += " AND FullName LIKE @FullName";
                         parameters.Add("@FullName", $"%{txtFullName.Text.Trim()}%");
                     }
-                    if (!string.IsNullOrEmpty(txtRoomID.Text))
+                    if (!string.IsNullOrEmpty(cmbRoomID.Text))
                     {
                         query += " AND RoomID = @RoomID";
-                        parameters.Add("@RoomID", txtRoomID.Text.Trim());
+                        parameters.Add("@RoomID", cmbRoomID.Text.Trim());
                     }
                     if (!string.IsNullOrEmpty(cmbGender.Text))
                     {
@@ -199,7 +227,7 @@ namespace QuanLyBenhVien
                 txtEmail.Text = selectedRow.Cells[6].Value.ToString();
                 dtpAdmissionDate.Text = selectedRow.Cells[7].Value.ToString();
                 dtpDischargeDate.Text = selectedRow.Cells[8].Value.ToString();
-                txtRoomID.Text = selectedRow.Cells[9].Value.ToString();
+                cmbRoomID.Text = selectedRow.Cells[9].Value.ToString();
             }
         }
     }

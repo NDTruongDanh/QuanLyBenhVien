@@ -341,6 +341,8 @@
             // 
             // cmbCategory
             // 
+            this.cmbCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCategory.BackColor = System.Drawing.Color.LightGray;
             this.cmbCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
