@@ -33,7 +33,20 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = "SELECT \r\n    thuoc.MedicationID AS \"Mã thuốc\", \r\n    thuoc.MedicationName AS \"Tên thuốc\", \r\n    thuoc.Dosage AS \"Liều lượng\", \r\n    thuoc.Category AS \"Loại thuốc\", \r\n    thuoc.QuantityInStock AS \"Số lượng tồn kho\", \r\n    thuoc.Price AS \"Giá\", \r\n    thuoc.ExpiryDate AS \"Ngày hết hạn\", \r\n    thuoc.ManufacturingDate AS \"Ngày sản xuất\", \r\n    thuoc.Manufacturer AS \"Nhà sản xuất\"\r\nFROM \r\n    MEDICATION AS thuoc;\r\n";
+                    string sql = @"SELECT 
+                                thuoc.MedicationID AS ""Mã thuốc"", 
+                                thuoc.MedicationName AS ""Tên thuốc"", 
+                                thuoc.Dosage AS ""Liều lượng"",
+                                thuoc.DosageUnit AS ""Đơn vị tính"",
+                                thuoc.Category AS ""Loại thuốc"", 
+                                thuoc.QuantityInStock AS ""Số lượng tồn kho"", 
+                                thuoc.Price AS ""Giá"", 
+                                thuoc.ExpiryDate AS ""Ngày hết hạn"", 
+                                thuoc.ManufacturingDate AS ""Ngày sản xuất"", 
+                                thuoc.Manufacturer AS ""Nhà sản xuất""
+                            FROM 
+                                MEDICATION AS thuoc;
+                            ";
                     SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
                     DataSet dataset = new DataSet();
                     adapter.Fill(dataset, "MEDICATION");
@@ -50,7 +63,8 @@ namespace QuanLyBenhVien
         {
             if (string.IsNullOrEmpty(txtMedicationID.Text) || string.IsNullOrEmpty(txtMedicationName.Text) ||
                string.IsNullOrEmpty(txtDosage.Text) || string.IsNullOrEmpty(cmbCategory.Text) ||
-               string.IsNullOrEmpty(txtQuantityInStock.Text) || string.IsNullOrEmpty(txtPrice.Text))
+               string.IsNullOrEmpty(txtQuantityInStock.Text) || string.IsNullOrEmpty(txtPrice.Text) ||
+               string.IsNullOrEmpty(cmbDosageUnit.Text))
             {
                 return false; 
             }
@@ -73,13 +87,13 @@ namespace QuanLyBenhVien
 
             string query = @"IF EXISTS (SELECT 1 FROM MEDICATION WHERE MedicationID = @MedicationID)
                      UPDATE MEDICATION 
-                     SET MedicationName = @MedicationName, Dosage = @Dosage, Category = @Category, 
+                     SET MedicationName = @MedicationName, Dosage = @Dosage, DosageUnit = @DosageUnit, Category = @Category, 
                          QuantityInStock = @QuantityInStock, Price = @Price, 
                          ExpiryDate = @ExpiryDate, ManufacturingDate = @ManufacturingDate, Manufacturer = @Manufacturer
                      WHERE MedicationID = @MedicationID
                      ELSE
-                     INSERT INTO MEDICATION (MedicationID, MedicationName, Dosage, Category, QuantityInStock, Price, ExpiryDate, ManufacturingDate, Manufacturer)
-                     VALUES (@MedicationID, @MedicationName, @Dosage, @Category, @QuantityInStock, @Price, @ExpiryDate, @ManufacturingDate, @Manufacturer)";
+                     INSERT INTO MEDICATION (MedicationID, MedicationName, Dosage, DosageUnit, Category, QuantityInStock, Price, ExpiryDate, ManufacturingDate, Manufacturer)
+                     VALUES (@MedicationID, @MedicationName, @Dosage, @DosageUnit, @Category, @QuantityInStock, @Price, @ExpiryDate, @ManufacturingDate, @Manufacturer)";
 
             var parameters = new Dictionary<string, object>
             {
@@ -91,7 +105,8 @@ namespace QuanLyBenhVien
                 { "@Price",(txtPrice.Text) },
                 { "@ExpiryDate", dtpExpiryDate.Value.Date },
                 { "@ManufacturingDate", dtpManufacturingDate.Value.Date },
-                { "@Manufacturer", txtManufacturer.Text }
+                { "@Manufacturer", txtManufacturer.Text },
+                {"@DosageUnit", cmbDosageUnit.Text}
             };
 
             CommonQuery.ExecuteQuery(query, parameters);
@@ -124,6 +139,11 @@ namespace QuanLyBenhVien
                     {
                         query += " AND Category LIKE @Category";
                         parameters.Add("@Category", $"%{cmbCategory.Text.Trim()}%");
+                    }
+                    if (!string.IsNullOrEmpty(cmbDosageUnit.Text))
+                    {
+                        query += " AND DosageUnit LIKE @DosageUnit";
+                        parameters.Add("@DosageUnit", $"%{cmbDosageUnit.Text.Trim()}%");
                     }
 
                     using (SqlCommand command = new SqlCommand(query, conn))
@@ -168,12 +188,13 @@ namespace QuanLyBenhVien
                 txtMedicationID.Text = selectedRow.Cells[0].Value.ToString();
                 txtMedicationName.Text = selectedRow.Cells[1].Value.ToString();
                 txtDosage.Text = selectedRow.Cells[2].Value.ToString();
-                cmbCategory.Text = selectedRow.Cells[3].Value.ToString();
-                txtQuantityInStock.Text = selectedRow.Cells[4].Value.ToString();
-                txtPrice.Text = selectedRow.Cells[5].Value.ToString();
-                dtpExpiryDate.Text = selectedRow.Cells[6].Value.ToString();
-                dtpManufacturingDate.Text = selectedRow.Cells[7].Value.ToString();
-                txtManufacturer.Text = selectedRow.Cells[8].Value.ToString();
+                cmbDosageUnit.Text = selectedRow.Cells[3].Value.ToString();
+                cmbCategory.Text = selectedRow.Cells[4].Value.ToString();
+                txtQuantityInStock.Text = selectedRow.Cells[5].Value.ToString();
+                txtPrice.Text = selectedRow.Cells[6].Value.ToString();
+                dtpExpiryDate.Text = selectedRow.Cells[7].Value.ToString();
+                dtpManufacturingDate.Text = selectedRow.Cells[8].Value.ToString();
+                txtManufacturer.Text = selectedRow.Cells[9].Value.ToString();
             }
         }
 

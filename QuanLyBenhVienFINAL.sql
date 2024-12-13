@@ -84,6 +84,7 @@ CREATE TABLE MEDICATION (
     MedicationID CHAR(6) PRIMARY KEY,
     MedicationName NVARCHAR(255),
     Dosage NVARCHAR(100), --Liều lượng
+	DosageUnit NVARCHAR(6),
     Category NVARCHAR(100),  -- Ví dụ: kháng sinh, giảm đau, v.v.
     QuantityInStock INT,  -- Số lượng thuốc trong kho
     Price MONEY,  -- Giá thuốc
@@ -201,7 +202,6 @@ VALUES
 ('AP0005', 'PA0005', 'ST0001', 'DP0005', '2024-12-05 12:00:00', N'Đang chờ xử lý'),
 ('AP0006', 'PA0006', 'ST0006', 'DP0006', '2024-12-06 13:00:00', N'Từ chối');
 
-Delete from APPOINTMENT
 
 -- Chèn dữ liệu vào bảng MEDICALRECORD
 INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan)
@@ -229,18 +229,17 @@ VALUES
 ('BI0003', 'ME0005', 2),
 ('BI0004', 'ME0006', 4);
 
-SELECT * FROM BILLDETAIL
 
 
 -- Chèn dữ liệu vào bảng MEDICATION
-INSERT INTO MEDICATION (MedicationID, MedicationName, Dosage, Category, QuantityInStock, Price, ExpiryDate, ManufacturingDate, Manufacturer)
+INSERT INTO MEDICATION (MedicationID, MedicationName, Dosage, DosageUnit, Category, QuantityInStock, Price, ExpiryDate, ManufacturingDate, Manufacturer)
 VALUES
-('ME0001', N'Paracetamol', N'500mg', N'Giảm đau', 100, 50000, '2025-12-01', '2024-01-01', N'Việt Nam'),
-('ME0002', N'Amoxicillin', N'250mg', N'Kháng sinh', 50, 80000, '2025-06-01', '2024-02-01', N'Ấn Độ'),
-('ME0003', N'Ciprofloxacin', N'500mg', N'Kháng sinh', 70, 120000, '2025-09-01', '2024-03-01', N'Mỹ'),
-('ME0004', N'Ibuprofen', N'400mg', N'Giảm đau', 150, 60000, '2025-07-01', '2024-04-01', N'Anh'),
-('ME0005', N'Omeprazole', N'20mg', N'Tiêu hóa', 200, 40000, '2025-11-01', '2024-05-01', N'Nhật Bản'),
-('ME0006', N'Diclofenac', N'50mg', N'Giảm đau', 120, 70000, '2025-08-01', '2024-06-01', N'Trung Quốc');
+('ME0001', N'Paracetamol', N'500mg','chai', N'Giảm đau', 100, 50000, '2025-12-01', '2024-01-01', N'Việt Nam'),
+('ME0002', N'Amoxicillin', N'250mg',N'viên', N'Kháng sinh', 50, 80000, '2025-06-01', '2024-02-01', N'Ấn Độ'),
+('ME0003', N'Ciprofloxacin', N'500mg',N'ống', N'Kháng sinh', 70, 120000, '2025-09-01', '2024-03-01', N'Mỹ'),
+('ME0004', N'Ibuprofen', N'400mg',N'gói', N'Giảm đau', 150, 60000, '2025-07-01', '2024-04-01', N'Anh'),
+('ME0005', N'Omeprazole', N'20mg',N'gói', N'Tiêu hóa', 200, 40000, '2025-11-01', '2024-05-01', N'Nhật Bản'),
+('ME0006', N'Diclofenac', N'50mg',N'viên', N'Giảm đau', 120, 70000, '2025-08-01', '2024-06-01', N'Trung Quốc');
 
 
 -- Chèn dữ liệu vào bảng ROOM
@@ -273,18 +272,4 @@ AS
 				FROM BILLDETAIL b JOIN MEDICATION m ON b.MedicationID = m.MedicationID 
 				WHERE BILL.TransactionID=b.TransactionID)
 
-	DROP TRIGGER TOTALMONEY_BD_IU
 
-
-SELECT * FROM BILLDETAIL
-
-UPDATE APPOINTMENT
-SET PatientID = 'PA0002'
-WHERE AppointmentID = 'AP0002'
-
-SELECT * FROM APPOINTMENT
-
- UPDATE APPOINTMENT 
- SET PatientID = @PatientID, DoctorID = @DoctorID, DepartmentID = @DepartmentID, 
-     AppointmentDateTime = @AppointmentDateTime,
- WHERE AppointmentID = @AppointmentID
