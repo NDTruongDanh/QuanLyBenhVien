@@ -165,6 +165,7 @@ namespace QuanLyBenhVien
 
             CommonQuery.ExecuteQuery(query, parameters);
             LoadBills();
+            CommonControls.ResetInputFields(Parent);
         }
 
         private void btnFindBill_Click(object sender, EventArgs e)

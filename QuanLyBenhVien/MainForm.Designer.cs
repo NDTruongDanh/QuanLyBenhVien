@@ -48,6 +48,7 @@
             this.btnIncomeReport = new System.Windows.Forms.ToolStripMenuItem();
             this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.lịchKhámToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +63,7 @@
             this.trợLýẢoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1344, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1344, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,7 +73,7 @@
             this.btnLogout,
             this.btnExit});
             this.btnFunction.Name = "btnFunction";
-            this.btnFunction.Size = new System.Drawing.Size(93, 26);
+            this.btnFunction.Size = new System.Drawing.Size(93, 24);
             this.btnFunction.Text = "Chức năng";
             // 
             // btnLogout
@@ -96,7 +97,7 @@
             this.khoaToolStripMenuItem,
             this.btnMedicine});
             this.btnCatalogue.Name = "btnCatalogue";
-            this.btnCatalogue.Size = new System.Drawing.Size(90, 26);
+            this.btnCatalogue.Size = new System.Drawing.Size(90, 24);
             this.btnCatalogue.Text = "Danh mục";
             // 
             // btnPatient
@@ -104,7 +105,7 @@
             this.btnPatient.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnMedicalRecord});
             this.btnPatient.Name = "btnPatient";
-            this.btnPatient.Size = new System.Drawing.Size(171, 26);
+            this.btnPatient.Size = new System.Drawing.Size(224, 26);
             this.btnPatient.Text = "Bệnh nhân";
             this.btnPatient.Click += new System.EventHandler(this.btnPatient_Click);
             // 
@@ -118,43 +119,44 @@
             // btnEmployee
             // 
             this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.Size = new System.Drawing.Size(171, 26);
+            this.btnEmployee.Size = new System.Drawing.Size(224, 26);
             this.btnEmployee.Text = "Nhân viên";
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnRoom
             // 
             this.btnRoom.Name = "btnRoom";
-            this.btnRoom.Size = new System.Drawing.Size(171, 26);
+            this.btnRoom.Size = new System.Drawing.Size(224, 26);
             this.btnRoom.Text = "Phòng bệnh";
             this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             // 
             // khoaToolStripMenuItem
             // 
             this.khoaToolStripMenuItem.Name = "khoaToolStripMenuItem";
-            this.khoaToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.khoaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.khoaToolStripMenuItem.Text = "Khoa";
             this.khoaToolStripMenuItem.Click += new System.EventHandler(this.khoaToolStripMenuItem_Click);
             // 
             // btnMedicine
             // 
             this.btnMedicine.Name = "btnMedicine";
-            this.btnMedicine.Size = new System.Drawing.Size(171, 26);
+            this.btnMedicine.Size = new System.Drawing.Size(224, 26);
             this.btnMedicine.Text = "Thuốc";
             this.btnMedicine.Click += new System.EventHandler(this.btnMedicine_Click);
             // 
             // btnManager
             // 
             this.btnManager.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBill});
+            this.btnBill,
+            this.lịchKhámToolStripMenuItem});
             this.btnManager.Name = "btnManager";
-            this.btnManager.Size = new System.Drawing.Size(73, 26);
+            this.btnManager.Size = new System.Drawing.Size(73, 24);
             this.btnManager.Text = "Quản lý";
             // 
             // btnBill
             // 
             this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(150, 26);
+            this.btnBill.Size = new System.Drawing.Size(224, 26);
             this.btnBill.Text = "Hóa đơn";
             this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
@@ -166,7 +168,7 @@
             this.btnMedicineReport,
             this.btnIncomeReport});
             this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Size = new System.Drawing.Size(84, 26);
+            this.btnStatistic.Size = new System.Drawing.Size(84, 24);
             this.btnStatistic.Text = "Thống kê";
             // 
             // btnMedicineStat
@@ -197,7 +199,7 @@
             // trợLýẢoToolStripMenuItem
             // 
             this.trợLýẢoToolStripMenuItem.Name = "trợLýẢoToolStripMenuItem";
-            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.trợLýẢoToolStripMenuItem.Text = "Trợ lý ảo ";
             this.trợLýẢoToolStripMenuItem.Click += new System.EventHandler(this.btnAIChatBot_Click);
             // 
@@ -205,12 +207,19 @@
             // 
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.HotTrack = true;
-            this.tabControl.Location = new System.Drawing.Point(0, 30);
+            this.tabControl.Location = new System.Drawing.Point(0, 28);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1344, 710);
+            this.tabControl.Size = new System.Drawing.Size(1344, 712);
             this.tabControl.TabIndex = 1;
+            // 
+            // lịchKhámToolStripMenuItem
+            // 
+            this.lịchKhámToolStripMenuItem.Name = "lịchKhámToolStripMenuItem";
+            this.lịchKhámToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.lịchKhámToolStripMenuItem.Text = "Lịch Khám";
+            this.lịchKhámToolStripMenuItem.Click += new System.EventHandler(this.lịchKhámToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -253,6 +262,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnMedicalRecord;
         private System.Windows.Forms.ToolStripMenuItem khoaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trợLýẢoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lịchKhámToolStripMenuItem;
     }
 }
 

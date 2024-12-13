@@ -91,5 +91,11 @@ namespace QuanLyBenhVien
             ChatBotForm chatBotForm = new ChatBotForm();
             AddFormToTab(chatBotForm, chatBotForm.Text);
         }
+
+        private void lịchKhámToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Appointment appointment = new Appointment();
+            AddFormToTab(appointment, appointment.Text);
+        }
     }
 }
