@@ -20,6 +20,8 @@ namespace QuanLyBenhVien
         {
             InitializeComponent();
             LoadBills();
+            InitializeCmbRecordID();
+            InitializeCmbStaffID();
         }
         public string BillNumber => txtTransactionID.Text;
         private void btnAddBillDetail_Click(object sender, EventArgs e)
@@ -51,6 +53,59 @@ namespace QuanLyBenhVien
             }
         }
 
+        private void InitializeCmbRecordID()
+        {
+            string query = "SELECT RecordID FROM MEDICALRECORD";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbRecordID.Items.Add(reader["RecordID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void InitializeCmbStaffID()
+        {
+            string query = "SELECT StaffID FROM STAFF";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbStaffID.Items.Add(reader["StaffID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
         private bool IsValidBill()
         {
             if (string.IsNullOrEmpty(txtTransactionID.Text) ||
@@ -110,6 +165,7 @@ namespace QuanLyBenhVien
 
             CommonQuery.ExecuteQuery(query, parameters);
             LoadBills();
+            CommonControls.ResetInputFields(Parent);
         }
 
         private void btnFindBill_Click(object sender, EventArgs e)

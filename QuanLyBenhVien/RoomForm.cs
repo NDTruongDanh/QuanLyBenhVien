@@ -112,6 +112,7 @@ namespace QuanLyBenhVien
 
             CommonQuery.ExecuteQuery(query, parameters);
             LoadRoomData();
+            CommonControls.ResetInputFields(Parent);
         }
 
      

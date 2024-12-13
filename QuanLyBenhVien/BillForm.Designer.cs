@@ -115,6 +115,8 @@
             // cmbStaffID
             // 
             this.cmbStaffID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbStaffID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbStaffID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStaffID.FormattingEnabled = true;
             this.cmbStaffID.Location = new System.Drawing.Point(663, 81);
@@ -125,6 +127,8 @@
             // cmbRecordID
             // 
             this.cmbRecordID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbRecordID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbRecordID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbRecordID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRecordID.FormattingEnabled = true;
             this.cmbRecordID.Location = new System.Drawing.Point(250, 81);
@@ -135,8 +139,15 @@
             // cmbPaymentMethod
             // 
             this.cmbPaymentMethod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPaymentMethod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbPaymentMethod.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPaymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPaymentMethod.FormattingEnabled = true;
+            this.cmbPaymentMethod.Items.AddRange(new object[] {
+            "Tiền mặt",
+            "Ví điện tử",
+            "Bảo hiểm",
+            "Thẻ tín dụng"});
             this.cmbPaymentMethod.Location = new System.Drawing.Point(250, 146);
             this.cmbPaymentMethod.Name = "cmbPaymentMethod";
             this.cmbPaymentMethod.Size = new System.Drawing.Size(208, 33);

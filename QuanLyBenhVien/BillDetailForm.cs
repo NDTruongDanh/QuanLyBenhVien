@@ -73,6 +73,7 @@ namespace QuanLyBenhVien
                     MessageBox.Show($"Lỗi khi tải dữ liệu chi tiết hóa đơn: {ex.Message}");
                 }
             }
+            ResetInputField();
         }
 
         private bool IsValidBillDetail()
@@ -107,7 +108,6 @@ namespace QuanLyBenhVien
 
             CommonQuery.ExecuteQuery(query, parameters);
             LoadBillDetailData();
-            //CommonControls.ResetInputFields(Parent);
         }
 
         private void btnRemoveBillDetail_Click(object sender, EventArgs e)
@@ -188,5 +188,15 @@ namespace QuanLyBenhVien
             }
         }
 
+        private void ResetInputField()
+        {
+            cmbMedicationID.SelectedIndex = -1;
+            txtAmount.Clear();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            ResetInputField();
+        }
     }
 }
