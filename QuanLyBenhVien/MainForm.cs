@@ -85,5 +85,11 @@ namespace QuanLyBenhVien
             MedicalRecord medicalRecord = new MedicalRecord();
             AddFormToTab(medicalRecord, medicalRecord.Text);
         }
+
+        private void btnAIChatBot_Click(object sender, EventArgs e)
+        {
+            ChatBotForm chatBotForm = new ChatBotForm();
+            AddFormToTab(chatBotForm, chatBotForm.Text);
+        }
     }
 }
