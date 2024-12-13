@@ -86,6 +86,7 @@ namespace QuanLyBenhVien
             AddFormToTab(medicalRecord, medicalRecord.Text);
         }
 
+
         private void thángToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DoanhthuTHANG dtt = new DoanhthuTHANG();
@@ -96,6 +97,18 @@ namespace QuanLyBenhVien
         {
             DoanhthuNAM dtn = new DoanhthuNAM();
             dtn.Show();
+
+        private void btnAIChatBot_Click(object sender, EventArgs e)
+        {
+            ChatBotForm chatBotForm = new ChatBotForm();
+            AddFormToTab(chatBotForm, chatBotForm.Text);
+        }
+
+        private void lịchKhámToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Appointment appointment = new Appointment();
+            AddFormToTab(appointment, appointment.Text);
+
         }
     }
 }

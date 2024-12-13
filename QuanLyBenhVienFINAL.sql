@@ -194,12 +194,14 @@ VALUES
 -- Chèn dữ liệu vào bảng APPOINTMENT
 INSERT INTO APPOINTMENT (AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDateTime, AppointmentStatus)
 VALUES
-('AP0001', 'PA0001', 'ST0001', 'DP0001', '2024-12-01 08:00:00', N'Hoàn thành'),
-('AP0002', 'PA0002', 'ST0006', 'DP0002', '2024-12-02 09:00:00', N'Chờ xác nhận'),
-('AP0003', 'PA0003', 'ST0007', 'DP0003', '2024-12-03 10:00:00', N'Hoàn thành'),
-('AP0004', 'PA0004', 'ST0008', 'DP0004', '2024-12-04 11:00:00', N'Hoàn thành'),
-('AP0005', 'PA0005', 'ST0001', 'DP0005', '2024-12-05 12:00:00', N'Hủy'),
-('AP0006', 'PA0006', 'ST0006', 'DP0006', '2024-12-06 13:00:00', N'Hoàn thành');
+('AP0001', 'PA0001', 'ST0001', 'DP0001', '2024-12-01 08:00:00', N'Chấp thuận'),
+('AP0002', 'PA0002', 'ST0006', 'DP0002', '2024-12-02 09:00:00', N'Đang chờ xử lý'),
+('AP0003', 'PA0003', 'ST0007', 'DP0003', '2024-12-03 10:00:00', N'Chấp thuận'),
+('AP0004', 'PA0004', 'ST0008', 'DP0004', '2024-12-04 11:00:00', N'Từ chối'),
+('AP0005', 'PA0005', 'ST0001', 'DP0005', '2024-12-05 12:00:00', N'Đang chờ xử lý'),
+('AP0006', 'PA0006', 'ST0006', 'DP0006', '2024-12-06 13:00:00', N'Từ chối');
+
+Delete from APPOINTMENT
 
 -- Chèn dữ liệu vào bảng MEDICALRECORD
 INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan)
@@ -276,4 +278,13 @@ AS
 
 SELECT * FROM BILLDETAIL
 
-SELECT * FROM BILL
+UPDATE APPOINTMENT
+SET PatientID = 'PA0002'
+WHERE AppointmentID = 'AP0002'
+
+SELECT * FROM APPOINTMENT
+
+ UPDATE APPOINTMENT 
+ SET PatientID = @PatientID, DoctorID = @DoctorID, DepartmentID = @DepartmentID, 
+     AppointmentDateTime = @AppointmentDateTime,
+ WHERE AppointmentID = @AppointmentID

@@ -22,6 +22,7 @@ namespace QuanLyBenhVien
         private void DepartmentForm_Load(object sender, EventArgs e)
         {
             LoadData();
+            InitializeCmbHeadDepartmentID();
         }
 
         private void LoadData()
@@ -41,6 +42,33 @@ namespace QuanLyBenhVien
                 {
                     MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}");
                 }
+            }
+        }
+
+        private void InitializeCmbHeadDepartmentID()
+        {
+            string query = "SELECT StaffID FROM STAFF";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbHeadDepartmentID.Items.Add(reader["StaffID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -78,7 +106,7 @@ namespace QuanLyBenhVien
                 { "@DepartmentID", txtDepartmentID.Text },
                 { "@DepartmentName", txtDepartmentName.Text },
                 { "@EmployeeNumber", txtEmployeeNumber.Text },
-                { "@HeadDepartmentID", txtHeadDepartmentID.Text },
+                { "@HeadDepartmentID", cmbHeadDepartmentID.Text },
                 { "@PhoneNumber", txtPhoneNumber.Text },
                 { "@LocationDPM", txtLocation.Text }
             };
@@ -110,10 +138,10 @@ namespace QuanLyBenhVien
                         query += " AND DepartmentName LIKE @DepartmentName";
                         parameters.Add("@DepartmentName", $"%{txtDepartmentName.Text.Trim()}%"); // Sử dụng LIKE để tìm kiếm gần đúng
                     }
-                    if (!string.IsNullOrEmpty(txtHeadDepartmentID.Text))
+                    if (!string.IsNullOrEmpty(cmbHeadDepartmentID.Text))
                     {
                         query += " AND HeadDepartmentID = @HeadDepartmentID";
-                        parameters.Add("@HeadDepartmentID", txtHeadDepartmentID.Text.Trim());
+                        parameters.Add("@HeadDepartmentID", cmbHeadDepartmentID.Text.Trim());
                     }
                     if (!string.IsNullOrEmpty(txtPhoneNumber.Text))
                     {
@@ -181,7 +209,7 @@ namespace QuanLyBenhVien
                 txtDepartmentID.Text = selectedRow.Cells[0].Value.ToString();
                 txtDepartmentName.Text = selectedRow.Cells[1].Value.ToString();
                 txtEmployeeNumber.Text = selectedRow.Cells[2].Value.ToString();
-                txtHeadDepartmentID.Text = selectedRow.Cells[3].Value.ToString();
+                cmbHeadDepartmentID.Text = selectedRow.Cells[3].Value.ToString();
                 txtPhoneNumber.Text = selectedRow.Cells[4].Value.ToString();
                 txtLocation.Text = selectedRow.Cells[5].Value.ToString();
             }
