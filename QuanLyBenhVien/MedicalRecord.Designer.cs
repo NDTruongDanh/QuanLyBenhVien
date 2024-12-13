@@ -148,7 +148,7 @@
             this.cmbDoctorID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDoctorID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDoctorID.FormattingEnabled = true;
-            this.cmbDoctorID.Location = new System.Drawing.Point(325, 136);
+            this.cmbDoctorID.Location = new System.Drawing.Point(325, 138);
             this.cmbDoctorID.Margin = new System.Windows.Forms.Padding(5);
             this.cmbDoctorID.Name = "cmbDoctorID";
             this.cmbDoctorID.Size = new System.Drawing.Size(215, 28);
@@ -228,7 +228,7 @@
             this.cmbPatientID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbPatientID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPatientID.FormattingEnabled = true;
-            this.cmbPatientID.Location = new System.Drawing.Point(90, 136);
+            this.cmbPatientID.Location = new System.Drawing.Point(90, 138);
             this.cmbPatientID.Margin = new System.Windows.Forms.Padding(5);
             this.cmbPatientID.Name = "cmbPatientID";
             this.cmbPatientID.Size = new System.Drawing.Size(159, 28);

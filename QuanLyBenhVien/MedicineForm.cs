@@ -95,8 +95,8 @@ namespace QuanLyBenhVien
             };
 
             CommonQuery.ExecuteQuery(query, parameters);
-            CommonControls.ResetInputFields(Parent);
             LoadData();
+            CommonControls.ResetInputFields(Parent);
         }
 
         private void btnFindMedicine_Click(object sender, EventArgs e)
