@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Extensions.AI; 
@@ -52,14 +53,16 @@ namespace QuanLyBenhVien
                     AppendFormattedText(userPrompt + Environment.NewLine, Color.Black, FontStyle.Regular);
 
                     txtPrompt.Clear();
-
                     chatHistory.Add(new ChatMessage(ChatRole.User, userPrompt));
+
+
+                    WaitingMessage("Chatbot is typing...");
 
                     var response = await client.CompleteAsync(chatHistory);
                     var chatbotResponse = response.ToString();
                     chatHistory.Add(new ChatMessage(ChatRole.Assistant, chatbotResponse));
-
-                    AppendFormattedText("Chatbot:\n", Color.Green, FontStyle.Bold);
+                    txtPrompt.Clear();
+                    AppendFormattedText("\nChatbot:\n", Color.Green, FontStyle.Bold);
                     AppendFormattedText(FormatResponse(chatbotResponse) + Environment.NewLine, Color.Black, FontStyle.Regular);
                 }
             }
@@ -73,15 +76,41 @@ namespace QuanLyBenhVien
                 btnGenerate.Enabled = true;
             }
         }
-        private void AppendFormattedText(string text, Color color, FontStyle fontStyle)
+
+        private void WaitingMessage(string message)
         {
-            txtChat.SelectionStart = txtChat.TextLength;
-            txtChat.SelectionLength = 0;
-            txtChat.SelectionColor = color;
-            txtChat.SelectionFont = new Font(txtChat.Font, fontStyle);
-            txtChat.AppendText(text);
-            txtChat.SelectionColor = txtChat.ForeColor; // Reset color
+            txtPrompt.SelectionStart = txtPrompt.TextLength;
+            txtPrompt.SelectionLength = 0;
+            txtPrompt.SelectionColor = Color.Gray;
+            txtPrompt.SelectionFont = new Font(txtPrompt.Font, FontStyle.Italic);
+            txtPrompt.AppendText(message);
+            txtPrompt.SelectionColor = txtPrompt.ForeColor;
         }
 
+        private void AppendFormattedText(string text, Color color, FontStyle fontStyle)
+        {
+            if (txtChat.InvokeRequired)
+            {
+                txtChat.Invoke(new Action(() => AppendFormattedText(text, color, fontStyle)));
+            }
+            else
+            {
+                txtChat.SelectionStart = txtChat.TextLength;
+                txtChat.SelectionLength = 0;
+                txtChat.SelectionColor = color;
+                txtChat.SelectionFont = new Font(txtChat.Font, fontStyle);
+                txtChat.AppendText(text);
+                txtChat.SelectionColor = txtChat.ForeColor;
+
+                txtChat.ScrollToCaret();
+            }
+        }
+
+        private void btnDeleteChat_Click(object sender, EventArgs e)
+        {
+            txtChat.Clear();
+            chatHistory.Clear();
+            InitializeAI();
+        }
     }
 }
