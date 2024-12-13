@@ -109,5 +109,11 @@ namespace QuanLyBenhVien
             Appointment appointment = new Appointment();
             AddFormToTab(appointment, appointment.Text);
         }
+
+        private void tồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KiemtraThuocTonKho ktt = new KiemtraThuocTonKho();
+            ktt.Show();
+        }
     }
 }

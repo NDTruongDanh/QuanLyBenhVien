@@ -48,22 +48,22 @@
             this.dtpManufacturingDate = new System.Windows.Forms.DateTimePicker();
             this.dtpExpiryDate = new System.Windows.Forms.DateTimePicker();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbDosageUnit = new System.Windows.Forms.ComboBox();
+            this.txtDosage = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnRemoveMedication = new System.Windows.Forms.Button();
             this.btnAddOrUpdateMedication = new System.Windows.Forms.Button();
             this.btnRefreshMedication = new System.Windows.Forms.Button();
             this.btnFindMedication = new System.Windows.Forms.Button();
             this.dgvMedicine = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.txtDosage = new System.Windows.Forms.TextBox();
-            this.cmbDosageUnit = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).BeginInit();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -354,6 +354,51 @@
             this.cmbCategory.Size = new System.Drawing.Size(351, 44);
             this.cmbCategory.TabIndex = 26;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.cmbDosageUnit, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtDosage, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(222, 56);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(305, 47);
+            this.tableLayoutPanel5.TabIndex = 27;
+            // 
+            // cmbDosageUnit
+            // 
+            this.cmbDosageUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbDosageUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbDosageUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbDosageUnit.BackColor = System.Drawing.Color.LightGray;
+            this.cmbDosageUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDosageUnit.FormattingEnabled = true;
+            this.cmbDosageUnit.Items.AddRange(new object[] {
+            "chai",
+            "viên",
+            "ống",
+            "gói"});
+            this.cmbDosageUnit.Location = new System.Drawing.Point(155, 3);
+            this.cmbDosageUnit.Name = "cmbDosageUnit";
+            this.cmbDosageUnit.Size = new System.Drawing.Size(147, 44);
+            this.cmbDosageUnit.TabIndex = 27;
+            // 
+            // txtDosage
+            // 
+            this.txtDosage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDosage.BackColor = System.Drawing.Color.LightGray;
+            this.txtDosage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtDosage.Location = new System.Drawing.Point(3, 3);
+            this.txtDosage.Multiline = true;
+            this.txtDosage.Name = "txtDosage";
+            this.txtDosage.Size = new System.Drawing.Size(146, 41);
+            this.txtDosage.TabIndex = 21;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 4;
@@ -445,56 +490,11 @@
             this.dgvMedicine.TabIndex = 2;
             this.dgvMedicine.SelectionChanged += new System.EventHandler(this.dgvMedicine_SelectionChanged);
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.cmbDosageUnit, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.txtDosage, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(222, 56);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(305, 47);
-            this.tableLayoutPanel5.TabIndex = 27;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // txtDosage
-            // 
-            this.txtDosage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDosage.BackColor = System.Drawing.Color.LightGray;
-            this.txtDosage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtDosage.Location = new System.Drawing.Point(3, 3);
-            this.txtDosage.Multiline = true;
-            this.txtDosage.Name = "txtDosage";
-            this.txtDosage.Size = new System.Drawing.Size(146, 41);
-            this.txtDosage.TabIndex = 21;
-            // 
-            // cmbDosageUnit
-            // 
-            this.cmbDosageUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbDosageUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbDosageUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbDosageUnit.BackColor = System.Drawing.Color.LightGray;
-            this.cmbDosageUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDosageUnit.FormattingEnabled = true;
-            this.cmbDosageUnit.Items.AddRange(new object[] {
-            "chai",
-            "viên",
-            "ống",
-            "gói"});
-            this.cmbDosageUnit.Location = new System.Drawing.Point(155, 3);
-            this.cmbDosageUnit.Name = "cmbDosageUnit";
-            this.cmbDosageUnit.Size = new System.Drawing.Size(147, 44);
-            this.cmbDosageUnit.TabIndex = 27;
             // 
             // MedicineForm
             // 
@@ -510,10 +510,10 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).EndInit();
             this.ResumeLayout(false);
 
         }

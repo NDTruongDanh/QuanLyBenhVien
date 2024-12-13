@@ -135,6 +135,12 @@
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="KiemtraThuocTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KiemtraThuocTonKho.Designer.cs">
+      <DependentUpon>KiemtraThuocTonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KiemtraThuocTonKho.resx">
+      <DependentUpon>KiemtraThuocTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
