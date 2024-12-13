@@ -24,13 +24,35 @@ namespace QuanLyBenhVien
             InitializeCmbStaffID();
         }
         public string BillNumber => txtTransactionID.Text;
-        private void btnAddBillDetail_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (!IsValidBill())
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin hợp lệ.");
+                return;
+            }
+
+            string query = @"IF NOT EXISTS (SELECT 1 FROM BILL WHERE TransactionID = @TransactionID)
+                     INSERT INTO BILL (TransactionID, RecordID, StaffID, TransactionDate, PaymentMethod)
+                     VALUES (@TransactionID, @RecordID, @StaffID, @TransactionDate, @PaymentMethod)";
+
+            var parameters = new Dictionary<string, object>
+            {
+                {"@TransactionID", txtTransactionID.Text},
+                {"@RecordID", cmbRecordID.Text},
+                {"@StaffID", cmbStaffID.Text},
+                {"@TransactionDate", dtpTransactionDate.Value.Date},
+                {"@PaymentMethod", cmbPaymentMethod.Text}
+                };
+
+            CommonQuery.ExecuteQuery(query, parameters);
+
             BillDetailForm billDetailForm = new BillDetailForm(this);
             this.Enabled = false;
             billDetailForm.ShowDialog();
             this.Enabled = true;
             LoadBills();
+            CommonControls.ResetInputFields(Parent);
         }
 
         private void LoadBills()
@@ -119,7 +141,7 @@ namespace QuanLyBenhVien
             return true;
         }
 
-        private void btnAddOrUpdateBill_Click(object sender, EventArgs e)
+        private void btnUpdateBill_Click(object sender, EventArgs e)
         {
             if (!IsValidBill())
             {
@@ -127,13 +149,9 @@ namespace QuanLyBenhVien
                 return;
             }
 
-            string query = @"IF EXISTS (SELECT 1 FROM BILL WHERE TransactionID = @TransactionID)
-                     UPDATE BILL SET RecordID = @RecordID, StaffID = @StaffID, TransactionDate = @TransactionDate,
-                     PaymentMethod = @PaymentMethod
-                     WHERE TransactionID = @TransactionID
-                     ELSE
-                     INSERT INTO BILL (TransactionID, RecordID, StaffID, TransactionDate, PaymentMethod)
-                     VALUES (@TransactionID, @RecordID, @StaffID, @TransactionDate, @PaymentMethod)";
+            string query = @" UPDATE BILL SET RecordID = @RecordID, StaffID = @StaffID,
+                         TransactionDate = @TransactionDate, PaymentMethod = @PaymentMethod
+                         WHERE TransactionID = @TransactionID";
 
             var parameters = new Dictionary<string, object>
             {

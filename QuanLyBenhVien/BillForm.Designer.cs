@@ -42,9 +42,9 @@
             this.txtTransactionID = new System.Windows.Forms.TextBox();
             this.dtpTransactionDate = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.btnAddBillDetail = new System.Windows.Forms.Button();
-            this.btnAddOrUpdate = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -239,9 +239,9 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.btnAdd, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnUpdate, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnRemove, 4, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnAddBillDetail, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnAddOrUpdate, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnRefresh, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnFind, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -251,6 +251,32 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(875, 44);
             this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnAdd.Location = new System.Drawing.Point(354, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(167, 36);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnUpdate.Location = new System.Drawing.Point(529, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(167, 36);
+            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdateBill_Click);
             // 
             // btnRemove
             // 
@@ -264,32 +290,6 @@
             this.btnRemove.Text = "Xóa";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemoveBill_Click);
-            // 
-            // btnAddBillDetail
-            // 
-            this.btnAddBillDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddBillDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAddBillDetail.Location = new System.Drawing.Point(529, 4);
-            this.btnAddBillDetail.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddBillDetail.Name = "btnAddBillDetail";
-            this.btnAddBillDetail.Size = new System.Drawing.Size(167, 36);
-            this.btnAddBillDetail.TabIndex = 8;
-            this.btnAddBillDetail.Text = "Tạo CTHD";
-            this.btnAddBillDetail.UseVisualStyleBackColor = true;
-            this.btnAddBillDetail.Click += new System.EventHandler(this.btnAddBillDetail_Click);
-            // 
-            // btnAddOrUpdate
-            // 
-            this.btnAddOrUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddOrUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAddOrUpdate.Location = new System.Drawing.Point(354, 4);
-            this.btnAddOrUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddOrUpdate.Name = "btnAddOrUpdate";
-            this.btnAddOrUpdate.Size = new System.Drawing.Size(167, 36);
-            this.btnAddOrUpdate.TabIndex = 7;
-            this.btnAddOrUpdate.Text = "Thêm/Sửa";
-            this.btnAddOrUpdate.UseVisualStyleBackColor = true;
-            this.btnAddOrUpdate.Click += new System.EventHandler(this.btnAddOrUpdateBill_Click);
             // 
             // btnRefresh
             // 
@@ -349,11 +349,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnAddBillDetail;
-        private System.Windows.Forms.Button btnAddOrUpdate;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.ComboBox cmbPaymentMethod;
         private System.Windows.Forms.ComboBox cmbRecordID;
         private System.Windows.Forms.ComboBox cmbStaffID;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

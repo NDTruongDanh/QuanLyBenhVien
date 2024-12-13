@@ -108,7 +108,6 @@ namespace QuanLyBenhVien
         {
             Appointment appointment = new Appointment();
             AddFormToTab(appointment, appointment.Text);
-
         }
     }
 }
