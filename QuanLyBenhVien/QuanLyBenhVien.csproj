@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +67,18 @@
     </Compile>
     <Compile Include="DepartmentForm.Designer.cs">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhthuNAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoanhthuNAM.Designer.cs">
+      <DependentUpon>DoanhthuNAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhthuTHANG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoanhthuTHANG.Designer.cs">
+      <DependentUpon>DoanhthuTHANG.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -119,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DepartmentForm.resx">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanhthuNAM.resx">
+      <DependentUpon>DoanhthuNAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanhthuTHANG.resx">
+      <DependentUpon>DoanhthuTHANG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>

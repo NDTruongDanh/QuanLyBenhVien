@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnRemoveMedication = new System.Windows.Forms.Button();
+            this.btnAddOrUpdateMedication = new System.Windows.Forms.Button();
+            this.btnRefreshMedication = new System.Windows.Forms.Button();
+            this.btnFindMedication = new System.Windows.Forms.Button();
+            this.dgvMedicine = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtManufacturer = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,17 +54,11 @@
             this.dtpManufacturingDate = new System.Windows.Forms.DateTimePicker();
             this.dtpExpiryDate = new System.Windows.Forms.DateTimePicker();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnRemoveMedication = new System.Windows.Forms.Button();
-            this.btnAddOrUpdateMedication = new System.Windows.Forms.Button();
-            this.btnRefreshMedication = new System.Windows.Forms.Button();
-            this.btnFindMedication = new System.Windows.Forms.Button();
-            this.dgvMedicine = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -78,6 +78,97 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 554);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Controls.Add(this.btnRemoveMedication, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnAddOrUpdateMedication, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnRefreshMedication, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnFindMedication, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 225);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1059, 47);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // btnRemoveMedication
+            // 
+            this.btnRemoveMedication.BackColor = System.Drawing.Color.Silver;
+            this.btnRemoveMedication.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemoveMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveMedication.Location = new System.Drawing.Point(796, 4);
+            this.btnRemoveMedication.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemoveMedication.Name = "btnRemoveMedication";
+            this.btnRemoveMedication.Size = new System.Drawing.Size(259, 39);
+            this.btnRemoveMedication.TabIndex = 3;
+            this.btnRemoveMedication.Text = "Xóa";
+            this.btnRemoveMedication.UseVisualStyleBackColor = false;
+            this.btnRemoveMedication.Click += new System.EventHandler(this.btnRemoveMedication_Click);
+            // 
+            // btnAddOrUpdateMedication
+            // 
+            this.btnAddOrUpdateMedication.BackColor = System.Drawing.Color.Silver;
+            this.btnAddOrUpdateMedication.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddOrUpdateMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddOrUpdateMedication.Location = new System.Drawing.Point(532, 4);
+            this.btnAddOrUpdateMedication.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddOrUpdateMedication.Name = "btnAddOrUpdateMedication";
+            this.btnAddOrUpdateMedication.Size = new System.Drawing.Size(256, 39);
+            this.btnAddOrUpdateMedication.TabIndex = 2;
+            this.btnAddOrUpdateMedication.Text = "Thêm/Sửa";
+            this.btnAddOrUpdateMedication.UseVisualStyleBackColor = false;
+            this.btnAddOrUpdateMedication.Click += new System.EventHandler(this.btnAddOrUpdateMedicine_Click);
+            // 
+            // btnRefreshMedication
+            // 
+            this.btnRefreshMedication.BackColor = System.Drawing.Color.Silver;
+            this.btnRefreshMedication.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefreshMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshMedication.Location = new System.Drawing.Point(268, 4);
+            this.btnRefreshMedication.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefreshMedication.Name = "btnRefreshMedication";
+            this.btnRefreshMedication.Size = new System.Drawing.Size(256, 39);
+            this.btnRefreshMedication.TabIndex = 1;
+            this.btnRefreshMedication.Text = "Làm mới";
+            this.btnRefreshMedication.UseVisualStyleBackColor = false;
+            this.btnRefreshMedication.Click += new System.EventHandler(this.btnRefreshMedication_Click);
+            // 
+            // btnFindMedication
+            // 
+            this.btnFindMedication.BackColor = System.Drawing.Color.Silver;
+            this.btnFindMedication.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFindMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindMedication.Location = new System.Drawing.Point(4, 4);
+            this.btnFindMedication.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFindMedication.Name = "btnFindMedication";
+            this.btnFindMedication.Size = new System.Drawing.Size(256, 39);
+            this.btnFindMedication.TabIndex = 0;
+            this.btnFindMedication.Text = "Tìm";
+            this.btnFindMedication.UseVisualStyleBackColor = false;
+            this.btnFindMedication.Click += new System.EventHandler(this.btnFindMedicine_Click);
+            // 
+            // dgvMedicine
+            // 
+            this.dgvMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMedicine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMedicine.Location = new System.Drawing.Point(4, 280);
+            this.dgvMedicine.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMedicine.Name = "dgvMedicine";
+            this.dgvMedicine.RowHeadersWidth = 51;
+            this.dgvMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMedicine.Size = new System.Drawing.Size(1059, 270);
+            this.dgvMedicine.TabIndex = 2;
+            this.dgvMedicine.SelectionChanged += new System.EventHandler(this.dgvMedicine_SelectionChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -358,97 +449,6 @@
             this.cmbCategory.Size = new System.Drawing.Size(365, 44);
             this.cmbCategory.TabIndex = 26;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.btnRemoveMedication, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnAddOrUpdateMedication, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnRefreshMedication, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnFindMedication, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 225);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1059, 47);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // btnRemoveMedication
-            // 
-            this.btnRemoveMedication.BackColor = System.Drawing.Color.Silver;
-            this.btnRemoveMedication.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemoveMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveMedication.Location = new System.Drawing.Point(796, 4);
-            this.btnRemoveMedication.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRemoveMedication.Name = "btnRemoveMedication";
-            this.btnRemoveMedication.Size = new System.Drawing.Size(259, 39);
-            this.btnRemoveMedication.TabIndex = 3;
-            this.btnRemoveMedication.Text = "Xóa";
-            this.btnRemoveMedication.UseVisualStyleBackColor = false;
-            this.btnRemoveMedication.Click += new System.EventHandler(this.btnRemoveMedication_Click);
-            // 
-            // btnAddOrUpdateMedication
-            // 
-            this.btnAddOrUpdateMedication.BackColor = System.Drawing.Color.Silver;
-            this.btnAddOrUpdateMedication.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddOrUpdateMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOrUpdateMedication.Location = new System.Drawing.Point(532, 4);
-            this.btnAddOrUpdateMedication.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddOrUpdateMedication.Name = "btnAddOrUpdateMedication";
-            this.btnAddOrUpdateMedication.Size = new System.Drawing.Size(256, 39);
-            this.btnAddOrUpdateMedication.TabIndex = 2;
-            this.btnAddOrUpdateMedication.Text = "Thêm/Sửa";
-            this.btnAddOrUpdateMedication.UseVisualStyleBackColor = false;
-            this.btnAddOrUpdateMedication.Click += new System.EventHandler(this.btnAddOrUpdateMedicine_Click);
-            // 
-            // btnRefreshMedication
-            // 
-            this.btnRefreshMedication.BackColor = System.Drawing.Color.Silver;
-            this.btnRefreshMedication.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefreshMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshMedication.Location = new System.Drawing.Point(268, 4);
-            this.btnRefreshMedication.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRefreshMedication.Name = "btnRefreshMedication";
-            this.btnRefreshMedication.Size = new System.Drawing.Size(256, 39);
-            this.btnRefreshMedication.TabIndex = 1;
-            this.btnRefreshMedication.Text = "Làm mới";
-            this.btnRefreshMedication.UseVisualStyleBackColor = false;
-            this.btnRefreshMedication.Click += new System.EventHandler(this.btnRefreshMedication_Click);
-            // 
-            // btnFindMedication
-            // 
-            this.btnFindMedication.BackColor = System.Drawing.Color.Silver;
-            this.btnFindMedication.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFindMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindMedication.Location = new System.Drawing.Point(4, 4);
-            this.btnFindMedication.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFindMedication.Name = "btnFindMedication";
-            this.btnFindMedication.Size = new System.Drawing.Size(256, 39);
-            this.btnFindMedication.TabIndex = 0;
-            this.btnFindMedication.Text = "Tìm";
-            this.btnFindMedication.UseVisualStyleBackColor = false;
-            this.btnFindMedication.Click += new System.EventHandler(this.btnFindMedicine_Click);
-            // 
-            // dgvMedicine
-            // 
-            this.dgvMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMedicine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicine.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMedicine.Location = new System.Drawing.Point(4, 280);
-            this.dgvMedicine.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvMedicine.Name = "dgvMedicine";
-            this.dgvMedicine.RowHeadersWidth = 51;
-            this.dgvMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicine.Size = new System.Drawing.Size(1059, 270);
-            this.dgvMedicine.TabIndex = 2;
-            this.dgvMedicine.SelectionChanged += new System.EventHandler(this.dgvMedicine_SelectionChanged);
-            // 
             // MedicineForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -460,11 +460,11 @@
             this.Text = "THUỐC";
             this.Load += new System.EventHandler(this.MedicineForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).EndInit();
             this.ResumeLayout(false);
 
         }

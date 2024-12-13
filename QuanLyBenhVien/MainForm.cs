@@ -85,5 +85,17 @@ namespace QuanLyBenhVien
             MedicalRecord medicalRecord = new MedicalRecord();
             AddFormToTab(medicalRecord, medicalRecord.Text);
         }
+
+        private void thángToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoanhthuTHANG dtt = new DoanhthuTHANG();
+            dtt.Show();
+        }
+
+        private void nămToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoanhthuNAM dtn = new DoanhthuNAM();
+            dtn.Show();
+        }
     }
 }
