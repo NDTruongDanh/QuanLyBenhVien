@@ -126,5 +126,7 @@ namespace QuanLyBenhVien
             // Chỉnh chiều cao của dòng
             dataGridView1.RowTemplate.Height = 30;
         }
+
+       
     }
 }
