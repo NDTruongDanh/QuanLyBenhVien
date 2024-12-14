@@ -277,3 +277,34 @@ AS
 				WHERE BILL.TransactionID=b.TransactionID)
 
 
+--Them data cho patient va medical 
+
+INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate, RoomID)
+VALUES
+('PA0007', N'Hồng Hài N', '1999-04-12', N'Nữ', '0962456786', N'Hải Phòng', 'h.hong@example.com', '2023-03-08', NULL, 'RO0002'),
+('PA0008', N'Đỗ Thị H', '1999-04-12', N'Nữ', '0962456786', N'Hải Phòng', 'h.do@example.com', '2024-12-08', NULL, 'RO0002'),
+('PA0009', N'Ngô Minh I', '1975-05-10', N'Nam', '0983456785', N'Lào Cai', 'i.ngo@example.com', '2024-11-27', '2024-12-09', 'RO0006'),
+('PA0010', N'Thái Hồng K', '2000-10-25', N'Nữ', '0943456784', N'Hà Giang', 'k.thai@example.com', '2024-12-10', NULL, 'RO0006');
+('PA0011', N'Nguyễn Văn A', '1985-06-12', N'Nam', '0987654321', N'Hà Nội', 'a.nguyen@example.com', '2024-11-20', '2024-12-05', 'RO0001'),
+('PA0012', N'Lê Thị B', '1990-03-15', N'Nữ', '0978654322', N'Đà Nẵng', 'b.le@example.com', '2024-12-01', NULL, 'RO0002'),
+('PA0013', N'Phạm Minh C', '2002-09-20', N'Nam', '0902456789', N'Hồ Chí Minh', 'c.pham@example.com', '2024-11-25', NULL, 'RO0001'),
+('PA0014', N'Trần Văn D', '1978-11-10', N'Nam', '0945654321', N'Cần Thơ', 'd.tran@example.com', '2024-11-30', '2024-12-10', 'RO0003'),
+('PA0015', N'Hoàng Thị E', '1987-02-07', N'Nữ', '0913456789', N'Bắc Ninh', 'e.hoang@example.com', '2024-12-02', NULL, 'RO0004'),
+('PA0016', N'Vũ Ngọc F', '1995-08-17', N'Nữ', '0932456788', N'Nam Định', 'f.vu@example.com', '2024-11-28', '2024-12-08', 'RO0005'),
+('PA0017', N'Bùi Thanh G', '1982-12-30', N'Nam', '0923456787', N'Quảng Ninh', 'g.bui@example.com', '2024-12-05', NULL, 'RO0001'),
+
+INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan)
+VALUES
+('MR0005', 'PA0005', 'ST0002', '2024-12-03', N'Dau dạ dày', N'Nội soi: loét dạ dày', N'Dùng thuốc giảm tiết axit, kiêng đồ cay'),
+('MR0006', 'PA0006', 'ST0004', '2024-11-29', N'Đau đầu mãn tính', N'CT scan không phát hiện bất thường', N'Dùng thuốc giảm đau, giảm căng thẳng'),
+('MR0007', 'PA0007', 'ST0001', '2024-12-06', N'Cảm lạnh', N'Không có dấu hiệu nguy hiểm', N'Uống vitamin C và nghỉ ngơi'),
+('MR0008', 'PA0008', 'ST0005', '2024-12-09', N'Suy nhược cơ thể', N'Chỉ số máu thấp', N'Tăng cường dinh dưỡng, vitamin'),
+('MR0009', 'PA0009', 'ST0003', '2024-11-28', N'Hen suyễn', N'Chỉ số phổi giảm', N'Dùng thuốc hít và theo dõi định kỳ'),
+('MR0010', 'PA0010', 'ST0004', '2024-12-11', N'Đau lưng', N'X-quang: thoái hóa cột sống', N'Vật lý trị liệu 3 tuần');
+('MR0011', 'PA0011', 'ST0001', '2024-11-21', N'Cảm cúm', N'Huyết áp bình thường, không có triệu chứng nặng', N'Nghỉ ngơi, uống thuốc giảm đau'),
+('MR0012', 'PA0012', 'ST0002', '2024-12-02', N'Sốt xuất huyết', N'Giảm tiểu cầu, sốt cao', N'Nhập viện, theo dõi hàng ngày'),
+('MR0013', 'PA0003', 'ST0001', '2024-11-26', N'Viêm phổi', N'X-quang phổi phát hiện tổn thương nhỏ', N'Dùng kháng sinh 7 ngày'),
+('MR0014', 'PA0004', 'ST0003', '2024-12-01', N'Gãy tay phải', N'Chụp X-quang: gãy xương quay', N'Bó bột và nghỉ ngơi 4 tuần'),
+
+
+
