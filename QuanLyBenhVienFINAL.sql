@@ -307,4 +307,46 @@ VALUES
 ('MR0014', 'PA0004', 'ST0003', '2024-12-01', N'Gãy tay phải', N'Chụp X-quang: gãy xương quay', N'Bó bột và nghỉ ngơi 4 tuần'),
 
 
+INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan)
+VALUES
+('MR0015', 'PA0001', 'ST0001', '2024-01-15', N'Sốt xuất huyết', N'Tiểu cầu thấp, sốt cao', N'Nhập viện, truyền dịch, điều trị sốt'),
+('MR0016', 'PA0002', 'ST0002', '2024-02-20', N'Viêm phổi', N'Chụp X-quang phát hiện viêm phổi nhẹ', N'Dùng kháng sinh, theo dõi nhiệt độ'),
+('MR0017', 'PA0003', 'ST0003', '2024-03-10', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, mất nước nhẹ', N'Uống thuốc chống tiêu chảy, bù nước'),
+('MR0018', 'PA0004', 'ST0001', '2024-04-05', N'Sốt xuất huyết', N'Tiểu cầu giảm mạnh', N'Truyền dịch và thuốc hạ sốt'),
+('MR0019', 'PA0005', 'ST0002', '2024-05-11', N'Viêm phổi', N'Phổi tổn thương nhẹ', N'Kháng sinh, nghỉ ngơi tại nhà'),
+('MR0020', 'PA0006', 'ST0004', '2024-06-21', N'Tiêu chảy do nhiễm khuẩn', N'Phân có máu, sốt cao', N'Thực hiện xét nghiệm, uống thuốc kháng sinh'),
+('MR0021', 'PA0007', 'ST0003', '2024-07-07', N'Sốt xuất huyết', N'Huyết áp ổn định, tiểu cầu thấp', N'Nhập viện, theo dõi sức khỏe'),
+('MR0022', 'PA0008', 'ST0005', '2024-08-18', N'Viêm phổi', N'Khó thở, ho nhiều', N'Kháng sinh và điều trị hỗ trợ'),
+('MR0023', 'PA0009', 'ST0002', '2024-09-05', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, không có máu', N'Uống thuốc kháng sinh, bù nước'),
+('MR0024', 'PA0010', 'ST0004', '2024-10-12', N'Sốt xuất huyết', N'Phát ban, sốt cao', N'Chăm sóc tại bệnh viện, điều trị triệu chứng'),
+('MR0025', 'PA0011', 'ST0001', '2024-11-22', N'Viêm phổi', N'Chụp X-quang phát hiện phổi viêm', N'Dùng kháng sinh, nghỉ ngơi'),
+('MR0026', 'PA0012', 'ST0002', '2024-12-15', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0027', 'PA0013', 'ST0003', '2024-01-02', N'Sốt xuất huyết', N'Tiểu cầu giảm, huyết áp thấp', N'Truyền dịch, hạ sốt'),
+('MR0028', 'PA0014', 'ST0005', '2024-02-17', N'Viêm phổi', N'Khó thở nhẹ, X-quang không phát hiện bất thường', N'Kháng sinh, chăm sóc tại nhà'),
+('MR0029', 'PA0015', 'ST0004', '2024-03-13', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, mất nước nhẹ', N'Uống thuốc kháng sinh, bù nước'),
+('MR0030', 'PA0016', 'ST0001', '2024-04-09', N'Sốt xuất huyết', N'Tiểu cầu giảm, sốt cao', N'Nhập viện, truyền dịch, thuốc hạ sốt'),
+('MR0031', 'PA0017', 'ST0002', '2024-05-17', N'Viêm phổi', N'Phổi có dấu hiệu viêm nhẹ', N'Kháng sinh, uống thuốc giảm ho'),
+('MR0032', 'PA0011', 'ST0003', '2024-06-02', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, sốt nhẹ', N'Uống thuốc kháng sinh, bù nước'),
+('MR0033', 'PA0012', 'ST0005', '2024-07-25', N'Sốt xuất huyết', N'Tiểu cầu thấp, xuất huyết dưới da', N'Truyền dịch, điều trị hỗ trợ'),
+('MR0034', 'PA0013', 'ST0004', '2024-08-11', N'Viêm phổi', N'Khó thở nhẹ, X-quang phát hiện viêm phổi nhẹ', N'Dùng thuốc kháng sinh và thuốc giảm ho');
 
+
+INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan)
+VALUES
+('MR0035', 'PA0002', 'ST0002', '2024-11-30', N'Covid-19', N'Xét nghiệm PCR dương tính, sốt, khó thở', N'Chăm sóc tại nhà, uống thuốc hạ sốt'),
+('MR0036', 'PA0003', 'ST0003', '2024-12-01', N'Viêm phổi', N'Khó thở, ho có đờm, đau ngực', N'Dùng kháng sinh, nghỉ ngơi'),
+('MR0037', 'PA0004', 'ST0001', '2024-12-02', N'Cảm cúm', N'Sốt cao, đau đầu, nghẹt mũi', N'Uống thuốc giảm đau, xịt mũi'),
+('MR0038', 'PA0005', 'ST0002', '2024-12-03', N'Covid-19', N'Khó thở, ho, mệt mỏi', N'Chăm sóc tại nhà, điều trị triệu chứng'),
+('MR0039', 'PA0006', 'ST0004', '2024-12-04', N'Viêm phổi', N'Phổi tổn thương nhẹ, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'),
+('MR0040', 'PA0007', 'ST0003', '2024-12-05', N'Cảm cúm', N'Ho, đau họng, sốt nhẹ', N'Uống thuốc giảm đau, uống nhiều nước'),
+('MR0041', 'PA0008', 'ST0005', '2024-12-06', N'Covid-19', N'Xét nghiệm PCR dương tính, mệt mỏi', N'Chăm sóc tại nhà, điều trị hỗ trợ'),
+('MR0042', 'PA0009', 'ST0002', '2024-12-07', N'Viêm phổi', N'Khó thở, ho nhiều, đau ngực', N'Kháng sinh, theo dõi tại bệnh viện'),
+('MR0043', 'PA0010', 'ST0004', '2024-12-08', N'Cảm cúm', N'Sốt cao, ho, đau cơ', N'Uống thuốc hạ sốt, nghỉ ngơi'),
+('MR0044', 'PA0011', 'ST0001', '2024-12-09', N'Covid-19', N'Mệt mỏi, ho, sốt nhẹ', N'Chăm sóc tại nhà, thuốc giảm sốt'),
+('MR0045', 'PA0012', 'ST0002', '2024-12-10', N'Viêm phổi', N'Phổi có dấu hiệu viêm, ho, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'),
+('MR0046', 'PA0013', 'ST0003', '2024-12-11', N'Cảm cúm', N'Ho, sốt, đau họng', N'Uống thuốc hạ sốt, xịt mũi'),
+('MR0047', 'PA0014', 'ST0005', '2024-12-12', N'Covid-19', N'Mệt mỏi, khó thở nhẹ', N'Chăm sóc tại nhà, thuốc giảm đau'),
+('MR0048', 'PA0015', 'ST0004', '2024-12-13', N'Viêm phổi', N'Khó thở, đau ngực, ho khan', N'Kháng sinh, nghỉ ngơi tại bệnh viện'),
+('MR0049', 'PA0016', 'ST0001', '2024-12-14', N'Cảm cúm', N'Sốt, ho, mệt mỏi', N'Uống thuốc giảm đau, uống nhiều nước'),
+('MR0050', 'PA0017', 'ST0002', '2024-12-14', N'Covid-19', N'Mệt mỏi, khó thở nhẹ, ho', N'Chăm sóc tại nhà, điều trị triệu chứng'),
+('MR0051', 'PA0001', 'ST0001', '2024-11-30', N'Cảm cúm', N'Sốt, ho khan, mệt mỏi', N'Ist, uống thuốc hạ sốt, nghỉ ngơi');
