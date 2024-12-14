@@ -224,14 +224,14 @@ VALUES
 ('BI0004', 'MR0004', 'ST0004', '2024-12-06', N'Tiền mặt', 280000)
 
 -- Chèn dữ liệu vào bảng BILLDETAIL
-INSERT INTO BILLDETAIL (TransactionID, MedicationID, Amount)
+INSERT INTO BILLDETAIL (TransactionID,MedicationID, MedicationName, Amount)
 VALUES
-('BI0001', 'ME0001', 2),
-('BI0001', 'ME0002', 3),
-('BI0002', 'ME0003', 1),
-('BI0003', 'ME0004', 5),
-('BI0003', 'ME0005', 2),
-('BI0004', 'ME0006', 4);
+('BI0001', 'ME0001', 'Paracetamol', 2),
+('BI0001', 'ME0002', 'Amoxicillin',3),
+('BI0002', 'ME0003', 'Ciprofloxacin',1),
+('BI0003', 'ME0004', 'Ibuprofen',5),
+('BI0003', 'ME0005', 'Omeprazole',2),
+('BI0004', 'ME0006', 'Diclofenac',4);
 
 
 
