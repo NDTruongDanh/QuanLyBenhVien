@@ -62,7 +62,7 @@ namespace QuanLyBenhVien
                         adapter.Fill(dt);
 
                         // Hiển thị dữ liệu lên DataGridView
-                        dataGridView1.DataSource = dt;
+                        dgvExpireInfo.DataSource = dt;
 
                         // Thông báo
                      //   MessageBox.Show($"Đã tải danh sách các thuốc còn hạn trong {soNgay} ngày.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -77,21 +77,16 @@ namespace QuanLyBenhVien
 
         private void KiemtraHANTHUOC_Load(object sender, EventArgs e)
         {
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14, FontStyle.Bold);
+            dgvExpireInfo.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14, FontStyle.Bold);
 
             // Chỉnh font cho nội dung các ô
-            dataGridView1.DefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Regular);
+            dgvExpireInfo.DefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Regular);
 
             // Chỉnh chiều cao của dòng
-            dataGridView1.RowTemplate.Height = 30;
+            dgvExpireInfo.RowTemplate.Height = 30;
         }
 
-       
-
-      
-       
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnExpired_Click(object sender, EventArgs e)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -116,7 +111,7 @@ namespace QuanLyBenhVien
                         adapter.Fill(dt);
 
                         // Hiển thị dữ liệu lên DataGridView
-                        dataGridView1.DataSource = dt;
+                        dgvExpireInfo.DataSource = dt;
 
                         // Thông báo
                         //   MessageBox.Show($"Đã tải danh sách các thuốc còn hạn trong {soNgay} ngày.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
