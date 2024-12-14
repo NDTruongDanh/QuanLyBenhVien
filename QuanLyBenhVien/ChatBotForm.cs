@@ -15,7 +15,7 @@ namespace QuanLyBenhVien
     public partial class ChatBotForm : Form
     {
         IChatClient client =
-            new OllamaChatClient(new Uri("http://localhost:11434/"), "llama3.2");
+            new OllamaChatClient(new Uri("http://localhost:11434/"), "llama3.2:3b");
         List<ChatMessage> chatHistory = new List<ChatMessage>();
         public ChatBotForm()
         {
