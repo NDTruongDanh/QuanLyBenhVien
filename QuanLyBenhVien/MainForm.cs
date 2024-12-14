@@ -158,5 +158,11 @@ namespace QuanLyBenhVien
             KiemtraHANTHUOC ktht = new KiemtraHANTHUOC();
             ktht.Show();
         }
+
+        private void btnWarning_Click(object sender, EventArgs e)
+        {
+            EpidemicSituation epidemic = new EpidemicSituation();
+            epidemic.Show();
+        }
     }
 }
