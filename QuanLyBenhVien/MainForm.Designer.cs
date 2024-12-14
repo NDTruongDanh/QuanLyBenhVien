@@ -52,12 +52,12 @@
             this.btnMonthIncomeReport = new System.Windows.Forms.ToolStripMenuItem();
             this.btnYearIncomeReport = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
-            this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl = new System.Windows.Forms.TabControl();
             this.cảnhBáoDịchBệnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnmonANDyearDisease = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMonthDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnYearDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
+            this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +73,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1008, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,7 +83,7 @@
             this.btnLogout,
             this.btnExit});
             this.btnFunction.Name = "btnFunction";
-            this.btnFunction.Size = new System.Drawing.Size(93, 24);
+            this.btnFunction.Size = new System.Drawing.Size(93, 26);
             this.btnFunction.Text = "Chức năng";
             // 
             // btnLogout
@@ -107,7 +107,7 @@
             this.btnDepartment,
             this.btnMedicine});
             this.btnCatalogue.Name = "btnCatalogue";
-            this.btnCatalogue.Size = new System.Drawing.Size(90, 24);
+            this.btnCatalogue.Size = new System.Drawing.Size(90, 26);
             this.btnCatalogue.Text = "Danh mục";
             // 
             // btnPatient
@@ -160,7 +160,7 @@
             this.btnBill,
             this.btnAppointment});
             this.btnManager.Name = "btnManager";
-            this.btnManager.Size = new System.Drawing.Size(73, 24);
+            this.btnManager.Size = new System.Drawing.Size(73, 26);
             this.btnManager.Text = "Quản lý";
             // 
             // btnBill
@@ -186,7 +186,7 @@
             this.btnIncomeReport,
             this.btnDiseaseStat});
             this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Size = new System.Drawing.Size(84, 24);
+            this.btnStatistic.Size = new System.Drawing.Size(84, 26);
             this.btnStatistic.Text = "Thống kê";
             // 
             // btnMedicineStat
@@ -237,14 +237,14 @@
             // btnMonthIncomeReport
             // 
             this.btnMonthIncomeReport.Name = "btnMonthIncomeReport";
-            this.btnMonthIncomeReport.Size = new System.Drawing.Size(224, 26);
+            this.btnMonthIncomeReport.Size = new System.Drawing.Size(133, 26);
             this.btnMonthIncomeReport.Text = "Tháng";
             this.btnMonthIncomeReport.Click += new System.EventHandler(this.btnMonthIncomeReport_Click);
             // 
             // btnYearIncomeReport
             // 
             this.btnYearIncomeReport.Name = "btnYearIncomeReport";
-            this.btnYearIncomeReport.Size = new System.Drawing.Size(224, 26);
+            this.btnYearIncomeReport.Size = new System.Drawing.Size(133, 26);
             this.btnYearIncomeReport.Text = "Năm";
             this.btnYearIncomeReport.Click += new System.EventHandler(this.btnYearIncomeReport_Click);
             // 
@@ -257,23 +257,6 @@
             this.btnDiseaseStat.Size = new System.Drawing.Size(226, 26);
             this.btnDiseaseStat.Text = "Tình hình Bệnh";
             this.btnDiseaseStat.Click += new System.EventHandler(this.btnWarning_Click);
-            // 
-            // trợLýẢoToolStripMenuItem
-            // 
-            this.trợLýẢoToolStripMenuItem.Name = "trợLýẢoToolStripMenuItem";
-            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
-            this.trợLýẢoToolStripMenuItem.Text = "Trợ lý ảo ";
-            this.trợLýẢoToolStripMenuItem.Click += new System.EventHandler(this.btnAIChatBot_Click);
-            // 
-            // tabControl
-            // 
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.HotTrack = true;
-            this.tabControl.Location = new System.Drawing.Point(0, 28);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1008, 573);
-            this.tabControl.TabIndex = 1;
             // 
             // cảnhBáoDịchBệnhToolStripMenuItem
             // 
@@ -293,15 +276,32 @@
             // btnMonthDiseaseStat
             // 
             this.btnMonthDiseaseStat.Name = "btnMonthDiseaseStat";
-            this.btnMonthDiseaseStat.Size = new System.Drawing.Size(224, 26);
+            this.btnMonthDiseaseStat.Size = new System.Drawing.Size(133, 26);
             this.btnMonthDiseaseStat.Text = "Tháng";
             this.btnMonthDiseaseStat.Click += new System.EventHandler(this.btnMonthDiseaseStat_Click);
             // 
             // btnYearDiseaseStat
             // 
             this.btnYearDiseaseStat.Name = "btnYearDiseaseStat";
-            this.btnYearDiseaseStat.Size = new System.Drawing.Size(224, 26);
+            this.btnYearDiseaseStat.Size = new System.Drawing.Size(133, 26);
             this.btnYearDiseaseStat.Text = "Năm";
+            // 
+            // trợLýẢoToolStripMenuItem
+            // 
+            this.trợLýẢoToolStripMenuItem.Name = "trợLýẢoToolStripMenuItem";
+            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.trợLýẢoToolStripMenuItem.Text = "Trợ lý ảo ";
+            this.trợLýẢoToolStripMenuItem.Click += new System.EventHandler(this.btnAIChatBot_Click);
+            // 
+            // tabControl
+            // 
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.HotTrack = true;
+            this.tabControl.Location = new System.Drawing.Point(0, 30);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1008, 571);
+            this.tabControl.TabIndex = 1;
             // 
             // MainForm
             // 
