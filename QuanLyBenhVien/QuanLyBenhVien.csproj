@@ -90,6 +90,12 @@
     <Compile Include="Appointment.Designer.cs">
       <DependentUpon>Appointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="BenhTheoThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BenhTheoThang.Designer.cs">
+      <DependentUpon>BenhTheoThang.cs</DependentUpon>
+    </Compile>
     <Compile Include="BillDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
