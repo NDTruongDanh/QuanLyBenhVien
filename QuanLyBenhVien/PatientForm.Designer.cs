@@ -327,7 +327,7 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Nữ",
             "Nam"});
-            this.cmbGender.Location = new System.Drawing.Point(186, 47);
+            this.cmbGender.Location = new System.Drawing.Point(186, 51);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(342, 33);
             this.cmbGender.TabIndex = 21;

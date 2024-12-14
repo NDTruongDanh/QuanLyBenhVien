@@ -30,6 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
             this.dtpAppointmentDateTime = new System.Windows.Forms.DateTimePicker();
             this.cmbDepartmentID = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,24 +41,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtAppointmentID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.rbtnDecline = new System.Windows.Forms.RadioButton();
+            this.rbtnAccept = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddOrUpdate = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.dgvAppointment = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.rbtnAccept = new System.Windows.Forms.RadioButton();
-            this.rbtnDecline = new System.Windows.Forms.RadioButton();
-            this.btnOK = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -106,6 +106,19 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(984, 218);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(496, 144);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(238, 74);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Xử lý trạng thái";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpAppointmentDateTime
             // 
@@ -235,6 +248,79 @@
             this.label6.Text = "Mã cuộc hẹn";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.Controls.Add(this.btnOK, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(741, 147);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(240, 68);
+            this.tableLayoutPanel4.TabIndex = 25;
+            // 
+            // btnOK
+            // 
+            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOK.Location = new System.Drawing.Point(164, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(72, 60);
+            this.btnOK.TabIndex = 5;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.rbtnDecline, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.rbtnAccept, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(154, 62);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // rbtnDecline
+            // 
+            this.rbtnDecline.AutoCheck = false;
+            this.rbtnDecline.AutoSize = true;
+            this.rbtnDecline.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbtnDecline.Location = new System.Drawing.Point(3, 34);
+            this.rbtnDecline.Name = "rbtnDecline";
+            this.rbtnDecline.Size = new System.Drawing.Size(148, 25);
+            this.rbtnDecline.TabIndex = 1;
+            this.rbtnDecline.Text = "Từ chối";
+            this.rbtnDecline.UseVisualStyleBackColor = true;
+            this.rbtnDecline.CheckedChanged += new System.EventHandler(this.rbtnDecline_CheckedChanged);
+            this.rbtnDecline.Click += new System.EventHandler(this.rbtnDecline_Click);
+            // 
+            // rbtnAccept
+            // 
+            this.rbtnAccept.AutoCheck = false;
+            this.rbtnAccept.AutoSize = true;
+            this.rbtnAccept.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbtnAccept.Location = new System.Drawing.Point(3, 3);
+            this.rbtnAccept.Name = "rbtnAccept";
+            this.rbtnAccept.Size = new System.Drawing.Size(148, 25);
+            this.rbtnAccept.TabIndex = 0;
+            this.rbtnAccept.Text = "Chấp thuận";
+            this.rbtnAccept.UseVisualStyleBackColor = true;
+            this.rbtnAccept.CheckedChanged += new System.EventHandler(this.rbtnAccept_CheckedChanged);
+            this.rbtnAccept.Click += new System.EventHandler(this.rbtnAccept_Click);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 4;
@@ -251,7 +337,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(984, 50);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
@@ -318,98 +404,13 @@
             this.dgvAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAppointment.Location = new System.Drawing.Point(3, 283);
             this.dgvAppointment.Name = "dgvAppointment";
+            this.dgvAppointment.ReadOnly = true;
             this.dgvAppointment.RowHeadersWidth = 51;
             this.dgvAppointment.RowTemplate.Height = 24;
             this.dgvAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAppointment.Size = new System.Drawing.Size(984, 274);
             this.dgvAppointment.TabIndex = 2;
             this.dgvAppointment.SelectionChanged += new System.EventHandler(this.dgvAppointment_SelectionChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(496, 144);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(238, 74);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Xử lý trạng thái";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Controls.Add(this.btnOK, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(741, 147);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(240, 68);
-            this.tableLayoutPanel4.TabIndex = 25;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.rbtnDecline, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.rbtnAccept, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(153, 62);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // rbtnAccept
-            // 
-            this.rbtnAccept.AutoCheck = false;
-            this.rbtnAccept.AutoSize = true;
-            this.rbtnAccept.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbtnAccept.Location = new System.Drawing.Point(3, 3);
-            this.rbtnAccept.Name = "rbtnAccept";
-            this.rbtnAccept.Size = new System.Drawing.Size(147, 25);
-            this.rbtnAccept.TabIndex = 0;
-            this.rbtnAccept.Text = "Chấp thuận";
-            this.rbtnAccept.UseVisualStyleBackColor = true;
-            this.rbtnAccept.CheckedChanged += new System.EventHandler(this.rbtnAccept_CheckedChanged);
-            this.rbtnAccept.Click += new System.EventHandler(this.rbtnAccept_Click);
-            // 
-            // rbtnDecline
-            // 
-            this.rbtnDecline.AutoCheck = false;
-            this.rbtnDecline.AutoSize = true;
-            this.rbtnDecline.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbtnDecline.Location = new System.Drawing.Point(3, 34);
-            this.rbtnDecline.Name = "rbtnDecline";
-            this.rbtnDecline.Size = new System.Drawing.Size(147, 25);
-            this.rbtnDecline.TabIndex = 1;
-            this.rbtnDecline.Text = "Từ chối";
-            this.rbtnDecline.UseVisualStyleBackColor = true;
-            this.rbtnDecline.CheckedChanged += new System.EventHandler(this.rbtnDecline_CheckedChanged);
-            this.rbtnDecline.Click += new System.EventHandler(this.rbtnDecline_Click);
-            // 
-            // btnOK
-            // 
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(163, 4);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(73, 60);
-            this.btnOK.TabIndex = 5;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
             // 
             // Appointment
             // 
@@ -422,11 +423,11 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).EndInit();
             this.ResumeLayout(false);
 
         }

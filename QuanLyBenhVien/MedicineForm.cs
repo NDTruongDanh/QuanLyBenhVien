@@ -122,13 +122,26 @@ namespace QuanLyBenhVien
                 {
                     conn.Open();
 
-                    string query = "SELECT \r\n    thuoc.MedicationID AS \"Mã thuốc\", \r\n    thuoc.MedicationName AS \"Tên thuốc\", \r\n    thuoc.Dosage AS \"Liều lượng\", \r\n    thuoc.Category AS \"Loại thuốc\", \r\n    thuoc.QuantityInStock AS \"Số lượng tồn kho\", \r\n    thuoc.Price AS \"Giá\", \r\n    thuoc.ExpiryDate AS \"Ngày hết hạn\", \r\n    thuoc.ManufacturingDate AS \"Ngày sản xuất\", \r\n    thuoc.Manufacturer AS \"Nhà sản xuất\"\r\nFROM \r\n    MEDICATION AS thuoc\r\n WHERE 1=1";
+                    string query = @"SELECT 
+                        thuoc.MedicationID AS ""Mã thuốc"", 
+                        thuoc.MedicationName AS ""Tên thuốc"", 
+                        thuoc.Dosage AS ""Liều lượng"", 
+                        thuoc.DosageUnit AS ""Đơn vị tính"",
+                        thuoc.Category AS ""Loại thuốc"", 
+                        thuoc.QuantityInStock AS ""Số lượng tồn kho"", 
+                        thuoc.Price AS ""Giá"", 
+                        thuoc.ExpiryDate AS ""Ngày hết hạn"", 
+                        thuoc.ManufacturingDate AS ""Ngày sản xuất"", 
+                        thuoc.Manufacturer AS ""Nhà sản xuất""
+                    FROM 
+                        MEDICATION AS thuoc
+                     WHERE 1=1";
                     var parameters = new Dictionary<string, object>();
 
                     if (!string.IsNullOrEmpty(txtMedicationID.Text))
                     {
-                        query += " AND MedicationID LIKE @MedicationID";
-                        parameters.Add("@MedicationID", $"%{txtMedicationID.Text.Trim()}%");
+                        query += " AND MedicationID = @MedicationID";
+                        parameters.Add("@MedicationID", txtMedicationID.Text);
                     }
                     if (!string.IsNullOrEmpty(txtMedicationName.Text))
                     {
@@ -142,8 +155,8 @@ namespace QuanLyBenhVien
                     }
                     if (!string.IsNullOrEmpty(cmbDosageUnit.Text))
                     {
-                        query += " AND DosageUnit LIKE @DosageUnit";
-                        parameters.Add("@DosageUnit", $"%{cmbDosageUnit.Text.Trim()}%");
+                        query += " AND DosageUnit = @DosageUnit";
+                        parameters.Add("@DosageUnit", cmbDosageUnit.Text);
                     }
 
                     using (SqlCommand command = new SqlCommand(query, conn))

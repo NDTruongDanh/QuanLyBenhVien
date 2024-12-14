@@ -137,7 +137,7 @@ namespace QuanLyBenhVien
                 {
                     conn.Open();
 
-                    string query = "SELECT MedicationID AS [Mã thuốc], Amount As[Số lượng] FROM BILLDETAIL WHERE 1=1";
+                    string query = $"SELECT MedicationID AS [Mã thuốc], Amount As[Số lượng] FROM BILLDETAIL WHERE TransactionID = '{lblTransactionID.Text}'";
                     var parameters = new Dictionary<string, object>();
 
                     if (!string.IsNullOrEmpty(cmbMedicationID.Text))
