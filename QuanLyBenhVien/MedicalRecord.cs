@@ -180,7 +180,7 @@ namespace QuanLyBenhVien
                     if (!string.IsNullOrEmpty(cmbPatientID.Text))
                     {
                         query += " AND PatientID = @PatientID";
-                        parameters.Add("@PatientID", cmbDoctorID.Text);
+                        parameters.Add("@PatientID", cmbPatientID.Text);
                     }
 
                     using (SqlCommand command = new SqlCommand(query, conn))
