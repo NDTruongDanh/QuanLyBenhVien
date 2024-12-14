@@ -21,6 +21,7 @@ namespace QuanLyBenhVien
         {
             InitializeComponent();
             InitializeAI();
+            txtPrompt.Focus();
         }
         
 
@@ -65,6 +66,7 @@ namespace QuanLyBenhVien
                     txtPrompt.ReadOnly = false;
                     AppendFormattedText("\nChatbot:\n", Color.Green, FontStyle.Bold);
                     AppendFormattedText(FormatResponse(chatbotResponse) + Environment.NewLine, Color.Black, FontStyle.Regular);
+                    txtPrompt.Focus();
                 }
             }
             catch (Exception ex)
