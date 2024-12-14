@@ -102,7 +102,7 @@ namespace QuanLyBenhVien
                             )
                             BEGIN
                                 UPDATE BILLDETAIL 
-                                SET Amount = 1 
+                                SET Amount = {txtAmount.Text}
                                 WHERE TransactionID = '{lblTransactionID.Text}' 
                                   AND MedicationID = '{cmbMedicationID.Text}';
                             END
@@ -115,7 +115,7 @@ namespace QuanLyBenhVien
                                 WHERE MedicationID = '{cmbMedicationID.Text}';
 
                                 INSERT INTO BILLDETAIL (TransactionID, MedicationID, MedicationName, Amount) 
-                                VALUES ('{lblTransactionID.Text}', '{cmbMedicationID.Text}', @MedicationName, 1);
+                                VALUES ('{lblTransactionID.Text}', '{cmbMedicationID.Text}', @MedicationName, {txtAmount.Text});
                             END";
 
             var parameters = new Dictionary<string, object>
