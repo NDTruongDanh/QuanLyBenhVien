@@ -68,7 +68,7 @@ namespace QuanLyBenhVien
             AddFormToTab(medStatForm, medStatForm.Text);
         }
 
-        private void khoaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnDepartment_Click(object sender, EventArgs e)
         {
             DepartmentForm departmentForm = new DepartmentForm();
             AddFormToTab(departmentForm, departmentForm.Text);
@@ -87,13 +87,13 @@ namespace QuanLyBenhVien
         }
 
 
-        private void thángToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnMonthIncomeReport_Click(object sender, EventArgs e)
         {
             DoanhthuTHANG dtt = new DoanhthuTHANG();
             dtt.Show();
         }
 
-        private void nămToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnYearIncomeReport_Click(object sender, EventArgs e)
         {
             DoanhthuNAM dtn = new DoanhthuNAM();
             dtn.Show();
@@ -104,19 +104,19 @@ namespace QuanLyBenhVien
             AddFormToTab(chatBotForm, chatBotForm.Text);
         }
 
-        private void lịchKhámToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnAppointment_Click(object sender, EventArgs e)
         {
             Appointment appointment = new Appointment();
             AddFormToTab(appointment, appointment.Text);
         }
 
-        private void tồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnQuantityInStock_Click(object sender, EventArgs e)
         {
             KiemtraThuocTonKho ktt = new KiemtraThuocTonKho();
             ktt.Show();
         }
 
-        private void hạnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnExpired_Click(object sender, EventArgs e)
         {
             KiemtraHANTHUOC ktht = new KiemtraHANTHUOC();
             ktht.Show();
