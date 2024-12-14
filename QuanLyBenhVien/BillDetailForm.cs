@@ -62,7 +62,7 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = $"SELECT MedicationID AS [Mã thuốc], Amount AS[Số lượng] FROM BILLDETAIL WHERE TransactionID = '{lblTransactionID.Text}'";
+                    string sql = $"SELECT MedicationID AS [Mã thuốc], MedicationName AS [Tên thuốc],Amount AS[Số lượng] FROM BILLDETAIL WHERE TransactionID = '{lblTransactionID.Text}'";
                     var adapter = new SqlDataAdapter(sql, conn);
                     var dataset = new DataSet();
                     adapter.Fill(dataset, "BILLDETAIL");
@@ -94,10 +94,29 @@ namespace QuanLyBenhVien
                 return;
             }
 
-            string query = $@"IF EXISTS (SELECT 1 FROM BILLDETAIL WHERE TransactionID = '{lblTransactionID.Text}' AND MedicationID = '{cmbMedicationID.Text}')
-                     UPDATE BILLDETAIL SET Amount = {txtAmount.Text} WHERE MedicationID = '{cmbMedicationID.Text}'
-                     ELSE
-                     INSERT INTO BILLDETAIL (TransactionID, MedicationID, Amount) VALUES ('{lblTransactionID.Text}', '{cmbMedicationID.Text}', {txtAmount.Text})";
+            string query = $@"IF EXISTS (
+                            SELECT 1 
+                            FROM BILLDETAIL 
+                            WHERE TransactionID = '{lblTransactionID.Text}' 
+                              AND MedicationID = '{cmbMedicationID.Text}'
+                            )
+                            BEGIN
+                                UPDATE BILLDETAIL 
+                                SET Amount = 1 
+                                WHERE TransactionID = '{lblTransactionID.Text}' 
+                                  AND MedicationID = '{cmbMedicationID.Text}';
+                            END
+                            ELSE
+                            BEGIN
+                                DECLARE @MedicationName NVARCHAR(255);
+
+                                SELECT @MedicationName = MedicationName
+                                FROM MEDICATION
+                                WHERE MedicationID = '{cmbMedicationID.Text}';
+
+                                INSERT INTO BILLDETAIL (TransactionID, MedicationID, MedicationName, Amount) 
+                                VALUES ('{lblTransactionID.Text}', '{cmbMedicationID.Text}', @MedicationName, 1);
+                            END";
 
             var parameters = new Dictionary<string, object>
             {
@@ -184,7 +203,7 @@ namespace QuanLyBenhVien
                 DataGridViewRow selectedRow = dgvBillDetail.SelectedRows[0];
 
                 cmbMedicationID.Text = selectedRow.Cells[0].Value.ToString();
-                txtAmount.Text = selectedRow.Cells[1].Value.ToString();
+                txtAmount.Text = selectedRow.Cells[2].Value.ToString();
             }
         }
 
