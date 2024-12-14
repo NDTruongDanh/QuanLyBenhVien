@@ -38,6 +38,8 @@ namespace QuanLyBenhVien
             // Tính ngày kiểm tra (ngày hiện tại + N ngày)
             DateTime ngayCanKiemTra = DateTime.Now.AddDays(soNgay);
 
+            DateTime now = DateTime.Now;
+            string ngayHientai = now.ToString("yyyy-MM-dd");
             // Kết nối SQL Server và truy vấn dữ liệu
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -46,13 +48,14 @@ namespace QuanLyBenhVien
                     conn.Open();
 
                     // Câu truy vấn SQL
-                    string query = "SELECT MedicationID,MedicationName, ExpiryDate FROM Medication WHERE ExpiryDate <= @NgayCanKiemTra";
+                    string query = $"SELECT MedicationID,MedicationName, ExpiryDate FROM MEDICATION WHERE ExpiryDate >= @ngayHientai AND ExpiryDate <= @NgayCanKiemTra";
 
                     // Thực thi truy vấn
                     using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
                     {
                         // Thêm tham số cho câu lệnh SQL
                         adapter.SelectCommand.Parameters.AddWithValue("@NgayCanKiemTra", ngayCanKiemTra);
+                        adapter.SelectCommand.Parameters.AddWithValue("@ngayHientai", ngayHientai);
 
                         // Đổ dữ liệu vào DataTable
                         DataTable dt = new DataTable();
@@ -81,6 +84,50 @@ namespace QuanLyBenhVien
 
             // Chỉnh chiều cao của dòng
             dataGridView1.RowTemplate.Height = 30;
+        }
+
+       
+
+      
+       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Câu truy vấn SQL
+                    string query = $"SELECT MedicationID,MedicationName, ExpiryDate FROM MEDICATION WHERE ExpiryDate < @ngayHientai";
+
+                    DateTime now = DateTime.Now;
+                    string ngayHientai = now.ToString("yyyy-MM-dd");
+                    // Thực thi truy vấn
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
+                    {
+                        // Thêm tham số cho câu lệnh SQL
+                       
+                        adapter.SelectCommand.Parameters.AddWithValue("@ngayHientai", ngayHientai);
+
+                        // Đổ dữ liệu vào DataTable
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        // Hiển thị dữ liệu lên DataGridView
+                        dataGridView1.DataSource = dt;
+
+                        // Thông báo
+                        //   MessageBox.Show($"Đã tải danh sách các thuốc còn hạn trong {soNgay} ngày.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
     }
 }
