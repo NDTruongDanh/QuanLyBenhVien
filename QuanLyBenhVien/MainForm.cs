@@ -12,9 +12,21 @@ namespace QuanLyBenhVien
 {
     public partial class MainForm : Form
     {
+        private ContextMenuStrip contextMenu; 
+
         public MainForm()
         {
             InitializeComponent();
+            InitializeTabControl();
+        }
+
+        private void InitializeTabControl()
+        {
+            contextMenu = new ContextMenuStrip();
+            ToolStripMenuItem closeTabMenuItem = new ToolStripMenuItem("Close Tab");
+            closeTabMenuItem.Click += CloseTabMenuItem_Click;
+            contextMenu.Items.Add(closeTabMenuItem);
+            tabControl.MouseUp += TabControl_MouseUp;
         }
 
         private void AddFormToTab(Form childForm, string tabName)
@@ -36,6 +48,31 @@ namespace QuanLyBenhVien
             childForm.Size = tabControl.Size;
             childForm.Show();
             tabControl.SelectedTab = tabPage;
+        }
+
+        private void TabControl_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                // Identify the tab under the mouse pointer
+                for (int i = 0; i < tabControl.TabPages.Count; i++)
+                {
+                    if (tabControl.GetTabRect(i).Contains(e.Location))
+                    {
+                        tabControl.SelectedIndex = i; // Select the tab
+                        contextMenu.Show(tabControl, e.Location); // Show the context menu
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void CloseTabMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabControl.SelectedTab != null)
+            {
+                tabControl.TabPages.Remove(tabControl.SelectedTab); // Close the selected tab
+            }
         }
 
         private void btnPatient_Click(object sender, EventArgs e)
@@ -86,7 +123,6 @@ namespace QuanLyBenhVien
             AddFormToTab(medicalRecord, medicalRecord.Text);
         }
 
-
         private void btnMonthIncomeReport_Click(object sender, EventArgs e)
         {
             DoanhthuTHANG dtt = new DoanhthuTHANG();
@@ -98,6 +134,7 @@ namespace QuanLyBenhVien
             DoanhthuNAM dtn = new DoanhthuNAM();
             dtn.Show();
         }
+
         private void btnAIChatBot_Click(object sender, EventArgs e)
         {
             ChatBotForm chatBotForm = new ChatBotForm();
