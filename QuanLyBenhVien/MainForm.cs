@@ -164,5 +164,11 @@ namespace QuanLyBenhVien
             EpidemicSituation epidemic = new EpidemicSituation();
             epidemic.Show();
         }
+
+        private void btnMonthDiseaseStat_Click(object sender, EventArgs e)
+        {
+            BenhTheoThang btt = new BenhTheoThang();
+            btt.Show();
+        }
     }
 }
