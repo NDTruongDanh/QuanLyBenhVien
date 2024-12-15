@@ -139,7 +139,7 @@ namespace QuanLyBenhVien
                         double changeRate = previous.CaseCount == 0 ? (current.CaseCount > 0 ? 100 : 0) : ((current.CaseCount - previous.CaseCount) / (double)previous.CaseCount) * 100;
 
                         //If the change rate exceeds the threshold, notify
-                        //if (changeRate >= threshold)
+                        if (changeRate >= threshold)
                         {
                             return new
                             {
@@ -150,7 +150,7 @@ namespace QuanLyBenhVien
                             };
                         }
 
-                        //return null;
+                        return null;
                     }).Where(x => x != null).ToList();
                 }).ToList();
 

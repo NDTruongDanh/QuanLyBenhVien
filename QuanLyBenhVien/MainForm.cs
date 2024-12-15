@@ -165,10 +165,17 @@ namespace QuanLyBenhVien
             epidemic.Show();
         }
 
+
         private void btnWeeklyAssignment_Click(object sender, EventArgs e)
         {
             WeeklyAssignmentForm weeklyAssignment = new WeeklyAssignmentForm();
             AddFormToTab(weeklyAssignment, weeklyAssignment.Text);
+
+        private void btnMonthDiseaseStat_Click(object sender, EventArgs e)
+        {
+            BenhTheoThang btt = new BenhTheoThang();
+            btt.Show();
+
         }
     }
 }
