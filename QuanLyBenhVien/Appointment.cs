@@ -166,7 +166,7 @@ namespace QuanLyBenhVien
                      INSERT INTO APPOINTMENT 
                      (AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDateTime, AppointmentStatus)
                      VALUES 
-                     (@AppointmentID, @PatientID, @DoctorID, @DepartmentID, @AppointmentDateTime, 'Đang chờ xử lý')";
+                     (@AppointmentID, @PatientID, @DoctorID, @DepartmentID, @AppointmentDateTime, N'Đang chờ xử lý')";
 
                     var parameters = new Dictionary<string, object>
             {
@@ -220,6 +220,17 @@ namespace QuanLyBenhVien
                         query += " AND PatientID = @PatientID";
                         parameters.Add("@PatientID", cmbPatientID.Text);
                     }
+                    if (!string.IsNullOrEmpty(cmbDoctorID.Text))
+                    {
+                        query += " AND DoctorID = @DoctorID";
+                        parameters.Add("@DoctorID", cmbDoctorID.Text);
+                    }
+                    if (!string.IsNullOrEmpty(cmbDepartmentID.Text))
+                    {
+                        query += " AND DepartmentID = @DepartmentID";
+                        parameters.Add("@DepartmentID", cmbDepartmentID.Text);
+                    }
+
 
                     string status = Status();
                     query += $" AND AppointmentStatus = @AppointmentStatus";
@@ -262,6 +273,16 @@ namespace QuanLyBenhVien
                 cmbDoctorID.Text = selectedRow.Cells[2].Value.ToString();
                 cmbDepartmentID.Text = selectedRow.Cells[3].Value.ToString();
                 dtpAppointmentDateTime.Text = selectedRow.Cells[4].Value.ToString();
+
+                if (selectedRow.Cells[5].Value.ToString() == "Chấp thuận")
+                    rbtnAccept.Checked = true;
+                else if(selectedRow.Cells[5].Value.ToString() == "Từ chối")
+                    rbtnDecline.Checked = true;
+                else
+                {
+                    rbtnDecline.Checked = false;
+                    rbtnAccept.Checked = false;
+                }
             }
         }
 
@@ -300,6 +321,25 @@ namespace QuanLyBenhVien
             else if (rbtnDecline.Checked)
                 return "Từ chối";
             return "Đang chờ xử lý";
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            string query = @"UPDATE APPOINTMENT 
+                         SET AppointmentStatus = @AppointmentStatus
+                         WHERE AppointmentID = @AppointmentID";
+                       
+            
+
+            var parameters = new Dictionary<string, object>
+            {
+                {"@AppointmentID", txtAppointmentID.Text},
+                {"@AppointmentStatus", Status()}
+            };
+
+            CommonQuery.ExecuteQuery(query, parameters);
+            LoadAppointments();
+            CommonControls.ResetInputFields(Parent);
         }
     }
 }
