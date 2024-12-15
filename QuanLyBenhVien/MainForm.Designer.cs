@@ -294,6 +294,7 @@
             this.btnYearDiseaseStat.Name = "btnYearDiseaseStat";
             this.btnYearDiseaseStat.Size = new System.Drawing.Size(224, 26);
             this.btnYearDiseaseStat.Text = "Năm";
+            this.btnYearDiseaseStat.Click += new System.EventHandler(this.btnYearDiseaseStat_Click);
             // 
             // trợLýẢoToolStripMenuItem
             // 

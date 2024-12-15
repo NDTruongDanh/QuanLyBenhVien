@@ -176,5 +176,11 @@ namespace QuanLyBenhVien
             BenhTheoThang btt = new BenhTheoThang();
             btt.Show();
         }
+
+        private void btnYearDiseaseStat_Click(object sender, EventArgs e)
+        {
+            BenhTheoNam btn = new BenhTheoNam();
+            btn.Show();
+        }
     }
 }

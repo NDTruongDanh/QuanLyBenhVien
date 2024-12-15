@@ -60,11 +60,11 @@ namespace QuanLyBenhVien
 
             // Query lọc dữ liệu
             string query = @"
-                SELECT YEAR(TransactionDate) AS Year,
-                       MONTH(TransactionDate) AS Month,
-                       SUM(Total) AS TotalAmount
-                FROM BILL
-                GROUP BY YEAR(TransactionDate), MONTH(TransactionDate)";
+                        SELECT YEAR(TransactionDate) AS Year,
+                        MONTH(TransactionDate) AS Month,
+                        SUM(Total) AS TotalAmount
+                        FROM BILL
+                        GROUP BY YEAR(TransactionDate), MONTH(TransactionDate)";
 
             if (years != null && years.Length > 0)
             {
@@ -102,7 +102,9 @@ namespace QuanLyBenhVien
                 Series series = new Series(year)
                 {
                     ChartType = SeriesChartType.Line,
-                    BorderWidth = 2
+                    MarkerStyle = MarkerStyle.Circle,
+                    MarkerSize = 9,
+                    BorderWidth = 3
                 };
 
                 // Thêm điểm vào Series
