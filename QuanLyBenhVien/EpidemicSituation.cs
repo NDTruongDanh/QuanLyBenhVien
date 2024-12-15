@@ -144,6 +144,8 @@ namespace QuanLyBenhVien
                             return new
                             {
                                 Diagnosis = current.Diagnosis,
+                                previousCaseCount = previous.CaseCount,
+                                currentCaseCount = current.CaseCount,
                                 PreviousPeriod = previous.Week == 0 ? previous.Month + "-" + previous.Year : GetDateFromISOWeek(previous.Year, previous.Week).ToString("dd-MM-yyyy"),
                                 CurrentPeriod = current.Week == 0 ? current.Month + "-" + current.Year : GetDateFromISOWeek(current.Year, current.Week).ToString("dd-MM-yyyy"),
                                 ChangeRate = changeRate
@@ -160,7 +162,9 @@ namespace QuanLyBenhVien
                 StringBuilder notificationMessage = new StringBuilder();
                 foreach (var record in groupedByDiagnosis)
                 {
-                    notificationMessage.AppendLine($"Loại bệnh: {record.Diagnosis} | Gia tăng từ {record.PreviousPeriod} đến {record.CurrentPeriod} | Tỷ lệ gia tăng: {record.ChangeRate:F2}%");
+                    notificationMessage.AppendLine($"Loại bệnh: {record.Diagnosis}\n" +
+                                    $"Số ca mắc bệnh tăng từ: {record.previousCaseCount} ({record.PreviousPeriod}) đến {record.currentCaseCount} ({record.CurrentPeriod})\n" +
+                                    $"Tỷ lệ gia tăng: {record.ChangeRate:F2}%\n\n");
                 }
 
                 MessageBox.Show(notificationMessage.ToString(), "Phát hiện tỷ lệ mắc bệnh gia tăng đột ngột");
@@ -174,7 +178,7 @@ namespace QuanLyBenhVien
             {
                 // Tạo chuỗi văn bản cho mỗi chẩn đoán
                 string recordText = $"Loại bệnh: {record.Diagnosis}\n" +
-                                    $"Gia tăng từ ngày: {record.PreviousPeriod} đến {record.CurrentPeriod}\n" +
+                                    $"Số ca mắc bệnh tăng từ: {record.previousCaseCount} ({record.PreviousPeriod}) đến {record.currentCaseCount} ({record.CurrentPeriod})\n" +
                                     $"Tỷ lệ gia tăng: {record.ChangeRate:F2}%\n\n";
 
                 // Thêm chuỗi văn bản vào RichTextBox
