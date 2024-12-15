@@ -311,6 +311,8 @@ namespace QuanLyBenhVien
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadAppointments();
+            rbtnAccept.Checked = false;
+            rbtnDecline.Checked = false;
             CommonControls.ResetInputFields(Parent);
         }
 
