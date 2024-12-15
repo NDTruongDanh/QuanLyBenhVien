@@ -167,25 +167,43 @@ namespace QuanLyBenhVien
                                     $"Tỷ lệ gia tăng: {record.ChangeRate:F2}%\n\n");
                 }
 
-                MessageBox.Show(notificationMessage.ToString(), "Phát hiện tỷ lệ mắc bệnh gia tăng đột ngột");
+                foreach (var record in groupedByDiagnosis)
+                {
+                   
+                    // Thêm chuỗi văn bản vào RichTextBox
+                    AppendFormattedText("Loại bệnh: ",Color.Black, FontStyle.Bold);
+                    AppendFormattedText($"{record.Diagnosis}\n", Color.Black, FontStyle.Regular);
+                    AppendFormattedText("Số ca mắc bệnh tăng từ:", Color.Black, FontStyle.Bold);
+                    AppendFormattedText($"{record.previousCaseCount} ({record.PreviousPeriod}) đến {record.currentCaseCount} ({record.CurrentPeriod})\n", Color.Black, FontStyle.Regular);
+                    AppendFormattedText("Tỷ lệ gia tăng:", Color.Black, FontStyle.Bold);
+                    AppendFormattedText($"{record.ChangeRate:F2}%\n\n", Color.Black, FontStyle.Regular);
+                }
             }
             else
             {
-                MessageBox.Show("Không phát hiện sự gia tăng bất thường.", "Dịch bệnh đang được kiểm so");
+              rtxtEpimedic.AppendText("Không phát hiện sự gia tăng bất thường.");
             }
 
-            foreach (var record in groupedByDiagnosis)
-            {
-                // Tạo chuỗi văn bản cho mỗi chẩn đoán
-                string recordText = $"Loại bệnh: {record.Diagnosis}\n" +
-                                    $"Số ca mắc bệnh tăng từ: {record.previousCaseCount} ({record.PreviousPeriod}) đến {record.currentCaseCount} ({record.CurrentPeriod})\n" +
-                                    $"Tỷ lệ gia tăng: {record.ChangeRate:F2}%\n\n";
-
-                // Thêm chuỗi văn bản vào RichTextBox
-                rtxtEpimedic.AppendText(recordText);
-            }
+            
         }
 
+        private void AppendFormattedText(string text, Color color, FontStyle fontStyle)
+        {
+            if (rtxtEpimedic.InvokeRequired)
+            {
+                rtxtEpimedic.Invoke(new Action(() => AppendFormattedText(text, color, fontStyle)));
+            }
+            else
+            {
+                rtxtEpimedic.SelectionStart = rtxtEpimedic.TextLength;
+                rtxtEpimedic.SelectionLength = 0;
+                rtxtEpimedic.SelectionColor = color;
+                rtxtEpimedic.SelectionFont = new Font(rtxtEpimedic.Font, fontStyle);
+                rtxtEpimedic.AppendText(text);
+                rtxtEpimedic.SelectionColor = rtxtEpimedic.ForeColor;
+
+            }
+        }
 
         private List<ChangeRecord> CalculateChangeRates(List<ComparisonRecord> comparison)
         {
