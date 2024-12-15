@@ -12,7 +12,7 @@ namespace QuanLyBenhVien
 {
     public partial class MainForm : Form
     {
-        private ContextMenuStrip contextMenu; 
+        private ContextMenuStrip contextMenu;
 
         public MainForm()
         {
@@ -170,12 +170,11 @@ namespace QuanLyBenhVien
         {
             WeeklyAssignmentForm weeklyAssignment = new WeeklyAssignmentForm();
             AddFormToTab(weeklyAssignment, weeklyAssignment.Text);
-
+        }
         private void btnMonthDiseaseStat_Click(object sender, EventArgs e)
         {
             BenhTheoThang btt = new BenhTheoThang();
             btt.Show();
-
         }
     }
 }

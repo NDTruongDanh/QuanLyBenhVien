@@ -42,6 +42,7 @@
             this.btnManager = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAppointment = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnWeeklyAssignment = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStatistic = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicineStat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPatientStat = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,12 +52,6 @@
             this.btnIncomeReport = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMonthIncomeReport = new System.Windows.Forms.ToolStripMenuItem();
             this.btnYearIncomeReport = new System.Windows.Forms.ToolStripMenuItem();
-
-            this.btnWarning = new System.Windows.Forms.ToolStripMenuItem();
-            this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.btnWeeklyAssignment = new System.Windows.Forms.ToolStripMenuItem();
-
             this.btnDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnWarning = new System.Windows.Forms.ToolStripMenuItem();
             this.btnmonANDyearDisease = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +59,6 @@
             this.btnYearDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
-
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,13 +73,8 @@
             this.trợLýẢoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1344, 28);
-
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 28);
-
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -190,6 +179,13 @@
             this.btnAppointment.Text = "Lịch Khám";
             this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
             // 
+            // btnWeeklyAssignment
+            // 
+            this.btnWeeklyAssignment.Name = "btnWeeklyAssignment";
+            this.btnWeeklyAssignment.Size = new System.Drawing.Size(160, 26);
+            this.btnWeeklyAssignment.Text = "Lịch trực";
+            this.btnWeeklyAssignment.Click += new System.EventHandler(this.btnWeeklyAssignment_Click);
+            // 
             // btnStatistic
             // 
             this.btnStatistic.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -261,15 +257,6 @@
             this.btnYearIncomeReport.Text = "Năm";
             this.btnYearIncomeReport.Click += new System.EventHandler(this.btnYearIncomeReport_Click);
             // 
-
-            // btnWarning
-            // 
-            this.btnWarning.Name = "btnWarning";
-            this.btnWarning.Size = new System.Drawing.Size(226, 26);
-            this.btnWarning.Text = "Cảnh báo dịch bệnh";
-            this.btnWarning.Click += new System.EventHandler(this.btnWarning_Click);
-            // 
-
             // btnDiseaseStat
             // 
             this.btnDiseaseStat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -298,17 +285,16 @@
             // btnMonthDiseaseStat
             // 
             this.btnMonthDiseaseStat.Name = "btnMonthDiseaseStat";
-            this.btnMonthDiseaseStat.Size = new System.Drawing.Size(133, 26);
+            this.btnMonthDiseaseStat.Size = new System.Drawing.Size(224, 26);
             this.btnMonthDiseaseStat.Text = "Tháng";
             this.btnMonthDiseaseStat.Click += new System.EventHandler(this.btnMonthDiseaseStat_Click);
             // 
             // btnYearDiseaseStat
             // 
             this.btnYearDiseaseStat.Name = "btnYearDiseaseStat";
-            this.btnYearDiseaseStat.Size = new System.Drawing.Size(133, 26);
+            this.btnYearDiseaseStat.Size = new System.Drawing.Size(224, 26);
             this.btnYearDiseaseStat.Text = "Năm";
             // 
-
             // trợLýẢoToolStripMenuItem
             // 
             this.trợLýẢoToolStripMenuItem.Name = "trợLýẢoToolStripMenuItem";
@@ -321,40 +307,22 @@
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.HotTrack = true;
             this.tabControl.Location = new System.Drawing.Point(0, 28);
-
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1344, 712);
             this.tabControl.TabIndex = 1;
             // 
-            // btnWeeklyAssignment
-            // 
-            this.btnWeeklyAssignment.Name = "btnWeeklyAssignment";
-            this.btnWeeklyAssignment.Size = new System.Drawing.Size(224, 26);
-            this.btnWeeklyAssignment.Text = "Lịch trực";
-            this.btnWeeklyAssignment.Click += new System.EventHandler(this.btnWeeklyAssignment_Click);
-            // 
-
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1008, 573);
-            this.tabControl.TabIndex = 1;
-            // 
-
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(1008, 601);
+            this.ClientSize = new System.Drawing.Size(1344, 740);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-
-            this.Margin = new System.Windows.Forms.Padding(4);
-
-
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "MainForm";
             this.Text = "QUẢN LÝ BỆNH VIỆN";
             this.menuStrip1.ResumeLayout(false);
