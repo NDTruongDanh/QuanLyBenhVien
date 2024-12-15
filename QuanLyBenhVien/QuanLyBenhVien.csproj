@@ -191,6 +191,12 @@
     <Compile Include="EpidemicSituation.Designer.cs">
       <DependentUpon>EpidemicSituation.cs</DependentUpon>
     </Compile>
+    <Compile Include="WeeklyAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WeeklyAssignment.Designer.cs">
+      <DependentUpon>WeeklyAssignment.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Appointment.resx">
       <DependentUpon>Appointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EpidemicSituation.resx">
       <DependentUpon>EpidemicSituation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeeklyAssignment.resx">
+      <DependentUpon>WeeklyAssignment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

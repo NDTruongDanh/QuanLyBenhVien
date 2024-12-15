@@ -164,5 +164,11 @@ namespace QuanLyBenhVien
             EpidemicSituation epidemic = new EpidemicSituation();
             epidemic.Show();
         }
+
+        private void btnWeeklyAssignment_Click(object sender, EventArgs e)
+        {
+            WeeklyAssignmentForm weeklyAssignment = new WeeklyAssignmentForm();
+            AddFormToTab(weeklyAssignment, weeklyAssignment.Text);
+        }
     }
 }
