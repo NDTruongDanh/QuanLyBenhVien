@@ -29,7 +29,7 @@ namespace QuanLyBenhVien
             string query = $@"SELECT TransactionDate AS Ngay, SUM(Total) AS DoanhThu,(SELECT SUM(Total) 
                                                                                       FROM BILL 
                                                                                       WHERE MONTH(TransactionDate) = {thang} AND YEAR(TransactionDate) = {nam})
-                                                                                        AS TongDoanhThu
+                                                                                      AS TongDoanhThu
                             FROM BILL
                             WHERE MONTH(TransactionDate) = {thang}   AND YEAR(TransactionDate)= {nam}
                             GROUP BY TransactionDate";
@@ -51,7 +51,11 @@ namespace QuanLyBenhVien
             chart1.Series.Clear();
             chart1.Series.Add("DoanhThu");
             chart1.Series["DoanhThu"].ChartType = SeriesChartType.Line;
-          
+
+            chart1.Series["DoanhThu"].MarkerStyle = MarkerStyle.Circle;
+            chart1.Series["DoanhThu"].MarkerSize = 9;
+            chart1.Series["DoanhThu"].BorderWidth = 3;
+
 
             foreach (DataRow row in dt.Rows)
             {

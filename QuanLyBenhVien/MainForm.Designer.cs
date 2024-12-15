@@ -276,15 +276,16 @@
             // btnMonthDiseaseStat
             // 
             this.btnMonthDiseaseStat.Name = "btnMonthDiseaseStat";
-            this.btnMonthDiseaseStat.Size = new System.Drawing.Size(133, 26);
+            this.btnMonthDiseaseStat.Size = new System.Drawing.Size(224, 26);
             this.btnMonthDiseaseStat.Text = "Tháng";
             this.btnMonthDiseaseStat.Click += new System.EventHandler(this.btnMonthDiseaseStat_Click);
             // 
             // btnYearDiseaseStat
             // 
             this.btnYearDiseaseStat.Name = "btnYearDiseaseStat";
-            this.btnYearDiseaseStat.Size = new System.Drawing.Size(133, 26);
+            this.btnYearDiseaseStat.Size = new System.Drawing.Size(224, 26);
             this.btnYearDiseaseStat.Text = "Năm";
+            this.btnYearDiseaseStat.Click += new System.EventHandler(this.btnYearDiseaseStat_Click);
             // 
             // trợLýẢoToolStripMenuItem
             // 

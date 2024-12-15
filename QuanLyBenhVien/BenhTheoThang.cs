@@ -64,8 +64,18 @@ namespace QuanLyBenhVien
                 DataTable dt = LayDuLieuLoaiBenh(loaiBenh, thang, nam);
 
                 // Tạo Series cho mỗi loại bệnh
-                Series series = new Series(loaiBenh);
-                series.ChartType = SeriesChartType.Line;
+                Series series = new Series(loaiBenh)
+                {
+                    //ChartType = SeriesChartType.Line,
+                    //BorderWidth = 5,
+
+                     ChartType = SeriesChartType.Line,
+                    MarkerStyle = MarkerStyle.Circle,
+                    MarkerSize = 9,
+                    BorderWidth = 3
+                };
+
+                //series.ChartType = SeriesChartType.Line;
 
                 // Thêm dữ liệu vào Series
                 foreach (DataRow row in dt.Rows)
