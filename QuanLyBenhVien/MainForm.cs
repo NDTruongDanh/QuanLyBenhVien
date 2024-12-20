@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBenhVien.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,110 +18,55 @@ namespace QuanLyBenhVien
         public MainForm()
         {
             InitializeComponent();
-            InitializeTabControl();
-        }
-
-        private void InitializeTabControl()
-        {
-            contextMenu = new ContextMenuStrip();
-            ToolStripMenuItem closeTabMenuItem = new ToolStripMenuItem("Close Tab");
-            closeTabMenuItem.Click += CloseTabMenuItem_Click;
-            contextMenu.Items.Add(closeTabMenuItem);
-            tabControl.MouseUp += TabControl_MouseUp;
-        }
-
-        private void AddFormToTab(Form childForm, string tabName)
-        {
-            foreach (TabPage existingTab in tabControl.TabPages)
-            {
-                if (existingTab.Text == tabName)
-                {
-                    tabControl.SelectedTab = existingTab;
-                    return;
-                }
-            }
-            TabPage tabPage = new TabPage(tabName);
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            tabPage.Controls.Add(childForm);
-            tabControl.TabPages.Add(tabPage);
-            childForm.Size = tabControl.Size;
-            childForm.Show();
-            tabControl.SelectedTab = tabPage;
-        }
-
-        private void TabControl_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                // Identify the tab under the mouse pointer
-                for (int i = 0; i < tabControl.TabPages.Count; i++)
-                {
-                    if (tabControl.GetTabRect(i).Contains(e.Location))
-                    {
-                        tabControl.SelectedIndex = i; // Select the tab
-                        contextMenu.Show(tabControl, e.Location); // Show the context menu
-                        break;
-                    }
-                }
-            }
-        }
-
-        private void CloseTabMenuItem_Click(object sender, EventArgs e)
-        {
-            if (tabControl.SelectedTab != null)
-            {
-                tabControl.TabPages.Remove(tabControl.SelectedTab); // Close the selected tab
-            }
+            CommonControls.InitializeTabControl(tabControl);
         }
 
         private void btnPatient_Click(object sender, EventArgs e)
         {
             PatientForm patientForm = new PatientForm();
-            AddFormToTab(patientForm, patientForm.Text);
+            CommonControls.AddFormToTab(patientForm, patientForm.Text);
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             EmployeeForm employeeForm = new EmployeeForm();
-            AddFormToTab(employeeForm, employeeForm.Text);
+            CommonControls.AddFormToTab(employeeForm, employeeForm.Text);
         }
 
         private void btnRoom_Click(object sender, EventArgs e)
         {
             RoomForm roomForm = new RoomForm();
-            AddFormToTab(roomForm, roomForm.Text);
+            CommonControls.AddFormToTab(roomForm, roomForm.Text);
         }
 
         private void btnMedicine_Click(object sender, EventArgs e)
         {
             MedicineForm medicineForm = new MedicineForm();
-            AddFormToTab(medicineForm, medicineForm.Text);
+            CommonControls.AddFormToTab(medicineForm, medicineForm.Text);
         }
 
         private void btnMedicineStat_Click(object sender, EventArgs e)
         {
             MedStatForm medStatForm = new MedStatForm();
-            AddFormToTab(medStatForm, medStatForm.Text);
+            CommonControls.AddFormToTab(medStatForm, medStatForm.Text);
         }
 
         private void btnDepartment_Click(object sender, EventArgs e)
         {
             DepartmentForm departmentForm = new DepartmentForm();
-            AddFormToTab(departmentForm, departmentForm.Text);
+            CommonControls.AddFormToTab(departmentForm, departmentForm.Text);
         }
 
         private void btnBill_Click(object sender, EventArgs e)
         {
             BillForm billForm = new BillForm();
-            AddFormToTab(billForm, billForm.Text);
+            CommonControls.AddFormToTab(billForm, billForm.Text);
         }
 
         private void btnMedicalRecord_Click(object sender, EventArgs e)
         {
             MedicalRecord medicalRecord = new MedicalRecord();
-            AddFormToTab(medicalRecord, medicalRecord.Text);
+            CommonControls.AddFormToTab(medicalRecord, medicalRecord.Text);
         }
 
         private void btnMonthIncomeReport_Click(object sender, EventArgs e)
@@ -138,13 +84,13 @@ namespace QuanLyBenhVien
         private void btnAIChatBot_Click(object sender, EventArgs e)
         {
             ChatBotForm chatBotForm = new ChatBotForm();
-            AddFormToTab(chatBotForm, chatBotForm.Text);
+            CommonControls.AddFormToTab(chatBotForm, chatBotForm.Text);
         }
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
             Appointment appointment = new Appointment();
-            AddFormToTab(appointment, appointment.Text);
+            CommonControls.AddFormToTab(appointment, appointment.Text);
         }
 
         private void btnQuantityInStock_Click(object sender, EventArgs e)
@@ -169,7 +115,7 @@ namespace QuanLyBenhVien
         private void btnWeeklyAssignment_Click(object sender, EventArgs e)
         {
             WeeklyAssignmentForm weeklyAssignment = new WeeklyAssignmentForm();
-            AddFormToTab(weeklyAssignment, weeklyAssignment.Text);
+            CommonControls.AddFormToTab(weeklyAssignment, weeklyAssignment.Text);
         }
         private void btnMonthDiseaseStat_Click(object sender, EventArgs e)
         {
@@ -181,6 +127,12 @@ namespace QuanLyBenhVien
         {
             BenhTheoNam btn = new BenhTheoNam();
             btn.Show();
+        }
+
+        private void testSignINToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SignIn signIn = new SignIn();
+            signIn.Show();
         }
     }
 }

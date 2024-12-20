@@ -23,7 +23,14 @@ namespace QuanLyBenhVien
             InitializeCmbPatientID();
             InitializeCmbDepartmentID();
             LoadAppointments();
+            SetupDateTimePickerCustom();
+        }
 
+        private void SetupDateTimePickerCustom()
+        {
+            dtpAppointmentDateTime.Format = DateTimePickerFormat.Custom;
+            dtpAppointmentDateTime.CustomFormat = "hh:mm tt dd/MM/yyyy"; // Định dạng ngày và giờ
+            dtpAppointmentDateTime.ShowUpDown = true; // Ẩn lịch, chỉ chọn giờ
         }
 
         private void LoadAppointments()

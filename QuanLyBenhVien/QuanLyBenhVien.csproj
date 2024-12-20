@@ -141,6 +141,30 @@
     <Compile Include="DoanhthuTHANG.Designer.cs">
       <DependentUpon>DoanhthuTHANG.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoctorAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorAppointment.Designer.cs">
+      <DependentUpon>DoctorAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorAssignment.Designer.cs">
+      <DependentUpon>DoctorAssignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorInformation.Designer.cs">
+      <DependentUpon>DoctorInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorView.Designer.cs">
+      <DependentUpon>DoctorView.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +227,12 @@
     <Compile Include="EpidemicSituation.Designer.cs">
       <DependentUpon>EpidemicSituation.cs</DependentUpon>
     </Compile>
+    <Compile Include="SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignIn.Designer.cs">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="WeeklyAssignment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +265,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoanhthuTHANG.resx">
       <DependentUpon>DoanhthuTHANG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorAppointment.resx">
+      <DependentUpon>DoctorAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorAssignment.resx">
+      <DependentUpon>DoctorAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorInformation.resx">
+      <DependentUpon>DoctorInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorView.resx">
+      <DependentUpon>DoctorView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
@@ -275,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EpidemicSituation.resx">
       <DependentUpon>EpidemicSituation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignIn.resx">
+      <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeeklyAssignment.resx">
       <DependentUpon>WeeklyAssignment.cs</DependentUpon>
