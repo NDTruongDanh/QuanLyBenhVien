@@ -124,6 +124,7 @@
             // 
             this.dtpAppointmentDateTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpAppointmentDateTime.CalendarFont = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpAppointmentDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpAppointmentDateTime.Location = new System.Drawing.Point(741, 97);
             this.dtpAppointmentDateTime.Name = "dtpAppointmentDateTime";
             this.dtpAppointmentDateTime.Size = new System.Drawing.Size(240, 22);
