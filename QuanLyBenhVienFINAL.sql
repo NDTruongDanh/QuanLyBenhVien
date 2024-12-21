@@ -16,10 +16,10 @@ CREATE TABLE PATIENT (
     AddressPatient NVARCHAR(255),
     Email VARCHAR(255),
     AdmissionDate DATE,
-    DischargeDate DATE,
-    RoomID CHAR(6)
+    DischargeDate DATE
 )
 
+SELECT * FROM PATIENT
 CREATE TABLE STAFF (
     StaffID CHAR(6) PRIMARY KEY,
     FullName NVARCHAR(255) NOT NULL,
@@ -43,7 +43,6 @@ CREATE TABLE DEPARTMENT (
     LocationDPM NVARCHAR(255)
 )
 
-
 CREATE TABLE APPOINTMENT (
     AppointmentID CHAR(6) PRIMARY KEY,
     PatientID CHAR(6),
@@ -63,6 +62,18 @@ CREATE TABLE MEDICALRECORD (
     TestResults NVARCHAR(500),
     TreatmentPlan NVARCHAR(500)
 )
+
+CREATE TABLE NURSECARE (
+	CareID CHAR(6) PRIMARY KEY,
+	NurseID CHAR(6),
+	PatientID CHAR(6),
+	RoomID CHAR(6),
+	CareDateTime SMALLDATETIME,
+	CareType NVARCHAR(100), --Type of care provided (e.g., medication, vitals check).
+	Notes NVARCHAR(500) --Additional details or observations by the nurse.
+)
+
+SELECT * FROM NURSECARE
 
 CREATE TABLE BILL (
     TransactionID CHAR(6) PRIMARY KEY,
@@ -112,11 +123,13 @@ CREATE TABLE WEEKLYASSIGNMENT (
     ShiftType NVARCHAR(50)  -- Loại ca: Sáng, Chiều, Tối
 )
 
+CREATE TABLE USERLOGIN(
+	UserID VARCHAR(6) PRIMARY KEY,
+	Pass VARCHAR(20) NOT NULL
+)
+
 
 --THÊM KHOÁ NGOẠI--
-ALTER TABLE PATIENT
-ADD CONSTRAINT FK_PA_RO FOREIGN KEY (RoomID) REFERENCES ROOM(RoomID) 
-
 ALTER TABLE STAFF
 ADD CONSTRAINT FK_STA_DE FOREIGN KEY (DepartmentID) REFERENCES DEPARTMENT(DepartmentID) 
 
@@ -150,7 +163,8 @@ ADD CONSTRAINT FK_BIDE_BI FOREIGN KEY (TransactionID) REFERENCES BILL(Transactio
 ALTER TABLE BILLDETAIL
 ADD CONSTRAINT FK_BIDE_ME FOREIGN KEY (MedicationID) REFERENCES MEDICATION(MedicationID) ON DELETE SET NULL
 
-
+ALTER TABLE USERLOGIN
+ADD CONSTRAINT FK_US_ST FOREIGN KEY (UserID) REFERENCES STAFF (StaffID)
 
 ALTER TABLE ROOM
 ADD CONSTRAINT FK_RO_DE FOREIGN KEY (DepartmentID) REFERENCES DEPARTMENT(DepartmentID) 
@@ -161,35 +175,45 @@ ADD CONSTRAINT FK_WE_STA FOREIGN KEY (StaffID) REFERENCES STAFF(StaffID)
 ALTER TABLE WEEKLYASSIGNMENT
 ADD CONSTRAINT FK_WE_DE FOREIGN KEY (DepartmentID) REFERENCES DEPARTMENT(DepartmentID) 
 
+ALTER TABLE NURSECARE
+ADD CONSTRAINT FK_N_ST FOREIGN KEY (NurseID) REFERENCES STAFF(StaffID)
+
+ALTER TABLE NURSECARE
+ADD CONSTRAINT FK_N_PT FOREIGN KEY (PatientID) REFERENCES PATIENT(PatientID)
+
+ALTER TABLE NURSECARE
+ADD CONSTRAINT FK_N_R FOREIGN KEY (RoomID) REFERENCES ROOM(RoomID)
+
+
 
 
 
 -- Chèn dữ liệu vào bảng PATIENT
-INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate, RoomID)
+INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate)
 VALUES 
-('PA0001', N'Nguyễn Văn A', '1990-05-01', N'Nam', '0901234567', N'Hà Nội', 'a.nguyen@example.com', '2024-12-01', '2024-12-05', 'RO0001'),
-('PA0002', N'Phạm Thị B', '1985-10-15', N'Nữ', '0902345678', N'Đà Nẵng', 'b.pham@example.com', '2024-12-02', '2024-12-06', 'RO0002'),
-('PA0003', N'Ngô Văn C', '2000-07-20', N'Nam', '0903456789', N'Hồ Chí Minh', 'c.ngo@example.com', '2024-12-03', '2024-12-07', 'RO0003'),
-('PA0004', N'Trần Thị D', '1992-02-10', N'Nữ', '0904567890', N'Quảng Ninh', 'd.tran@example.com', '2024-12-04', '2024-12-08', 'RO0004'),
-('PA0005', N'Lê Minh E', '1980-11-11', N'Nam', '0905678901', N'Bình Dương', 'e.le@example.com', '2024-12-05', '2024-12-09', 'RO0005'),
-('PA0006', N'Vũ Thị F', '1995-03-22', N'Nữ', '0906789012', N'Vũng Tàu', 'f.vu@example.com', '2024-12-06', '2024-12-10', 'RO0006');
+('PA0001', N'Nguyễn Văn A', '1990-05-01', N'Nam', '0901234567', N'Hà Nội', 'a.nguyen@example.com', '2024-12-01', '2024-12-05'),
+('PA0002', N'Phạm Thị B', '1985-10-15', N'Nữ', '0902345678', N'Đà Nẵng', 'b.pham@example.com', '2024-12-02', '2024-12-06'),
+('PA0003', N'Ngô Văn C', '2000-07-20', N'Nam', '0903456789', N'Hồ Chí Minh', 'c.ngo@example.com', '2024-12-03', '2024-12-07'),
+('PA0004', N'Trần Thị D', '1992-02-10', N'Nữ', '0904567890', N'Quảng Ninh', 'd.tran@example.com', '2024-12-04', '2024-12-08'),
+('PA0005', N'Lê Minh E', '1980-11-11', N'Nam', '0905678901', N'Bình Dương', 'e.le@example.com', '2024-12-05', '2024-12-09'),
+('PA0006', N'Vũ Thị F', '1995-03-22', N'Nữ', '0906789012', N'Vũng Tàu', 'f.vu@example.com', '2024-12-06', '2024-12-10');
 
 -- Chèn dữ liệu vào bảng STAFF
 INSERT INTO STAFF (StaffID, FullName, TypeOfStaff, Gender, DateOfBirth, PhoneNumber, DateOfJoining, Email, Salary, DepartmentID)
 VALUES
 ('ST0001', N'Nguyễn Thiện G', N'Bác sĩ Đa khoa', N'Nam', '1980-01-15', '0912345678', '2020-05-01', 'g.nguyen@example.com', 15000000, 'DP0001'),
 ('ST0002', N'Phạm Minh H', N'Kế toán', N'Nữ', '1990-06-20', '0913456789', '2022-07-01', 'h.pham@example.com', 10000000, 'DP0002'),
-('ST0003', N'Lê Thị I', N'Quản lý', N'Nữ', '1985-09-30', '0914567890', '2018-08-15', 'i.le@example.com', 20000000, 'DP0003'),
+('ST0003', N'Lê Thị I', N'Y tá', N'Nữ', '1985-09-30', '0914567890', '2018-08-15', 'i.le@example.com', 20000000, 'DP0003'),
 ('ST0004', N'Vũ Thái J', N'Kế toán', N'Nam', '1978-12-25', '0915678901', '2015-11-20', 'j.vu@example.com', 18000000, 'DP0004'),
 ('ST0005', N'Trần Minh K', N'Điều dưỡng Tổng quát', N'Nam', '1992-05-05', '0916789012', '2023-09-10', 'k.tran@example.com', 11000000, 'DP0005'),
 ('ST0006', N'Võ Quang L', N'Bác sĩ Ngoại khoa', N'Nam', '1982-03-11', '0917890123', '2019-06-01', 'l.vo@example.com', 17000000, 'DP0006'),
-('ST0007', N'Võ Quang A', N'Bác sĩ Thần kinh', N'Nam', '1983-03-14', '0917890127', '2020-06-02', 'a.vo@example.com', 28000000, 'DP0001'),
-('ST0008', N'Võ Quang B', N'Bác sĩ Ung bứu', N'Nam', '1985-03-11', '0917890121', '2018-07-01', 'b.vo@example.com', 17500000, 'DP0002');
+('ST0007', N'Võ Quang A', N'Dược sĩ', N'Nam', '1983-03-14', '0917890127', '2020-06-02', 'a.vo@example.com', 28000000, 'DP0001'),
+('ST0008', N'Võ Quang B', N'Dược sĩ', N'Nam', '1985-03-11', '0917890121', '2018-07-01', 'b.vo@example.com', 17500000, 'DP0002');
 
 -- Chèn dữ liệu vào bảng DEPARTMENT
 INSERT INTO DEPARTMENT (DepartmentID, DepartmentName, EmployeeNumber, HeadDepartmentID, PhoneNumber, LocationDPM)
 VALUES
-('DP0001', N'Khoa Nội', 2, 'ST0001', '0241234567', N'Hà Nội'),
+('DP0001', N'Khoa Nội', 2, 'ST0007', '0241234567', N'Hà Nội'),
 ('DP0002', N'Khoa Ngoại', 2, 'ST0002', '0242345678', N'Đà Nẵng'),
 ('DP0003', N'Khoa Cấp Cứu', 1, 'ST0003', '0243456789', N'Hồ Chí Minh'),
 ('DP0004', N'Khoa Nhi', 1, 'ST0004', '0244567890', N'Quảng Ninh'),
@@ -279,19 +303,19 @@ AS
 
 --Them data cho patient va medical 
 
-INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate, RoomID)
+INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate)
 VALUES
-('PA0007', N'Hồng Hài N', '1999-04-12', N'Nữ', '0962456786', N'Hải Phòng', 'h.hong@example.com', '2023-03-08', NULL, 'RO0002'),
-('PA0008', N'Đỗ Thị H', '1999-04-12', N'Nữ', '0962456786', N'Hải Phòng', 'h.do@example.com', '2024-12-08', NULL, 'RO0002'),
-('PA0009', N'Ngô Minh I', '1975-05-10', N'Nam', '0983456785', N'Lào Cai', 'i.ngo@example.com', '2024-11-27', '2024-12-09', 'RO0006'),
-('PA0010', N'Thái Hồng K', '2000-10-25', N'Nữ', '0943456784', N'Hà Giang', 'k.thai@example.com', '2024-12-10', NULL, 'RO0006');
-('PA0011', N'Nguyễn Văn A', '1985-06-12', N'Nam', '0987654321', N'Hà Nội', 'a.nguyen@example.com', '2024-11-20', '2024-12-05', 'RO0001'),
-('PA0012', N'Lê Thị B', '1990-03-15', N'Nữ', '0978654322', N'Đà Nẵng', 'b.le@example.com', '2024-12-01', NULL, 'RO0002'),
-('PA0013', N'Phạm Minh C', '2002-09-20', N'Nam', '0902456789', N'Hồ Chí Minh', 'c.pham@example.com', '2024-11-25', NULL, 'RO0001'),
-('PA0014', N'Trần Văn D', '1978-11-10', N'Nam', '0945654321', N'Cần Thơ', 'd.tran@example.com', '2024-11-30', '2024-12-10', 'RO0003'),
-('PA0015', N'Hoàng Thị E', '1987-02-07', N'Nữ', '0913456789', N'Bắc Ninh', 'e.hoang@example.com', '2024-12-02', NULL, 'RO0004'),
-('PA0016', N'Vũ Ngọc F', '1995-08-17', N'Nữ', '0932456788', N'Nam Định', 'f.vu@example.com', '2024-11-28', '2024-12-08', 'RO0005'),
-('PA0017', N'Bùi Thanh G', '1982-12-30', N'Nam', '0923456787', N'Quảng Ninh', 'g.bui@example.com', '2024-12-05', NULL, 'RO0001'),
+('PA0007', N'Hồng Hài N', '1999-04-12', N'Nữ', '0962456786', N'Hải Phòng', 'h.hong@example.com', '2023-03-08', NULL),
+('PA0008', N'Đỗ Thị H', '1999-04-12', N'Nữ', '0962456786', N'Hải Phòng', 'h.do@example.com', '2024-12-08', NULL),
+('PA0009', N'Ngô Minh I', '1975-05-10', N'Nam', '0983456785', N'Lào Cai', 'i.ngo@example.com', '2024-11-27', '2024-12-09'),
+('PA0010', N'Thái Hồng K', '2000-10-25', N'Nữ', '0943456784', N'Hà Giang', 'k.thai@example.com', '2024-12-10', NULL),
+('PA0011', N'Nguyễn Văn A', '1985-06-12', N'Nam', '0987654321', N'Hà Nội', 'a.nguyen@example.com', '2024-11-20', '2024-12-05'),
+('PA0012', N'Lê Thị B', '1990-03-15', N'Nữ', '0978654322', N'Đà Nẵng', 'b.le@example.com', '2024-12-01', NULL),
+('PA0013', N'Phạm Minh C', '2002-09-20', N'Nam', '0902456789', N'Hồ Chí Minh', 'c.pham@example.com', '2024-11-25', NULL),
+('PA0014', N'Trần Văn D', '1978-11-10', N'Nam', '0945654321', N'Cần Thơ', 'd.tran@example.com', '2024-11-30', '2024-12-10'),
+('PA0015', N'Hoàng Thị E', '1987-02-07', N'Nữ', '0913456789', N'Bắc Ninh', 'e.hoang@example.com', '2024-12-02', NULL),
+('PA0016', N'Vũ Ngọc F', '1995-08-17', N'Nữ', '0932456788', N'Nam Định', 'f.vu@example.com', '2024-11-28', '2024-12-08'),
+('PA0017', N'Bùi Thanh G', '1982-12-30', N'Nam', '0923456787', N'Quảng Ninh', 'g.bui@example.com', '2024-12-05', NULL)
 
 INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan)
 VALUES
@@ -300,15 +324,11 @@ VALUES
 ('MR0007', 'PA0007', 'ST0001', '2024-12-06', N'Cảm lạnh', N'Không có dấu hiệu nguy hiểm', N'Uống vitamin C và nghỉ ngơi'),
 ('MR0008', 'PA0008', 'ST0005', '2024-12-09', N'Suy nhược cơ thể', N'Chỉ số máu thấp', N'Tăng cường dinh dưỡng, vitamin'),
 ('MR0009', 'PA0009', 'ST0003', '2024-11-28', N'Hen suyễn', N'Chỉ số phổi giảm', N'Dùng thuốc hít và theo dõi định kỳ'),
-('MR0010', 'PA0010', 'ST0004', '2024-12-11', N'Đau lưng', N'X-quang: thoái hóa cột sống', N'Vật lý trị liệu 3 tuần');
+('MR0010', 'PA0010', 'ST0004', '2024-12-11', N'Đau lưng', N'X-quang: thoái hóa cột sống', N'Vật lý trị liệu 3 tuần'),
 ('MR0011', 'PA0011', 'ST0001', '2024-11-21', N'Cảm cúm', N'Huyết áp bình thường, không có triệu chứng nặng', N'Nghỉ ngơi, uống thuốc giảm đau'),
 ('MR0012', 'PA0012', 'ST0002', '2024-12-02', N'Sốt xuất huyết', N'Giảm tiểu cầu, sốt cao', N'Nhập viện, theo dõi hàng ngày'),
 ('MR0013', 'PA0003', 'ST0001', '2024-11-26', N'Viêm phổi', N'X-quang phổi phát hiện tổn thương nhỏ', N'Dùng kháng sinh 7 ngày'),
 ('MR0014', 'PA0004', 'ST0003', '2024-12-01', N'Gãy tay phải', N'Chụp X-quang: gãy xương quay', N'Bó bột và nghỉ ngơi 4 tuần'),
-
-
-INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan)
-VALUES
 ('MR0015', 'PA0001', 'ST0001', '2024-01-15', N'Sốt xuất huyết', N'Tiểu cầu thấp, sốt cao', N'Nhập viện, truyền dịch, điều trị sốt'),
 ('MR0016', 'PA0002', 'ST0002', '2024-02-20', N'Viêm phổi', N'Chụp X-quang phát hiện viêm phổi nhẹ', N'Dùng kháng sinh, theo dõi nhiệt độ'),
 ('MR0017', 'PA0003', 'ST0003', '2024-03-10', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, mất nước nhẹ', N'Uống thuốc chống tiêu chảy, bù nước'),
@@ -350,3 +370,92 @@ VALUES
 ('MR0049', 'PA0016', 'ST0001', '2024-12-14', N'Cảm cúm', N'Sốt, ho, mệt mỏi', N'Uống thuốc giảm đau, uống nhiều nước'),
 ('MR0050', 'PA0017', 'ST0002', '2024-12-14', N'Covid-19', N'Mệt mỏi, khó thở nhẹ, ho', N'Chăm sóc tại nhà, điều trị triệu chứng'),
 ('MR0051', 'PA0001', 'ST0001', '2024-11-30', N'Cảm cúm', N'Sốt, ho khan, mệt mỏi', N'Ist, uống thuốc hạ sốt, nghỉ ngơi');
+
+-- Insert sample data into the APPOINTMENT table
+INSERT INTO APPOINTMENT (AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDateTime, AppointmentStatus)
+VALUES
+('A00001', 'P00001', 'D00001', 'DEP001', GETDATE() - 2, 'Confirmed'), -- 2 days ago
+('A00002', 'P00002', 'D00002', 'DEP002', GETDATE() + 1, 'Confirmed'), -- Tomorrow
+('A00003', 'P00003', 'D00003', 'DEP003', GETDATE() + 3, 'Cancelled'), -- 3 days later
+('A00004', 'P00004', 'D00001', 'DEP004', GETDATE() - 6, 'Completed'), -- Last week
+('A00005', 'P00005', 'D00002', 'DEP005', '2024-12-16', 'Confirmed'), -- Current week's Monday
+('A00006', 'P00006', 'D00003', 'DEP006', '2024-12-22', 'Completed'); -- Current week's Sunday
+
+INSERT INTO APPOINTMENT (AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDateTime, AppointmentStatus)
+VALUES
+('A00007', 'P00005', 'D00002', 'DEP005', '2024-12-15', 'Confirmed'),
+('A00008', 'P00005', 'D00002', 'DEP005', '2024-12-24', 'Confirmed'),
+('A00009', 'P00005', 'D00002', 'DEP005', '2024-12-23', 'Confirmed'),
+('A00010', 'P00005', 'D00002', 'DEP005', '2024-12-17', 'Confirmed'),
+('A00011', 'P00005', 'D00002', 'DEP005', '2024-12-20', 'Confirmed'),
+('A00012', 'P00005', 'D00002', 'DEP005', '2024-12-14', 'Confirmed')
+
+
+DELETE FROM APPOINTMENT
+WHERE AppointmentID IN ('A00005', 'A00006')
+
+ALTER TABLE APPOINTMENT
+DROP CONSTRAINT FK_AP_DE
+
+SELECT * FROM APPOINTMENT
+
+SELECT AppointmentDateTime, FullName
+FROM APPOINTMENT a JOIN PATIENT p ON a.PatientID = p.PatientID
+WHERE AppointmentDateTime > DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) -- Start of the week (Monday)
+  AND AppointmentDateTime <= DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) -- End of the week (Sunday);
+ORDER BY AppointmentDateTime
+
+SELECT *
+
+SELECT st.StaffID, FullName , ShiftType, WeekStartDate, WeekEndDate 
+                               FROM WEEKLYASSIGNMENT w JOIN STAFF st ON w.StaffID = st.StaffID
+                               WHERE WeekStartDate > DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) 
+                                      AND WeekEndDate <= DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
+	                                  AND w.DepartmentID IN (SELECT st1.DepartmentID FROM STAFF st1 WHERE st1.StaffID = 'ST0001')
+                               ORDER BY ShiftType, WeekStartDate
+
+							   SELECT * FROM STAFF
+							   WHERE DepartmentID = 'DP0001'
+
+							   SELECT * FROM WEEKLYASSIGNMENT
+							   WHERE DepartmentID = 'DP0001'
+
+INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, DepartmentID, WeekStartDate, WeekEndDate, ShiftType)
+VALUES
+('A00001', 'ST0001', 'DP0001', '2024-12-17', '2024-12-21', N'Sáng'),  
+('A00002', 'ST0007', 'DP0001', '2024-12-16', '2024-12-22', N'Sáng'), 
+('A00003', 'ST0001', 'DP0001', '2024-12-17', '2024-12-21', N'Chiều') 
+
+-- Example data for NURSECARE table
+INSERT INTO NURSECARE (CareID, NurseID, PatientID, RoomID, CareDateTime, CareType, Notes)
+VALUES 
+('C00001', 'N00001', 'P00001', 'R0001', '2024-12-20 09:00:00', 'Medication Administration', 'Administered antibiotics as prescribed.'),
+('C00002', 'N00002', 'P00002', 'R0002', '2024-12-20 11:30:00', 'Wound Dressing', 'Changed dressing and cleaned wound. Healing well.'),
+('C00003', 'N00003', 'P00003', 'R0003', '2024-12-20 14:00:00', 'Vital Signs Check', 'Blood pressure: 120/80, Temperature: 37°C.'),
+('C00004', 'N00001', 'P00004', 'R0001', '2024-12-21 08:00:00', 'Patient Hygiene', 'Assisted patient with morning hygiene routine.'),
+('C00005', 'N00004', 'P00005', 'R0004', '2024-12-21 10:15:00', 'IV Drip Monitoring', 'Checked IV line and adjusted flow rate as needed.'),
+('C00006', 'N00002', 'P00006', 'R0005', '2024-12-21 13:30:00', 'Nutrition Assistance', 'Helped patient with lunch and ensured adequate hydration.'),
+('C00007', 'N00005', 'P00007', 'R0006', '2024-12-21 15:45:00', 'Patient Education', 'Explained post-discharge care and medication regimen.'),
+('C00008', 'N00003', 'P00008', 'R0003', '2024-12-22 09:00:00', 'Pain Management', 'Provided prescribed painkillers after confirming with the doctor.'),
+('C00009', 'N00001', 'P00009', 'R0001', '2024-12-22 11:00:00', 'Patient Monitoring', 'Monitored patient’s vitals during post-surgery recovery.'),
+('C00010', 'N00004', 'P00010', 'R0004', '2024-12-22 14:30:00', 'Emergency Response', 'Responded to a sudden drop in blood pressure, stabilized the patient.');
+
+INSERT INTO USERLOGIN VALUES ('admin','1') ---ADMIN
+INSERT INTO USERLOGIN VALUES ('N00001','1') ----Y tá
+INSERT INTO USERLOGIN VALUES ('ST0001','1') ---- Bác sĩ
+INSERT INTO USERLOGIN VALUES ('ST0002','1') ---- Kế toán
+INSERT INTO USERLOGIN VALUES ('ST0007','1') ---- Dược sĩ (trưởng khoa)
+INSERT INTO USERLOGIN VALUES ('ST0008','1') ---- Dược sĩ
+
+INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate)
+VALUES
+    ('P00001', N'Nguyễn Văn A', '1985-01-15', N'Nam', '0912345678', N'123 Đường ABC, Quận 1, TP.HCM', 'nguyenvana@example.com', '2024-12-01', NULL),
+    ('P00002', N'Trần Thị B', '1990-02-25', N'Nữ', '0923456789', N'45 Đường DEF, Quận 2, TP.HCM', 'tranthib@example.com', '2024-12-02', NULL),
+    ('P00003', N'Lê Văn C', '1980-03-10', N'Nam', '0934567890', N'78 Đường GHI, Quận 3, TP.HCM', 'levanc@example.com', '2024-12-03', NULL),
+    ('P00004', N'Hoàng Thị D', '2000-04-05', N'Nữ', '0945678901', N'90 Đường JKL, Quận 4, TP.HCM', 'hoangthid@example.com', '2024-12-04', NULL),
+    ('P00005', N'Phạm Văn E', '1995-05-20', N'Nam', '0956789012', N'56 Đường MNO, Quận 5, TP.HCM', 'phamvane@example.com', '2024-12-05', NULL),
+    ('P00006', N'Nguyễn Thị F', '1988-06-15', N'Nữ', '0967890123', N'34 Đường PQR, Quận 6, TP.HCM', 'nguyenthif@example.com', '2024-12-06', NULL),
+    ('P00007', N'Đinh Văn G', '1992-07-30', N'Nam', '0978901234', N'12 Đường STU, Quận 7, TP.HCM', 'dinhvang@example.com', '2024-12-07', NULL),
+    ('P00008', N'Bùi Thị H', '2002-08-20', N'Nữ', '0989012345', N'67 Đường VWX, Quận 8, TP.HCM', 'buithih@example.com', '2024-12-08', NULL),
+    ('P00009', N'Trịnh Văn I', '1985-09-12', N'Nam', '0990123456', N'89 Đường YZ, Quận 9, TP.HCM', 'trinhvani@example.com', '2024-12-09', NULL),
+    ('P00010', N'Lý Thị K', '1998-10-05', N'Nữ', '0901234567', N'23 Đường ABC, Quận 10, TP.HCM', 'lythik@example.com', '2024-12-10', NULL);

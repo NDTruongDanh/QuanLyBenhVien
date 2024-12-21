@@ -24,7 +24,6 @@ namespace QuanLyBenhVien
         private void PatientForm_Load(object sender, EventArgs e)
         {
             LoadData();
-            InitializeCmbRoomID();
         }
 
         private void LoadData()
@@ -34,7 +33,17 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = "SELECT    bn.PatientID AS \"Mã bệnh nhân\", \r\n    bn.FullName AS \"Họ và tên\", \r\n    bn.DateOfBirth AS \"Ngày sinh\", \r\n    bn.Gender AS \"Giới tính\", \r\n    bn.PhoneNumber AS \"Số điện thoại\", \r\n    bn.AddressPatient AS \"Địa chỉ\", \r\n    bn.Email AS \"Email\", \r\n    bn.AdmissionDate AS \"Ngày nhập viện\", \r\n    bn.DischargeDate AS \"Ngày xuất viện\", \r\n    bn.RoomID AS \"Mã phòng\"\r\nFROM \r\n    PATIENT AS bn;\r\n";
+                    string sql = @"SELECT   bn.PatientID AS ""Mã bệnh nhân"", 
+                                            bn.FullName AS ""Họ và tên"", 
+                                            bn.DateOfBirth AS ""Ngày sinh"", 
+                                            bn.Gender AS ""Giới tính"", 
+                                            bn.PhoneNumber AS ""Số điện thoại"", 
+                                            bn.AddressPatient AS ""Địa chỉ"", 
+                                            bn.Email AS ""Email"", 
+                                            bn.AdmissionDate AS ""Ngày nhập viện"", 
+                                            bn.DischargeDate AS ""Ngày xuất viện""
+                                        FROM 
+                                            PATIENT AS bn;";
                     SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
                     DataSet dataset = new DataSet();
                     adapter.Fill(dataset, "PATIENT");
@@ -46,33 +55,6 @@ namespace QuanLyBenhVien
                 }
             }
 
-        }
-
-        private void InitializeCmbRoomID()
-        {
-            string query = "SELECT RoomID FROM ROOM";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                cmbRoomID.Items.Add(reader["RoomID"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
         }
 
         private bool IsValid()
@@ -110,11 +92,11 @@ namespace QuanLyBenhVien
             string query = @"IF EXISTS (SELECT 1 FROM PATIENT WHERE PatientID = @PatientID)
                              UPDATE PATIENT SET FullName = @FullName, Gender = @Gender, DateOfBirth = @DateOfBirth,
                              PhoneNumber = @PhoneNumber, AddressPatient = @AddressPatient, Email = @Email,
-                             AdmissionDate = @AdmissionDate, DischargeDate = @DischargeDate, RoomID = @RoomID
+                             AdmissionDate = @AdmissionDate, DischargeDate = @DischargeDate
                              WHERE PatientID = @PatientID
                              ELSE
-                             INSERT INTO PATIENT (PatientID, FullName, Gender, DateOfBirth, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate, RoomID)
-                             VALUES (@PatientID, @FullName, @Gender, @DateOfBirth, @PhoneNumber, @AddressPatient, @Email, @AdmissionDate, @DischargeDate, @RoomID)";
+                             INSERT INTO PATIENT (PatientID, FullName, Gender, DateOfBirth, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate)
+                             VALUES (@PatientID, @FullName, @Gender, @DateOfBirth, @PhoneNumber, @AddressPatient, @Email, @AdmissionDate, @DischargeDate)";
 
             var parameters = new Dictionary<string, object>
             {
@@ -127,7 +109,6 @@ namespace QuanLyBenhVien
                 {"@Email", txtEmail.Text},
                 {"@AdmissionDate", dtpAdmissionDate.Value},
                 {"@DischargeDate", dtpDischargeDate.Value},
-                {"@RoomID", cmbRoomID.Text}
             };
 
             CommonQuery.ExecuteQuery(query, parameters);
@@ -143,7 +124,19 @@ namespace QuanLyBenhVien
                 {
                     conn.Open();
 
-                    string query = "SELECT \r\n    bn.PatientID AS \"Mã bệnh nhân\", \r\n    bn.FullName AS \"Họ và tên\", \r\n    bn.DateOfBirth AS \"Ngày sinh\", \r\n    bn.Gender AS \"Giới tính\", \r\n    bn.PhoneNumber AS \"Số điện thoại\", \r\n    bn.AddressPatient AS \"Địa chỉ\", \r\n    bn.Email AS \"Email\", \r\n    bn.AdmissionDate AS \"Ngày nhập viện\", \r\n    bn.DischargeDate AS \"Ngày xuất viện\", \r\n    bn.RoomID AS \"Mã phòng\"\r\nFROM \r\n    PATIENT AS bn\r\n WHERE 1=1"; // 1=1 giúp nối dễ dàng các điều kiện
+                    string query = @"SELECT 
+                                    bn.PatientID AS ""Mã bệnh nhân"", 
+                                    bn.FullName AS ""Họ và tên"", 
+                                    bn.DateOfBirth AS ""Ngày sinh"", 
+                                    bn.Gender AS ""Giới tính"", 
+                                    bn.PhoneNumber AS ""Số điện thoại"", 
+                                    bn.AddressPatient AS ""Địa chỉ"", 
+                                    bn.Email AS ""Email"", 
+                                    bn.AdmissionDate AS ""Ngày nhập viện"", 
+                                    bn.DischargeDate AS ""Ngày xuất viện""
+                                FROM 
+                                    PATIENT AS bn
+                                 WHERE 1=1";
                     var parameters = new Dictionary<string, object>();
 
                     if (!string.IsNullOrEmpty(txtPatientID.Text))
@@ -155,11 +148,6 @@ namespace QuanLyBenhVien
                     {
                         query += " AND FullName LIKE @FullName";
                         parameters.Add("@FullName", $"%{txtFullName.Text.Trim()}%");
-                    }
-                    if (!string.IsNullOrEmpty(cmbRoomID.Text))
-                    {
-                        query += " AND RoomID = @RoomID";
-                        parameters.Add("@RoomID", cmbRoomID.Text.Trim());
                     }
                     if (!string.IsNullOrEmpty(cmbGender.Text))
                     {
@@ -227,7 +215,6 @@ namespace QuanLyBenhVien
                 txtEmail.Text = selectedRow.Cells[6].Value.ToString();
                 dtpAdmissionDate.Text = selectedRow.Cells[7].Value.ToString();
                 dtpDischargeDate.Text = selectedRow.Cells[8].Value.ToString();
-                cmbRoomID.Text = selectedRow.Cells[9].Value.ToString();
             }
         }
     }

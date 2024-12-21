@@ -31,7 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnFunction = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnChangePW = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCatalogue = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPatient = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicalRecord = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +43,7 @@
             this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAppointment = new System.Windows.Forms.ToolStripMenuItem();
             this.btnWeeklyAssignment = new System.Windows.Forms.ToolStripMenuItem();
+            this.chămSócBệnhNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStatistic = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicineStat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPatientStat = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,6 @@
             this.btnMonthDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnYearDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testSignINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -71,8 +71,7 @@
             this.btnCatalogue,
             this.btnManager,
             this.btnStatistic,
-            this.trợLýẢoToolStripMenuItem,
-            this.testSignINToolStripMenuItem});
+            this.trợLýẢoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -84,7 +83,7 @@
             // 
             this.btnFunction.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnLogout,
-            this.btnExit});
+            this.btnChangePW});
             this.btnFunction.Name = "btnFunction";
             this.btnFunction.Size = new System.Drawing.Size(93, 24);
             this.btnFunction.Text = "Chức năng";
@@ -92,14 +91,16 @@
             // btnLogout
             // 
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(160, 26);
+            this.btnLogout.Size = new System.Drawing.Size(224, 26);
             this.btnLogout.Text = "Đăng xuất";
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnExit
+            // btnChangePW
             // 
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(160, 26);
-            this.btnExit.Text = "Thoát";
+            this.btnChangePW.Name = "btnChangePW";
+            this.btnChangePW.Size = new System.Drawing.Size(224, 26);
+            this.btnChangePW.Text = "Đổi mặt khẩu";
+            this.btnChangePW.Click += new System.EventHandler(this.btnChangePW_Click);
             // 
             // btnCatalogue
             // 
@@ -162,7 +163,8 @@
             this.btnManager.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnBill,
             this.btnAppointment,
-            this.btnWeeklyAssignment});
+            this.btnWeeklyAssignment,
+            this.chămSócBệnhNhânToolStripMenuItem});
             this.btnManager.Name = "btnManager";
             this.btnManager.Size = new System.Drawing.Size(73, 24);
             this.btnManager.Text = "Quản lý";
@@ -170,23 +172,30 @@
             // btnBill
             // 
             this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(160, 26);
+            this.btnBill.Size = new System.Drawing.Size(229, 26);
             this.btnBill.Text = "Hóa đơn";
             this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
             // btnAppointment
             // 
             this.btnAppointment.Name = "btnAppointment";
-            this.btnAppointment.Size = new System.Drawing.Size(160, 26);
+            this.btnAppointment.Size = new System.Drawing.Size(229, 26);
             this.btnAppointment.Text = "Lịch Khám";
             this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
             // 
             // btnWeeklyAssignment
             // 
             this.btnWeeklyAssignment.Name = "btnWeeklyAssignment";
-            this.btnWeeklyAssignment.Size = new System.Drawing.Size(160, 26);
+            this.btnWeeklyAssignment.Size = new System.Drawing.Size(229, 26);
             this.btnWeeklyAssignment.Text = "Lịch trực";
             this.btnWeeklyAssignment.Click += new System.EventHandler(this.btnWeeklyAssignment_Click);
+            // 
+            // chămSócBệnhNhânToolStripMenuItem
+            // 
+            this.chămSócBệnhNhânToolStripMenuItem.Name = "chămSócBệnhNhânToolStripMenuItem";
+            this.chămSócBệnhNhânToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.chămSócBệnhNhânToolStripMenuItem.Text = "Chăm sóc bệnh nhân";
+            this.chămSócBệnhNhânToolStripMenuItem.Click += new System.EventHandler(this.chămSócBệnhNhânToolStripMenuItem_Click);
             // 
             // btnStatistic
             // 
@@ -305,13 +314,6 @@
             this.trợLýẢoToolStripMenuItem.Text = "Trợ lý ảo ";
             this.trợLýẢoToolStripMenuItem.Click += new System.EventHandler(this.btnAIChatBot_Click);
             // 
-            // testSignINToolStripMenuItem
-            // 
-            this.testSignINToolStripMenuItem.Name = "testSignINToolStripMenuItem";
-            this.testSignINToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
-            this.testSignINToolStripMenuItem.Text = "TestSignIn";
-            this.testSignINToolStripMenuItem.Click += new System.EventHandler(this.testSignINToolStripMenuItem_Click);
-            // 
             // tabControl
             // 
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -347,7 +349,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnFunction;
         private System.Windows.Forms.ToolStripMenuItem btnLogout;
-        private System.Windows.Forms.ToolStripMenuItem btnExit;
+        private System.Windows.Forms.ToolStripMenuItem btnChangePW;
         private System.Windows.Forms.ToolStripMenuItem btnCatalogue;
         private System.Windows.Forms.ToolStripMenuItem btnPatient;
         private System.Windows.Forms.ToolStripMenuItem btnEmployee;
@@ -379,7 +381,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnmonANDyearDisease;
         private System.Windows.Forms.ToolStripMenuItem btnMonthDiseaseStat;
         private System.Windows.Forms.ToolStripMenuItem btnYearDiseaseStat;
-        private System.Windows.Forms.ToolStripMenuItem testSignINToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chămSócBệnhNhânToolStripMenuItem;
     }
 }
 

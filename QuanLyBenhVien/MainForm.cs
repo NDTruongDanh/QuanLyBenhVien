@@ -13,12 +13,12 @@ namespace QuanLyBenhVien
 {
     public partial class MainForm : Form
     {
-        private ContextMenuStrip contextMenu;
-
-        public MainForm()
+        string userID;
+        public MainForm(string userID)
         {
             InitializeComponent();
             CommonControls.InitializeTabControl(tabControl);
+            this.userID = userID;
         }
 
         private void btnPatient_Click(object sender, EventArgs e)
@@ -129,10 +129,21 @@ namespace QuanLyBenhVien
             btn.Show();
         }
 
-        private void testSignINToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnChangePW_Click(object sender, EventArgs e)
         {
-            SignIn signIn = new SignIn();
-            signIn.Show();
+            ChangePassword changePassword = new ChangePassword(userID);
+            changePassword.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void chămSócBệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NurseCareForm nurseCare = new NurseCareForm();
+            CommonControls.AddFormToTab(nurseCare, nurseCare.Text);
         }
     }
 }
