@@ -169,12 +169,6 @@
     <Compile Include="DoctorAppointment.Designer.cs">
       <DependentUpon>DoctorAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeadPharmacist.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HeadPharmacist.Designer.cs">
-      <DependentUpon>HeadPharmacist.cs</DependentUpon>
-    </Compile>
     <Compile Include="NurseCareForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,9 +329,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorAppointment.resx">
       <DependentUpon>DoctorAppointment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HeadPharmacist.resx">
-      <DependentUpon>HeadPharmacist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NurseCareForm.resx">
       <DependentUpon>NurseCareForm.cs</DependentUpon>
