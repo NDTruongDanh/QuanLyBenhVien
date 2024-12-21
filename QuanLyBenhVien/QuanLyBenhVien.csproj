@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -84,6 +88,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accountant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accountant.Designer.cs">
+      <DependentUpon>Accountant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountantBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountantBill.Designer.cs">
+      <DependentUpon>AccountantBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Appointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +129,12 @@
     </Compile>
     <Compile Include="BillForm.Designer.cs">
       <DependentUpon>BillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="ChatBotForm.cs">
       <SubType>Form</SubType>
@@ -147,17 +169,41 @@
     <Compile Include="DoctorAppointment.Designer.cs">
       <DependentUpon>DoctorAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoctorAssignment.cs">
+    <Compile Include="HeadPharmacist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorAssignment.Designer.cs">
-      <DependentUpon>DoctorAssignment.cs</DependentUpon>
+    <Compile Include="HeadPharmacist.Designer.cs">
+      <DependentUpon>HeadPharmacist.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoctorInformation.cs">
+    <Compile Include="NurseCareForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorInformation.Designer.cs">
-      <DependentUpon>DoctorInformation.cs</DependentUpon>
+    <Compile Include="NurseCareForm.Designer.cs">
+      <DependentUpon>NurseCareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NurseVIew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NurseVIew.Designer.cs">
+      <DependentUpon>NurseVIew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientCare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientCare.Designer.cs">
+      <DependentUpon>PatientCare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffAssignment.Designer.cs">
+      <DependentUpon>StaffAssignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Information.Designer.cs">
+      <DependentUpon>Information.cs</DependentUpon>
     </Compile>
     <Compile Include="DoctorView.cs">
       <SubType>Form</SubType>
@@ -207,11 +253,23 @@
     <Compile Include="MedStatForm.Designer.cs">
       <DependentUpon>MedStatForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NormalMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NormalMedicine.Designer.cs">
+      <DependentUpon>NormalMedicine.cs</DependentUpon>
+    </Compile>
     <Compile Include="PatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PatientForm.Designer.cs">
       <DependentUpon>PatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacistView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PharmacistView.Designer.cs">
+      <DependentUpon>PharmacistView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -239,6 +297,12 @@
     <Compile Include="WeeklyAssignment.Designer.cs">
       <DependentUpon>WeeklyAssignment.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Accountant.resx">
+      <DependentUpon>Accountant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountantBill.resx">
+      <DependentUpon>AccountantBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Appointment.resx">
       <DependentUpon>Appointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BillForm.resx">
       <DependentUpon>BillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChatBotForm.resx">
       <DependentUpon>ChatBotForm.cs</DependentUpon>
@@ -269,11 +336,23 @@
     <EmbeddedResource Include="DoctorAppointment.resx">
       <DependentUpon>DoctorAppointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoctorAssignment.resx">
-      <DependentUpon>DoctorAssignment.cs</DependentUpon>
+    <EmbeddedResource Include="HeadPharmacist.resx">
+      <DependentUpon>HeadPharmacist.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoctorInformation.resx">
-      <DependentUpon>DoctorInformation.cs</DependentUpon>
+    <EmbeddedResource Include="NurseCareForm.resx">
+      <DependentUpon>NurseCareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NurseVIew.resx">
+      <DependentUpon>NurseVIew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientCare.resx">
+      <DependentUpon>PatientCare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffAssignment.resx">
+      <DependentUpon>StaffAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Information.resx">
+      <DependentUpon>Information.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorView.resx">
       <DependentUpon>DoctorView.cs</DependentUpon>
@@ -299,8 +378,14 @@
     <EmbeddedResource Include="MedStatForm.resx">
       <DependentUpon>MedStatForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NormalMedicine.resx">
+      <DependentUpon>NormalMedicine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PatientForm.resx">
       <DependentUpon>PatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacistView.resx">
+      <DependentUpon>PharmacistView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

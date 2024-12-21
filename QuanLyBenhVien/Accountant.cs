@@ -11,43 +11,48 @@ using System.Windows.Forms;
 
 namespace QuanLyBenhVien
 {
-    public partial class DoctorView : Form
+    public partial class Accountant : Form
     {
         string userID = null;
-        public DoctorView()
+        public Accountant()
         {
             InitializeComponent();
             CommonControls.InitializeTabControl(tabControl);
         }
-        public DoctorView(string userID)
+        public Accountant(string userID)
         {
-            InitializeComponent();
             this.userID = userID;
+            InitializeComponent();
             CommonControls.InitializeTabControl(tabControl);
         }
-
         private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Information doctorInformation = new Information(userID);
-            CommonControls.AddFormToTab(doctorInformation, doctorInformation.Text);
+            Information information = new Information(userID);
+            CommonControls.AddFormToTab(information, information.Text);
         }
 
-        private void lịchLàmViệcToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnMonth_Click(object sender, EventArgs e)
         {
-            DoctorAppointment doctorAppointment = new DoctorAppointment();
-            CommonControls.AddFormToTab(doctorAppointment, doctorAppointment.Text);
+            DoanhthuTHANG dtt = new DoanhthuTHANG();
+            CommonControls.AddFormToTab(dtt, dtt.Text);
         }
 
-        private void btnWeeklyAssignment_Click(object sender, EventArgs e)
+        private void btnYear_Click(object sender, EventArgs e)
         {
-            StaffAssignment doctorAssignment = new StaffAssignment(userID);
-            CommonControls.AddFormToTab(doctorAssignment, doctorAssignment.Text);
+            DoanhthuNAM dtn = new DoanhthuNAM();
+            CommonControls.AddFormToTab(dtn, dtn.Text);
+        }
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            AccountantBill accountantBill = new AccountantBill();
+            CommonControls.AddFormToTab(accountantBill, accountantBill.Text);
         }
 
         private void đổiMặtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangePassword changePassword = new ChangePassword(userID);
-            changePassword.ShowDialog();
+            changePassword.ShowDialog();   
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)

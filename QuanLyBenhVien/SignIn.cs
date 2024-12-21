@@ -33,14 +33,16 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = $"SELECT UserID, Pass, TypeOfStaff FROM USERLOGIN ul JOIN STAFF ON ul.UserID = StaffID WHERE UserID = '{txtUser.Text}'";
-
-                    using (SqlCommand cmd = new SqlCommand(sql, conn))
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    string sql;
+                    if (txtUser.Text != "admin")
                     {
-                        while (reader.Read())
+                        sql = $@"SELECT UserID, Pass, TypeOfStaff, HeadDepartmentID 
+                                   FROM USERLOGIN ul JOIN STAFF st ON ul.UserID = st.StaffID JOIN DEPARTMENT d ON d.DepartmentID = st.DepartmentID 
+                                   WHERE UserID = '{txtUser.Text}'";
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            if (reader != null)
+                            if (reader.Read())
                             {
                                 if (reader.GetString(reader.GetOrdinal("Pass")) != txtPassword.Text)
                                 {
@@ -52,13 +54,33 @@ namespace QuanLyBenhVien
                                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     string type = reader.GetString(reader.GetOrdinal("TypeOfStaff"));
 
+                                    bool isHeadDepartment = false;
+                                    if (txtUser.Text == reader.GetString(reader.GetOrdinal("HeadDepartmentID")))
+                                    {
+                                        isHeadDepartment = true;
+                                    }
+
                                     if (type.ToLower().Contains("Bác sĩ".ToLower()))
                                     {
                                         DoctorView doctorView = new DoctorView(txtUser.Text);
-                                        doctorView.Show();
+                                        doctorView.ShowDialog();
+                                    }
+                                    else if (type.ToLower().Contains("Dược sĩ".ToLower()))
+                                    {
+                                        PharmacistView pharmacistView = new PharmacistView(txtUser.Text, isHeadDepartment);
+                                        pharmacistView.ShowDialog();
+                                    }
+                                    else if (type.ToLower().Contains("Kế toán".ToLower()))
+                                    {
+                                        Accountant accountant = new Accountant(txtUser.Text);
+                                        accountant.ShowDialog();
+                                    }
+                                    else if (type.ToLower().Contains("Y tá".ToLower()))
+                                    {
+                                        NurseVIew nurseVIew = new NurseVIew(txtUser.Text);
+                                        nurseVIew.ShowDialog();
                                     }
                                 }
-
                             }
                             else
                             {
@@ -66,6 +88,32 @@ namespace QuanLyBenhVien
                             }
                         }
                     }
+                    else
+                    {
+                        sql = $@"SELECT * FROM USERLOGIN
+                                 WHERE UserID = '{txtUser.Text}'";
+
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                if (reader.GetString(reader.GetOrdinal("Pass")) != txtPassword.Text)
+                                {
+                                    MessageBox.Show("Password isn't correct!", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MainForm mainForm = new MainForm(txtUser.Text);
+                                    mainForm.ShowDialog();
+                                }
+                            }
+                                
+                        }
+                    }
+
+                    
                 }
                 catch (Exception ex)
                 {

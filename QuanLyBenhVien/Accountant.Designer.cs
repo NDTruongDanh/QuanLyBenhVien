@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBenhVien
 {
-    partial class DoctorView
+    partial class Accountant
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.chứcNăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMặtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhânToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lịchLàmViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnWeeklyAssignment = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnIncome = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMonth = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnYear = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,12 +48,12 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.chứcNăngToolStripMenuItem,
             this.thôngTinCáNhânToolStripMenuItem1,
-            this.lịchLàmViệcToolStripMenuItem,
-            this.btnWeeklyAssignment});
+            this.btnBill,
+            this.btnIncome});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // chứcNăngToolStripMenuItem
@@ -64,26 +63,26 @@
             this.đổiMặtKhẩuToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
-            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
             this.chứcNăngToolStripMenuItem.Text = "Cài đặt";
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             // 
             // đổiMặtKhẩuToolStripMenuItem
             // 
             this.đổiMặtKhẩuToolStripMenuItem.Name = "đổiMặtKhẩuToolStripMenuItem";
-            this.đổiMặtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.đổiMặtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đổiMặtKhẩuToolStripMenuItem.Text = "Đổi mặt khẩu";
             this.đổiMặtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMặtKhẩuToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -94,53 +93,56 @@
             this.thôngTinCáNhânToolStripMenuItem1.Text = "Thông tin cá nhân";
             this.thôngTinCáNhânToolStripMenuItem1.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem1_Click);
             // 
-            // lịchLàmViệcToolStripMenuItem
+            // btnBill
             // 
-            this.lịchLàmViệcToolStripMenuItem.Name = "lịchLàmViệcToolStripMenuItem";
-            this.lịchLàmViệcToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
-            this.lịchLàmViệcToolStripMenuItem.Text = "Lịch khám";
-            this.lịchLàmViệcToolStripMenuItem.Click += new System.EventHandler(this.lịchLàmViệcToolStripMenuItem_Click);
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Size = new System.Drawing.Size(81, 24);
+            this.btnBill.Text = "Hoá đơn";
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
-            // btnWeeklyAssignment
+            // btnIncome
             // 
-            this.btnWeeklyAssignment.Name = "btnWeeklyAssignment";
-            this.btnWeeklyAssignment.Size = new System.Drawing.Size(108, 24);
-            this.btnWeeklyAssignment.Text = "Lịch làm việc";
-            this.btnWeeklyAssignment.Click += new System.EventHandler(this.btnWeeklyAssignment_Click);
+            this.btnIncome.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnMonth,
+            this.btnYear});
+            this.btnIncome.Name = "btnIncome";
+            this.btnIncome.Size = new System.Drawing.Size(148, 24);
+            this.btnIncome.Text = "Báo cáo doanh thu";
             // 
-            // contextMenuStrip1
+            // btnMonth
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.btnMonth.Name = "btnMonth";
+            this.btnMonth.Size = new System.Drawing.Size(167, 26);
+            this.btnMonth.Text = "Theo tháng";
+            this.btnMonth.Click += new System.EventHandler(this.btnMonth_Click);
+            // 
+            // btnYear
+            // 
+            this.btnYear.Name = "btnYear";
+            this.btnYear.Size = new System.Drawing.Size(167, 26);
+            this.btnYear.Text = "Theo năm";
+            this.btnYear.Click += new System.EventHandler(this.btnYear_Click);
             // 
             // tabControl
             // 
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.HotTrack = true;
-            this.tabControl.Location = new System.Drawing.Point(0, 28);
+            this.tabControl.Location = new System.Drawing.Point(0, 30);
             this.tabControl.Margin = new System.Windows.Forms.Padding(5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(800, 422);
-            this.tabControl.TabIndex = 2;
+            this.tabControl.Size = new System.Drawing.Size(800, 420);
+            this.tabControl.TabIndex = 3;
             // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-            // 
-            // DoctorView
+            // Accountant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "DoctorView";
-            this.Text = "DoctorView";
+            this.Name = "Accountant";
+            this.Text = "Accountant";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -152,14 +154,14 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem chứcNăngToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đổiMặtKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem lịchLàmViệcToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnBill;
+        private System.Windows.Forms.ToolStripMenuItem btnIncome;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.ToolStripMenuItem btnWeeklyAssignment;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnMonth;
+        private System.Windows.Forms.ToolStripMenuItem btnYear;
     }
 }

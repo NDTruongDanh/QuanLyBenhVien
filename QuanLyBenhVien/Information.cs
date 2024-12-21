@@ -12,12 +12,14 @@ using System.Windows.Forms;
 
 namespace QuanLyBenhVien
 {
-    public partial class DoctorInformation : Form
+    public partial class Information : Form
     {
         private readonly string connStr = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
 
-        public DoctorInformation()
+        string userID = null;
+        public Information(string userID)
         {
+            this.userID = userID;
             InitializeComponent();
             LoadData(); 
         }
@@ -29,9 +31,9 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = @"SELECT st.StaffID, st.FullName, st.Gender, st.DateOfBirth, st.TypeOfStaff, DepartmentName, st.DateOfJoining, st.Email, st.PhoneNumber
+                    string sql = $@"SELECT st.StaffID, st.FullName, st.Gender, st.DateOfBirth, st.TypeOfStaff, HeadDepartmentID, DepartmentName, st.DateOfJoining, st.Email, st.PhoneNumber
                                    FROM STAFF st JOIN DEPARTMENT d ON st.DepartmentID = d.DepartmentID 
-                                   WHERE StaffID = 'ST0001'";
+                                   WHERE StaffID = '{userID}'";
                     using (SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, conn))
                     {
                         using (DataTable dataTable = new DataTable())
@@ -45,11 +47,18 @@ namespace QuanLyBenhVien
                                 lblFullName.Text = row["FullName"].ToString();
                                 lblGender.Text = row["Gender"].ToString();
                                 lblDateOfBirth.Text = Convert.ToDateTime(row["DateOfBirth"]).ToString("dd/MM/yyyy");
-                                lblTypeOfDoctor.Text = row["TypeOfStaff"].ToString();
-                                lblDepartment.Text = row["DepartmentName"].ToString();
+                                lblTypeOfStaff.Text = row["TypeOfStaff"].ToString();
+                                string headDepartmenID = row["HeadDepartmentID"].ToString();
+                                if (headDepartmenID == userID)
+                                {
+                                    lblHeadDepartment.Text = "Trưởng phòng";
+                                }
+                                lblDepartmentName.Text = row["DepartmentName"].ToString();
                                 lblDateOfJoining.Text = Convert.ToDateTime(row["DateOfJoining"]).ToString("dd/MM/yyyy");
                                 lblEmail.Text = row["Email"].ToString();
                                 lblPhoneNumber.Text = row["PhoneNumber"].ToString();
+
+                                
                             }
                             else
                             {

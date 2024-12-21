@@ -39,17 +39,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpAdmissionDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpDischargeDate = new System.Windows.Forms.DateTimePicker();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.cmbRoomID = new System.Windows.Forms.ComboBox();
             this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,6 +53,8 @@
             this.btnFindPatient = new System.Windows.Forms.Button();
             this.btnRemovePatient = new System.Windows.Forms.Button();
             this.btnAddOrUpdatePatient = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtpDischargeDate = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
@@ -90,6 +88,8 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.dtpDischargeDate, 3, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label8, 2, 3);
             this.tableLayoutPanel2.Controls.Add(this.txtEmail, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.label10, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtFullName, 3, 0);
@@ -99,17 +99,13 @@
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label6, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label7, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label8, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label9, 2, 4);
             this.tableLayoutPanel2.Controls.Add(this.txtPatientID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtAddress, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtPhoneNumber, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.dtpAdmissionDate, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.dtpDischargeDate, 3, 4);
             this.tableLayoutPanel2.Controls.Add(this.cmbGender, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.dtpDateOfBirth, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.cmbRoomID, 3, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
@@ -234,32 +230,6 @@
             this.label7.Text = "Ngày sinh";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(535, 125);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(158, 41);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Mã phòng";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(535, 166);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(158, 45);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Ngày xuất viện";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // txtPatientID
             // 
             this.txtPatientID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -309,15 +279,6 @@
             this.dtpAdmissionDate.Size = new System.Drawing.Size(340, 30);
             this.dtpAdmissionDate.TabIndex = 17;
             // 
-            // dtpDischargeDate
-            // 
-            this.dtpDischargeDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpDischargeDate.Location = new System.Drawing.Point(701, 173);
-            this.dtpDischargeDate.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpDischargeDate.Name = "dtpDischargeDate";
-            this.dtpDischargeDate.Size = new System.Drawing.Size(341, 30);
-            this.dtpDischargeDate.TabIndex = 18;
-            // 
             // cmbGender
             // 
             this.cmbGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -339,17 +300,6 @@
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(343, 30);
             this.dtpDateOfBirth.TabIndex = 22;
-            // 
-            // cmbRoomID
-            // 
-            this.cmbRoomID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbRoomID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbRoomID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbRoomID.FormattingEnabled = true;
-            this.cmbRoomID.Location = new System.Drawing.Point(700, 128);
-            this.cmbRoomID.Name = "cmbRoomID";
-            this.cmbRoomID.Size = new System.Drawing.Size(343, 33);
-            this.cmbRoomID.TabIndex = 23;
             // 
             // dgvPatient
             // 
@@ -452,6 +402,28 @@
             this.btnAddOrUpdatePatient.UseVisualStyleBackColor = true;
             this.btnAddOrUpdatePatient.Click += new System.EventHandler(this.btnAddOrUpdatePatient_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(535, 125);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(158, 41);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Ngày xuất viện";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dtpDischargeDate
+            // 
+            this.dtpDischargeDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDischargeDate.Location = new System.Drawing.Point(701, 130);
+            this.dtpDischargeDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDischargeDate.Name = "dtpDischargeDate";
+            this.dtpDischargeDate.Size = new System.Drawing.Size(341, 30);
+            this.dtpDischargeDate.TabIndex = 24;
+            // 
             // PatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -482,14 +454,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPatientID;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpAdmissionDate;
-        private System.Windows.Forms.DateTimePicker dtpDischargeDate;
         private System.Windows.Forms.DataGridView dgvPatient;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -502,6 +471,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
-        private System.Windows.Forms.ComboBox cmbRoomID;
+        private System.Windows.Forms.DateTimePicker dtpDischargeDate;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -11,20 +11,20 @@ using System.Windows.Forms;
 
 namespace QuanLyBenhVien
 {
-    public partial class DoctorAssignment : Form
+    public partial class StaffAssignment : Form
     {
         private readonly string connStr = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
 
         string staffID = null;
         string staffName = null;
 
-        public DoctorAssignment()
+        public StaffAssignment()
         {
             InitializeComponent();
             cmbSelection.Text = "Tuần này";
             LoadWeeklyAssignments();
         }
-        public DoctorAssignment(string userID)
+        public StaffAssignment(string userID)
         {
             MessageBox.Show($"{userID}");
             InitializeComponent();
@@ -95,7 +95,7 @@ namespace QuanLyBenhVien
                             // Map Day of the Week to column index
                             for (DateTime date = weekStartDate; date <= weekEndDate; date = date.AddDays(1))
                             {
-                                int columnIndex = ((int)date.DayOfWeek == 0 ? 6 : (int)date.DayOfWeek - 1) + 1; // Adjust Sunday to index 6
+                                int columnIndex = ((int)date.DayOfWeek == 0 ? 6 : (int)date.DayOfWeek - 1) + 1;
                                 if (columnIndex >= 1 && columnIndex <= 7) // Ensure within range
                                 {
                                     if (!string.IsNullOrEmpty(dgvAssignment.Rows[rowIndex].Cells[columnIndex].Value?.ToString()))
@@ -132,8 +132,7 @@ namespace QuanLyBenhVien
                 {
                     if (cell.Value != null && cell.Value.ToString().Contains(searchString))
                     {
-                        // Apply highlight style
-                        cell.Style.BackColor = Color.Yellow; // Highlight with yellow background
+                        cell.Style.BackColor = Color.Yellow;
                     }
                 }
             }
