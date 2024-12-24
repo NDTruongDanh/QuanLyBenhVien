@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblRevenue = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,9 +38,9 @@
             this.txtMonth = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtYear = new System.Windows.Forms.TextBox();
+            this.btnOK = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvAccountantBill = new System.Windows.Forms.DataGridView();
-            this.btnOK = new System.Windows.Forms.Button();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -154,6 +156,17 @@
             this.txtYear.Size = new System.Drawing.Size(96, 30);
             this.txtYear.TabIndex = 7;
             // 
+            // btnOK
+            // 
+            this.btnOK.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOK.Location = new System.Drawing.Point(413, 29);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(46, 34);
+            this.btnOK.TabIndex = 11;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -177,28 +190,34 @@
             // 
             this.dgvAccountantBill.AllowUserToAddRows = false;
             this.dgvAccountantBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAccountantBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAccountantBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAccountantBill.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAccountantBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAccountantBill.Location = new System.Drawing.Point(131, 100);
             this.dgvAccountantBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAccountantBill.Name = "dgvAccountantBill";
             this.dgvAccountantBill.ReadOnly = true;
+            this.dgvAccountantBill.RowHeadersVisible = false;
             this.dgvAccountantBill.RowHeadersWidth = 51;
             this.dgvAccountantBill.RowTemplate.Height = 24;
             this.dgvAccountantBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccountantBill.Size = new System.Drawing.Size(542, 274);
             this.dgvAccountantBill.TabIndex = 6;
-            // 
-            // btnOK
-            // 
-            this.btnOK.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOK.Location = new System.Drawing.Point(413, 29);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(46, 34);
-            this.btnOK.TabIndex = 11;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // AccountantBill
             // 

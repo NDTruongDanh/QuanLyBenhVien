@@ -142,12 +142,14 @@
             // 
             // dgvBillDetail
             // 
+            this.dgvBillDetail.AllowUserToAddRows = false;
             this.dgvBillDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBillDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBillDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBillDetail.Location = new System.Drawing.Point(3, 162);
             this.dgvBillDetail.Name = "dgvBillDetail";
             this.dgvBillDetail.ReadOnly = true;
+            this.dgvBillDetail.RowHeadersVisible = false;
             this.dgvBillDetail.RowHeadersWidth = 51;
             this.dgvBillDetail.RowTemplate.Height = 24;
             this.dgvBillDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
