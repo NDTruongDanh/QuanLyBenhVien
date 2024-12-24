@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< Updated upstream
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> Stashed changes
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddOrUpdate = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
@@ -342,11 +347,32 @@
             // dgvWeeklyAssigment
             // 
             this.dgvWeeklyAssigment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+<<<<<<< Updated upstream
             this.dgvWeeklyAssigment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+=======
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWeeklyAssigment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvWeeklyAssigment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWeeklyAssigment.DefaultCellStyle = dataGridViewCellStyle2;
+>>>>>>> Stashed changes
             this.dgvWeeklyAssigment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWeeklyAssigment.Location = new System.Drawing.Point(3, 228);
             this.dgvWeeklyAssigment.Name = "dgvWeeklyAssigment";
             this.dgvWeeklyAssigment.ReadOnly = true;
+            this.dgvWeeklyAssigment.RowHeadersVisible = false;
             this.dgvWeeklyAssigment.RowHeadersWidth = 51;
             this.dgvWeeklyAssigment.RowTemplate.Height = 24;
             this.dgvWeeklyAssigment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

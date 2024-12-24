@@ -80,6 +80,7 @@
             this.dgvRoom.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRoom.Name = "dgvRoom";
             this.dgvRoom.ReadOnly = true;
+            this.dgvRoom.RowHeadersVisible = false;
             this.dgvRoom.RowHeadersWidth = 51;
             this.dgvRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRoom.Size = new System.Drawing.Size(1059, 233);

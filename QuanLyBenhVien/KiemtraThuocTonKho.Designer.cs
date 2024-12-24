@@ -195,6 +195,7 @@
             // 
             // dataGridView1
             // 
+<<<<<<< Updated upstream
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -207,6 +208,35 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(862, 364);
             this.dataGridView1.TabIndex = 1;
+=======
+            this.btnOK.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnOK.Location = new System.Drawing.Point(760, 64);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(113, 47);
+            this.btnOK.TabIndex = 6;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // dgvCheckMedicine
+            // 
+            this.dgvCheckMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCheckMedicine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCheckMedicine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCheckMedicine.Location = new System.Drawing.Point(3, 141);
+            this.dgvCheckMedicine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvCheckMedicine.Name = "dgvCheckMedicine";
+            this.dgvCheckMedicine.ReadOnly = true;
+            this.dgvCheckMedicine.RowHeadersVisible = false;
+            this.dgvCheckMedicine.RowHeadersWidth = 70;
+            this.dgvCheckMedicine.RowTemplate.Height = 24;
+            this.dgvCheckMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCheckMedicine.Size = new System.Drawing.Size(1149, 449);
+            this.dgvCheckMedicine.TabIndex = 1;
+>>>>>>> Stashed changes
             // 
             // KiemtraThuocTonKho
             // 

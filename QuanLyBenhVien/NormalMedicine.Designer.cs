@@ -63,6 +63,7 @@
             this.dgvMedicine.Location = new System.Drawing.Point(4, 94);
             this.dgvMedicine.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMedicine.Name = "dgvMedicine";
+            this.dgvMedicine.RowHeadersVisible = false;
             this.dgvMedicine.RowHeadersWidth = 51;
             this.dgvMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicine.Size = new System.Drawing.Size(792, 352);
