@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtManufacturer = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.cmbDosageUnit = new System.Windows.Forms.ComboBox();
-            this.txtDosage = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnRemoveMedication = new System.Windows.Forms.Button();
             this.btnAddOrUpdateMedication = new System.Windows.Forms.Button();
@@ -58,6 +58,7 @@
             this.btnFindMedication = new System.Windows.Forms.Button();
             this.dgvMedicine = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtDosage = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -86,7 +87,6 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.BackgroundImage = global::QuanLyBenhVien.Properties.Resources.MedicineImage;
             this.tableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -124,20 +124,19 @@
             // txtManufacturer
             // 
             this.txtManufacturer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtManufacturer.BackColor = System.Drawing.Color.LightGray;
-            this.txtManufacturer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtManufacturer.Location = new System.Drawing.Point(705, 164);
-            this.txtManufacturer.Multiline = true;
+            this.txtManufacturer.BackColor = System.Drawing.SystemColors.Window;
+            this.txtManufacturer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtManufacturer.Location = new System.Drawing.Point(705, 171);
             this.txtManufacturer.Name = "txtManufacturer";
-            this.txtManufacturer.Size = new System.Drawing.Size(351, 44);
+            this.txtManufacturer.Size = new System.Drawing.Size(351, 30);
             this.txtManufacturer.TabIndex = 25;
             // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.BackColor = System.Drawing.Color.LightGray;
+            this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(534, 160);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
@@ -149,9 +148,9 @@
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.BackColor = System.Drawing.Color.LightGray;
+            this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label6.Location = new System.Drawing.Point(534, 106);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -164,9 +163,9 @@
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.BackColor = System.Drawing.Color.LightGray;
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(4, 160);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
@@ -178,21 +177,20 @@
             // txtMedicationName
             // 
             this.txtMedicationName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMedicationName.BackColor = System.Drawing.Color.LightGray;
-            this.txtMedicationName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMedicationName.Location = new System.Drawing.Point(706, 4);
+            this.txtMedicationName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtMedicationName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMedicationName.Location = new System.Drawing.Point(706, 11);
             this.txtMedicationName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMedicationName.Multiline = true;
             this.txtMedicationName.Name = "txtMedicationName";
-            this.txtMedicationName.Size = new System.Drawing.Size(349, 44);
+            this.txtMedicationName.Size = new System.Drawing.Size(349, 30);
             this.txtMedicationName.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.LightGray;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(4, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -205,13 +203,13 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.LightGray;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(4, 64);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(4, 66);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 31);
+            this.label2.Size = new System.Drawing.Size(211, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "Liều lượng - ĐVT";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -219,9 +217,9 @@
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.Color.LightGray;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(4, 106);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -233,9 +231,9 @@
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.BackColor = System.Drawing.Color.LightGray;
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(534, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -247,9 +245,9 @@
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.BackColor = System.Drawing.Color.LightGray;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(534, 53);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -261,35 +259,32 @@
             // txtMedicationID
             // 
             this.txtMedicationID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMedicationID.BackColor = System.Drawing.Color.LightGray;
-            this.txtMedicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMedicationID.Location = new System.Drawing.Point(223, 4);
+            this.txtMedicationID.BackColor = System.Drawing.SystemColors.Window;
+            this.txtMedicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMedicationID.Location = new System.Drawing.Point(223, 11);
             this.txtMedicationID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMedicationID.Multiline = true;
             this.txtMedicationID.Name = "txtMedicationID";
-            this.txtMedicationID.Size = new System.Drawing.Size(303, 44);
+            this.txtMedicationID.Size = new System.Drawing.Size(303, 30);
             this.txtMedicationID.TabIndex = 6;
             // 
             // txtQuantityInStock
             // 
             this.txtQuantityInStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQuantityInStock.BackColor = System.Drawing.Color.LightGray;
-            this.txtQuantityInStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtQuantityInStock.Location = new System.Drawing.Point(705, 110);
-            this.txtQuantityInStock.Multiline = true;
+            this.txtQuantityInStock.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQuantityInStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtQuantityInStock.Location = new System.Drawing.Point(705, 117);
             this.txtQuantityInStock.Name = "txtQuantityInStock";
-            this.txtQuantityInStock.Size = new System.Drawing.Size(351, 44);
+            this.txtQuantityInStock.Size = new System.Drawing.Size(351, 30);
             this.txtQuantityInStock.TabIndex = 20;
             // 
             // txtPrice
             // 
             this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrice.BackColor = System.Drawing.Color.LightGray;
-            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtPrice.Location = new System.Drawing.Point(222, 110);
-            this.txtPrice.Multiline = true;
+            this.txtPrice.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtPrice.Location = new System.Drawing.Point(222, 117);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(305, 44);
+            this.txtPrice.Size = new System.Drawing.Size(305, 30);
             this.txtPrice.TabIndex = 22;
             // 
             // tableLayoutPanel4
@@ -312,12 +307,12 @@
             // 
             this.dtpManufacturingDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpManufacturingDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpManufacturingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpManufacturingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpManufacturingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpManufacturingDate.Location = new System.Drawing.Point(156, 5);
+            this.dtpManufacturingDate.Location = new System.Drawing.Point(156, 9);
             this.dtpManufacturingDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpManufacturingDate.Name = "dtpManufacturingDate";
-            this.dtpManufacturingDate.Size = new System.Drawing.Size(145, 38);
+            this.dtpManufacturingDate.Size = new System.Drawing.Size(145, 30);
             this.dtpManufacturingDate.TabIndex = 21;
             // 
             // dtpExpiryDate
@@ -325,12 +320,12 @@
             this.dtpExpiryDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpExpiryDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpExpiryDate.CalendarMonthBackground = System.Drawing.Color.White;
-            this.dtpExpiryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpExpiryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpExpiryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpExpiryDate.Location = new System.Drawing.Point(4, 5);
+            this.dtpExpiryDate.Location = new System.Drawing.Point(4, 9);
             this.dtpExpiryDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpExpiryDate.Name = "dtpExpiryDate";
-            this.dtpExpiryDate.Size = new System.Drawing.Size(144, 38);
+            this.dtpExpiryDate.Size = new System.Drawing.Size(144, 30);
             this.dtpExpiryDate.TabIndex = 20;
             // 
             // cmbCategory
@@ -338,8 +333,8 @@
             this.cmbCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbCategory.BackColor = System.Drawing.Color.LightGray;
-            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategory.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Items.AddRange(new object[] {
             "Kháng sinh",
@@ -349,9 +344,9 @@
             "Chống dị ứng",
             "Tiêu hóa",
             "Thần kinh"});
-            this.cmbCategory.Location = new System.Drawing.Point(705, 57);
+            this.cmbCategory.Location = new System.Drawing.Point(705, 63);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(351, 44);
+            this.cmbCategory.Size = new System.Drawing.Size(351, 33);
             this.cmbCategory.TabIndex = 26;
             // 
             // tableLayoutPanel5
@@ -359,8 +354,8 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.cmbDosageUnit, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtDosage, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.cmbDosageUnit, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(222, 56);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -375,8 +370,8 @@
             this.cmbDosageUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDosageUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDosageUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbDosageUnit.BackColor = System.Drawing.Color.LightGray;
-            this.cmbDosageUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDosageUnit.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbDosageUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDosageUnit.FormattingEnabled = true;
             this.cmbDosageUnit.Items.AddRange(new object[] {
             "chai",
@@ -385,19 +380,8 @@
             "gói"});
             this.cmbDosageUnit.Location = new System.Drawing.Point(155, 3);
             this.cmbDosageUnit.Name = "cmbDosageUnit";
-            this.cmbDosageUnit.Size = new System.Drawing.Size(147, 44);
+            this.cmbDosageUnit.Size = new System.Drawing.Size(147, 33);
             this.cmbDosageUnit.TabIndex = 27;
-            // 
-            // txtDosage
-            // 
-            this.txtDosage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDosage.BackColor = System.Drawing.Color.LightGray;
-            this.txtDosage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtDosage.Location = new System.Drawing.Point(3, 3);
-            this.txtDosage.Multiline = true;
-            this.txtDosage.Name = "txtDosage";
-            this.txtDosage.Size = new System.Drawing.Size(146, 41);
-            this.txtDosage.TabIndex = 21;
             // 
             // tableLayoutPanel3
             // 
@@ -422,7 +406,7 @@
             // 
             // btnRemoveMedication
             // 
-            this.btnRemoveMedication.BackColor = System.Drawing.Color.Silver;
+            this.btnRemoveMedication.BackColor = System.Drawing.SystemColors.Control;
             this.btnRemoveMedication.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRemoveMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveMedication.Location = new System.Drawing.Point(796, 4);
@@ -436,7 +420,7 @@
             // 
             // btnAddOrUpdateMedication
             // 
-            this.btnAddOrUpdateMedication.BackColor = System.Drawing.Color.Silver;
+            this.btnAddOrUpdateMedication.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddOrUpdateMedication.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddOrUpdateMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddOrUpdateMedication.Location = new System.Drawing.Point(532, 4);
@@ -450,7 +434,7 @@
             // 
             // btnRefreshMedication
             // 
-            this.btnRefreshMedication.BackColor = System.Drawing.Color.Silver;
+            this.btnRefreshMedication.BackColor = System.Drawing.SystemColors.Control;
             this.btnRefreshMedication.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRefreshMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefreshMedication.Location = new System.Drawing.Point(268, 4);
@@ -464,7 +448,7 @@
             // 
             // btnFindMedication
             // 
-            this.btnFindMedication.BackColor = System.Drawing.Color.Silver;
+            this.btnFindMedication.BackColor = System.Drawing.SystemColors.Control;
             this.btnFindMedication.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnFindMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFindMedication.Location = new System.Drawing.Point(4, 4);
@@ -480,6 +464,14 @@
             // 
             this.dgvMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMedicine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMedicine.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMedicine.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMedicine.Location = new System.Drawing.Point(4, 280);
             this.dgvMedicine.Margin = new System.Windows.Forms.Padding(4);
@@ -495,6 +487,16 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // txtDosage
+            // 
+            this.txtDosage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDosage.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDosage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtDosage.Location = new System.Drawing.Point(3, 8);
+            this.txtDosage.Name = "txtDosage";
+            this.txtDosage.Size = new System.Drawing.Size(146, 30);
+            this.txtDosage.TabIndex = 28;
             // 
             // MedicineForm
             // 
@@ -547,7 +549,7 @@
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.ComboBox cmbDosageUnit;
-        private System.Windows.Forms.TextBox txtDosage;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox txtDosage;
     }
 }

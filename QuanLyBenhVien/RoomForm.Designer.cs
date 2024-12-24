@@ -118,13 +118,13 @@
             // 
             // txtEmptyBed
             // 
+            this.txtEmptyBed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmptyBed.BackColor = System.Drawing.SystemColors.Window;
             this.txtEmptyBed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtEmptyBed.Location = new System.Drawing.Point(235, 126);
+            this.txtEmptyBed.Location = new System.Drawing.Point(235, 138);
             this.txtEmptyBed.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmptyBed.Multiline = true;
             this.txtEmptyBed.Name = "txtEmptyBed";
-            this.txtEmptyBed.Size = new System.Drawing.Size(293, 46);
+            this.txtEmptyBed.Size = new System.Drawing.Size(293, 30);
             this.txtEmptyBed.TabIndex = 12;
             // 
             // label5
@@ -181,24 +181,24 @@
             // 
             // txtRoomID
             // 
+            this.txtRoomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRoomID.BackColor = System.Drawing.SystemColors.Window;
             this.txtRoomID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtRoomID.Location = new System.Drawing.Point(235, 4);
+            this.txtRoomID.Location = new System.Drawing.Point(235, 15);
             this.txtRoomID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRoomID.Multiline = true;
             this.txtRoomID.Name = "txtRoomID";
-            this.txtRoomID.Size = new System.Drawing.Size(293, 46);
+            this.txtRoomID.Size = new System.Drawing.Size(293, 30);
             this.txtRoomID.TabIndex = 4;
             // 
             // txtBedCount
             // 
+            this.txtBedCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBedCount.BackColor = System.Drawing.SystemColors.Window;
             this.txtBedCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBedCount.Location = new System.Drawing.Point(761, 65);
+            this.txtBedCount.Location = new System.Drawing.Point(761, 76);
             this.txtBedCount.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBedCount.Multiline = true;
             this.txtBedCount.Name = "txtBedCount";
-            this.txtBedCount.Size = new System.Drawing.Size(294, 46);
+            this.txtBedCount.Size = new System.Drawing.Size(294, 30);
             this.txtBedCount.TabIndex = 5;
             // 
             // label2
