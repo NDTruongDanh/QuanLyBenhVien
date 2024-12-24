@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -10,6 +12,8 @@ namespace QuanLyBenhVien.Classes
 {
     internal class CommonControls
     {
+        static readonly string connStr = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
+
         static ContextMenuStrip contextMenu;
 
         static TabControl tabControl;
@@ -95,6 +99,234 @@ namespace QuanLyBenhVien.Classes
             }
         }
 
+        public static void InitializeCmbPatientID(ComboBox cmbPatientID)
+        {
+            string query = "SELECT PatientID FROM PATIENT";
 
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbPatientID.Items.Add(reader["PatientID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        public static void InitializeCmbDoctorID(ComboBox cmbDoctorID)
+        {
+            string query = "SELECT StaffID FROM STAFF WHERE TypeOfStaff LIKE N'%Bác sĩ%'";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbDoctorID.Items.Add(reader["StaffID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        public static void InitializeCmbDepartmentID(ComboBox cmbDepartmentID)
+        {
+            string query = "SELECT DepartmentID FROM DEPARTMENT";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbDepartmentID.Items.Add(reader["DepartmentID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        public static void InitializCmbMedicationID(ComboBox cmbMedicationID)
+        {
+            string query = "SELECT MedicationID FROM MEDICATION";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbMedicationID.Items.Add(reader["MedicationID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        public static void InitializeCmbRecordID(ComboBox cmbRecordID)
+        {
+            string query = "SELECT RecordID FROM MEDICALRECORD";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbRecordID.Items.Add(reader["RecordID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        public static void InitializeCmbStaffID(ComboBox cmbStaffID)
+        {
+            string query = "SELECT StaffID FROM STAFF";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbStaffID.Items.Add(reader["StaffID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        public static void InitializeCmbNurseID(ComboBox cmbNurseID)
+        {
+            string query = "SELECT StaffID FROM STAFF WHERE TypeOfStaff LIKE N'%Y tá%'";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbNurseID.Items.Add(reader["StaffID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        public static void InitializeCmbRoomID(ComboBox cmbRoomID)
+        {
+            string query = "SELECT RoomID FROM ROOM";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbRoomID.Items.Add(reader["RoomID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        public static void SetupDateTimePickerCustom_Time(DateTimePicker dateTimePicker)
+        {
+            dateTimePicker.Format = DateTimePickerFormat.Custom;
+            dateTimePicker.CustomFormat = "hh:mm tt dd/MM/yyyy"; // Định dạng ngày và giờ
+            dateTimePicker.ShowUpDown = true; // Ẩn lịch, chỉ chọn giờ
+        }
+
+        public static void SetupDateTimePickerCustom_Date(DateTimePicker dateTimePicker)
+        {
+            dateTimePicker.Format = DateTimePickerFormat.Custom;
+            dateTimePicker.CustomFormat = "dd/MM/yyyy"; // Định dạng ngày và giờ
+            dateTimePicker.ShowUpDown = true; // Ẩn lịch, chỉ chọn giờ
+        }
     }
 }
