@@ -124,6 +124,9 @@
   <data name="anhTHUOC1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\anhTHUOC1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="55498790_1988019174827777_3981126884560732160_n1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\55498790_1988019174827777_3981126884560732160_n1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,7 +139,7 @@
   <data name="anhTHUOC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\anhTHUOC.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="an" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\an.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
