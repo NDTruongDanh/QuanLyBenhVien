@@ -33,8 +33,8 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSignIn = new System.Windows.Forms.Button();
-            this.btnHidePass = new System.Windows.Forms.Button();
             this.chkRememberMe = new System.Windows.Forms.CheckBox();
+            this.btnHidePass = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -85,17 +85,6 @@
             this.btnSignIn.UseVisualStyleBackColor = true;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
-            // btnHidePass
-            // 
-            this.btnHidePass.BackgroundImage = global::QuanLyBenhVien.Properties.Resources.mo;
-            this.btnHidePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHidePass.Location = new System.Drawing.Point(585, 198);
-            this.btnHidePass.Name = "btnHidePass";
-            this.btnHidePass.Size = new System.Drawing.Size(41, 38);
-            this.btnHidePass.TabIndex = 5;
-            this.btnHidePass.UseVisualStyleBackColor = true;
-            this.btnHidePass.Click += new System.EventHandler(this.btnHidePass_Click);
-            // 
             // chkRememberMe
             // 
             this.chkRememberMe.AutoSize = true;
@@ -106,6 +95,17 @@
             this.chkRememberMe.TabIndex = 6;
             this.chkRememberMe.Text = "Remember me";
             this.chkRememberMe.UseVisualStyleBackColor = true;
+            // 
+            // btnHidePass
+            // 
+            this.btnHidePass.BackgroundImage = global::QuanLyBenhVien.Properties.Resources.mo;
+            this.btnHidePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHidePass.Location = new System.Drawing.Point(585, 198);
+            this.btnHidePass.Name = "btnHidePass";
+            this.btnHidePass.Size = new System.Drawing.Size(41, 38);
+            this.btnHidePass.TabIndex = 5;
+            this.btnHidePass.UseVisualStyleBackColor = true;
+            this.btnHidePass.Click += new System.EventHandler(this.btnHidePass_Click);
             // 
             // SignIn
             // 

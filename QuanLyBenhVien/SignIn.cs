@@ -194,16 +194,14 @@ namespace QuanLyBenhVien
             {
 
                 txtPassword.UseSystemPasswordChar = false;
-                string s = @"D:\ANHDA\an.jpg";
-                btnHidePass.BackgroundImage = Image.FromFile(s);
+                btnHidePass.BackgroundImage = Properties.Resources.an;
                 btnHidePass.BackgroundImageLayout = ImageLayout.Stretch;
             }
             else
             {
 
                 txtPassword.UseSystemPasswordChar = true;
-                string s = @"D:\ANHDA\mo.jpg";
-                btnHidePass.BackgroundImage = Image.FromFile(s);
+                btnHidePass.BackgroundImage = Properties.Resources.mo;
                 btnHidePass.BackgroundImageLayout = ImageLayout.Stretch;
             }
         }
