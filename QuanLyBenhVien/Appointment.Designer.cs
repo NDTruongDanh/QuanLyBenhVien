@@ -123,11 +123,12 @@
             // dtpAppointmentDateTime
             // 
             this.dtpAppointmentDateTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpAppointmentDateTime.CalendarFont = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpAppointmentDateTime.CalendarFont = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpAppointmentDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpAppointmentDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpAppointmentDateTime.Location = new System.Drawing.Point(741, 97);
+            this.dtpAppointmentDateTime.Location = new System.Drawing.Point(741, 93);
             this.dtpAppointmentDateTime.Name = "dtpAppointmentDateTime";
-            this.dtpAppointmentDateTime.Size = new System.Drawing.Size(240, 22);
+            this.dtpAppointmentDateTime.Size = new System.Drawing.Size(240, 30);
             this.dtpAppointmentDateTime.TabIndex = 23;
             // 
             // cmbDepartmentID
@@ -136,12 +137,12 @@
             this.cmbDepartmentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDepartmentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDepartmentID.BackColor = System.Drawing.Color.LightGray;
-            this.cmbDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbDepartmentID.FormattingEnabled = true;
-            this.cmbDepartmentID.Location = new System.Drawing.Point(249, 159);
+            this.cmbDepartmentID.Location = new System.Drawing.Point(249, 164);
             this.cmbDepartmentID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
-            this.cmbDepartmentID.Size = new System.Drawing.Size(240, 44);
+            this.cmbDepartmentID.Size = new System.Drawing.Size(240, 33);
             this.cmbDepartmentID.TabIndex = 15;
             // 
             // label4
@@ -176,12 +177,12 @@
             this.cmbDoctorID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDoctorID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDoctorID.BackColor = System.Drawing.Color.LightGray;
-            this.cmbDoctorID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbDoctorID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbDoctorID.FormattingEnabled = true;
-            this.cmbDoctorID.Location = new System.Drawing.Point(249, 86);
+            this.cmbDoctorID.Location = new System.Drawing.Point(249, 91);
             this.cmbDoctorID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDoctorID.Name = "cmbDoctorID";
-            this.cmbDoctorID.Size = new System.Drawing.Size(240, 44);
+            this.cmbDoctorID.Size = new System.Drawing.Size(240, 33);
             this.cmbDoctorID.TabIndex = 11;
             // 
             // label2
@@ -203,12 +204,12 @@
             this.cmbPatientID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbPatientID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPatientID.BackColor = System.Drawing.Color.LightGray;
-            this.cmbPatientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbPatientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbPatientID.FormattingEnabled = true;
-            this.cmbPatientID.Location = new System.Drawing.Point(741, 14);
+            this.cmbPatientID.Location = new System.Drawing.Point(741, 19);
             this.cmbPatientID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbPatientID.Name = "cmbPatientID";
-            this.cmbPatientID.Size = new System.Drawing.Size(240, 44);
+            this.cmbPatientID.Size = new System.Drawing.Size(240, 33);
             this.cmbPatientID.TabIndex = 9;
             // 
             // label1
@@ -228,7 +229,7 @@
             // 
             this.txtAppointmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAppointmentID.BackColor = System.Drawing.Color.LightGray;
-            this.txtAppointmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtAppointmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtAppointmentID.Location = new System.Drawing.Point(250, 13);
             this.txtAppointmentID.Margin = new System.Windows.Forms.Padding(4);
             this.txtAppointmentID.Multiline = true;
@@ -270,6 +271,7 @@
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.Location = new System.Drawing.Point(164, 4);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
@@ -300,6 +302,7 @@
             this.rbtnDecline.AutoCheck = false;
             this.rbtnDecline.AutoSize = true;
             this.rbtnDecline.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbtnDecline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnDecline.Location = new System.Drawing.Point(3, 34);
             this.rbtnDecline.Name = "rbtnDecline";
             this.rbtnDecline.Size = new System.Drawing.Size(148, 25);
@@ -314,6 +317,7 @@
             this.rbtnAccept.AutoCheck = false;
             this.rbtnAccept.AutoSize = true;
             this.rbtnAccept.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbtnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnAccept.Location = new System.Drawing.Point(3, 3);
             this.rbtnAccept.Name = "rbtnAccept";
             this.rbtnAccept.Size = new System.Drawing.Size(148, 25);
@@ -348,6 +352,7 @@
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(742, 4);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
@@ -362,6 +367,7 @@
             this.btnAddOrUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddOrUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddOrUpdate.Location = new System.Drawing.Point(496, 4);
             this.btnAddOrUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddOrUpdate.Name = "btnAddOrUpdate";
@@ -376,6 +382,7 @@
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Location = new System.Drawing.Point(250, 4);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
@@ -390,6 +397,7 @@
             this.btnFind.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.Location = new System.Drawing.Point(4, 4);
             this.btnFind.Margin = new System.Windows.Forms.Padding(4);
             this.btnFind.Name = "btnFind";

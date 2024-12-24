@@ -59,6 +59,7 @@
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(598, 4);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
@@ -73,6 +74,7 @@
             this.btnAddOrUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddOrUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddOrUpdate.Location = new System.Drawing.Point(400, 4);
             this.btnAddOrUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddOrUpdate.Name = "btnAddOrUpdate";
@@ -87,6 +89,7 @@
             this.btnFind.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.Location = new System.Drawing.Point(4, 4);
             this.btnFind.Margin = new System.Windows.Forms.Padding(4);
             this.btnFind.Name = "btnFind";
@@ -104,7 +107,7 @@
             this.label5.Location = new System.Drawing.Point(400, 116);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(190, 58);
+            this.label5.Size = new System.Drawing.Size(144, 58);
             this.label5.TabIndex = 24;
             this.label5.Text = "Ngày kết thúc";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,7 +120,7 @@
             this.label4.Location = new System.Drawing.Point(4, 116);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(190, 58);
+            this.label4.Size = new System.Drawing.Size(142, 58);
             this.label4.TabIndex = 14;
             this.label4.Text = "Ngày bắt đầu";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -130,7 +133,7 @@
             this.label3.Location = new System.Drawing.Point(400, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 58);
+            this.label3.Size = new System.Drawing.Size(144, 58);
             this.label3.TabIndex = 12;
             this.label3.Text = "Ca";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,12 +144,12 @@
             this.cmbStaffID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbStaffID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbStaffID.BackColor = System.Drawing.Color.LightGray;
-            this.cmbStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbStaffID.FormattingEnabled = true;
-            this.cmbStaffID.Location = new System.Drawing.Point(201, 65);
+            this.cmbStaffID.Location = new System.Drawing.Point(153, 70);
             this.cmbStaffID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbStaffID.Name = "cmbStaffID";
-            this.cmbStaffID.Size = new System.Drawing.Size(192, 44);
+            this.cmbStaffID.Size = new System.Drawing.Size(240, 33);
             this.cmbStaffID.TabIndex = 11;
             // 
             // label2
@@ -157,7 +160,7 @@
             this.label2.Location = new System.Drawing.Point(4, 58);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 58);
+            this.label2.Size = new System.Drawing.Size(142, 58);
             this.label2.TabIndex = 10;
             this.label2.Text = "Mã nhân viên";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,12 +171,12 @@
             this.cmbDepartmentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDepartmentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDepartmentID.BackColor = System.Drawing.Color.LightGray;
-            this.cmbDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbDepartmentID.FormattingEnabled = true;
-            this.cmbDepartmentID.Location = new System.Drawing.Point(597, 7);
+            this.cmbDepartmentID.Location = new System.Drawing.Point(551, 12);
             this.cmbDepartmentID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
-            this.cmbDepartmentID.Size = new System.Drawing.Size(194, 44);
+            this.cmbDepartmentID.Size = new System.Drawing.Size(240, 33);
             this.cmbDepartmentID.TabIndex = 9;
             // 
             // tableLayoutPanel3
@@ -201,6 +204,7 @@
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Location = new System.Drawing.Point(202, 4);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
@@ -218,7 +222,7 @@
             this.label1.Location = new System.Drawing.Point(400, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 58);
+            this.label1.Size = new System.Drawing.Size(144, 58);
             this.label1.TabIndex = 8;
             this.label1.Text = "Mã khoa";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -227,12 +231,12 @@
             // 
             this.txtAssignmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAssignmentID.BackColor = System.Drawing.Color.LightGray;
-            this.txtAssignmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtAssignmentID.Location = new System.Drawing.Point(202, 6);
+            this.txtAssignmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtAssignmentID.Location = new System.Drawing.Point(154, 6);
             this.txtAssignmentID.Margin = new System.Windows.Forms.Padding(4);
             this.txtAssignmentID.Multiline = true;
             this.txtAssignmentID.Name = "txtAssignmentID";
-            this.txtAssignmentID.Size = new System.Drawing.Size(190, 46);
+            this.txtAssignmentID.Size = new System.Drawing.Size(238, 46);
             this.txtAssignmentID.TabIndex = 7;
             // 
             // label6
@@ -243,7 +247,7 @@
             this.label6.Location = new System.Drawing.Point(4, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 58);
+            this.label6.Size = new System.Drawing.Size(142, 58);
             this.label6.TabIndex = 6;
             this.label6.Text = "Mã lịch trực";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -251,10 +255,10 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.dtpWeekEndDate, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.dtpWeekStartDate, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.cmbShiftType, 3, 1);
@@ -282,9 +286,10 @@
             this.dtpWeekEndDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpWeekEndDate.CalendarFont = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpWeekEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpWeekEndDate.Location = new System.Drawing.Point(597, 130);
+            this.dtpWeekEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpWeekEndDate.Location = new System.Drawing.Point(551, 130);
             this.dtpWeekEndDate.Name = "dtpWeekEndDate";
-            this.dtpWeekEndDate.Size = new System.Drawing.Size(194, 30);
+            this.dtpWeekEndDate.Size = new System.Drawing.Size(240, 30);
             this.dtpWeekEndDate.TabIndex = 27;
             // 
             // dtpWeekStartDate
@@ -292,9 +297,10 @@
             this.dtpWeekStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpWeekStartDate.CalendarFont = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpWeekStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpWeekStartDate.Location = new System.Drawing.Point(201, 130);
+            this.dtpWeekStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpWeekStartDate.Location = new System.Drawing.Point(153, 130);
             this.dtpWeekStartDate.Name = "dtpWeekStartDate";
-            this.dtpWeekStartDate.Size = new System.Drawing.Size(192, 30);
+            this.dtpWeekStartDate.Size = new System.Drawing.Size(240, 30);
             this.dtpWeekStartDate.TabIndex = 26;
             // 
             // cmbShiftType
@@ -303,16 +309,16 @@
             this.cmbShiftType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbShiftType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbShiftType.BackColor = System.Drawing.Color.LightGray;
-            this.cmbShiftType.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbShiftType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbShiftType.FormattingEnabled = true;
             this.cmbShiftType.Items.AddRange(new object[] {
             "Sáng",
             "Chiều ",
             "Tối"});
-            this.cmbShiftType.Location = new System.Drawing.Point(597, 65);
+            this.cmbShiftType.Location = new System.Drawing.Point(551, 70);
             this.cmbShiftType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbShiftType.Name = "cmbShiftType";
-            this.cmbShiftType.Size = new System.Drawing.Size(194, 44);
+            this.cmbShiftType.Size = new System.Drawing.Size(240, 33);
             this.cmbShiftType.TabIndex = 25;
             // 
             // tableLayoutPanel1
