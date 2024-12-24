@@ -73,6 +73,7 @@
             // dgvRoom
             // 
             this.dgvRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRoom.Location = new System.Drawing.Point(4, 244);
@@ -87,7 +88,7 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.BackgroundImage = global::QuanLyBenhVien.Properties.Resources.anhphongbenh;
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -117,10 +118,9 @@
             // 
             // txtEmptyBed
             // 
-            this.txtEmptyBed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmptyBed.BackColor = System.Drawing.Color.LightGray;
-            this.txtEmptyBed.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtEmptyBed.Location = new System.Drawing.Point(235, 130);
+            this.txtEmptyBed.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEmptyBed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtEmptyBed.Location = new System.Drawing.Point(235, 126);
             this.txtEmptyBed.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmptyBed.Multiline = true;
             this.txtEmptyBed.Name = "txtEmptyBed";
@@ -130,9 +130,8 @@
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.BackColor = System.Drawing.Color.LightGray;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(4, 125);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -144,9 +143,8 @@
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.BackColor = System.Drawing.Color.LightGray;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(536, 63);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -158,9 +156,8 @@
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.LightGray;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(4, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -172,9 +169,8 @@
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.Color.LightGray;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(4, 63);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -185,10 +181,9 @@
             // 
             // txtRoomID
             // 
-            this.txtRoomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRoomID.BackColor = System.Drawing.Color.LightGray;
-            this.txtRoomID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtRoomID.Location = new System.Drawing.Point(235, 7);
+            this.txtRoomID.BackColor = System.Drawing.SystemColors.Window;
+            this.txtRoomID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtRoomID.Location = new System.Drawing.Point(235, 4);
             this.txtRoomID.Margin = new System.Windows.Forms.Padding(4);
             this.txtRoomID.Multiline = true;
             this.txtRoomID.Name = "txtRoomID";
@@ -197,10 +192,9 @@
             // 
             // txtBedCount
             // 
-            this.txtBedCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBedCount.BackColor = System.Drawing.Color.LightGray;
-            this.txtBedCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBedCount.Location = new System.Drawing.Point(761, 68);
+            this.txtBedCount.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBedCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBedCount.Location = new System.Drawing.Point(761, 65);
             this.txtBedCount.Margin = new System.Windows.Forms.Padding(4);
             this.txtBedCount.Multiline = true;
             this.txtBedCount.Name = "txtBedCount";
@@ -210,9 +204,8 @@
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.LightGray;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(535, 2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(219, 56);
@@ -225,13 +218,13 @@
             this.cmbDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDepartmentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDepartmentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbDepartmentID.BackColor = System.Drawing.Color.LightGray;
-            this.cmbDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbDepartmentID.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbDepartmentID.FormattingEnabled = true;
-            this.cmbDepartmentID.Location = new System.Drawing.Point(760, 8);
+            this.cmbDepartmentID.Location = new System.Drawing.Point(760, 14);
             this.cmbDepartmentID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
-            this.cmbDepartmentID.Size = new System.Drawing.Size(296, 44);
+            this.cmbDepartmentID.Size = new System.Drawing.Size(296, 33);
             this.cmbDepartmentID.TabIndex = 8;
             // 
             // cmbRoomType
@@ -239,8 +232,8 @@
             this.cmbRoomType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbRoomType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbRoomType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbRoomType.BackColor = System.Drawing.Color.LightGray;
-            this.cmbRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbRoomType.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbRoomType.FormattingEnabled = true;
             this.cmbRoomType.Items.AddRange(new object[] {
             "Điều trị tổng quát",
@@ -253,10 +246,10 @@
             "Chăm sóc dài hạn",
             "Sản khoa",
             "VIP"});
-            this.cmbRoomType.Location = new System.Drawing.Point(234, 69);
+            this.cmbRoomType.Location = new System.Drawing.Point(234, 75);
             this.cmbRoomType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbRoomType.Name = "cmbRoomType";
-            this.cmbRoomType.Size = new System.Drawing.Size(295, 44);
+            this.cmbRoomType.Size = new System.Drawing.Size(295, 33);
             this.cmbRoomType.TabIndex = 9;
             // 
             // tableLayoutPanel3
@@ -282,9 +275,9 @@
             // 
             // btnRemoveRoom
             // 
-            this.btnRemoveRoom.BackColor = System.Drawing.Color.Silver;
+            this.btnRemoveRoom.BackColor = System.Drawing.SystemColors.Control;
             this.btnRemoveRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemoveRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveRoom.Location = new System.Drawing.Point(796, 4);
             this.btnRemoveRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemoveRoom.Name = "btnRemoveRoom";
@@ -296,9 +289,9 @@
             // 
             // btnAddOrUpdateRoom
             // 
-            this.btnAddOrUpdateRoom.BackColor = System.Drawing.Color.Silver;
+            this.btnAddOrUpdateRoom.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddOrUpdateRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddOrUpdateRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddOrUpdateRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddOrUpdateRoom.Location = new System.Drawing.Point(532, 4);
             this.btnAddOrUpdateRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddOrUpdateRoom.Name = "btnAddOrUpdateRoom";
@@ -310,9 +303,9 @@
             // 
             // btnRefreshRoom
             // 
-            this.btnRefreshRoom.BackColor = System.Drawing.Color.Silver;
+            this.btnRefreshRoom.BackColor = System.Drawing.SystemColors.Control;
             this.btnRefreshRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefreshRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefreshRoom.Location = new System.Drawing.Point(268, 4);
             this.btnRefreshRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefreshRoom.Name = "btnRefreshRoom";
@@ -324,9 +317,9 @@
             // 
             // btnFindRoom
             // 
-            this.btnFindRoom.BackColor = System.Drawing.Color.Silver;
+            this.btnFindRoom.BackColor = System.Drawing.SystemColors.Control;
             this.btnFindRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFindRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFindRoom.Location = new System.Drawing.Point(4, 4);
             this.btnFindRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnFindRoom.Name = "btnFindRoom";
