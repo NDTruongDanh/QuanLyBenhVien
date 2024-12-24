@@ -326,7 +326,7 @@ namespace QuanLyBenhVien.Classes
         {
             dateTimePicker.Format = DateTimePickerFormat.Custom;
             dateTimePicker.CustomFormat = "dd/MM/yyyy"; // Định dạng ngày và giờ
-            dateTimePicker.ShowUpDown = true; // Ẩn lịch, chỉ chọn giờ
+            dateTimePicker.ShowUpDown = true; // Ẩn lịch, chỉ chọn giờ 
         }
     }
 }

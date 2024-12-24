@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddOrUpdate = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
@@ -143,7 +145,7 @@
             this.cmbStaffID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbStaffID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbStaffID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbStaffID.BackColor = System.Drawing.Color.LightGray;
+            this.cmbStaffID.BackColor = System.Drawing.SystemColors.Window;
             this.cmbStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbStaffID.FormattingEnabled = true;
             this.cmbStaffID.Location = new System.Drawing.Point(153, 70);
@@ -170,7 +172,7 @@
             this.cmbDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDepartmentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDepartmentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbDepartmentID.BackColor = System.Drawing.Color.LightGray;
+            this.cmbDepartmentID.BackColor = System.Drawing.SystemColors.Window;
             this.cmbDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbDepartmentID.FormattingEnabled = true;
             this.cmbDepartmentID.Location = new System.Drawing.Point(551, 12);
@@ -230,13 +232,12 @@
             // txtAssignmentID
             // 
             this.txtAssignmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAssignmentID.BackColor = System.Drawing.Color.LightGray;
+            this.txtAssignmentID.BackColor = System.Drawing.SystemColors.Window;
             this.txtAssignmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtAssignmentID.Location = new System.Drawing.Point(154, 6);
+            this.txtAssignmentID.Location = new System.Drawing.Point(154, 14);
             this.txtAssignmentID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAssignmentID.Multiline = true;
             this.txtAssignmentID.Name = "txtAssignmentID";
-            this.txtAssignmentID.Size = new System.Drawing.Size(238, 46);
+            this.txtAssignmentID.Size = new System.Drawing.Size(238, 30);
             this.txtAssignmentID.TabIndex = 7;
             // 
             // label6
@@ -308,7 +309,7 @@
             this.cmbShiftType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbShiftType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbShiftType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbShiftType.BackColor = System.Drawing.Color.LightGray;
+            this.cmbShiftType.BackColor = System.Drawing.SystemColors.Window;
             this.cmbShiftType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbShiftType.FormattingEnabled = true;
             this.cmbShiftType.Items.AddRange(new object[] {
@@ -342,7 +343,23 @@
             // dgvWeeklyAssigment
             // 
             this.dgvWeeklyAssigment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWeeklyAssigment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvWeeklyAssigment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWeeklyAssigment.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWeeklyAssigment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWeeklyAssigment.Location = new System.Drawing.Point(3, 228);
             this.dgvWeeklyAssigment.Name = "dgvWeeklyAssigment";
@@ -361,7 +378,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "WeeklyAssignmentForm";
-            this.Text = "WeeklyAssignment";
+            this.Text = "LỊCH LÀM VIỆC";
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

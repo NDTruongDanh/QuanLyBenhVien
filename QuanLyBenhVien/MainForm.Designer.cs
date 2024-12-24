@@ -73,7 +73,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1344, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1344, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -185,7 +185,7 @@
             // 
             this.btnWeeklyAssignment.Name = "btnWeeklyAssignment";
             this.btnWeeklyAssignment.Size = new System.Drawing.Size(229, 26);
-            this.btnWeeklyAssignment.Text = "Lịch trực";
+            this.btnWeeklyAssignment.Text = "Lịch làm việc";
             this.btnWeeklyAssignment.Click += new System.EventHandler(this.btnWeeklyAssignment_Click);
             // 
             // chămSócBệnhNhânToolStripMenuItem
@@ -211,20 +211,20 @@
             this.btnQuantityInStock,
             this.btnExpired});
             this.btnMedicineReport.Name = "btnMedicineReport";
-            this.btnMedicineReport.Size = new System.Drawing.Size(224, 26);
+            this.btnMedicineReport.Size = new System.Drawing.Size(217, 26);
             this.btnMedicineReport.Text = "Báo cáo thuốc ";
             // 
             // btnQuantityInStock
             // 
             this.btnQuantityInStock.Name = "btnQuantityInStock";
-            this.btnQuantityInStock.Size = new System.Drawing.Size(224, 26);
+            this.btnQuantityInStock.Size = new System.Drawing.Size(176, 26);
             this.btnQuantityInStock.Text = "Tồn kho";
             this.btnQuantityInStock.Click += new System.EventHandler(this.btnQuantityInStock_Click);
             // 
             // btnExpired
             // 
             this.btnExpired.Name = "btnExpired";
-            this.btnExpired.Size = new System.Drawing.Size(224, 26);
+            this.btnExpired.Size = new System.Drawing.Size(176, 26);
             this.btnExpired.Text = "Hạn sử dụng";
             this.btnExpired.Click += new System.EventHandler(this.btnExpired_Click);
             // 
@@ -234,7 +234,7 @@
             this.btnMonthIncomeReport,
             this.btnYearIncomeReport});
             this.btnIncomeReport.Name = "btnIncomeReport";
-            this.btnIncomeReport.Size = new System.Drawing.Size(224, 26);
+            this.btnIncomeReport.Size = new System.Drawing.Size(217, 26);
             this.btnIncomeReport.Text = "Báo cáo doanh thu";
             // 
             // btnMonthIncomeReport
@@ -257,7 +257,7 @@
             this.btnWarning,
             this.btnmonANDyearDisease});
             this.btnDiseaseStat.Name = "btnDiseaseStat";
-            this.btnDiseaseStat.Size = new System.Drawing.Size(224, 26);
+            this.btnDiseaseStat.Size = new System.Drawing.Size(217, 26);
             this.btnDiseaseStat.Text = "Tình hình Bệnh";
             // 
             // btnWarning
@@ -301,11 +301,11 @@
             // 
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.HotTrack = true;
-            this.tabControl.Location = new System.Drawing.Point(0, 30);
+            this.tabControl.Location = new System.Drawing.Point(0, 28);
             this.tabControl.Margin = new System.Windows.Forms.Padding(5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1344, 710);
+            this.tabControl.Size = new System.Drawing.Size(1344, 712);
             this.tabControl.TabIndex = 1;
             // 
             // MainForm

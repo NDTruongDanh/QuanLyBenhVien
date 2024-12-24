@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -123,13 +125,13 @@
             this.cmbRoomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbRoomID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbRoomID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbRoomID.BackColor = System.Drawing.Color.LightGray;
-            this.cmbRoomID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbRoomID.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbRoomID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbRoomID.FormattingEnabled = true;
             this.cmbRoomID.Location = new System.Drawing.Point(198, 128);
             this.cmbRoomID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbRoomID.Name = "cmbRoomID";
-            this.cmbRoomID.Size = new System.Drawing.Size(190, 44);
+            this.cmbRoomID.Size = new System.Drawing.Size(190, 33);
             this.cmbRoomID.TabIndex = 16;
             // 
             // label3
@@ -150,13 +152,13 @@
             this.cmbPatientID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbPatientID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbPatientID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbPatientID.BackColor = System.Drawing.Color.LightGray;
-            this.cmbPatientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbPatientID.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbPatientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbPatientID.FormattingEnabled = true;
             this.cmbPatientID.Location = new System.Drawing.Point(198, 86);
             this.cmbPatientID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbPatientID.Name = "cmbPatientID";
-            this.cmbPatientID.Size = new System.Drawing.Size(190, 44);
+            this.cmbPatientID.Size = new System.Drawing.Size(190, 33);
             this.cmbPatientID.TabIndex = 14;
             // 
             // label2
@@ -177,13 +179,13 @@
             this.cmbNurseID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbNurseID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbNurseID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbNurseID.BackColor = System.Drawing.Color.LightGray;
-            this.cmbNurseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbNurseID.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbNurseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbNurseID.FormattingEnabled = true;
             this.cmbNurseID.Location = new System.Drawing.Point(198, 44);
             this.cmbNurseID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbNurseID.Name = "cmbNurseID";
-            this.cmbNurseID.Size = new System.Drawing.Size(190, 44);
+            this.cmbNurseID.Size = new System.Drawing.Size(190, 33);
             this.cmbNurseID.TabIndex = 12;
             // 
             // label1
@@ -202,13 +204,12 @@
             // txtCareID
             // 
             this.txtCareID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCareID.BackColor = System.Drawing.Color.LightGray;
-            this.txtCareID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCareID.Location = new System.Drawing.Point(199, 4);
+            this.txtCareID.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCareID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtCareID.Location = new System.Drawing.Point(199, 6);
             this.txtCareID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCareID.Multiline = true;
             this.txtCareID.Name = "txtCareID";
-            this.txtCareID.Size = new System.Drawing.Size(188, 34);
+            this.txtCareID.Size = new System.Drawing.Size(188, 30);
             this.txtCareID.TabIndex = 8;
             // 
             // label6
@@ -248,14 +249,14 @@
             // 
             // txtNotes
             // 
-            this.txtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNotes.BackColor = System.Drawing.Color.LightGray;
-            this.txtNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNotes.Location = new System.Drawing.Point(199, 114);
+            this.txtNotes.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNotes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtNotes.Location = new System.Drawing.Point(199, 98);
             this.txtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(188, 34);
+            this.txtNotes.Size = new System.Drawing.Size(188, 66);
             this.txtNotes.TabIndex = 28;
             // 
             // label7
@@ -274,8 +275,8 @@
             // txtCaretype
             // 
             this.txtCaretype.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCaretype.BackColor = System.Drawing.Color.LightGray;
-            this.txtCaretype.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtCaretype.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCaretype.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtCaretype.Location = new System.Drawing.Point(199, 50);
             this.txtCaretype.Margin = new System.Windows.Forms.Padding(4);
             this.txtCaretype.Multiline = true;
@@ -300,10 +301,11 @@
             // 
             this.dtpCareDateTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpCareDateTime.CalendarFont = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCareDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpCareDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCareDateTime.Location = new System.Drawing.Point(198, 9);
+            this.dtpCareDateTime.Location = new System.Drawing.Point(198, 5);
             this.dtpCareDateTime.Name = "dtpCareDateTime";
-            this.dtpCareDateTime.Size = new System.Drawing.Size(190, 22);
+            this.dtpCareDateTime.Size = new System.Drawing.Size(190, 30);
             this.dtpCareDateTime.TabIndex = 24;
             // 
             // label4
@@ -343,6 +345,7 @@
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(598, 4);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
@@ -357,6 +360,7 @@
             this.btnAddOrUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddOrUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddOrUpdate.Location = new System.Drawing.Point(400, 4);
             this.btnAddOrUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddOrUpdate.Name = "btnAddOrUpdate";
@@ -371,6 +375,7 @@
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Location = new System.Drawing.Point(202, 4);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
@@ -385,6 +390,7 @@
             this.btnFind.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.Location = new System.Drawing.Point(4, 4);
             this.btnFind.Margin = new System.Windows.Forms.Padding(4);
             this.btnFind.Name = "btnFind";
@@ -398,7 +404,23 @@
             // 
             this.dgvNurseCare.AllowUserToAddRows = false;
             this.dgvNurseCare.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNurseCare.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNurseCare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNurseCare.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvNurseCare.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNurseCare.Location = new System.Drawing.Point(3, 228);
             this.dgvNurseCare.Name = "dgvNurseCare";
@@ -416,7 +438,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "NurseCareForm";
-            this.Text = "NurseCareForm";
+            this.Text = "CHĂM SÓC BỆNH NHÂN";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
