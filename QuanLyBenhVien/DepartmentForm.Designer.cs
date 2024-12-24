@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAddOrUpdateDepartment = new System.Windows.Forms.Button();
             this.btnRefreshDepartment = new System.Windows.Forms.Button();
             this.btnFindDepartment = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDepartmentName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,6 +48,7 @@
             this.txtEmployeeNumber = new System.Windows.Forms.TextBox();
             this.cmbHeadDepartmentID = new System.Windows.Forms.ComboBox();
             this.dgvDepartment = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -56,7 +57,7 @@
             // 
             // btnAddOrUpdateDepartment
             // 
-            this.btnAddOrUpdateDepartment.BackColor = System.Drawing.Color.Silver;
+            this.btnAddOrUpdateDepartment.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddOrUpdateDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddOrUpdateDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAddOrUpdateDepartment.Location = new System.Drawing.Point(532, 4);
@@ -70,7 +71,7 @@
             // 
             // btnRefreshDepartment
             // 
-            this.btnRefreshDepartment.BackColor = System.Drawing.Color.Silver;
+            this.btnRefreshDepartment.BackColor = System.Drawing.SystemColors.Control;
             this.btnRefreshDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRefreshDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRefreshDepartment.Location = new System.Drawing.Point(268, 4);
@@ -84,9 +85,9 @@
             // 
             // btnFindDepartment
             // 
-            this.btnFindDepartment.BackColor = System.Drawing.Color.Silver;
+            this.btnFindDepartment.BackColor = System.Drawing.SystemColors.Control;
             this.btnFindDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFindDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnFindDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnFindDepartment.Location = new System.Drawing.Point(4, 4);
             this.btnFindDepartment.Margin = new System.Windows.Forms.Padding(4);
             this.btnFindDepartment.Name = "btnFindDepartment";
@@ -98,7 +99,7 @@
             // 
             // btnRemoveDepartment
             // 
-            this.btnRemoveDepartment.BackColor = System.Drawing.Color.Silver;
+            this.btnRemoveDepartment.BackColor = System.Drawing.SystemColors.Control;
             this.btnRemoveDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRemoveDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRemoveDepartment.Location = new System.Drawing.Point(796, 4);
@@ -153,18 +154,17 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.BackgroundImage = global::QuanLyBenhVien.Properties.Resources._55498790_1988019174827777_3981126884560732160_n1;
             this.tableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.27439F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.72561F));
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtLocation, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtPhoneNumber, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtDepartmentName, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 2, 1);
@@ -189,33 +189,31 @@
             // txtLocation
             // 
             this.txtLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLocation.BackColor = System.Drawing.Color.LightGray;
-            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtLocation.Location = new System.Drawing.Point(737, 156);
+            this.txtLocation.BackColor = System.Drawing.SystemColors.Window;
+            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtLocation.Location = new System.Drawing.Point(737, 163);
             this.txtLocation.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLocation.Multiline = true;
             this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(318, 44);
+            this.txtLocation.Size = new System.Drawing.Size(318, 30);
             this.txtLocation.TabIndex = 22;
             // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhoneNumber.BackColor = System.Drawing.Color.LightGray;
-            this.txtPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(737, 84);
+            this.txtPhoneNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtPhoneNumber.Location = new System.Drawing.Point(737, 91);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPhoneNumber.Multiline = true;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(318, 44);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(318, 30);
             this.txtPhoneNumber.TabIndex = 20;
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.Color.LightGray;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(4, 147);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -227,35 +225,20 @@
             // txtDepartmentName
             // 
             this.txtDepartmentName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDepartmentName.BackColor = System.Drawing.Color.LightGray;
-            this.txtDepartmentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtDepartmentName.Location = new System.Drawing.Point(737, 13);
+            this.txtDepartmentName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDepartmentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtDepartmentName.Location = new System.Drawing.Point(737, 20);
             this.txtDepartmentName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDepartmentName.Multiline = true;
             this.txtDepartmentName.Name = "txtDepartmentName";
-            this.txtDepartmentName.Size = new System.Drawing.Size(318, 44);
+            this.txtDepartmentName.Size = new System.Drawing.Size(318, 30);
             this.txtDepartmentName.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.LightGray;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(4, 4);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 62);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã khoa";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.LightGray;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(4, 75);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -267,9 +250,9 @@
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.BackColor = System.Drawing.Color.LightGray;
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(536, 4);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -282,9 +265,9 @@
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.BackColor = System.Drawing.Color.LightGray;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(536, 75);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -296,9 +279,9 @@
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.BackColor = System.Drawing.Color.LightGray;
+            this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(536, 147);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
@@ -310,25 +293,23 @@
             // txtDepartmentID
             // 
             this.txtDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDepartmentID.BackColor = System.Drawing.Color.LightGray;
-            this.txtDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtDepartmentID.Location = new System.Drawing.Point(268, 13);
+            this.txtDepartmentID.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtDepartmentID.Location = new System.Drawing.Point(268, 20);
             this.txtDepartmentID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDepartmentID.Multiline = true;
             this.txtDepartmentID.Name = "txtDepartmentID";
-            this.txtDepartmentID.Size = new System.Drawing.Size(260, 44);
+            this.txtDepartmentID.Size = new System.Drawing.Size(260, 30);
             this.txtDepartmentID.TabIndex = 6;
             // 
             // txtEmployeeNumber
             // 
             this.txtEmployeeNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmployeeNumber.BackColor = System.Drawing.Color.LightGray;
-            this.txtEmployeeNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtEmployeeNumber.Location = new System.Drawing.Point(268, 156);
+            this.txtEmployeeNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEmployeeNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtEmployeeNumber.Location = new System.Drawing.Point(268, 163);
             this.txtEmployeeNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmployeeNumber.Multiline = true;
             this.txtEmployeeNumber.Name = "txtEmployeeNumber";
-            this.txtEmployeeNumber.Size = new System.Drawing.Size(260, 44);
+            this.txtEmployeeNumber.Size = new System.Drawing.Size(260, 30);
             this.txtEmployeeNumber.TabIndex = 18;
             // 
             // cmbHeadDepartmentID
@@ -336,18 +317,26 @@
             this.cmbHeadDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbHeadDepartmentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbHeadDepartmentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbHeadDepartmentID.BackColor = System.Drawing.Color.LightGray;
-            this.cmbHeadDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbHeadDepartmentID.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbHeadDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbHeadDepartmentID.FormattingEnabled = true;
-            this.cmbHeadDepartmentID.Location = new System.Drawing.Point(267, 84);
+            this.cmbHeadDepartmentID.Location = new System.Drawing.Point(267, 90);
             this.cmbHeadDepartmentID.Name = "cmbHeadDepartmentID";
-            this.cmbHeadDepartmentID.Size = new System.Drawing.Size(262, 44);
+            this.cmbHeadDepartmentID.Size = new System.Drawing.Size(262, 33);
             this.cmbHeadDepartmentID.TabIndex = 23;
             // 
             // dgvDepartment
             // 
             this.dgvDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDepartment.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDepartment.Location = new System.Drawing.Point(4, 280);
             this.dgvDepartment.Margin = new System.Windows.Forms.Padding(4);
@@ -358,6 +347,20 @@
             this.dgvDepartment.Size = new System.Drawing.Size(1059, 270);
             this.dgvDepartment.TabIndex = 1;
             this.dgvDepartment.SelectionChanged += new System.EventHandler(this.dgvDepartment_SelectionChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(4, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(256, 62);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Mã khoa";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DepartmentForm
             // 
@@ -383,7 +386,6 @@
         private System.Windows.Forms.Button btnRefreshDepartment;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDepartmentName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -399,5 +401,6 @@
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.ComboBox cmbHeadDepartmentID;
+        private System.Windows.Forms.Label label1;
     }
 }
