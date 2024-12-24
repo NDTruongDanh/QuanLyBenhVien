@@ -75,6 +75,7 @@
             // 
             // dgvBill
             // 
+            this.dgvBill.AllowUserToAddRows = false;
             this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -98,6 +99,7 @@
             this.dgvBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvBill.Name = "dgvBill";
             this.dgvBill.ReadOnly = true;
+            this.dgvBill.RowHeadersVisible = false;
             this.dgvBill.RowHeadersWidth = 51;
             this.dgvBill.RowTemplate.Height = 24;
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
