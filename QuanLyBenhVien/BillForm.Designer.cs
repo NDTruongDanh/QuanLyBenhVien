@@ -62,13 +62,13 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(661, 412);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(881, 507);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvBill
@@ -76,14 +76,14 @@
             this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBill.Location = new System.Drawing.Point(2, 207);
-            this.dgvBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvBill.Location = new System.Drawing.Point(3, 254);
+            this.dgvBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvBill.Name = "dgvBill";
             this.dgvBill.ReadOnly = true;
             this.dgvBill.RowHeadersWidth = 51;
             this.dgvBill.RowTemplate.Height = 24;
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBill.Size = new System.Drawing.Size(657, 203);
+            this.dgvBill.Size = new System.Drawing.Size(875, 251);
             this.dgvBill.TabIndex = 0;
             this.dgvBill.SelectionChanged += new System.EventHandler(this.dgvBill_SelectionChanged);
             // 
@@ -105,14 +105,14 @@
             this.tableLayoutPanel2.Controls.Add(this.txtTransactionID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.dtpTransactionDate, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(657, 160);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(875, 198);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // cmbStaffID
@@ -122,10 +122,10 @@
             this.cmbStaffID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStaffID.FormattingEnabled = true;
-            this.cmbStaffID.Location = new System.Drawing.Point(551, 63);
-            this.cmbStaffID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbStaffID.Location = new System.Drawing.Point(663, 82);
+            this.cmbStaffID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbStaffID.Name = "cmbStaffID";
-            this.cmbStaffID.Size = new System.Drawing.Size(104, 33);
+            this.cmbStaffID.Size = new System.Drawing.Size(209, 33);
             this.cmbStaffID.TabIndex = 15;
             // 
             // cmbRecordID
@@ -135,10 +135,10 @@
             this.cmbRecordID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbRecordID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRecordID.FormattingEnabled = true;
-            this.cmbRecordID.Location = new System.Drawing.Point(247, 63);
-            this.cmbRecordID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbRecordID.Location = new System.Drawing.Point(250, 82);
+            this.cmbRecordID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbRecordID.Name = "cmbRecordID";
-            this.cmbRecordID.Size = new System.Drawing.Size(103, 33);
+            this.cmbRecordID.Size = new System.Drawing.Size(208, 33);
             this.cmbRecordID.TabIndex = 14;
             // 
             // cmbPaymentMethod
@@ -153,10 +153,10 @@
             "Ví điện tử",
             "Bảo hiểm",
             "Thẻ tín dụng"});
-            this.cmbPaymentMethod.Location = new System.Drawing.Point(247, 116);
-            this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPaymentMethod.Location = new System.Drawing.Point(250, 148);
+            this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbPaymentMethod.Name = "cmbPaymentMethod";
-            this.cmbPaymentMethod.Size = new System.Drawing.Size(103, 33);
+            this.cmbPaymentMethod.Size = new System.Drawing.Size(208, 33);
             this.cmbPaymentMethod.TabIndex = 12;
             // 
             // label5
@@ -164,10 +164,9 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(2, 106);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(3, 132);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(241, 54);
+            this.label5.Size = new System.Drawing.Size(241, 66);
             this.label5.TabIndex = 8;
             this.label5.Text = "Phương thức thanh toán";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,10 +176,9 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(354, 53);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(464, 66);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(193, 53);
+            this.label4.Size = new System.Drawing.Size(193, 66);
             this.label4.TabIndex = 6;
             this.label4.Text = "Mã nhân viên";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -190,10 +188,9 @@
             this.RecordID.AutoSize = true;
             this.RecordID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RecordID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RecordID.Location = new System.Drawing.Point(2, 53);
-            this.RecordID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.RecordID.Location = new System.Drawing.Point(3, 66);
             this.RecordID.Name = "RecordID";
-            this.RecordID.Size = new System.Drawing.Size(241, 53);
+            this.RecordID.Size = new System.Drawing.Size(241, 66);
             this.RecordID.TabIndex = 4;
             this.RecordID.Text = "Mã bệnh án";
             this.RecordID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -203,10 +200,9 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(354, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(464, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 53);
+            this.label2.Size = new System.Drawing.Size(193, 66);
             this.label2.TabIndex = 2;
             this.label2.Text = "Ngày xuất hoá đơn";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -216,10 +212,9 @@
             this.TransactionID.AutoSize = true;
             this.TransactionID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TransactionID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TransactionID.Location = new System.Drawing.Point(2, 0);
-            this.TransactionID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TransactionID.Location = new System.Drawing.Point(3, 0);
             this.TransactionID.Name = "TransactionID";
-            this.TransactionID.Size = new System.Drawing.Size(241, 53);
+            this.TransactionID.Size = new System.Drawing.Size(241, 66);
             this.TransactionID.TabIndex = 0;
             this.TransactionID.Text = "Số hoá đơn";
             this.TransactionID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -228,20 +223,20 @@
             // 
             this.txtTransactionID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTransactionID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTransactionID.Location = new System.Drawing.Point(247, 11);
-            this.txtTransactionID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTransactionID.Location = new System.Drawing.Point(250, 18);
+            this.txtTransactionID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTransactionID.Name = "txtTransactionID";
-            this.txtTransactionID.Size = new System.Drawing.Size(103, 30);
+            this.txtTransactionID.Size = new System.Drawing.Size(208, 30);
             this.txtTransactionID.TabIndex = 1;
             // 
             // dtpTransactionDate
             // 
             this.dtpTransactionDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpTransactionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpTransactionDate.Location = new System.Drawing.Point(551, 11);
-            this.dtpTransactionDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpTransactionDate.Location = new System.Drawing.Point(663, 18);
+            this.dtpTransactionDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpTransactionDate.Name = "dtpTransactionDate";
-            this.dtpTransactionDate.Size = new System.Drawing.Size(104, 30);
+            this.dtpTransactionDate.Size = new System.Drawing.Size(209, 30);
             this.dtpTransactionDate.TabIndex = 10;
             // 
             // tableLayoutPanel3
@@ -258,21 +253,22 @@
             this.tableLayoutPanel3.Controls.Add(this.btnRefresh, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnFind, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 166);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 204);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(657, 37);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(875, 46);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // btnAdd
             // 
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAdd.Location = new System.Drawing.Point(265, 3);
+            this.btnAdd.Location = new System.Drawing.Point(354, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(125, 31);
+            this.btnAdd.Size = new System.Drawing.Size(167, 38);
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "CTHD";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -282,9 +278,10 @@
             // 
             this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnUpdate.Location = new System.Drawing.Point(396, 3);
+            this.btnUpdate.Location = new System.Drawing.Point(529, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(125, 31);
+            this.btnUpdate.Size = new System.Drawing.Size(167, 38);
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -294,9 +291,10 @@
             // 
             this.btnRemove.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnRemove.Location = new System.Drawing.Point(527, 3);
+            this.btnRemove.Location = new System.Drawing.Point(704, 4);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(127, 31);
+            this.btnRemove.Size = new System.Drawing.Size(167, 38);
             this.btnRemove.TabIndex = 9;
             this.btnRemove.Text = "Xóa";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -306,9 +304,10 @@
             // 
             this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnRefresh.Location = new System.Drawing.Point(134, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(179, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(125, 31);
+            this.btnRefresh.Size = new System.Drawing.Size(167, 38);
             this.btnRefresh.TabIndex = 6;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -318,9 +317,10 @@
             // 
             this.btnFind.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnFind.Location = new System.Drawing.Point(3, 3);
+            this.btnFind.Location = new System.Drawing.Point(4, 4);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(125, 31);
+            this.btnFind.Size = new System.Drawing.Size(167, 38);
             this.btnFind.TabIndex = 5;
             this.btnFind.Text = "Tìm";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -328,11 +328,11 @@
             // 
             // BillForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 412);
+            this.ClientSize = new System.Drawing.Size(881, 507);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BillForm";
             this.Text = "HÓA ĐƠN";
             this.tableLayoutPanel1.ResumeLayout(false);
