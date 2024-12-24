@@ -89,6 +89,7 @@
             this.dgvAssignment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAssignment.Location = new System.Drawing.Point(3, 93);
             this.dgvAssignment.Name = "dgvAssignment";
+            this.dgvAssignment.RowHeadersVisible = false;
             this.dgvAssignment.RowHeadersWidth = 51;
             this.dgvAssignment.RowTemplate.Height = 24;
             this.dgvAssignment.Size = new System.Drawing.Size(794, 354);
