@@ -214,7 +214,6 @@
             this.btnMedicineStat.Name = "btnMedicineStat";
             this.btnMedicineStat.Size = new System.Drawing.Size(226, 26);
             this.btnMedicineStat.Text = "Thống kê đơn thuốc";
-            this.btnMedicineStat.Click += new System.EventHandler(this.btnMedicineStat_Click);
             // 
             // btnPatientStat
             // 

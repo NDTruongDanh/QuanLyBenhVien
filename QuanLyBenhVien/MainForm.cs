@@ -45,12 +45,6 @@ namespace QuanLyBenhVien
             CommonControls.AddFormToTab(medicineForm, medicineForm.Text);
         }
 
-        private void btnMedicineStat_Click(object sender, EventArgs e)
-        {
-            MedStatForm medStatForm = new MedStatForm();
-            CommonControls.AddFormToTab(medStatForm, medStatForm.Text);
-        }
-
         private void btnDepartment_Click(object sender, EventArgs e)
         {
             DepartmentForm departmentForm = new DepartmentForm();
