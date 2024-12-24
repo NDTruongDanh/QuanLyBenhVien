@@ -26,7 +26,7 @@ namespace QuanLyBenhVien
 
             txtPassword.UseSystemPasswordChar = true;
         }
-
+        public string user = null;
         private void AuthenticateByStaffID()
         {
             if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPassword.Text))
@@ -58,7 +58,6 @@ namespace QuanLyBenhVien
 
                                 else
                                 {
-                                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     string type = reader.GetString(reader.GetOrdinal("TypeOfStaff"));
 
                                     bool isHeadDepartment = false;
@@ -111,16 +110,14 @@ namespace QuanLyBenhVien
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    MainForm mainForm = new MainForm(txtUser.Text);
-                                    mainForm.ShowDialog();
+                                    user = txtUser.Text;
+                                    this.DialogResult = DialogResult.OK;
+                                    this.Close();
                                 }
                             }
                                 
                         }
                     }
-
-                    
                 }
                 catch (Exception ex)
                 {
@@ -160,16 +157,6 @@ namespace QuanLyBenhVien
 
                             // Thực thi câu lệnh
                             int rowsAffected = command.ExecuteNonQuery();
-
-                            // Kiểm tra kết quả
-                            if (rowsAffected > 0)
-                            {
-                                MessageBox.Show("Đã lưu mật khẩu thành công");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Không tìm thấy người dùng phù hợp hoặc mật khẩu sai.");
-                            }
                         }
                     }
                     catch (Exception ex)
@@ -186,8 +173,6 @@ namespace QuanLyBenhVien
             chkRememberMe.Checked = false;
         }
 
-
-        // AuthenticateByStaffID();
         private void btnHidePass_Click(object sender, EventArgs e)
         {
             if (txtPassword.UseSystemPasswordChar == true)
@@ -239,9 +224,6 @@ namespace QuanLyBenhVien
                             
                         }
                     }
-
-             
-               
             }
 
             string query2 = "SELECT FLAG FROM USERLOGIN WHERE UserID = @UserID";
@@ -255,8 +237,8 @@ namespace QuanLyBenhVien
               
                     connection.Open(); // Mở kết nối
 
-                    using (SqlCommand command = new SqlCommand(query2, connection))
-                    {
+                using (SqlCommand command = new SqlCommand(query2, connection))
+                {
                     // Thêm tham số vào câu lệnh SQL
                     command.Parameters.AddWithValue("@UserID", username);
 
@@ -272,11 +254,6 @@ namespace QuanLyBenhVien
                     }
 
                 }
-
-                    // Hiển thị kết quả trong Label hoặc TextBox
-                   
-                
-              
             }
 
             if (result != "0")

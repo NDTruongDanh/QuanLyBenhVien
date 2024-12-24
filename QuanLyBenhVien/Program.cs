@@ -16,7 +16,18 @@ namespace QuanLyBenhVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignIn());
+            using (SignIn signIn = new SignIn())
+            {
+                if (signIn.ShowDialog() == DialogResult.OK) // Check if login was successful
+                {
+                    Application.Run(new MainForm(signIn.user));
+                }
+                else
+                {
+                    // Exit the application if login failed or was canceled
+                    Application.Exit();
+                }
+            }
         }
     }
 }

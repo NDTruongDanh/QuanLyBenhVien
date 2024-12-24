@@ -201,7 +201,5 @@ namespace QuanLyBenhVien
                 cmbRoomType.Text = selectedRow.Cells[3].Value.ToString();
             }
         }
-
-        
     }
 }

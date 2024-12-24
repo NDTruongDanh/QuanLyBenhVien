@@ -30,6 +30,8 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.dtpDischargeDate = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtFullName = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@
             this.btnFindPatient = new System.Windows.Forms.Button();
             this.btnRemovePatient = new System.Windows.Forms.Button();
             this.btnAddOrUpdatePatient = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dtpDischargeDate = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
@@ -120,6 +120,28 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1059, 213);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // dtpDischargeDate
+            // 
+            this.dtpDischargeDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDischargeDate.Location = new System.Drawing.Point(701, 130);
+            this.dtpDischargeDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDischargeDate.Name = "dtpDischargeDate";
+            this.dtpDischargeDate.Size = new System.Drawing.Size(341, 30);
+            this.dtpDischargeDate.TabIndex = 24;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(535, 125);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(158, 41);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Ngày xuất viện";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtEmail
             // 
@@ -379,6 +401,7 @@
             this.btnRemovePatient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemovePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemovePatient.Location = new System.Drawing.Point(796, 4);
             this.btnRemovePatient.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemovePatient.Name = "btnRemovePatient";
@@ -393,6 +416,7 @@
             this.btnAddOrUpdatePatient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddOrUpdatePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddOrUpdatePatient.Location = new System.Drawing.Point(532, 4);
             this.btnAddOrUpdatePatient.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddOrUpdatePatient.Name = "btnAddOrUpdatePatient";
@@ -401,28 +425,6 @@
             this.btnAddOrUpdatePatient.Text = "Thêm/Sửa";
             this.btnAddOrUpdatePatient.UseVisualStyleBackColor = true;
             this.btnAddOrUpdatePatient.Click += new System.EventHandler(this.btnAddOrUpdatePatient_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(535, 125);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(158, 41);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Ngày xuất viện";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dtpDischargeDate
-            // 
-            this.dtpDischargeDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpDischargeDate.Location = new System.Drawing.Point(701, 130);
-            this.dtpDischargeDate.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpDischargeDate.Name = "dtpDischargeDate";
-            this.dtpDischargeDate.Size = new System.Drawing.Size(341, 30);
-            this.dtpDischargeDate.TabIndex = 24;
             // 
             // PatientForm
             // 
