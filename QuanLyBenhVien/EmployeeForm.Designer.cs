@@ -163,7 +163,7 @@
             "Giảng viên Y khoa",
             "Kế toán",
             "Quản lý"});
-            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 88);
+            this.cmbTypeOfStaff.Location = new System.Drawing.Point(687, 93);
             this.cmbTypeOfStaff.Name = "cmbTypeOfStaff";
             this.cmbTypeOfStaff.Size = new System.Drawing.Size(369, 33);
             this.cmbTypeOfStaff.TabIndex = 26;
@@ -373,7 +373,7 @@
             this.cmbDepartmentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDepartmentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDepartmentID.FormattingEnabled = true;
-            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 88);
+            this.cmbDepartmentID.Location = new System.Drawing.Point(154, 93);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
             this.cmbDepartmentID.Size = new System.Drawing.Size(369, 33);
             this.cmbDepartmentID.TabIndex = 25;
@@ -383,7 +383,7 @@
             this.dgvEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -407,6 +407,7 @@
             this.dgvEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmployee.Size = new System.Drawing.Size(1059, 270);
             this.dgvEmployee.TabIndex = 1;
+            this.dgvEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellContentClick);
             this.dgvEmployee.SelectionChanged += new System.EventHandler(this.dgvEmployee_SelectionChanged);
             // 
             // tableLayoutPanel3

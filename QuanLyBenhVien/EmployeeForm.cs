@@ -247,5 +247,10 @@ namespace QuanLyBenhVien
                 cmbDepartmentID.Text = selectedRow.Cells[9].Value.ToString();
             }
         }
+
+        private void dgvEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

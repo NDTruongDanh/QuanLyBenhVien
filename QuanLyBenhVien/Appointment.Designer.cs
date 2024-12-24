@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
@@ -136,7 +138,7 @@
             this.cmbDepartmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDepartmentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDepartmentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbDepartmentID.BackColor = System.Drawing.Color.LightGray;
+            this.cmbDepartmentID.BackColor = System.Drawing.Color.White;
             this.cmbDepartmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbDepartmentID.FormattingEnabled = true;
             this.cmbDepartmentID.Location = new System.Drawing.Point(249, 164);
@@ -176,7 +178,7 @@
             this.cmbDoctorID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDoctorID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDoctorID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbDoctorID.BackColor = System.Drawing.Color.LightGray;
+            this.cmbDoctorID.BackColor = System.Drawing.Color.White;
             this.cmbDoctorID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbDoctorID.FormattingEnabled = true;
             this.cmbDoctorID.Location = new System.Drawing.Point(249, 91);
@@ -203,7 +205,7 @@
             this.cmbPatientID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbPatientID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbPatientID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbPatientID.BackColor = System.Drawing.Color.LightGray;
+            this.cmbPatientID.BackColor = System.Drawing.SystemColors.Window;
             this.cmbPatientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbPatientID.FormattingEnabled = true;
             this.cmbPatientID.Location = new System.Drawing.Point(741, 19);
@@ -228,13 +230,13 @@
             // txtAppointmentID
             // 
             this.txtAppointmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAppointmentID.BackColor = System.Drawing.Color.LightGray;
+            this.txtAppointmentID.BackColor = System.Drawing.SystemColors.Window;
             this.txtAppointmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtAppointmentID.Location = new System.Drawing.Point(250, 13);
+            this.txtAppointmentID.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtAppointmentID.Location = new System.Drawing.Point(250, 21);
             this.txtAppointmentID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAppointmentID.Multiline = true;
             this.txtAppointmentID.Name = "txtAppointmentID";
-            this.txtAppointmentID.Size = new System.Drawing.Size(238, 46);
+            this.txtAppointmentID.Size = new System.Drawing.Size(238, 30);
             this.txtAppointmentID.TabIndex = 7;
             // 
             // label6
@@ -409,12 +411,30 @@
             // 
             // dgvAppointment
             // 
+            this.dgvAppointment.AllowUserToAddRows = false;
             this.dgvAppointment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAppointment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAppointment.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAppointment.Location = new System.Drawing.Point(3, 283);
             this.dgvAppointment.Name = "dgvAppointment";
             this.dgvAppointment.ReadOnly = true;
+            this.dgvAppointment.RowHeadersVisible = false;
             this.dgvAppointment.RowHeadersWidth = 51;
             this.dgvAppointment.RowTemplate.Height = 24;
             this.dgvAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
