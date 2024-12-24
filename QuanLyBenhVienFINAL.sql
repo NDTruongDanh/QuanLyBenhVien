@@ -19,7 +19,7 @@ CREATE TABLE PATIENT (
     DischargeDate DATE
 )
 
-SELECT * FROM PATIENT
+--SELECT * FROM PATIENT
 CREATE TABLE STAFF (
     StaffID CHAR(6) PRIMARY KEY,
     FullName NVARCHAR(255) NOT NULL,
@@ -125,7 +125,8 @@ CREATE TABLE WEEKLYASSIGNMENT (
 
 CREATE TABLE USERLOGIN(
 	UserID VARCHAR(6) PRIMARY KEY,
-	Pass VARCHAR(20) NOT NULL
+	Pass VARCHAR(20) NOT NULL,
+	FLAG SMALLINT DEFAULT(0)
 )
 
 
@@ -440,12 +441,15 @@ VALUES
 ('C00009', 'N00001', 'P00009', 'R0001', '2024-12-22 11:00:00', 'Patient Monitoring', 'Monitored patient’s vitals during post-surgery recovery.'),
 ('C00010', 'N00004', 'P00010', 'R0004', '2024-12-22 14:30:00', 'Emergency Response', 'Responded to a sudden drop in blood pressure, stabilized the patient.');
 
-INSERT INTO USERLOGIN VALUES ('admin','1') ---ADMIN
-INSERT INTO USERLOGIN VALUES ('N00001','1') ----Y tá
-INSERT INTO USERLOGIN VALUES ('ST0001','1') ---- Bác sĩ
-INSERT INTO USERLOGIN VALUES ('ST0002','1') ---- Kế toán
-INSERT INTO USERLOGIN VALUES ('ST0007','1') ---- Dược sĩ (trưởng khoa)
-INSERT INTO USERLOGIN VALUES ('ST0008','1') ---- Dược sĩ
+INSERT INTO USERLOGIN (UserID,Pass) VALUES ('admin','1') ---ADMIN
+INSERT INTO USERLOGIN (UserID,Pass) VALUES ('N00001','1') ----Y tá
+INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0001','1') ---- Bác sĩ
+INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0002','1') ---- Kế toán
+INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0007','1') ---- Dược sĩ (trưởng khoa)
+INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0008','1') ---- Dược sĩ
+
+
+
 
 INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate)
 VALUES

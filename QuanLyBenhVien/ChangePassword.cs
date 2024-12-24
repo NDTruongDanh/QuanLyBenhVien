@@ -52,10 +52,43 @@ namespace QuanLyBenhVien
         private void btnChangePass_Click(object sender, EventArgs e)
         {
             ChangePW();
+
+          
         }
 
         private void ChangePW()
         {
+            string query = "UPDATE USERLOGIN SET FLAG = @Flag WHERE UserID = @UserID AND Pass = @Password";
+
+            // Sử dụng kết nối cơ sở dữ liệu
+            using (SqlConnection connection = new SqlConnection(connStr))
+            {
+                try
+                {
+                    connection.Open(); // Mở kết nối
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Thêm tham số cho câu lệnh
+                        command.Parameters.AddWithValue("@Flag", "0");
+                        command.Parameters.AddWithValue("@UserID", userID);
+                        command.Parameters.AddWithValue("@Password", txtOldPass.Text);
+
+                        // Thực thi câu lệnh
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Kiểm tra kết quả
+                      
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý lỗi
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                }
+            }
+
+            //Hung Chinh
             if (txtOldPass.Text == oldPw)
             {
                 if (txtNewPass.Text == txtConfirmPass.Text)
