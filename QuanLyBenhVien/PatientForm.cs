@@ -39,9 +39,7 @@ namespace QuanLyBenhVien
                                             bn.Gender AS ""Giới tính"", 
                                             bn.PhoneNumber AS ""Số điện thoại"", 
                                             bn.AddressPatient AS ""Địa chỉ"", 
-                                            bn.Email AS ""Email"", 
-                                            bn.AdmissionDate AS ""Ngày nhập viện"", 
-                                            bn.DischargeDate AS ""Ngày xuất viện""
+                                            bn.Email AS ""Email""
                                         FROM 
                                             PATIENT AS bn;";
                     SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
@@ -62,8 +60,7 @@ namespace QuanLyBenhVien
             if (string.IsNullOrEmpty(txtPatientID.Text) || string.IsNullOrEmpty(txtFullName.Text) ||
                 string.IsNullOrEmpty(dtpDateOfBirth.Text) || string.IsNullOrEmpty(cmbGender.Text) ||
                 string.IsNullOrEmpty(txtPhoneNumber.Text) || string.IsNullOrEmpty(txtAddress.Text) ||
-                string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(dtpAdmissionDate.Text) ||
-                string.IsNullOrEmpty(dtpDischargeDate.Text))
+                string.IsNullOrEmpty(txtEmail.Text))
             {
                 return false;
             }
@@ -91,12 +88,11 @@ namespace QuanLyBenhVien
 
             string query = @"IF EXISTS (SELECT 1 FROM PATIENT WHERE PatientID = @PatientID)
                              UPDATE PATIENT SET FullName = @FullName, Gender = @Gender, DateOfBirth = @DateOfBirth,
-                             PhoneNumber = @PhoneNumber, AddressPatient = @AddressPatient, Email = @Email,
-                             AdmissionDate = @AdmissionDate, DischargeDate = @DischargeDate
+                             PhoneNumber = @PhoneNumber, AddressPatient = @AddressPatient, Email = @Email
                              WHERE PatientID = @PatientID
                              ELSE
-                             INSERT INTO PATIENT (PatientID, FullName, Gender, DateOfBirth, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate)
-                             VALUES (@PatientID, @FullName, @Gender, @DateOfBirth, @PhoneNumber, @AddressPatient, @Email, @AdmissionDate, @DischargeDate)";
+                             INSERT INTO PATIENT (PatientID, FullName, Gender, DateOfBirth, PhoneNumber, AddressPatient, Email)
+                             VALUES (@PatientID, @FullName, @Gender, @DateOfBirth, @PhoneNumber, @AddressPatient, @Email)";
 
             var parameters = new Dictionary<string, object>
             {
@@ -107,8 +103,6 @@ namespace QuanLyBenhVien
                 {"@PhoneNumber", txtPhoneNumber.Text},
                 {"@AddressPatient", txtAddress.Text},
                 {"@Email", txtEmail.Text},
-                {"@AdmissionDate", dtpAdmissionDate.Value},
-                {"@DischargeDate", dtpDischargeDate.Value},
             };
 
             CommonQuery.ExecuteQuery(query, parameters);
@@ -213,8 +207,6 @@ namespace QuanLyBenhVien
                 txtPhoneNumber.Text = selectedRow.Cells[4].Value.ToString();
                 txtAddress.Text = selectedRow.Cells[5].Value.ToString();
                 txtEmail.Text = selectedRow.Cells[6].Value.ToString();
-                dtpAdmissionDate.Text = selectedRow.Cells[7].Value.ToString();
-                dtpDischargeDate.Text = selectedRow.Cells[8].Value.ToString();
             }
         }
     }
