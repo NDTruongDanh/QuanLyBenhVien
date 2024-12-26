@@ -139,5 +139,11 @@ namespace QuanLyBenhVien
             NurseCareForm nurseCare = new NurseCareForm();
             CommonControls.AddFormToTab(nurseCare, nurseCare.Text);
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            AccountForm accountForm = new AccountForm();
+            CommonControls.AddFormToTab(accountForm, accountForm.Text);
+        }
     }
 }

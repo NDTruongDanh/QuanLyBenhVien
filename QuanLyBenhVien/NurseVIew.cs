@@ -49,5 +49,11 @@ namespace QuanLyBenhVien
             ChangePassword changePassword = new ChangePassword(userID);
             changePassword.ShowDialog();
         }
+
+        private void trợLýẢoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChatBotForm chatBotForm = new ChatBotForm();
+            CommonControls.AddFormToTab(chatBotForm, chatBotForm.Text);
+        }
     }
 }
