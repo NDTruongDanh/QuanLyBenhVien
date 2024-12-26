@@ -17,16 +17,17 @@ namespace QuanLyBenhVien
 {
     public partial class SignIn : Form
     {
-
         private readonly string connStr = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
+        public string UserID { get; private set; }
+        public string UserType { get; private set; }
+        public bool IsHeadDepartment { get; private set; }
 
         public SignIn()
         {
             InitializeComponent();
-
             txtPassword.UseSystemPasswordChar = true;
         }
-        public string user = null;
+
         private void AuthenticateByStaffID()
         {
             if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPassword.Text))
@@ -40,99 +41,79 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql;
-                    if (txtUser.Text != "admin")
+                    if (txtUser.Text == "admin")
                     {
-                        sql = $@"SELECT UserID, Pass, TypeOfStaff, HeadDepartmentID 
-                                   FROM USERLOGIN ul JOIN STAFF st ON ul.UserID = st.StaffID JOIN DEPARTMENT d ON d.DepartmentID = st.DepartmentID 
-                                   WHERE UserID = '{txtUser.Text}'";
-                        using (SqlCommand cmd = new SqlCommand(sql, conn))
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        string adminSql = "SELECT * FROM USERLOGIN WHERE UserID = @UserID";
+                        using (SqlCommand cmd = new SqlCommand(adminSql, conn))
                         {
-                            if (reader.Read())
+                            cmd.Parameters.AddWithValue("@UserID", txtUser.Text);
+                            using (SqlDataReader reader = cmd.ExecuteReader())
                             {
-                                if (reader.GetString(reader.GetOrdinal("Pass")) != txtPassword.Text)
+                                if (reader.Read())
                                 {
-                                    MessageBox.Show("Password isn't correct!", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-
-                                else
-                                {
-                                    string type = reader.GetString(reader.GetOrdinal("TypeOfStaff"));
-
-                                    bool isHeadDepartment = false;
-                                    if (txtUser.Text == reader.GetString(reader.GetOrdinal("HeadDepartmentID")))
+                                    if (reader.GetString(reader.GetOrdinal("Pass")) == txtPassword.Text)
                                     {
-                                        isHeadDepartment = true;
+                                        UserID = txtUser.Text;
+                                        UserType = "admin";
+                                        this.DialogResult = DialogResult.OK;
+                                        this.Close();
                                     }
-
-                                    if (type.ToLower().Contains("Bác sĩ".ToLower()))
+                                    else
                                     {
-                                        DoctorView doctorView = new DoctorView(txtUser.Text);
-                                        doctorView.ShowDialog();
-                                    }
-                                    else if (type.ToLower().Contains("Dược sĩ".ToLower()))
-                                    {
-                                        PharmacistView pharmacistView = new PharmacistView(txtUser.Text, isHeadDepartment);
-                                        pharmacistView.ShowDialog();
-                                    }
-                                    else if (type.ToLower().Contains("Kế toán".ToLower()))
-                                    {
-                                        Accountant accountant = new Accountant(txtUser.Text);
-                                        accountant.ShowDialog();
-                                    }
-                                    else if (type.ToLower().Contains("Y tá".ToLower()))
-                                    {
-                                        NurseVIew nurseVIew = new NurseVIew(txtUser.Text);
-                                        nurseVIew.ShowDialog();
+                                        MessageBox.Show("Password isn't correct!", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
                                 }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Không tìm thấy UserID", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
                     else
                     {
-                        sql = $@"SELECT * FROM USERLOGIN
-                                 WHERE UserID = '{txtUser.Text}'";
+                        string staffSql = @"SELECT UserID, Pass, TypeOfStaff, HeadDepartmentID 
+                                  FROM USERLOGIN ul 
+                                  JOIN STAFF st ON ul.UserID = st.StaffID 
+                                  JOIN DEPARTMENT d ON d.DepartmentID = st.DepartmentID 
+                                  WHERE UserID = @UserID";
 
-                        using (SqlCommand cmd = new SqlCommand(sql, conn))
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        using (SqlCommand cmd = new SqlCommand(staffSql, conn))
                         {
-                            if (reader.Read())
+                            cmd.Parameters.AddWithValue("@UserID", txtUser.Text);
+                            using (SqlDataReader reader = cmd.ExecuteReader())
                             {
-                                if (reader.GetString(reader.GetOrdinal("Pass")) != txtPassword.Text)
+                                if (reader.Read())
                                 {
-                                    MessageBox.Show("Password isn't correct!", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    if (reader.GetString(reader.GetOrdinal("Pass")) == txtPassword.Text)
+                                    {
+                                        UserID = txtUser.Text;
+                                        UserType = reader.GetString(reader.GetOrdinal("TypeOfStaff"));
+                                        IsHeadDepartment = (txtUser.Text == reader.GetString(reader.GetOrdinal("HeadDepartmentID")));
+
+                                        this.DialogResult = DialogResult.OK;
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Password isn't correct!", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
                                 }
                                 else
                                 {
-                                    user = txtUser.Text;
-                                    this.DialogResult = DialogResult.OK;
-                                    this.Close();
+                                    MessageBox.Show("UserID not found", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
-                                
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error: {ex.Message}\nStack Trace: {ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            // Kiểm tra nếu checkbox Remember Me được chọn
             if (chkRememberMe.Checked)
             {
-                // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPassword.Text))
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin UserID và Password.");
@@ -140,28 +121,21 @@ namespace QuanLyBenhVien
                 }
 
                 string query = "UPDATE USERLOGIN SET FLAG = @Flag WHERE UserID = @UserID AND Pass = @Password";
-
-                // Sử dụng kết nối cơ sở dữ liệu
                 using (SqlConnection connection = new SqlConnection(connStr))
                 {
                     try
                     {
-                        connection.Open(); // Mở kết nối
-
+                        connection.Open();
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
-                            // Thêm tham số cho câu lệnh
                             command.Parameters.AddWithValue("@Flag", "1");
                             command.Parameters.AddWithValue("@UserID", txtUser.Text);
                             command.Parameters.AddWithValue("@Password", txtPassword.Text);
-
-                            // Thực thi câu lệnh
-                            int rowsAffected = command.ExecuteNonQuery();
+                            command.ExecuteNonQuery();
                         }
                     }
                     catch (Exception ex)
                     {
-                        // Xử lý lỗi
                         MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
                     }
                 }
@@ -172,6 +146,8 @@ namespace QuanLyBenhVien
             txtUser.Clear();
             chkRememberMe.Checked = false;
         }
+
+        
 
         private void btnHidePass_Click(object sender, EventArgs e)
         {
@@ -261,5 +237,9 @@ namespace QuanLyBenhVien
                 txtPassword.Text = password;
             }
         }
+    }
+    public interface ILogoutHandler
+    {
+        bool LogoutTriggered { get; }
     }
 }
