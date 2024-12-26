@@ -55,5 +55,10 @@ namespace QuanLyBenhVien
             ChatBotForm chatBotForm = new ChatBotForm();
             CommonControls.AddFormToTab(chatBotForm, chatBotForm.Text);
         }
+
+        private void btnDeleteRemember_Click(object sender, EventArgs e)
+        {
+            CommonControls.DisableRememberMe(userID);
+        }
     }
 }
