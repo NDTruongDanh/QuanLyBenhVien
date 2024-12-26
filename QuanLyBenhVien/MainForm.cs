@@ -159,6 +159,7 @@ namespace QuanLyBenhVien
                         command.Parameters.AddWithValue("@UserID", userID);
                         int rowsAffected = command.ExecuteNonQuery();
                     }
+                    MessageBox.Show("Xóa nhớ mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
