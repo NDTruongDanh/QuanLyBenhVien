@@ -32,6 +32,7 @@
             this.btnFunction = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.btnChangePW = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDeleteRemeber = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCatalogue = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPatient = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicalRecord = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,9 +57,8 @@
             this.btnmonANDyearDisease = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMonthDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnYearDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
-            this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnChatbot = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.btnDeleteRemeber = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +70,7 @@
             this.btnCatalogue,
             this.btnManager,
             this.btnStatistic,
-            this.trợLýẢoToolStripMenuItem});
+            this.btnChatbot});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -91,16 +91,23 @@
             // btnLogout
             // 
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(224, 26);
+            this.btnLogout.Size = new System.Drawing.Size(212, 26);
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnChangePW
             // 
             this.btnChangePW.Name = "btnChangePW";
-            this.btnChangePW.Size = new System.Drawing.Size(224, 26);
+            this.btnChangePW.Size = new System.Drawing.Size(212, 26);
             this.btnChangePW.Text = "Đổi mặt khẩu";
             this.btnChangePW.Click += new System.EventHandler(this.btnChangePW_Click);
+            // 
+            // btnDeleteRemeber
+            // 
+            this.btnDeleteRemeber.Name = "btnDeleteRemeber";
+            this.btnDeleteRemeber.Size = new System.Drawing.Size(212, 26);
+            this.btnDeleteRemeber.Text = "Xóa nhớ mật khẩu";
+            this.btnDeleteRemeber.Click += new System.EventHandler(this.btnDeleteRemeber_Click);
             // 
             // btnCatalogue
             // 
@@ -292,12 +299,12 @@
             this.btnYearDiseaseStat.Text = "Năm";
             this.btnYearDiseaseStat.Click += new System.EventHandler(this.btnYearDiseaseStat_Click);
             // 
-            // trợLýẢoToolStripMenuItem
+            // btnChatbot
             // 
-            this.trợLýẢoToolStripMenuItem.Name = "trợLýẢoToolStripMenuItem";
-            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
-            this.trợLýẢoToolStripMenuItem.Text = "Trợ lý ảo ";
-            this.trợLýẢoToolStripMenuItem.Click += new System.EventHandler(this.btnAIChatBot_Click);
+            this.btnChatbot.Name = "btnChatbot";
+            this.btnChatbot.Size = new System.Drawing.Size(84, 24);
+            this.btnChatbot.Text = "Trợ lý ảo ";
+            this.btnChatbot.Click += new System.EventHandler(this.btnAIChatBot_Click);
             // 
             // tabControl
             // 
@@ -309,13 +316,6 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1344, 712);
             this.tabControl.TabIndex = 1;
-            // 
-            // btnDeleteRemeber
-            // 
-            this.btnDeleteRemeber.Name = "btnDeleteRemeber";
-            this.btnDeleteRemeber.Size = new System.Drawing.Size(224, 26);
-            this.btnDeleteRemeber.Text = "Xóa nhớ mật khẩu";
-            this.btnDeleteRemeber.Click += new System.EventHandler(this.btnDeleteRemeber_Click);
             // 
             // MainForm
             // 
@@ -359,7 +359,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnMonthIncomeReport;
         private System.Windows.Forms.ToolStripMenuItem btnYearIncomeReport;
 
-        private System.Windows.Forms.ToolStripMenuItem trợLýẢoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnChatbot;
         private System.Windows.Forms.ToolStripMenuItem btnAppointment;
         private System.Windows.Forms.ToolStripMenuItem btnQuantityInStock;
         private System.Windows.Forms.ToolStripMenuItem btnExpired;
