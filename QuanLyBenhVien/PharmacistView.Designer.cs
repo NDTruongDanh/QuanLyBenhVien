@@ -37,6 +37,7 @@
             this.btnMedicine = new System.Windows.Forms.ToolStripMenuItem();
             this.lịchTrựcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@
             this.chứcNăngToolStripMenuItem,
             this.thôngTinCáNhânToolStripMenuItem1,
             this.btnMedicine,
-            this.lịchTrựcToolStripMenuItem});
+            this.lịchTrựcToolStripMenuItem,
+            this.trợLýẢoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -67,20 +69,20 @@
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             // 
             // đổiMặtKhẩuToolStripMenuItem
             // 
             this.đổiMặtKhẩuToolStripMenuItem.Name = "đổiMặtKhẩuToolStripMenuItem";
-            this.đổiMặtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đổiMặtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.đổiMặtKhẩuToolStripMenuItem.Text = "Đổi mặt khẩu";
             this.đổiMặtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMặtKhẩuToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -116,6 +118,13 @@
             this.tabControl.Size = new System.Drawing.Size(800, 422);
             this.tabControl.TabIndex = 2;
             // 
+            // trợLýẢoToolStripMenuItem
+            // 
+            this.trợLýẢoToolStripMenuItem.Name = "trợLýẢoToolStripMenuItem";
+            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.trợLýẢoToolStripMenuItem.Text = "Trợ lý ảo";
+            this.trợLýẢoToolStripMenuItem.Click += new System.EventHandler(this.trợLýẢoToolStripMenuItem_Click);
+            // 
             // PharmacistView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -143,5 +152,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnMedicine;
         private System.Windows.Forms.ToolStripMenuItem lịchTrựcToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.ToolStripMenuItem trợLýẢoToolStripMenuItem;
     }
 }

@@ -58,7 +58,11 @@
             this.btnYearDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
+
+            this.btnAccount = new System.Windows.Forms.ToolStripMenuItem();
+
             this.btnDeleteRemeber = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,7 +168,12 @@
             this.btnBill,
             this.btnAppointment,
             this.btnWeeklyAssignment,
+
+            this.chămSócBệnhNhânToolStripMenuItem,
+            this.btnAccount});
+
             this.btnNurseCare});
+
             this.btnManager.Name = "btnManager";
             this.btnManager.Size = new System.Drawing.Size(73, 24);
             this.btnManager.Text = "Quản lý";
@@ -310,12 +319,21 @@
             this.tabControl.Size = new System.Drawing.Size(1344, 712);
             this.tabControl.TabIndex = 1;
             // 
+
+            // btnAccount
+            // 
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(229, 26);
+            this.btnAccount.Text = "Tài khoản";
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+
             // btnDeleteRemeber
             // 
             this.btnDeleteRemeber.Name = "btnDeleteRemeber";
             this.btnDeleteRemeber.Size = new System.Drawing.Size(224, 26);
             this.btnDeleteRemeber.Text = "Xóa nhớ mật khẩu";
             this.btnDeleteRemeber.Click += new System.EventHandler(this.btnDeleteRemeber_Click);
+
             // 
             // MainForm
             // 
@@ -371,8 +389,13 @@
         private System.Windows.Forms.ToolStripMenuItem btnmonANDyearDisease;
         private System.Windows.Forms.ToolStripMenuItem btnMonthDiseaseStat;
         private System.Windows.Forms.ToolStripMenuItem btnYearDiseaseStat;
+
+        private System.Windows.Forms.ToolStripMenuItem chămSócBệnhNhânToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnAccount;
+
         private System.Windows.Forms.ToolStripMenuItem btnNurseCare;
         private System.Windows.Forms.ToolStripMenuItem btnDeleteRemeber;
+
     }
 }
 
