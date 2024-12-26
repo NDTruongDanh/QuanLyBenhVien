@@ -44,6 +44,7 @@
             this.btnAppointment = new System.Windows.Forms.ToolStripMenuItem();
             this.btnWeeklyAssignment = new System.Windows.Forms.ToolStripMenuItem();
             this.chămSócBệnhNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStatistic = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicineReport = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuantityInStock = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,7 @@
             this.btnYearDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.btnAccount = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDeleteRemember = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +83,8 @@
             // 
             this.btnFunction.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnLogout,
-            this.btnChangePW});
+            this.btnChangePW,
+            this.btnDeleteRemember});
             this.btnFunction.Name = "btnFunction";
             this.btnFunction.Size = new System.Drawing.Size(93, 24);
             this.btnFunction.Text = "Chức năng";
@@ -90,14 +92,14 @@
             // btnLogout
             // 
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(181, 26);
+            this.btnLogout.Size = new System.Drawing.Size(224, 26);
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnChangePW
             // 
             this.btnChangePW.Name = "btnChangePW";
-            this.btnChangePW.Size = new System.Drawing.Size(181, 26);
+            this.btnChangePW.Size = new System.Drawing.Size(224, 26);
             this.btnChangePW.Text = "Đổi mặt khẩu";
             this.btnChangePW.Click += new System.EventHandler(this.btnChangePW_Click);
             // 
@@ -196,6 +198,13 @@
             this.chămSócBệnhNhânToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.chămSócBệnhNhânToolStripMenuItem.Text = "Chăm sóc bệnh nhân";
             this.chămSócBệnhNhânToolStripMenuItem.Click += new System.EventHandler(this.chămSócBệnhNhânToolStripMenuItem_Click);
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(229, 26);
+            this.btnAccount.Text = "Tài khoản";
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnStatistic
             // 
@@ -310,12 +319,12 @@
             this.tabControl.Size = new System.Drawing.Size(1344, 712);
             this.tabControl.TabIndex = 1;
             // 
-            // btnAccount
+            // btnDeleteRemember
             // 
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(229, 26);
-            this.btnAccount.Text = "Tài khoản";
-            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            this.btnDeleteRemember.Name = "btnDeleteRemember";
+            this.btnDeleteRemember.Size = new System.Drawing.Size(224, 26);
+            this.btnDeleteRemember.Text = "Tắt nhớ mật khẩu";
+            this.btnDeleteRemember.Click += new System.EventHandler(this.btnDeleteRemember_Click);
             // 
             // MainForm
             // 
@@ -373,6 +382,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnYearDiseaseStat;
         private System.Windows.Forms.ToolStripMenuItem chămSócBệnhNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnAccount;
+        private System.Windows.Forms.ToolStripMenuItem btnDeleteRemember;
     }
 }
 
