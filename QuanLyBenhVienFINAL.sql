@@ -14,9 +14,7 @@ CREATE TABLE PATIENT (
     Gender NVARCHAR(10) NOT NULL,
     PhoneNumber VARCHAR(15),
     AddressPatient NVARCHAR(255),
-    Email VARCHAR(255),
-    AdmissionDate DATE,
-    DischargeDate DATE
+    Email VARCHAR(255)
 )
 
 --SELECT * FROM PATIENT
@@ -73,7 +71,6 @@ CREATE TABLE NURSECARE (
 	Notes NVARCHAR(500) --Additional details or observations by the nurse.
 )
 
-SELECT * FROM NURSECARE
 
 CREATE TABLE BILL (
     TransactionID CHAR(6) PRIMARY KEY,
@@ -129,8 +126,25 @@ CREATE TABLE USERLOGIN(
 	FLAG SMALLINT DEFAULT(0)
 )
 
+CREATE TABLE HOSPITALIZATION
+(
+	HospitalizationID CHAR(6) PRIMARY KEY,
+	PatientID CHAR(6),
+	RoomID CHAR(6),
+	AdmissionDate DATETIME,
+	DischargeDate DATETIME
+)
+
+
+
 
 --THÊM KHOÁ NGOẠI--
+ALTER TABLE HOSPITALIZATION
+ADD CONSTRAINT FK_HOS_PA FOREIGN KEY (PatientID) REFERENCES PATIENT(PatientID)
+
+ALTER TABLE HOSPITALIZATION
+ADD CONSTRAINT FK_HOS_RO FOREIGN KEY (RoomID) REFERENCES ROOM(RoomID)
+
 ALTER TABLE STAFF
 ADD CONSTRAINT FK_STA_DE FOREIGN KEY (DepartmentID) REFERENCES DEPARTMENT(DepartmentID) 
 
@@ -187,111 +201,6 @@ ADD CONSTRAINT FK_N_R FOREIGN KEY (RoomID) REFERENCES ROOM(RoomID)
 
 
 
-
-
--- Chèn dữ liệu vào bảng PATIENT
-INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate)
-VALUES 
-('PA0001', N'Nguyễn Văn A', '1990-05-01', N'Nam', '0901234567', N'Hà Nội', 'a.nguyen@example.com', '2024-12-01', '2024-12-05'),
-('PA0002', N'Phạm Thị B', '1985-10-15', N'Nữ', '0902345678', N'Đà Nẵng', 'b.pham@example.com', '2024-12-02', '2024-12-06'),
-('PA0003', N'Ngô Văn C', '2000-07-20', N'Nam', '0903456789', N'Hồ Chí Minh', 'c.ngo@example.com', '2024-12-03', '2024-12-07'),
-('PA0004', N'Trần Thị D', '1992-02-10', N'Nữ', '0904567890', N'Quảng Ninh', 'd.tran@example.com', '2024-12-04', '2024-12-08'),
-('PA0005', N'Lê Minh E', '1980-11-11', N'Nam', '0905678901', N'Bình Dương', 'e.le@example.com', '2024-12-05', '2024-12-09'),
-('PA0006', N'Vũ Thị F', '1995-03-22', N'Nữ', '0906789012', N'Vũng Tàu', 'f.vu@example.com', '2024-12-06', '2024-12-10');
-
--- Chèn dữ liệu vào bảng STAFF
-INSERT INTO STAFF (StaffID, FullName, TypeOfStaff, Gender, DateOfBirth, PhoneNumber, DateOfJoining, Email, Salary, DepartmentID)
-VALUES
-('ST0001', N'Nguyễn Thiện G', N'Bác sĩ Đa khoa', N'Nam', '1980-01-15', '0912345678', '2020-05-01', 'g.nguyen@example.com', 15000000, 'DP0001'),
-('ST0002', N'Phạm Minh H', N'Kế toán', N'Nữ', '1990-06-20', '0913456789', '2022-07-01', 'h.pham@example.com', 10000000, 'DP0002'),
-('ST0003', N'Lê Thị I', N'Y tá', N'Nữ', '1985-09-30', '0914567890', '2018-08-15', 'i.le@example.com', 20000000, 'DP0003'),
-('ST0004', N'Vũ Thái J', N'Kế toán', N'Nam', '1978-12-25', '0915678901', '2015-11-20', 'j.vu@example.com', 18000000, 'DP0004'),
-('ST0005', N'Trần Minh K', N'Điều dưỡng Tổng quát', N'Nam', '1992-05-05', '0916789012', '2023-09-10', 'k.tran@example.com', 11000000, 'DP0005'),
-('ST0006', N'Võ Quang L', N'Bác sĩ Ngoại khoa', N'Nam', '1982-03-11', '0917890123', '2019-06-01', 'l.vo@example.com', 17000000, 'DP0006'),
-('ST0007', N'Võ Quang A', N'Dược sĩ', N'Nam', '1983-03-14', '0917890127', '2020-06-02', 'a.vo@example.com', 28000000, 'DP0001'),
-('ST0008', N'Võ Quang B', N'Dược sĩ', N'Nam', '1985-03-11', '0917890121', '2018-07-01', 'b.vo@example.com', 17500000, 'DP0002');
-
--- Chèn dữ liệu vào bảng DEPARTMENT
-INSERT INTO DEPARTMENT (DepartmentID, DepartmentName, EmployeeNumber, HeadDepartmentID, PhoneNumber, LocationDPM)
-VALUES
-('DP0001', N'Khoa Nội', 2, 'ST0007', '0241234567', N'Hà Nội'),
-('DP0002', N'Khoa Ngoại', 2, 'ST0002', '0242345678', N'Đà Nẵng'),
-('DP0003', N'Khoa Cấp Cứu', 1, 'ST0003', '0243456789', N'Hồ Chí Minh'),
-('DP0004', N'Khoa Nhi', 1, 'ST0004', '0244567890', N'Quảng Ninh'),
-('DP0005', N'Khoa Sản', 1, 'ST0005', '0245678901', N'Bình Dương'),
-('DP0006', N'Khoa Tim Mạch', 1, 'ST0006', '0246789012', N'Vũng Tàu');
-
--- Chèn dữ liệu vào bảng APPOINTMENT
-INSERT INTO APPOINTMENT (AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDateTime, AppointmentStatus)
-VALUES
-('AP0001', 'PA0001', 'ST0001', 'DP0001', '2024-12-01 08:00:00', N'Chấp thuận'),
-('AP0002', 'PA0002', 'ST0006', 'DP0002', '2024-12-02 09:00:00', N'Đang chờ xử lý'),
-('AP0003', 'PA0003', 'ST0007', 'DP0003', '2024-12-03 10:00:00', N'Chấp thuận'),
-('AP0004', 'PA0004', 'ST0008', 'DP0004', '2024-12-04 11:00:00', N'Từ chối'),
-('AP0005', 'PA0005', 'ST0001', 'DP0005', '2024-12-05 12:00:00', N'Đang chờ xử lý'),
-('AP0006', 'PA0006', 'ST0006', 'DP0006', '2024-12-06 13:00:00', N'Từ chối');
-
-
--- Chèn dữ liệu vào bảng MEDICALRECORD
-INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan)
-VALUES
-('MR0001', 'PA0001', 'ST0001', '2024-12-01', N'Viêm phổi', N'X-ray bình thường', N'Điều trị kháng sinh'),
-('MR0002', 'PA0003', 'ST0007', '2024-12-03', N'Đau dạ dày', N'Siêu âm bình thường', N'Thuốc giảm đau'),
-('MR0003', 'PA0004', 'ST0008', '2024-12-04', N'Cảm cúm', N'Xét nghiệm máu', N'Thức ăn nhẹ, uống nước nhiều'),
-('MR0004', 'PA0006', 'ST0006', '2024-12-06', N'Bệnh tim mạch', N'ECG bình thường', N'Thuốc tim mạch')
-
--- Chèn dữ liệu vào bảng BILL
-INSERT INTO BILL (TransactionID, RecordID, StaffID, TransactionDate, PaymentMethod, Total)
-VALUES
-('BI0001', 'MR0001', 'ST0004', '2024-12-01', N'Tiền mặt', 340000),
-('BI0002', 'MR0002', 'ST0002', '2024-12-03', N'Thẻ tín dụng', 120000),
-('BI0003', 'MR0003', 'ST0002', '2024-12-04', N'Bảo hiểm', 380000),
-('BI0004', 'MR0004', 'ST0004', '2024-12-06', N'Tiền mặt', 280000)
-
--- Chèn dữ liệu vào bảng BILLDETAIL
-INSERT INTO BILLDETAIL (TransactionID,MedicationID, MedicationName, Amount)
-VALUES
-('BI0001', 'ME0001', 'Paracetamol', 2),
-('BI0001', 'ME0002', 'Amoxicillin',3),
-('BI0002', 'ME0003', 'Ciprofloxacin',1),
-('BI0003', 'ME0004', 'Ibuprofen',5),
-('BI0003', 'ME0005', 'Omeprazole',2),
-('BI0004', 'ME0006', 'Diclofenac',4);
-
-
-
--- Chèn dữ liệu vào bảng MEDICATION
-INSERT INTO MEDICATION (MedicationID, MedicationName, Dosage, DosageUnit, Category, QuantityInStock, Price, ExpiryDate, ManufacturingDate, Manufacturer)
-VALUES
-('ME0001', N'Paracetamol', N'500mg','chai', N'Giảm đau', 100, 50000, '2025-12-01', '2024-01-01', N'Việt Nam'),
-('ME0002', N'Amoxicillin', N'250mg',N'viên', N'Kháng sinh', 50, 80000, '2025-06-01', '2024-02-01', N'Ấn Độ'),
-('ME0003', N'Ciprofloxacin', N'500mg',N'ống', N'Kháng sinh', 70, 120000, '2025-09-01', '2024-03-01', N'Mỹ'),
-('ME0004', N'Ibuprofen', N'400mg',N'gói', N'Giảm đau', 150, 60000, '2025-07-01', '2024-04-01', N'Anh'),
-('ME0005', N'Omeprazole', N'20mg',N'gói', N'Tiêu hóa', 200, 40000, '2025-11-01', '2024-05-01', N'Nhật Bản'),
-('ME0006', N'Diclofenac', N'50mg',N'viên', N'Giảm đau', 120, 70000, '2025-08-01', '2024-06-01', N'Trung Quốc');
-
-
--- Chèn dữ liệu vào bảng ROOM
-INSERT INTO ROOM (RoomID, DepartmentID, BedCount, RoomType)
-VALUES
-('RO0001', 'DP0001', 10, N'Điều trị tổng quát'),
-('RO0002', 'DP0002', 12, N'VIP'),
-('RO0003', 'DP0003', 8, N'Hồi sức'),
-('RO0004', 'DP0004', 6, N'Điều trị tổng quát'),
-('RO0005', 'DP0005', 4, N'VIP'),
-('RO0006', 'DP0006', 5, N'Sản khoa');
-
-
--- Chèn dữ liệu vào bảng WEEKLYASSIGNMENT
-INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, DepartmentID, WeekStartDate, WeekEndDate, ShiftType)
-VALUES
-('WA0001', 'ST0001', 'DP0001', '2024-12-01', '2024-12-07', N'Sáng'),
-('WA0002', 'ST0002', 'DP0002', '2024-12-01', '2024-12-07', N'Chiều'),
-('WA0003', 'ST0003', 'DP0003', '2024-12-01', '2024-12-07', N'Tối'),
-('WA0004', 'ST0004', 'DP0004', '2024-12-01', '2024-12-07', N'Sáng'),
-('WA0005', 'ST0005', 'DP0005', '2024-12-01', '2024-12-07', N'Chiều'),
-('WA0006', 'ST0006', 'DP0006', '2024-12-01', '2024-12-07', N'Tối');
-
 CREATE TRIGGER TOTALMONEY_BD_IU
 ON BILLDETAIL
 AFTER INSERT, DELETE, UPDATE
@@ -302,103 +211,9 @@ AS
 				WHERE BILL.TransactionID=b.TransactionID)
 
 
---Them data cho patient va medical 
-
-INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate)
-VALUES
-('PA0007', N'Hồng Hài N', '1999-04-12', N'Nữ', '0962456786', N'Hải Phòng', 'h.hong@example.com', '2023-03-08', NULL),
-('PA0008', N'Đỗ Thị H', '1999-04-12', N'Nữ', '0962456786', N'Hải Phòng', 'h.do@example.com', '2024-12-08', NULL),
-('PA0009', N'Ngô Minh I', '1975-05-10', N'Nam', '0983456785', N'Lào Cai', 'i.ngo@example.com', '2024-11-27', '2024-12-09'),
-('PA0010', N'Thái Hồng K', '2000-10-25', N'Nữ', '0943456784', N'Hà Giang', 'k.thai@example.com', '2024-12-10', NULL),
-('PA0011', N'Nguyễn Văn A', '1985-06-12', N'Nam', '0987654321', N'Hà Nội', 'a.nguyen@example.com', '2024-11-20', '2024-12-05'),
-('PA0012', N'Lê Thị B', '1990-03-15', N'Nữ', '0978654322', N'Đà Nẵng', 'b.le@example.com', '2024-12-01', NULL),
-('PA0013', N'Phạm Minh C', '2002-09-20', N'Nam', '0902456789', N'Hồ Chí Minh', 'c.pham@example.com', '2024-11-25', NULL),
-('PA0014', N'Trần Văn D', '1978-11-10', N'Nam', '0945654321', N'Cần Thơ', 'd.tran@example.com', '2024-11-30', '2024-12-10'),
-('PA0015', N'Hoàng Thị E', '1987-02-07', N'Nữ', '0913456789', N'Bắc Ninh', 'e.hoang@example.com', '2024-12-02', NULL),
-('PA0016', N'Vũ Ngọc F', '1995-08-17', N'Nữ', '0932456788', N'Nam Định', 'f.vu@example.com', '2024-11-28', '2024-12-08'),
-('PA0017', N'Bùi Thanh G', '1982-12-30', N'Nam', '0923456787', N'Quảng Ninh', 'g.bui@example.com', '2024-12-05', NULL)
-
-INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan)
-VALUES
-('MR0005', 'PA0005', 'ST0002', '2024-12-03', N'Dau dạ dày', N'Nội soi: loét dạ dày', N'Dùng thuốc giảm tiết axit, kiêng đồ cay'),
-('MR0006', 'PA0006', 'ST0004', '2024-11-29', N'Đau đầu mãn tính', N'CT scan không phát hiện bất thường', N'Dùng thuốc giảm đau, giảm căng thẳng'),
-('MR0007', 'PA0007', 'ST0001', '2024-12-06', N'Cảm lạnh', N'Không có dấu hiệu nguy hiểm', N'Uống vitamin C và nghỉ ngơi'),
-('MR0008', 'PA0008', 'ST0005', '2024-12-09', N'Suy nhược cơ thể', N'Chỉ số máu thấp', N'Tăng cường dinh dưỡng, vitamin'),
-('MR0009', 'PA0009', 'ST0003', '2024-11-28', N'Hen suyễn', N'Chỉ số phổi giảm', N'Dùng thuốc hít và theo dõi định kỳ'),
-('MR0010', 'PA0010', 'ST0004', '2024-12-11', N'Đau lưng', N'X-quang: thoái hóa cột sống', N'Vật lý trị liệu 3 tuần'),
-('MR0011', 'PA0011', 'ST0001', '2024-11-21', N'Cảm cúm', N'Huyết áp bình thường, không có triệu chứng nặng', N'Nghỉ ngơi, uống thuốc giảm đau'),
-('MR0012', 'PA0012', 'ST0002', '2024-12-02', N'Sốt xuất huyết', N'Giảm tiểu cầu, sốt cao', N'Nhập viện, theo dõi hàng ngày'),
-('MR0013', 'PA0003', 'ST0001', '2024-11-26', N'Viêm phổi', N'X-quang phổi phát hiện tổn thương nhỏ', N'Dùng kháng sinh 7 ngày'),
-('MR0014', 'PA0004', 'ST0003', '2024-12-01', N'Gãy tay phải', N'Chụp X-quang: gãy xương quay', N'Bó bột và nghỉ ngơi 4 tuần'),
-('MR0015', 'PA0001', 'ST0001', '2024-01-15', N'Sốt xuất huyết', N'Tiểu cầu thấp, sốt cao', N'Nhập viện, truyền dịch, điều trị sốt'),
-('MR0016', 'PA0002', 'ST0002', '2024-02-20', N'Viêm phổi', N'Chụp X-quang phát hiện viêm phổi nhẹ', N'Dùng kháng sinh, theo dõi nhiệt độ'),
-('MR0017', 'PA0003', 'ST0003', '2024-03-10', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, mất nước nhẹ', N'Uống thuốc chống tiêu chảy, bù nước'),
-('MR0018', 'PA0004', 'ST0001', '2024-04-05', N'Sốt xuất huyết', N'Tiểu cầu giảm mạnh', N'Truyền dịch và thuốc hạ sốt'),
-('MR0019', 'PA0005', 'ST0002', '2024-05-11', N'Viêm phổi', N'Phổi tổn thương nhẹ', N'Kháng sinh, nghỉ ngơi tại nhà'),
-('MR0020', 'PA0006', 'ST0004', '2024-06-21', N'Tiêu chảy do nhiễm khuẩn', N'Phân có máu, sốt cao', N'Thực hiện xét nghiệm, uống thuốc kháng sinh'),
-('MR0021', 'PA0007', 'ST0003', '2024-07-07', N'Sốt xuất huyết', N'Huyết áp ổn định, tiểu cầu thấp', N'Nhập viện, theo dõi sức khỏe'),
-('MR0022', 'PA0008', 'ST0005', '2024-08-18', N'Viêm phổi', N'Khó thở, ho nhiều', N'Kháng sinh và điều trị hỗ trợ'),
-('MR0023', 'PA0009', 'ST0002', '2024-09-05', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, không có máu', N'Uống thuốc kháng sinh, bù nước'),
-('MR0024', 'PA0010', 'ST0004', '2024-10-12', N'Sốt xuất huyết', N'Phát ban, sốt cao', N'Chăm sóc tại bệnh viện, điều trị triệu chứng'),
-('MR0025', 'PA0011', 'ST0001', '2024-11-22', N'Viêm phổi', N'Chụp X-quang phát hiện phổi viêm', N'Dùng kháng sinh, nghỉ ngơi'),
-('MR0026', 'PA0012', 'ST0002', '2024-12-15', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
-('MR0027', 'PA0013', 'ST0003', '2024-01-02', N'Sốt xuất huyết', N'Tiểu cầu giảm, huyết áp thấp', N'Truyền dịch, hạ sốt'),
-('MR0028', 'PA0014', 'ST0005', '2024-02-17', N'Viêm phổi', N'Khó thở nhẹ, X-quang không phát hiện bất thường', N'Kháng sinh, chăm sóc tại nhà'),
-('MR0029', 'PA0015', 'ST0004', '2024-03-13', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, mất nước nhẹ', N'Uống thuốc kháng sinh, bù nước'),
-('MR0030', 'PA0016', 'ST0001', '2024-04-09', N'Sốt xuất huyết', N'Tiểu cầu giảm, sốt cao', N'Nhập viện, truyền dịch, thuốc hạ sốt'),
-('MR0031', 'PA0017', 'ST0002', '2024-05-17', N'Viêm phổi', N'Phổi có dấu hiệu viêm nhẹ', N'Kháng sinh, uống thuốc giảm ho'),
-('MR0032', 'PA0011', 'ST0003', '2024-06-02', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, sốt nhẹ', N'Uống thuốc kháng sinh, bù nước'),
-('MR0033', 'PA0012', 'ST0005', '2024-07-25', N'Sốt xuất huyết', N'Tiểu cầu thấp, xuất huyết dưới da', N'Truyền dịch, điều trị hỗ trợ'),
-('MR0034', 'PA0013', 'ST0004', '2024-08-11', N'Viêm phổi', N'Khó thở nhẹ, X-quang phát hiện viêm phổi nhẹ', N'Dùng thuốc kháng sinh và thuốc giảm ho');
-
-
-INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan)
-VALUES
-('MR0035', 'PA0002', 'ST0002', '2024-11-30', N'Covid-19', N'Xét nghiệm PCR dương tính, sốt, khó thở', N'Chăm sóc tại nhà, uống thuốc hạ sốt'),
-('MR0036', 'PA0003', 'ST0003', '2024-12-01', N'Viêm phổi', N'Khó thở, ho có đờm, đau ngực', N'Dùng kháng sinh, nghỉ ngơi'),
-('MR0037', 'PA0004', 'ST0001', '2024-12-02', N'Cảm cúm', N'Sốt cao, đau đầu, nghẹt mũi', N'Uống thuốc giảm đau, xịt mũi'),
-('MR0038', 'PA0005', 'ST0002', '2024-12-03', N'Covid-19', N'Khó thở, ho, mệt mỏi', N'Chăm sóc tại nhà, điều trị triệu chứng'),
-('MR0039', 'PA0006', 'ST0004', '2024-12-04', N'Viêm phổi', N'Phổi tổn thương nhẹ, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'),
-('MR0040', 'PA0007', 'ST0003', '2024-12-05', N'Cảm cúm', N'Ho, đau họng, sốt nhẹ', N'Uống thuốc giảm đau, uống nhiều nước'),
-('MR0041', 'PA0008', 'ST0005', '2024-12-06', N'Covid-19', N'Xét nghiệm PCR dương tính, mệt mỏi', N'Chăm sóc tại nhà, điều trị hỗ trợ'),
-('MR0042', 'PA0009', 'ST0002', '2024-12-07', N'Viêm phổi', N'Khó thở, ho nhiều, đau ngực', N'Kháng sinh, theo dõi tại bệnh viện'),
-('MR0043', 'PA0010', 'ST0004', '2024-12-08', N'Cảm cúm', N'Sốt cao, ho, đau cơ', N'Uống thuốc hạ sốt, nghỉ ngơi'),
-('MR0044', 'PA0011', 'ST0001', '2024-12-09', N'Covid-19', N'Mệt mỏi, ho, sốt nhẹ', N'Chăm sóc tại nhà, thuốc giảm sốt'),
-('MR0045', 'PA0012', 'ST0002', '2024-12-10', N'Viêm phổi', N'Phổi có dấu hiệu viêm, ho, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'),
-('MR0046', 'PA0013', 'ST0003', '2024-12-11', N'Cảm cúm', N'Ho, sốt, đau họng', N'Uống thuốc hạ sốt, xịt mũi'),
-('MR0047', 'PA0014', 'ST0005', '2024-12-12', N'Covid-19', N'Mệt mỏi, khó thở nhẹ', N'Chăm sóc tại nhà, thuốc giảm đau'),
-('MR0048', 'PA0015', 'ST0004', '2024-12-13', N'Viêm phổi', N'Khó thở, đau ngực, ho khan', N'Kháng sinh, nghỉ ngơi tại bệnh viện'),
-('MR0049', 'PA0016', 'ST0001', '2024-12-14', N'Cảm cúm', N'Sốt, ho, mệt mỏi', N'Uống thuốc giảm đau, uống nhiều nước'),
-('MR0050', 'PA0017', 'ST0002', '2024-12-14', N'Covid-19', N'Mệt mỏi, khó thở nhẹ, ho', N'Chăm sóc tại nhà, điều trị triệu chứng'),
-('MR0051', 'PA0001', 'ST0001', '2024-11-30', N'Cảm cúm', N'Sốt, ho khan, mệt mỏi', N'Ist, uống thuốc hạ sốt, nghỉ ngơi');
-
--- Insert sample data into the APPOINTMENT table
-INSERT INTO APPOINTMENT (AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDateTime, AppointmentStatus)
-VALUES
-('A00001', 'P00001', 'D00001', 'DEP001', GETDATE() - 2, 'Confirmed'), -- 2 days ago
-('A00002', 'P00002', 'D00002', 'DEP002', GETDATE() + 1, 'Confirmed'), -- Tomorrow
-('A00003', 'P00003', 'D00003', 'DEP003', GETDATE() + 3, 'Cancelled'), -- 3 days later
-('A00004', 'P00004', 'D00001', 'DEP004', GETDATE() - 6, 'Completed'), -- Last week
-('A00005', 'P00005', 'D00002', 'DEP005', '2024-12-16', 'Confirmed'), -- Current week's Monday
-('A00006', 'P00006', 'D00003', 'DEP006', '2024-12-22', 'Completed'); -- Current week's Sunday
-
-INSERT INTO APPOINTMENT (AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDateTime, AppointmentStatus)
-VALUES
-('A00007', 'P00005', 'D00002', 'DEP005', '2024-12-15', 'Confirmed'),
-('A00008', 'P00005', 'D00002', 'DEP005', '2024-12-24', 'Confirmed'),
-('A00009', 'P00005', 'D00002', 'DEP005', '2024-12-23', 'Confirmed'),
-('A00010', 'P00005', 'D00002', 'DEP005', '2024-12-17', 'Confirmed'),
-('A00011', 'P00005', 'D00002', 'DEP005', '2024-12-20', 'Confirmed'),
-('A00012', 'P00005', 'D00002', 'DEP005', '2024-12-14', 'Confirmed')
-
-
-DELETE FROM APPOINTMENT
-WHERE AppointmentID IN ('A00005', 'A00006')
-
 ALTER TABLE APPOINTMENT
 DROP CONSTRAINT FK_AP_DE
 
-SELECT * FROM APPOINTMENT
 
 SELECT AppointmentDateTime, FullName
 FROM APPOINTMENT a JOIN PATIENT p ON a.PatientID = p.PatientID
@@ -406,7 +221,6 @@ WHERE AppointmentDateTime > DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(
   AND AppointmentDateTime <= DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) -- End of the week (Sunday);
 ORDER BY AppointmentDateTime
 
-SELECT *
 
 SELECT st.StaffID, FullName , ShiftType, WeekStartDate, WeekEndDate 
                                FROM WEEKLYASSIGNMENT w JOIN STAFF st ON w.StaffID = st.StaffID
@@ -420,12 +234,6 @@ SELECT st.StaffID, FullName , ShiftType, WeekStartDate, WeekEndDate
 
 							   SELECT * FROM WEEKLYASSIGNMENT
 							   WHERE DepartmentID = 'DP0001'
-
-INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, DepartmentID, WeekStartDate, WeekEndDate, ShiftType)
-VALUES
-('A00001', 'ST0001', 'DP0001', '2024-12-17', '2024-12-21', N'Sáng'),  
-('A00002', 'ST0007', 'DP0001', '2024-12-16', '2024-12-22', N'Sáng'), 
-('A00003', 'ST0001', 'DP0001', '2024-12-17', '2024-12-21', N'Chiều') 
 
 -- Example data for NURSECARE table
 INSERT INTO NURSECARE (CareID, NurseID, PatientID, RoomID, CareDateTime, CareType, Notes)
@@ -441,6 +249,7 @@ VALUES
 ('C00009', 'N00001', 'P00009', 'R0001', '2024-12-22 11:00:00', 'Patient Monitoring', 'Monitored patient’s vitals during post-surgery recovery.'),
 ('C00010', 'N00004', 'P00010', 'R0004', '2024-12-22 14:30:00', 'Emergency Response', 'Responded to a sudden drop in blood pressure, stabilized the patient.');
 
+
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('admin','1') ---ADMIN
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('N00001','1') ----Y tá
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0001','1') ---- Bác sĩ
@@ -450,16 +259,476 @@ INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0008','1') ---- Dược sĩ
 
 
 
+INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email)
+VALUES 
+('PA0001', N'Nguyễn Văn A', '1990-05-01', N'Nam', '0901234567', N'Hà Nội', 'a.nguyen@example.com'),
+('PA0002', N'Phạm Thị B', '1985-10-15', N'Nữ', '0902345678', N'Đà Nẵng', 'b.pham@example.com'),
+('PA0003', N'Ngô Văn C', '2000-07-20', N'Nam', '0903456789', N'Hồ Chí Minh', 'c.ngo@example.com'),
+('PA0004', N'Trần Thị D', '1992-02-10', N'Nữ', '0904567890', N'Quảng Ninh', 'd.tran@example.com'),
+('PA0005', N'Lê Minh E', '1980-11-11', N'Nam', '0905678901', N'Bình Dương', 'e.le@example.com'),
+('PA0006', N'Vũ Thị F', '1995-03-22', N'Nữ', '0906789012', N'Vũng Tàu', 'f.vu@example.com'),
+('PA0007', N'Đỗ Văn G', '1998-08-18', N'Nam', '0907890123', N'Cần Thơ', 'g.do@example.com'),
+('PA0008', N'Hoàng Thị H', '1983-04-05', N'Nữ', '0908901234', N'Hải Phòng', 'h.hoang@example.com'),
+('PA0009', N'Nguyễn Thị I', '1997-01-25', N'Nữ', '0909012345', N'Gia Lai', 'i.nguyen@example.com'),
+('PA0010', N'Phạm Văn J', '1989-09-09', N'Nam', '0910123456', N'Nghệ An', 'j.pham@example.com'),
+('PA0011', N'Trần Minh K', '2001-06-30', N'Nam', '0911234567', N'Lâm Đồng', 'k.tran@example.com'),
+('PA0012', N'Lê Thị L', '1993-12-20', N'Nữ', '0912345678', N'Tây Ninh', 'l.le@example.com'),
+('PA0013', N'Vũ Văn M', '1987-07-01', N'Nam', '0913456789', N'Nam Định', 'm.vu@example.com'),
+('PA0014', N'Đặng Thị N', '1990-10-10', N'Nữ', '0914567890', N'Hà Tĩnh', 'n.dang@example.com'),
+('PA0015', N'Tô Minh O', '1986-03-15', N'Nam', '0915678901', N'Khánh Hòa', 'o.to@example.com'),
+('PA0016', N'Trịnh Thị P', '1999-11-25', N'Nữ', '0916789012', N'Bắc Ninh', 'p.trinh@example.com'),
+('PA0017', N'Nguyễn Văn Q', '1985-06-12', N'Nam', '0917890123', N'Đồng Nai', 'q.nguyen@example.com'),
+('PA0018', N'Phạm Thị R', '1991-08-19', N'Nữ', '0918901234', N'An Giang', 'r.pham@example.com'),
+('PA0019', N'Vũ Văn S', '1988-02-22', N'Nam', '0919012345', N'Hà Nam', 's.vu@example.com'),
+('PA0020', N'Lê Thị T', '1996-05-08', N'Nữ', '0920123456', N'Hòa Bình', 't.le@example.com'),
+('PA0021', N'Đỗ Văn U', '1994-04-14', N'Nam', '0921234567', N'Thái Bình', 'u.do@example.com'),
+('PA0022', N'Hoàng Thị V', '1992-07-21', N'Nữ', '0922345678', N'Ninh Thuận', 'v.hoang@example.com'),
+('PA0023', N'Nguyễn Minh W', '1981-12-30', N'Nam', '0923456789', N'Hà Giang', 'w.nguyen@example.com'),
+('PA0024', N'Phạm Thị X', '1989-11-11', N'Nữ', '0924567890', N'Phú Yên', 'x.pham@example.com'),
+('PA0025', N'Ngô Văn Y', '1993-03-17', N'Nam', '0925678901', N'Tiền Giang', 'y.ngo@example.com'),
+('PA0026', N'Trần Thị Z', '1997-09-09', N'Nữ', '0926789012', N'Sóc Trăng', 'z.tran@example.com'),
+('PA0027', N'Đặng Văn AA', '1982-06-06', N'Nam', '0930123456', N'Quảng Nam', 'aa.dang@example.com'),
+('PA0028', N'Lê Thị BB', '1984-01-05', N'Nữ', '0931234567', N'Bắc Giang', 'bb.le@example.com'),
+('PA0029', N'Trịnh Minh CC', '1990-10-01', N'Nam', '0932345678', N'Thái Nguyên', 'cc.trinh@example.com'),
+('PA0030', N'Tô Thị DD', '1999-08-24', N'Nữ', '0933456789', N'Bạc Liêu', 'dd.to@example.com'),
+('PA0031', N'Nguyễn Văn EE', '2000-04-12', N'Nam', '0934567890', N'Quảng Ngãi', 'ee.nguyen@example.com'),
+('PA0032', N'Lê Thị FF', '1983-07-07', N'Nữ', '0935678901', N'Hà Tây', 'ff.le@example.com'),
+('PA0033', N'Đỗ Văn GG', '1991-09-14', N'Nam', '0936789012', N'Kon Tum', 'gg.do@example.com'),
+('PA0034', N'Trần Thị HH', '1987-11-11', N'Nữ', '0940123456', N'Cà Mau', 'hh.tran@example.com'),
+('PA0035', N'Vũ Văn II', '1995-12-20', N'Nam', '0941234567', N'Kiên Giang', 'ii.vu@example.com'),
+('PA0036', N'Phạm Thị JJ', '1998-02-25', N'Nữ', '0942345678', N'Bình Phước', 'jj.pham@example.com'),
+('PA0037', N'Hoàng Minh KK', '1989-06-18', N'Nam', '0943456789', N'Đồng Tháp', 'kk.hoang@example.com'),
+('PA0038', N'Trịnh Thị LL', '1994-03-28', N'Nữ', '0944567890', N'Lạng Sơn', 'll.trinh@example.com'),
+('PA0039', N'Lê Văn MM', '1986-11-01', N'Nam', '0945678901', N'Tuyên Quang', 'mm.le@example.com'),
+('PA0040', N'Nguyễn Thị NN', '1997-05-14', N'Nữ', '0946789012', N'Yên Bái', 'nn.nguyen@example.com');
 
-INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email, AdmissionDate, DischargeDate)
+
+
+INSERT INTO DEPARTMENT (DepartmentID, DepartmentName, EmployeeNumber, HeadDepartmentID, PhoneNumber, LocationDPM)
 VALUES
-    ('P00001', N'Nguyễn Văn A', '1985-01-15', N'Nam', '0912345678', N'123 Đường ABC, Quận 1, TP.HCM', 'nguyenvana@example.com', '2024-12-01', NULL),
-    ('P00002', N'Trần Thị B', '1990-02-25', N'Nữ', '0923456789', N'45 Đường DEF, Quận 2, TP.HCM', 'tranthib@example.com', '2024-12-02', NULL),
-    ('P00003', N'Lê Văn C', '1980-03-10', N'Nam', '0934567890', N'78 Đường GHI, Quận 3, TP.HCM', 'levanc@example.com', '2024-12-03', NULL),
-    ('P00004', N'Hoàng Thị D', '2000-04-05', N'Nữ', '0945678901', N'90 Đường JKL, Quận 4, TP.HCM', 'hoangthid@example.com', '2024-12-04', NULL),
-    ('P00005', N'Phạm Văn E', '1995-05-20', N'Nam', '0956789012', N'56 Đường MNO, Quận 5, TP.HCM', 'phamvane@example.com', '2024-12-05', NULL),
-    ('P00006', N'Nguyễn Thị F', '1988-06-15', N'Nữ', '0967890123', N'34 Đường PQR, Quận 6, TP.HCM', 'nguyenthif@example.com', '2024-12-06', NULL),
-    ('P00007', N'Đinh Văn G', '1992-07-30', N'Nam', '0978901234', N'12 Đường STU, Quận 7, TP.HCM', 'dinhvang@example.com', '2024-12-07', NULL),
-    ('P00008', N'Bùi Thị H', '2002-08-20', N'Nữ', '0989012345', N'67 Đường VWX, Quận 8, TP.HCM', 'buithih@example.com', '2024-12-08', NULL),
-    ('P00009', N'Trịnh Văn I', '1985-09-12', N'Nam', '0990123456', N'89 Đường YZ, Quận 9, TP.HCM', 'trinhvani@example.com', '2024-12-09', NULL),
-    ('P00010', N'Lý Thị K', '1998-10-05', N'Nữ', '0901234567', N'23 Đường ABC, Quận 10, TP.HCM', 'lythik@example.com', '2024-12-10', NULL);
+('KN', N'Khoa Nội', 11, 'ST0002', '0123456789', 'Tầng 1'),
+('KNg', N'Khoa Ngoại', 4, 'ST0003', '0123456790', 'Tầng 2'),
+('KS', N'Khoa Sản', 4, 'ST0001', '0123456791', 'Tầng 3'),
+('KNh', N'Khoa Nhi', 4, 'ST0008', '0123456792', 'Tầng 4'),
+('KHSCC', N'Khoa Hồi sức cấp cứu', 9, 'ST0014', '0123456793', 'Tầng 5'),
+('KUB', N'Khoa Ung bướu', 6, 'ST0007', '0123456794', 'Tầng 6'),
+('KTM', N'Khoa Tim mạch', 5, 'ST0004', '0123456795', 'Tầng 7'),
+('KTK', N'Khoa Thần kinh', 2, 'ST0005', '0123456796', 'Tầng 8'),
+('KDL', N'Khoa Da liễu', 5, 'ST0006', '0123456797', 'Tầng 9'),
+('KTMH', N'Khoa Tai Mũi Họng', 2, 'ST0024', '0123456798', 'Tầng 10'),
+('KM', N'Khoa Mắt', 1, 'ST0018', '0123456799', 'Tầng 11'),
+('KRHM', N'Khoa Răng Hàm Mặt', 2, 'ST0035', '0123456700', 'Tầng 12'),
+('KCDHA', N'Khoa Chẩn đoán hình ảnh', 2, 'ST0013', '0123456701', 'Tầng 13'),
+('KXN', N'Khoa Xét nghiệm', 2, 'ST0012', '0123456702', 'Tầng 14'),
+('KVLTL', N'Khoa Vật lý trị liệu – Phục hồi chức năng', 1, 'ST0021', '0123456703', 'Tầng 15')
+
+
+
+INSERT INTO STAFF (StaffID, FullName, TypeOfStaff, Gender, DateOfBirth, PhoneNumber, DateOfJoining, Email, Salary, DepartmentID)
+VALUES
+('ST0001', N'Nguyễn Văn A', N'Bác sĩ Đa khoa', N'Nam', '1980-01-01', '0912345678', '2015-01-01', 'a.nguyen@example.com', 20000000, 'KN'),
+('ST0002', N'Lê Thị B', N'Bác sĩ Nội khoa', N'Nữ', '1985-02-15', '0913456789', '2016-02-01', 'b.le@example.com', 22000000, 'KN'),
+('ST0003', N'Trần Văn C', N'Bác sĩ Ngoại khoa', N'Nam', '1978-03-20', '0914567890', '2017-03-01', 'c.tran@example.com', 25000000, 'KNg'),
+('ST0004', N'Phạm Thị D', N'Bác sĩ Tim mạch', N'Nữ', '1982-04-25', '0915678901', '2018-04-01', 'd.pham@example.com', 23000000, 'KTM'),
+('ST0005', N'Vũ Văn E', N'Bác sĩ Thần kinh', N'Nam', '1987-05-30', '0916789012', '2019-05-01', 'e.vu@example.com', 24000000, 'KTK'),
+('ST0006', N'Ngô Thị F', N'Bác sĩ Da liễu', N'Nữ', '1989-06-10', '0917890123', '2020-06-01', 'f.ngo@example.com', 22000000, 'KDL'),
+('ST0007', N'Lê Quang G', N'Bác sĩ Ung bướu', N'Nam', '1983-07-15', '0918901234', '2021-07-01', 'g.le@example.com', 26000000, 'KUB'),
+('ST0008', N'Trần Minh H', N'Bác sĩ Nhi khoa', N'Nam', '1990-08-20', '0919012345', '2022-08-01', 'h.tran@example.com', 21000000, 'KNh'),
+('ST0009', N'Phạm Thị I', N'Điều dưỡng Tổng quát', N'Nữ', '1992-09-25', '0910123456', '2023-09-01', 'i.pham@example.com', 15000000, 'KN'),
+('ST0010', N'Nguyễn Văn J', N'Điều dưỡng ICU', N'Nam', '1985-10-30', '0911234567', '2014-10-01', 'j.nguyen@example.com', 17000000, 'KHSCC'),
+('ST0011', N'Lê Thị K', N'Điều dưỡng Sản khoa', N'Nữ', '1994-11-05', '0912345678', '2015-11-01', 'k.le@example.com', 16000000, 'KS'),
+('ST0012', N'Vũ Văn L', N'Kỹ thuật viên Xét nghiệm', N'Nam', '1988-12-10', '0913456789', '2016-12-01', 'l.vu@example.com', 18000000, 'KXN'),
+('ST0013', N'Phạm Thị M', N'Kỹ thuật viên Hình ảnh', N'Nữ', '1993-01-15', '0914567890', '2017-01-01', 'm.pham@example.com', 19000000, 'KCDHA'),
+('ST0014', N'Trần Văn N', N'Bác sĩ Hồi sức cấp cứu', N'Nam', '1995-02-20', '0915678901', '2018-02-01', 'n.tran@example.com', 17000000, 'KHSCC'),
+('ST0015', N'Ngô Thị O', N'Dược sĩ', N'Nữ', '1997-03-25', '0916789012', '2019-03-01', 'o.ngo@example.com', 20000000, 'KDL'),
+('ST0016', N'Phan Văn P', N'Hộ lý', N'Nam', '1980-04-30', '0917890123', '2020-04-01', 'p.phan@example.com', 14000000, 'KHSCC'),
+('ST0017', N'Lê Thị Q', N'Nhân viên Nghiên cứu Y khoa', N'Nữ', '1983-05-10', '0918901234', '2021-05-01', 'q.le@example.com', 25000000, 'KUB'),
+('ST0018', N'Vũ Văn R', N'Bác sĩ Mắt', N'Nam', '1985-06-15', '0919012345', '2022-06-01', 'r.vu@example.com', 30000000, 'KM'),
+('ST0019', N'Nguyễn Thị S', N'Kế toán', N'Nữ', '1990-07-20', '0910123456', '2023-07-01', 's.nguyen@example.com', 18000000, 'KTMH'),
+('ST0020', N'Trần Văn T', N'Quản lý', N'Nam', '1987-08-25', '0911234567', '2014-08-01', 't.tran@example.com', 25000000, 'KHSCC'),
+('ST0021', N'Nguyễn Văn U', N'Bác sĩ Đa khoa', N'Nam', '1990-09-15', '0912345678', '2015-09-01', 'u.nguyen@example.com', 20000000, 'KN'),
+('ST0022', N'Lê Thị V', N'Bác sĩ Nội khoa', N'Nữ', '1985-10-20', '0913456789', '2016-10-01', 'v.le@example.com', 22000000, 'KN'),
+('ST0023', N'Trần Văn W', N'Bác sĩ Ngoại khoa', N'Nam', '1978-11-25', '0914567890', '2017-11-01', 'w.tran@example.com', 25000000, 'KNg'),
+('ST0024', N'Phạm Thị X', N'Bác sĩ Tai Mũi Họng', N'Nữ', '1982-12-30', '0915678901', '2018-12-01', 'x.pham@example.com', 23000000, 'KTMH'),
+('ST0025', N'Vũ Văn Y', N'Bác sĩ Thần kinh', N'Nam', '1987-01-05', '0916789012', '2019-01-01', 'y.vu@example.com', 24000000, 'KTK'),
+('ST0026', N'Ngô Thị Z', N'Bác sĩ Da liễu', N'Nữ', '1989-02-10', '0917890123', '2020-02-01', 'z.ngo@example.com', 22000000, 'KDL'),
+('ST0027', N'Lê Quang AA', N'Bác sĩ Ung bướu', N'Nam', '1983-03-15', '0918901234', '2021-03-01', 'aa.le@example.com', 26000000, 'KUB'),
+('ST0028', N'Trần Minh BB', N'Bác sĩ Nhi khoa', N'Nam', '1990-04-20', '0919012345', '2022-04-01', 'bb.tran@example.com', 21000000, 'KNh'),
+('ST0029', N'Phạm Thị CC', N'Điều dưỡng Tổng quát', N'Nữ', '1992-05-25', '0910123456', '2023-05-01', 'cc.pham@example.com', 15000000, 'KN'),
+('ST0030', N'Nguyễn Văn DD', N'Kế toán', N'Nam', '1985-06-30', '0911234567', '2014-06-01', 'dd.nguyen@example.com', 17000000, 'KHSCC'),
+('ST0031', N'Lê Thị EE', N'Điều dưỡng Sản khoa', N'Nữ', '1994-07-05', '0912345678', '2015-07-01', 'ee.le@example.com', 16000000, 'KS'),
+('ST0032', N'Vũ Văn FF', N'Kỹ thuật viên Xét nghiệm', N'Nam', '1988-08-10', '0913456789', '2016-08-01', 'ff.vu@example.com', 18000000, 'KXN'),
+('ST0033', N'Phạm Thị GG', N'Kỹ thuật viên Hình ảnh', N'Nữ', '1993-09-15', '0914567890', '2017-09-01', 'gg.pham@example.com', 19000000, 'KCDHA'),
+('ST0034', N'Trần Văn HH', N'Kỹ thuật viên Vật lý trị liệu', N'Nam', '1995-10-20', '0915678901', '2018-10-01', 'hh.tran@example.com', 17000000, 'KVLTL'),
+('ST0035', N'Ngô Thị II', N'Bác sĩ Răng Hàm Mặt', N'Nữ', '1997-11-25', '0916789012', '2019-11-01', 'ii.ngo@example.com', 20000000, 'KRHM'),
+('ST0036', N'Phan Văn JJ', N'Hộ lý', N'Nam', '1980-12-30', '0917890123', '2020-12-01', 'jj.phan@example.com', 14000000, 'KHSCC'),
+('ST0037', N'Lê Thị KK', N'Nhân viên Nghiên cứu Y khoa', N'Nữ', '1983-01-10', '0918901234', '2021-01-01', 'kk.le@example.com', 25000000, 'KUB'),
+('ST0038', N'Vũ Văn LL', N'Giảng viên Y khoa', N'Nam', '1985-02-15', '0919012345', '2022-02-01', 'll.vu@example.com', 30000000, 'KRHM'),
+('ST0039', N'Lê Văn HH', N'Điều dưỡng ICU', N'Nam', '1987-07-14', '0923456739', '2021-07-01', 'h39.le@example.com', 17000000, 'KHSCC'),
+('ST0040', N'Nguyễn Văn KK', N'Bác sĩ Tim mạch', N'Nam', '1985-08-22', '0923456740', '2020-08-01', 'k40.nguyen@example.com', 23000000, 'KTM'),
+('ST0041', N'Trần Thị NN', N'Bác sĩ Nội khoa', N'Nữ', '1985-03-15', '0923456781', '2016-03-01', 'nn.tran@example.com', 22000000, 'KN'),
+('ST0042', N'Lê Văn OO', N'Điều dưỡng Tổng quát', N'Nam', '1990-06-20', '0923456782', '2017-06-01', 'oo.le@example.com', 15000000, 'KN'),
+('ST0043', N'Phạm Thị PP', N'Bác sĩ Ngoại khoa', N'Nữ', '1988-07-25', '0923456783', '2018-07-01', 'pp.pham@example.com', 25000000, 'KNg'),
+('ST0044', N'Nguyễn Văn QQ', N'Bác sĩ Tim mạch', N'Nam', '1979-04-10', '0923456784', '2019-04-01', 'qq.nguyen@example.com', 23000000, 'KTM'),
+('ST0045', N'Vũ Thị RR', N'Kế toán', N'Nữ', '1992-08-15', '0923456785', '2020-08-01', 'rr.vu@example.com', 16000000, 'KS'),
+('ST0046', N'Trần Văn SS', N'Bác sĩ Nhi khoa', N'Nam', '1983-11-05', '0923456786', '2021-11-01', 'ss.tran@example.com', 21000000, 'KNh'),
+('ST0047', N'Lê Thị TT', N'Điều dưỡng ICU', N'Nữ', '1986-01-25', '0923456787', '2022-01-01', 'tt.le@example.com', 17000000, 'KHSCC'),
+('ST0048', N'Phạm Văn UU', N'Bác sĩ Da liễu', N'Nam', '1980-02-15', '0923456788', '2023-02-01', 'uu.pham@example.com', 22000000, 'KDL'),
+('ST0049', N'Nguyễn Thị VV', N'Bác sĩ Ung bướu', N'Nữ', '1982-09-30', '0923456789', '2015-09-01', 'vv.nguyen@example.com', 26000000, 'KUB'),
+('ST0050', N'Trần Văn WW', N'Điều dưỡng Tổng quát', N'Nam', '1993-10-20', '0923456790', '2016-10-01', 'ww.tran@example.com', 15000000, 'KN'),
+('ST0051', N'Phạm Thị XX', N'Bác sĩ Tim mạch', N'Nữ', '1985-12-15', '0923456791', '2017-12-01', 'xx.pham@example.com', 23000000, 'KTM'),
+('ST0052', N'Lê Văn YY', N'Kế toán', N'Nam', '1990-01-30', '0923456792', '2018-01-01', 'yy.le@example.com', 17000000, 'KHSCC'),
+('ST0053', N'Nguyễn Thị ZZ', N'Bác sĩ Nội khoa', N'Nữ', '1989-03-10', '0923456793', '2019-03-01', 'zz.nguyen@example.com', 22000000, 'KN'),
+('ST0054', N'Trần Văn AA1', N'Bác sĩ Ngoại khoa', N'Nam', '1984-04-25', '0923456794', '2020-04-01', 'aa1.tran@example.com', 25000000, 'KNg'),
+('ST0055', N'Lê Thị BB1', N'Điều dưỡng Sản khoa', N'Nữ', '1991-06-15', '0923456795', '2021-06-01', 'bb1.le@example.com', 16000000, 'KS'),
+('ST0056', N'Vũ Văn CC1', N'Bác sĩ Nhi khoa', N'Nam', '1987-07-05', '0923456796', '2022-07-01', 'cc1.vu@example.com', 21000000, 'KNh'),
+('ST0057', N'Nguyễn Thị DD1', N'Điều dưỡng Tổng quát', N'Nữ', '1994-08-20', '0923456797', '2023-08-01', 'dd1.nguyen@example.com', 15000000, 'KN'),
+('ST0058', N'Trần Văn EE1', N'Bác sĩ Da liễu', N'Nam', '1983-09-15', '0923456798', '2015-09-01', 'ee1.tran@example.com', 22000000, 'KDL'),
+('ST0059', N'Lê Thị FF1', N'Bác sĩ Ung bướu', N'Nữ', '1981-10-10', '0923456799', '2016-10-01', 'ff1.le@example.com', 26000000, 'KUB'),
+('ST0060', N'Vũ Văn GG1', N'Bác sĩ Tim mạch', N'Nam', '1988-11-25', '0923456800', '2017-11-01', 'gg1.vu@example.com', 23000000, 'KTM');
+
+
+
+INSERT INTO APPOINTMENT (AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDateTime, AppointmentStatus)
+VALUES
+('AP0001', 'PT0001', 'ST0001', 'KN', '2024-12-27 08:00:00', N'Chấp thuận'),
+('AP0002', 'PT0002', 'ST0002', 'KN', '2024-12-27 08:30:00', N'Đang chờ xử lý'),
+('AP0003', 'PT0003', 'ST0003', 'KNg', '2024-12-27 09:00:00', N'Từ chối'),
+('AP0004', 'PT0004', 'ST0004', 'KTM', '2024-12-27 09:30:00', N'Chấp thuận'),
+('AP0005', 'PT0005', 'ST0005', 'KTK', '2024-12-27 10:00:00', N'Đang chờ xử lý'),
+('AP0006', 'PT0006', 'ST0007', 'KUB', '2024-12-27 10:30:00', N'Chấp thuận'),
+('AP0007', 'PT0007', 'ST0008', 'KNh', '2024-12-27 11:00:00', N'Từ chối'),
+('AP0008', 'PT0008', 'ST0014', 'KVLTL', '2024-12-27 11:30:00', N'Đang chờ xử lý'),
+('AP0009', 'PT0009', 'ST0018', 'KM', '2024-12-27 12:00:00', N'Chấp thuận'),
+('AP0010', 'PT0010', 'ST0001', 'KN', '2024-12-27 12:30:00', N'Từ chối'),
+('AP0011', 'PT0011', 'ST0002', 'KN', '2024-12-27 13:00:00', N'Đang chờ xử lý'),
+('AP0012', 'PT0012', 'ST0003', 'KNg', '2024-12-27 13:30:00', N'Chấp thuận'),
+('AP0013', 'PT0013', 'ST0004', 'KTM', '2024-12-27 14:00:00', N'Từ chối'),
+('AP0014', 'PT0014', 'ST0005', 'KTK', '2024-12-27 14:30:00', N'Đang chờ xử lý'),
+('AP0015', 'PT0015', 'ST0007', 'KUB', '2024-12-27 15:00:00', N'Chấp thuận'),
+('AP0016', 'PT0016', 'ST0008', 'KNh', '2024-12-27 15:30:00', N'Từ chối'),
+('AP0017', 'PT0017', 'ST0014', 'KVLTL', '2024-12-27 16:00:00', N'Chấp thuận'),
+('AP0018', 'PT0018', 'ST0018', 'KM', '2024-12-27 16:30:00', N'Đang chờ xử lý'),
+('AP0019', 'PT0019', 'ST0001', 'KN', '2024-12-27 17:00:00', N'Từ chối'),
+('AP0020', 'PT0020', 'ST0002', 'KN', '2024-12-27 17:30:00', N'Chấp thuận'),
+('AP0021', 'PT0021', 'ST0003', 'KNg', '2024-12-27 18:00:00', N'Đang chờ xử lý'),
+('AP0022', 'PT0022', 'ST0004', 'KTM', '2024-12-27 18:30:00', N'Từ chối'),
+('AP0023', 'PT0023', 'ST0005', 'KTK', '2024-12-27 19:00:00', N'Chấp thuận'),
+('AP0024', 'PT0024', 'ST0007', 'KUB', '2024-12-27 19:30:00', N'Đang chờ xử lý'),
+('AP0025', 'PT0025', 'ST0008', 'KNh', '2024-12-27 20:00:00', N'Từ chối'),
+('AP0026', 'PT0026', 'ST0014', 'KVLTL', '2024-12-27 20:30:00', N'Chấp thuận'),
+('AP0027', 'PT0027', 'ST0018', 'KM', '2024-12-27 21:00:00', N'Đang chờ xử lý'),
+('AP0028', 'PT0028', 'ST0001', 'KN', '2024-12-27 21:30:00', N'Từ chối'),
+('AP0029', 'PT0029', 'ST0002', 'KN', '2024-12-28 08:00:00', N'Chấp thuận'),
+('AP0030', 'PT0030', 'ST0003', 'KNg', '2024-12-28 08:30:00', N'Đang chờ xử lý'),
+('AP0031', 'PT0031', 'ST0004', 'KTM', '2024-12-28 09:00:00', N'Từ chối'),
+('AP0032', 'PT0032', 'ST0005', 'KTK', '2024-12-28 09:30:00', N'Chấp thuận'),
+('AP0033', 'PT0033', 'ST0007', 'KUB', '2024-12-28 10:00:00', N'Đang chờ xử lý'),
+('AP0034', 'PT0034', 'ST0008', 'KNh', '2024-12-28 10:30:00', N'Từ chối'),
+('AP0035', 'PT0035', 'ST0014', 'KVLTL', '2024-12-28 11:00:00', N'Chấp thuận'),
+('AP0036', 'PT0036', 'ST0018', 'KM', '2024-12-28 11:30:00', N'Đang chờ xử lý'),
+('AP0037', 'PT0037', 'ST0001', 'KN', '2024-12-28 12:00:00', N'Từ chối'),
+('AP0038', 'PT0038', 'ST0002', 'KN', '2024-12-28 12:30:00', N'Chấp thuận'),
+('AP0039', 'PT0039', 'ST0003', 'KNg', '2024-12-28 13:00:00', N'Đang chờ xử lý'),
+('AP0040', 'PT0040', 'ST0004', 'KTM', '2024-12-28 13:30:00', N'Từ chối');
+
+
+
+INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan) 
+VALUES 
+('MR0001', 'PA0001', 'ST0001', '2024-12-01', N'Viêm phổi', N'X-ray bình thường', N'Điều trị kháng sinh'), 
+('MR0002', 'PA0003', 'ST0007', '2024-12-03', N'Đau dạ dày', N'Siêu âm bình thường', N'Thuốc giảm đau'), 
+('MR0003', 'PA0004', 'ST0008', '2024-12-04', N'Cảm cúm', N'Xét nghiệm máu', N'Thức ăn nhẹ, uống nước nhiều'), 
+('MR0004', 'PA0006', 'ST0006', '2024-12-06', N'Bệnh tim mạch', N'ECG bình thường', N'Thuốc tim mạch'), 
+('MR0005', 'PA0005', 'ST0002', '2024-12-03', N'Dau dạ dày', N'Nội soi: loét dạ dày', N'Dùng thuốc giảm tiết axit, kiêng đồ cay'), 
+('MR0006', 'PA0006', 'ST0004', '2024-11-29', N'Đau đầu mãn tính', N'CT scan không phát hiện bất thường', N'Dùng thuốc giảm đau, giảm căng thẳng'), 
+('MR0007', 'PA0007', 'ST0001', '2024-12-06', N'Cảm lạnh', N'Không có dấu hiệu nguy hiểm', N'Uống vitamin C và nghỉ ngơi'), 
+('MR0008', 'PA0008', 'ST0005', '2024-12-09', N'Suy nhược cơ thể', N'Chỉ số máu thấp', N'Tăng cường dinh dưỡng, vitamin'), 
+('MR0009', 'PA0009', 'ST0003', '2024-11-28', N'Hen suyễn', N'Chỉ số phổi giảm', N'Dùng thuốc hít và theo dõi định kỳ'), 
+('MR0010', 'PA0010', 'ST0004', '2024-12-11', N'Đau lưng', N'X-quang: thoái hóa cột sống', N'Vật lý trị liệu 3 tuần'), 
+('MR0011', 'PA0011', 'ST0001', '2024-11-21', N'Cảm cúm', N'Huyết áp bình thường, không có triệu chứng nặng', N'Nghỉ ngơi, uống thuốc giảm đau'), 
+('MR0012', 'PA0012', 'ST0002', '2024-12-02', N'Sốt xuất huyết', N'Giảm tiểu cầu, sốt cao', N'Nhập viện, theo dõi hàng ngày'), 
+('MR0013', 'PA0003', 'ST0001', '2024-11-26', N'Viêm phổi', N'X-quang phổi phát hiện tổn thương nhỏ', N'Dùng kháng sinh 7 ngày'), 
+('MR0014', 'PA0004', 'ST0003', '2024-12-01', N'Gãy tay phải', N'Chụp X-quang: gãy xương quay', N'Bó bột và nghỉ ngơi 4 tuần'), 
+('MR0015', 'PA0001', 'ST0001', '2024-01-15', N'Sốt xuất huyết', N'Tiểu cầu thấp, sốt cao', N'Nhập viện, truyền dịch, điều trị sốt'), 
+('MR0016', 'PA0002', 'ST0002', '2024-02-20', N'Viêm phổi', N'Chụp X-quang phát hiện viêm phổi nhẹ', N'Dùng kháng sinh, theo dõi nhiệt độ'), 
+('MR0017', 'PA0003', 'ST0003', '2024-03-10', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, mất nước nhẹ', N'Uống thuốc chống tiêu chảy, bù nước'), 
+('MR0018', 'PA0004', 'ST0001', '2024-04-05', N'Sốt xuất huyết', N'Tiểu cầu giảm mạnh', N'Truyền dịch và thuốc hạ sốt'), 
+('MR0019', 'PA0005', 'ST0002', '2024-05-11', N'Viêm phổi', N'Phổi tổn thương nhẹ', N'Kháng sinh, nghỉ ngơi tại nhà'), 
+('MR0020', 'PA0006', 'ST0004', '2024-06-21', N'Tiêu chảy do nhiễm khuẩn', N'Phân có máu, sốt cao', N'Thực hiện xét nghiệm, uống thuốc kháng sinh'), 
+('MR0021', 'PA0007', 'ST0003', '2024-07-07', N'Sốt xuất huyết', N'Huyết áp ổn định, tiểu cầu thấp', N'Nhập viện, theo dõi sức khỏe'), 
+('MR0022', 'PA0008', 'ST0005', '2024-08-18', N'Viêm phổi', N'Khó thở, ho nhiều', N'Kháng sinh và điều trị hỗ trợ'), 
+('MR0023', 'PA0009', 'ST0002', '2024-09-05', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, không có máu', N'Uống thuốc kháng sinh, bù nước'), 
+('MR0024', 'PA0010', 'ST0004', '2024-10-12', N'Sốt xuất huyết', N'Phát ban, sốt cao', N'Chăm sóc tại bệnh viện, điều trị triệu chứng'), 
+('MR0025', 'PA0011', 'ST0001', '2024-11-22', N'Viêm phổi', N'Chụp X-quang phát hiện phổi viêm', N'Dùng kháng sinh, nghỉ ngơi'), 
+('MR0026', 'PA0012', 'ST0002', '2024-12-15', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'), 
+('MR0027', 'PA0013', 'ST0003', '2024-01-02', N'Sốt xuất huyết', N'Tiểu cầu giảm, huyết áp thấp', N'Truyền dịch, hạ sốt'), 
+('MR0028', 'PA0014', 'ST0005', '2024-02-17', N'Viêm phổi', N'Khó thở nhẹ, X-quang không phát hiện bất thường', N'Kháng sinh, chăm sóc tại nhà'), 
+('MR0029', 'PA0015', 'ST0004', '2024-03-13', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, mất nước nhẹ', N'Uống thuốc kháng sinh, bù nước'), 
+('MR0030', 'PA0016', 'ST0001', '2024-04-09', N'Sốt xuất huyết', N'Tiểu cầu giảm, sốt cao', N'Nhập viện, truyền dịch, thuốc hạ sốt'), 
+('MR0031', 'PA0017', 'ST0002', '2024-05-17', N'Viêm phổi', N'Phổi có dấu hiệu viêm nhẹ', N'Kháng sinh, uống thuốc giảm ho'), 
+('MR0032', 'PA0011', 'ST0003', '2024-06-02', N'Tiêu chảy do nhiễm khuẩn', N'Phân lỏng, sốt nhẹ', N'Uống thuốc kháng sinh, bù nước'), 
+('MR0033', 'PA0012', 'ST0005', '2024-07-25', N'Sốt xuất huyết', N'Tiểu cầu thấp, xuất huyết dưới da', N'Truyền dịch, điều trị hỗ trợ'), 
+('MR0034', 'PA0013', 'ST0004', '2024-08-11', N'Viêm phổi', N'Khó thở nhẹ, X-quang phát hiện viêm phổi nhẹ', N'Dùng thuốc kháng sinh và thuốc giảm ho'), 
+('MR0035', 'PA0002', 'ST0002', '2024-11-30', N'Covid-19', N'Xét nghiệm PCR dương tính, sốt, khó thở', N'Chăm sóc tại nhà, uống thuốc hạ sốt'), 
+('MR0036', 'PA0003', 'ST0003', '2024-12-01', N'Viêm phổi', N'Khó thở, ho có đờm, đau ngực', N'Dùng kháng sinh, nghỉ ngơi'), 
+('MR0037', 'PA0004', 'ST0001', '2024-12-02', N'Cảm cúm', N'Sốt cao, đau đầu, nghẹt mũi', N'Uống thuốc giảm đau, xịt mũi'), 
+('MR0038', 'PA0005', 'ST0002', '2024-12-03', N'Covid-19', N'Khó thở, ho, mệt mỏi', N'Chăm sóc tại nhà, điều trị triệu chứng'), 
+('MR0039', 'PA0006', 'ST0004', '2024-12-04', N'Viêm phổi', N'Phổi tổn thương nhẹ, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
+('MR0040', 'PA0007', 'ST0003', '2024-12-05', N'Cảm cúm', N'Ho, đau họng, sốt nhẹ', N'Uống thuốc giảm đau, uống nhiều nước'), 
+('MR0041', 'PA0008', 'ST0005', '2024-12-06', N'Covid-19', N'Xét nghiệm PCR dương tính, mệt mỏi', N'Chăm sóc tại nhà, điều trị hỗ trợ'), 
+('MR0042', 'PA0009', 'ST0002', '2024-12-07', N'Viêm phổi', N'Khó thở, ho nhiều, đau ngực', N'Kháng sinh, theo dõi tại bệnh viện'), 
+('MR0043', 'PA0010', 'ST0004', '2024-12-08', N'Cảm cúm', N'Sốt cao, ho, đau cơ', N'Uống thuốc hạ sốt, nghỉ ngơi'), 
+('MR0044', 'PA0011', 'ST0001', '2024-12-09', N'Covid-19', N'Mệt mỏi, ho, sốt nhẹ', N'Chăm sóc tại nhà, thuốc giảm sốt'), 
+('MR0045', 'PA0012', 'ST0002', '2024-12-10', N'Viêm phổi', N'Phổi có dấu hiệu viêm, ho, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
+('MR0046', 'PA0013', 'ST0003', '2024-12-11', N'Cảm cúm', N'Ho, sốt, đau họng', N'Uống thuốc hạ sốt, xịt mũi'), 
+('MR0047', 'PA0014', 'ST0005', '2024-12-12', N'Covid-19', N'Mệt mỏi, khó thở nhẹ', N'Chăm sóc tại nhà, thuốc giảm đau'), 
+('MR0048', 'PA0015', 'ST0004', '2024-12-13', N'Viêm phổi', N'Khó thở, đau ngực, ho khan', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
+('MR0049', 'PA0016', 'ST0001', '2024-12-14', N'Cảm cúm', N'Sốt, ho, mệt mỏi', N'Uống thuốc giảm đau, uống nhiều nước'), 
+('MR0050', 'PA0017', 'ST0002', '2024-12-14', N'Covid-19', N'Mệt mỏi, khó thở nhẹ, ho', N'Chăm sóc tại nhà, điều trị triệu chứng'), 
+('MR0051', 'PA0001', 'ST0001', '2024-11-30', N'Cảm cúm', N'Sốt, ho khan, mệt mỏi', N'Ist, uống thuốc hạ sốt, nghỉ ngơi');
+
+
+
+INSERT INTO MEDICATION (MedicationID, MedicationName, Dosage, DosageUnit, Category, QuantityInStock, Price, ExpiryDate, ManufacturingDate, Manufacturer)
+VALUES
+('ME0001', N'Paracetamol', N'500mg', N'viên', N'Giảm đau', 100, 50000, '2025-12-01', '2024-01-01', N'Việt Nam'),
+('ME0002', N'Amoxicillin', N'250mg', N'viên', N'Kháng sinh', 50, 80000, '2025-06-01', '2024-02-01', N'Ấn Độ'),
+('ME0003', N'Ciprofloxacin', N'500mg', N'viên', N'Kháng sinh', 70, 120000, '2025-09-01', '2024-03-01', N'Mỹ'),
+('ME0004', N'Ibuprofen', N'400mg', N'viên', N'Giảm đau', 150, 60000, '2025-07-01', '2024-04-01', N'Anh'),
+('ME0005', N'Omeprazole', N'20mg', N'viên', N'Tiêu hóa', 200, 40000, '2025-11-01', '2024-05-01', N'Nhật Bản'),
+('ME0006', N'Diclofenac', N'50mg', N'viên', N'Giảm đau', 120, 70000, '2025-08-01', '2024-06-01', N'Trung Quốc'),
+('ME0007', N'Aspirin', N'300mg', N'viên', N'Giảm đau', 90, 45000, '2025-04-01', '2024-03-15', N'Đức'),
+('ME0008', N'Metformin', N'850mg', N'viên', N'Tiểu đường', 110, 90000, '2025-10-01', '2024-02-10', N'Hàn Quốc'),
+('ME0009', N'Loratadine', N'10mg', N'viên', N'Dị ứng', 75, 30000, '2025-06-15', '2024-01-20', N'Việt Nam'),
+('ME0010', N'Vitamin C', N'500mg', N'viên', N'Bổ sung', 300, 25000, '2025-12-20', '2024-03-05', N'Ấn Độ'),
+('ME0011', N'Acyclovir', N'200mg', N'viên', N'Kháng virus', 60, 100000, '2025-09-25', '2024-04-15', N'Nhật Bản'),
+('ME0012', N'Albuterol', N'2mg', N'chai', N'Hô hấp', 80, 150000, '2025-08-10', '2024-02-25', N'Pháp'),
+('ME0013', N'Clopidogrel', N'75mg', N'viên', N'Tim mạch', 65, 120000, '2025-07-20', '2024-03-18', N'Mỹ'),
+('ME0014', N'Atorvastatin', N'10mg', N'viên', N'Tim mạch', 100, 80000, '2025-06-05', '2024-02-12', N'Trung Quốc'),
+('ME0015', N'Diazepam', N'5mg', N'viên', N'An thần', 50, 60000, '2025-05-10', '2024-03-01', N'Việt Nam'),
+('ME0016', N'Dextromethorphan', N'15mg', N'gói', N'Hô hấp', 70, 45000, '2025-11-10', '2024-01-05', N'Hàn Quốc'),
+('ME0017', N'Furosemide', N'40mg', N'viên', N'Lợi tiểu', 120, 55000, '2025-08-30', '2024-02-01', N'Đức'),
+('ME0018', N'Itraconazole', N'100mg', N'viên', N'Nấm', 55, 90000, '2025-10-25', '2024-04-18', N'Nhật Bản'),
+('ME0019', N'Azithromycin', N'250mg', N'viên', N'Kháng sinh', 80, 95000, '2025-09-15', '2024-03-25', N'Ấn Độ'),
+('ME0020', N'Lisinopril', N'10mg', N'viên', N'Tim mạch', 90, 85000, '2025-07-15', '2024-03-10', N'Pháp'),
+('ME0021', N'Losartan', N'50mg', N'viên', N'Tim mạch', 100, 100000, '2025-11-10', '2024-02-20', N'Mỹ'),
+('ME0022', N'Montelukast', N'10mg', N'viên', N'Hô hấp', 85, 120000, '2025-06-01', '2024-04-12', N'Nhật Bản'),
+('ME0023', N'Prednisone', N'5mg', N'viên', N'Dị ứng', 75, 60000, '2025-08-15', '2024-03-05', N'Anh'),
+('ME0024', N'Ranitidine', N'150mg', N'viên', N'Tiêu hóa', 95, 75000, '2025-10-01', '2024-03-20', N'Việt Nam'),
+('ME0025', N'Simvastatin', N'20mg', N'viên', N'Tim mạch', 110, 70000, '2025-12-01', '2024-01-18', N'Hàn Quốc'),
+('ME0026', N'Tramadol', N'50mg', N'viên', N'Giảm đau', 60, 85000, '2025-07-20', '2024-04-10', N'Pháp'),
+('ME0027', N'Warfarin', N'2mg', N'viên', N'Chống đông', 80, 65000, '2025-09-05', '2024-03-30', N'Mỹ'),
+('ME0028', N'Zinc', N'50mg', N'viên', N'Bổ sung', 200, 25000, '2025-05-10', '2024-02-25', N'Ấn Độ'),
+('ME0029', N'Amphotericin', N'100mg', N'chai', N'Nấm', 55, 120000, '2025-06-15', '2024-03-12', N'Nhật Bản'),
+('ME0030', N'Amitriptyline', N'25mg', N'viên', N'Trầm cảm', 70, 95000, '2025-08-20', '2024-04-22', N'Trung Quốc');
+
+
+INSERT INTO BILLDETAIL (TransactionID, MedicationID, MedicationName, Amount)
+VALUES
+('BI0001', 'ME0001', N'Paracetamol', 2), -- 2 viên Paracetamol
+('BI0001', 'ME0002', N'Amoxicillin', 1), -- 1 viên Amoxicillin
+('BI0002', 'ME0003', N'Ciprofloxacin', 1), -- 1 viên Ciprofloxacin
+('BI0002', 'ME0004', N'Ibuprofen', 3), -- 3 viên Ibuprofen
+('BI0003', 'ME0005', N'Omeprazole', 5), -- 5 gói Omeprazole
+('BI0003', 'ME0006', N'Diclofenac', 2), -- 2 viên Diclofenac
+('BI0004', 'ME0007', N'Aspirin', 4), -- 4 viên Aspirin
+('BI0004', 'ME0008', N'Metformin', 2), -- 2 viên Metformin
+('BI0005', 'ME0009', N'Loratadine', 3), -- 3 viên Loratadine
+('BI0005', 'ME0010', N'Vitamin C', 4), -- 4 viên Vitamin C
+('BI0006', 'ME0011', N'Acyclovir', 2), -- 2 viên Acyclovir
+('BI0006', 'ME0012', N'Albuterol', 1), -- 1 viên Albuterol
+('BI0007', 'ME0013', N'Clopidogrel', 1), -- 1 viên Clopidogrel
+('BI0007', 'ME0014', N'Atorvastatin', 3), -- 3 viên Atorvastatin
+('BI0008', 'ME0015', N'Diazepam', 2), -- 2 viên Diazepam
+('BI0008', 'ME0016', N'Dextromethorphan', 4), -- 4 viên Dextromethorphan
+('BI0009', 'ME0017', N'Furosemide', 2), -- 2 viên Furosemide
+('BI0009', 'ME0018', N'Itraconazole', 2), -- 2 viên Itraconazole
+('BI0010', 'ME0019', N'Azithromycin', 3), -- 3 viên Azithromycin
+('BI0010', 'ME0020', N'Lisinopril', 2), -- 2 viên Lisinopril
+('BI0011', 'ME0021', N'Losartan', 1), -- 1 viên Losartan
+('BI0011', 'ME0022', N'Montelukast', 2), -- 2 viên Montelukast
+('BI0012', 'ME0023', N'Prednisone', 4), -- 4 viên Prednisone
+('BI0012', 'ME0024', N'Ranitidine', 2), -- 2 viên Ranitidine
+('BI0013', 'ME0025', N'Simvastatin', 2), -- 2 viên Simvastatin
+('BI0013', 'ME0026', N'Tramadol', 1), -- 1 viên Tramadol
+('BI0014', 'ME0027', N'Warfarin', 1), -- 1 viên Warfarin
+('BI0014', 'ME0028', N'Zinc', 8), -- 8 viên Zinc
+('BI0015', 'ME0029', N'Amphotericin', 1), -- 1 viên Amphotericin
+('BI0015', 'ME0030', N'Amitriptyline', 3), -- 3 viên Amitriptyline
+('BI0016', 'ME0001', N'Paracetamol', 3), -- 3 viên Paracetamol
+('BI0016', 'ME0004', N'Ibuprofen', 1), -- 1 viên Ibuprofen
+('BI0017', 'ME0002', N'Amoxicillin', 2), -- 2 viên Amoxicillin
+('BI0017', 'ME0005', N'Omeprazole', 3), -- 3 gói Omeprazole
+('BI0018', 'ME0003', N'Ciprofloxacin', 1), -- 1 viên Ciprofloxacin
+('BI0018', 'ME0006', N'Diclofenac', 2), -- 2 viên Diclofenac
+('BI0019', 'ME0007', N'Aspirin', 6), -- 6 viên Aspirin
+('BI0019', 'ME0008', N'Metformin', 3), -- 3 viên Metformin
+('BI0020', 'ME0009', N'Loratadine', 2), -- 2 viên Loratadine
+('BI0020', 'ME0010', N'Vitamin C', 6), -- 6 viên Vitamin C
+('BI0021', 'ME0011', N'Acyclovir', 3), -- 3 viên Acyclovir
+('BI0021', 'ME0012', N'Albuterol', 1), -- 1 viên Albuterol
+('BI0022', 'ME0013', N'Clopidogrel', 1), -- 1 viên Clopidogrel
+('BI0022', 'ME0014', N'Atorvastatin', 4), -- 4 viên Atorvastatin
+('BI0023', 'ME0015', N'Diazepam', 3), -- 3 viên Diazepam
+('BI0023', 'ME0016', N'Dextromethorphan', 5), -- 5 viên Dextromethorphan
+('BI0024', 'ME0017', N'Furosemide', 2), -- 2 viên Furosemide
+('BI0024', 'ME0018', N'Itraconazole', 4), -- 4 viên Itraconazole
+('BI0025', 'ME0019', N'Azithromycin', 1), -- 1 viên Azithromycin
+('BI0025', 'ME0020', N'Lisinopril', 3), -- 3 viên Lisinopril
+('BI0026', 'ME0021', N'Losartan', 2), -- 2 viên Losartan
+('BI0026', 'ME0022', N'Montelukast', 4), -- 4 viên Montelukast
+('BI0027', 'ME0023', N'Prednisone', 3), -- 3 viên Prednisone
+('BI0027', 'ME0024', N'Ranitidine', 4), -- 4 viên Ranitidine
+('BI0028', 'ME0025', N'Simvastatin', 3), -- 3 viên Simvastatin
+('BI0028', 'ME0026', N'Tramadol', 2), -- 2 viên Tramadol
+('BI0029', 'ME0027', N'Warfarin', 2), -- 2 viên Warfarin
+('BI0029', 'ME0028', N'Zinc', 4), -- 4 viên Zinc
+('BI0030', 'ME0029', N'Amphotericin', 4), -- 4 viên Amphotericin
+('BI0030', 'ME0030', N'Amitriptyline', 2); -- 2 viên Amitriptyline
+
+
+
+INSERT INTO BILL (TransactionID, RecordID, StaffID, TransactionDate, PaymentMethod, Total)
+VALUES
+('BI0001', 'MR0001', 'ST0004', '2024-12-01', N'Tiền mặt', 180000), -- Paracetamol (2 viên), Amoxicillin (1 viên) = 100000 + 80000 = 180000
+('BI0002', 'MR0002', 'ST0002', '2024-12-03', N'Thẻ tín dụng', 300000), -- Ciprofloxacin (1 viên), Ibuprofen (3 viên) = 120000 + 180000 = 300000
+('BI0003', 'MR0003', 'ST0002', '2024-12-04', N'Bảo hiểm', 340000), -- Omeprazole (5 gói), Diclofenac (2 viên) = 200000 + 140000 = 340000
+('BI0004', 'MR0004', 'ST0004', '2024-12-06', N'Tiền mặt', 360000), -- Aspirin (4 viên), Metformin (2 viên) = 180000 + 180000 = 360000
+('BI0005', 'MR0005', 'ST0002', '2024-12-07', N'Tiền mặt', 190000), -- Loratadine (3 viên), Vitamin C (4 viên) = 90000 + 100000 = 190000
+('BI0006', 'MR0006', 'ST0005', '2024-12-10', N'Ví điện tử', 350000), -- Acyclovir (2 viên), Albuterol (1 viên) = 200000 + 150000 = 350000
+('BI0007', 'MR0007', 'ST0003', '2024-12-12', N'Thẻ tín dụng', 360000), -- Clopidogrel (1 viên), Atorvastatin (3 viên) = 120000 + 240000 = 360000
+('BI0008', 'MR0008', 'ST0004', '2024-12-13', N'Tiền mặt', 300000), -- Diazepam (2 viên), Dextromethorphan (4 viên) = 120000 + 180000 = 300000
+('BI0009', 'MR0009', 'ST0006', '2024-12-14', N'Tiền mặt', 290000), -- Furosemide (2 viên), Itraconazole (2 viên) = 110000 + 180000 = 290000
+('BI0010', 'MR0010', 'ST0007', '2024-12-15', N'Bảo hiểm', 455000), -- Azithromycin (3 viên), Lisinopril (2 viên) = 285000 + 170000 = 455000
+('BI0011', 'MR0011', 'ST0001', '2024-12-16', N'Ví điện tử', 340000), -- Losartan (1 viên), Montelukast (2 viên) = 100000 + 240000 = 340000
+('BI0012', 'MR0012', 'ST0002', '2024-12-17', N'Tiền mặt', 390000), -- Prednisone (4 viên), Ranitidine (2 viên) = 240000 + 150000 = 390000
+('BI0013', 'MR0013', 'ST0004', '2024-12-18', N'Thẻ tín dụng', 225000), -- Simvastatin (2 viên), Tramadol (1 viên) = 140000 + 85000 = 225000
+('BI0014', 'MR0014', 'ST0003', '2024-12-19', N'Ví điện tử', 265000), -- Warfarin (1 viên), Zinc (8 viên) = 65000 + 200000 = 265000
+('BI0015', 'MR0015', 'ST0005', '2024-12-20', N'Tiền mặt', 470000), -- Amphotericin (4 viên), Amitriptyline (3 viên) = 480000 + 190000 = 470000
+('BI0016', 'MR0016', 'ST0002', '2024-12-21', N'Bảo hiểm', 180000), -- Paracetamol (3 viên), Ibuprofen (1 viên) = 150000 + 30000 = 180000
+('BI0017', 'MR0017', 'ST0006', '2024-12-22', N'Thẻ tín dụng', 300000), -- Amoxicillin (2 viên), Omeprazole (3 gói) = 160000 + 140000 = 300000
+('BI0018', 'MR0018', 'ST0001', '2024-12-23', N'Ví điện tử', 240000), -- Ciprofloxacin (1 viên), Diclofenac (2 viên) = 120000 + 120000 = 240000
+('BI0019', 'MR0019', 'ST0004', '2024-12-24', N'Tiền mặt', 540000), -- Aspirin (6 viên), Metformin (3 viên) = 270000 + 270000 = 540000
+('BI0020', 'MR0020', 'ST0003', '2024-12-25', N'Thẻ tín dụng', 180000), -- Loratadine (2 viên), Vitamin C (6 viên) = 60000 + 120000 = 180000
+('BI0021', 'MR0021', 'ST0007', '2024-12-26', N'Tiền mặt', 350000), -- Acyclovir (3 viên), Albuterol (1 viên) = 300000 + 50000 = 350000
+('BI0022', 'MR0022', 'ST0005', '2024-12-27', N'Bảo hiểm', 380000), -- Clopidogrel (1 viên), Atorvastatin (4 viên) = 120000 + 260000 = 380000
+('BI0023', 'MR0023', 'ST0006', '2024-12-28', N'Ví điện tử', 375000), -- Diazepam (3 viên), Dextromethorphan (5 viên) = 180000 + 195000 = 375000
+('BI0024', 'MR0024', 'ST0004', '2024-12-29', N'Tiền mặt', 420000), -- Furosemide (2 viên), Itraconazole (3 viên) = 220000 + 200000 = 420000
+('BI0025', 'MR0025', 'ST0001', '2024-12-30', N'Thẻ tín dụng', 295000), -- Azithromycin (1 viên), Lisinopril (3 viên) = 95000 + 200000 = 295000
+('BI0026', 'MR0026', 'ST0002', '2024-12-31', N'Tiền mặt', 340000), -- Losartan (2 viên), Montelukast (2 viên) = 200000 + 140000 = 340000
+('BI0027', 'MR0027', 'ST0005', '2024-12-31', N'Ví điện tử', 330000), -- Prednisone (3 viên), Ranitidine (2 viên) = 180000 + 150000 = 330000
+('BI0028', 'MR0028', 'ST0006', '2024-12-31', N'Thẻ tín dụng', 395000), -- Simvastatin (3 viên), Tramadol (2 viên) = 210000 + 185000 = 395000
+('BI0029', 'MR0029', 'ST0007', '2024-12-31', N'Bảo hiểm', 305000), -- Warfarin (2 viên), Zinc (4 viên) = 130000 + 175000 = 305000
+('BI0030', 'MR0030', 'ST0003', '2024-12-31', N'Tiền mặt', 680000); -- Amphotericin (4 viên), Amitriptyline (2 viên) = 380000 + 300000 = 680000
+
+
+INSERT INTO ROOM (RoomID, DepartmentID, BedCount, RoomType)
+VALUES
+('RO0001', 'KN', 10, N'Điều trị tổng quát'),
+('RO0002', 'KNg', 12, N'VIP'),
+('RO0003', 'KHSCC', 8, N'Hồi sức'),
+('RO0004', 'KNh', 6, N'Sơ sinh'),
+('RO0005', 'KS', 4, N'Chăm sóc đặc biệt'),
+('RO0006', 'KUB', 5, N'Phẫu thuật'),
+('RO0007', 'KTM', 7, N'Cách ly'),
+('RO0008', 'KTK', 8, N'Khám ngoại trú'),
+('RO0009', 'KDL', 6, N'Chăm sóc dài hạn'),
+('RO0010', 'KVLTL', 4, N'Sản khoa'),
+('RO0011', 'KM', 10, N'Điều trị tổng quát'),
+('RO0012', 'KRHM', 12, N'VIP'),
+('RO0013', 'KCDHA', 8, N'Hồi sức'),
+('RO0014', 'KXN', 6, N'Sơ sinh'),
+('RO0015', 'KTMH', 4, N'Chăm sóc đặc biệt'),
+('RO0016', 'KUB', 5, N'Phẫu thuật'),
+('RO0017', 'KTK', 7, N'Cách ly'),
+('RO0018', 'KVLTL', 8, N'Khám ngoại trú'),
+('RO0019', 'KN', 6, N'Chăm sóc dài hạn'),
+('RO0020', 'KNg', 4, N'Sản khoa'),
+('RO0021', 'KNh', 10, N'Điều trị tổng quát'),
+('RO0022', 'KS', 12, N'VIP'),
+('RO0023', 'KHSCC', 8, N'Hồi sức'),
+('RO0024', 'KDL', 6, N'Sơ sinh'),
+('RO0025', 'KTM', 4, N'Chăm sóc đặc biệt'),
+('RO0026', 'KTK', 5, N'Phẫu thuật'),
+('RO0027', 'KCDHA', 7, N'Cách ly'),
+('RO0028', 'KM', 8, N'Khám ngoại trú'),
+('RO0029', 'KXN', 6, N'Chăm sóc dài hạn'),
+('RO0030', 'KVLTL', 4, N'Sản khoa'),
+('RO0031', 'KRHM', 10, N'Điều trị tổng quát'),
+('RO0032', 'KN', 12, N'VIP'),
+('RO0033', 'KNg', 8, N'Hồi sức'),
+('RO0034', 'KTM', 6, N'Sơ sinh'),
+('RO0035', 'KDL', 4, N'Chăm sóc đặc biệt'),
+('RO0036', 'KTK', 5, N'Phẫu thuật'),
+('RO0037', 'KUB', 7, N'Cách ly'),
+('RO0038', 'KS', 8, N'Khám ngoại trú'),
+('RO0039', 'KNh', 6, N'Chăm sóc dài hạn'),
+('RO0040', 'KHSCC', 4, N'Sản khoa'),
+('RO0041', 'KTMH', 10, N'Điều trị tổng quát'),
+('RO0042', 'KCDHA', 12, N'VIP'),
+('RO0043', 'KXN', 8, N'Hồi sức'),
+('RO0044', 'KRHM', 6, N'Sơ sinh'),
+('RO0045', 'KM', 4, N'Chăm sóc đặc biệt'),
+('RO0046', 'KVLTL', 5, N'Phẫu thuật'),
+('RO0047', 'KTM', 7, N'Cách ly'),
+('RO0048', 'KTK', 8, N'Khám ngoại trú'),
+('RO0049', 'KDL', 6, N'Chăm sóc dài hạn'),
+('RO0050', 'KN', 4, N'Sản khoa');
+
+
+
+INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, DepartmentID, WeekStartDate, WeekEndDate, ShiftType)
+VALUES
+('WA0001', 'ST0001', 'KN', '2024-12-01', '2024-12-07', N'Sáng'),
+('WA0002', 'ST0002', 'KNg', '2024-12-01', '2024-12-07', N'Chiều'),
+('WA0003', 'ST0003', 'KS', '2024-12-01', '2024-12-07', N'Tối'),
+('WA0004', 'ST0004', 'KNh', '2024-12-01', '2024-12-07', N'Sáng'),
+('WA0005', 'ST0005', 'KHSCC', '2024-12-01', '2024-12-07', N'Chiều'),
+('WA0006', 'ST0006', 'KUB', '2024-12-01', '2024-12-07', N'Tối'),
+('WA0007', 'ST0007', 'KTM', '2024-12-01', '2024-12-07', N'Sáng'),
+('WA0008', 'ST0008', 'KTK', '2024-12-01', '2024-12-07', N'Chiều'),
+('WA0009', 'ST0009', 'KDL', '2024-12-01', '2024-12-07', N'Tối'),
+('WA0010', 'ST0010', 'KTMH', '2024-12-01', '2024-12-07', N'Sáng'),
+('WA0011', 'ST0011', 'KM', '2024-12-08', '2024-12-14', N'Chiều'),
+('WA0012', 'ST0012', 'KRHM', '2024-12-08', '2024-12-14', N'Tối'),
+('WA0013', 'ST0013', 'KCDHA', '2024-12-08', '2024-12-14', N'Sáng'),
+('WA0014', 'ST0014', 'KXN', '2024-12-08', '2024-12-14', N'Chiều'),
+('WA0015', 'ST0015', 'KVLTL', '2024-12-08', '2024-12-14', N'Tối'),
+('WA0016', 'ST0016', 'KN', '2024-12-08', '2024-12-14', N'Sáng'),
+('WA0017', 'ST0017', 'KNg', '2024-12-08', '2024-12-14', N'Chiều'),
+('WA0018', 'ST0018', 'KS', '2024-12-08', '2024-12-14', N'Tối'),
+('WA0019', 'ST0019', 'KNh', '2024-12-08', '2024-12-14', N'Sáng'),
+('WA0020', 'ST0020', 'KHSCC', '2024-12-08', '2024-12-14', N'Chiều'),
+('WA0021', 'ST0021', 'KUB', '2024-12-15', '2024-12-21', N'Tối'),
+('WA0022', 'ST0022', 'KTM', '2024-12-15', '2024-12-21', N'Sáng'),
+('WA0023', 'ST0023', 'KTK', '2024-12-15', '2024-12-21', N'Chiều'),
+('WA0024', 'ST0024', 'KDL', '2024-12-15', '2024-12-21', N'Tối'),
+('WA0025', 'ST0025', 'KTMH', '2024-12-15', '2024-12-21', N'Sáng'),
+('WA0026', 'ST0026', 'KM', '2024-12-15', '2024-12-21', N'Chiều'),
+('WA0027', 'ST0027', 'KRHM', '2024-12-15', '2024-12-21', N'Tối'),
+('WA0028', 'ST0028', 'KCDHA', '2024-12-15', '2024-12-21', N'Sáng'),
+('WA0029', 'ST0029', 'KXN', '2024-12-15', '2024-12-21', N'Chiều'),
+('WA0030', 'ST0030', 'KVLTL', '2024-12-15', '2024-12-21', N'Tối'),
+('WA0031', 'ST0031', 'KN', '2024-12-22', '2024-12-28', N'Sáng'),
+('WA0032', 'ST0032', 'KNg', '2024-12-22', '2024-12-28', N'Chiều'),
+('WA0033', 'ST0033', 'KS', '2024-12-22', '2024-12-28', N'Tối'),
+('WA0034', 'ST0034', 'KNh', '2024-12-22', '2024-12-28', N'Sáng'),
+('WA0035', 'ST0035', 'KHSCC', '2024-12-22', '2024-12-28', N'Chiều'),
+('WA0036', 'ST0036', 'KUB', '2024-12-22', '2024-12-28', N'Tối'),
+('WA0037', 'ST0037', 'KTM', '2024-12-22', '2024-12-28', N'Sáng'),
+('WA0038', 'ST0038', 'KTK', '2024-12-22', '2024-12-28', N'Chiều'),
+('WA0039', 'ST0039', 'KDL', '2024-12-22', '2024-12-28', N'Tối'),
+('WA0040', 'ST0040', 'KTMH', '2024-12-22', '2024-12-28', N'Sáng'),
+('WA0041', 'ST0041', 'KM', '2024-12-29', '2025-01-04', N'Chiều'),
+('WA0042', 'ST0042', 'KRHM', '2024-12-29', '2025-01-04', N'Tối'),
+('WA0043', 'ST0043', 'KCDHA', '2024-12-29', '2025-01-04', N'Sáng'),
+('WA0044', 'ST0044', 'KXN', '2024-12-29', '2025-01-04', N'Chiều'),
+('WA0045', 'ST0045', 'KVLTL', '2024-12-29', '2025-01-04', N'Tối'),
+('WA0046', 'ST0046', 'KN', '2024-12-29', '2025-01-04', N'Sáng'),
+('WA0047', 'ST0047', 'KNg', '2024-12-29', '2025-01-04', N'Chiều'),
+('WA0048', 'ST0048', 'KS', '2024-12-29', '2025-01-04', N'Tối'),
+('WA0049', 'ST0049', 'KNh', '2024-12-29', '2025-01-04', N'Sáng'),
+('WA0050', 'ST0050', 'KHSCC', '2024-12-29', '2025-01-04', N'Chiều');
+
+
