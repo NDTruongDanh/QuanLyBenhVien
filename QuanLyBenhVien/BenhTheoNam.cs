@@ -90,7 +90,7 @@ namespace QuanLyBenhVien
                 string query = @"
                                  SELECT MONTH(VisitDate) AS Thang, COUNT(*) AS SoLuongCaBenh
                                  FROM MEDICALRECORD
-                                 WHERE (@LoaiBenh IS NULL OR Diagnosis = @LoaiBenh)
+                                 WHERE (@LoaiBenh IS NULL OR Diagnosis LIKE @LoaiBenh)
                                  AND YEAR(VisitDate) = @Nam
                                  GROUP BY MONTH(VisitDate)
                                  ORDER BY MONTH(VisitDate);
@@ -98,7 +98,7 @@ namespace QuanLyBenhVien
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@LoaiBenh", string.IsNullOrEmpty(loaiBenh) ? (object)DBNull.Value : loaiBenh);
+                    cmd.Parameters.AddWithValue("@LoaiBenh", string.IsNullOrEmpty(loaiBenh) ? (object)DBNull.Value : $"%{loaiBenh.Trim()}%");
                     cmd.Parameters.AddWithValue("@Nam", nam);
 
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
