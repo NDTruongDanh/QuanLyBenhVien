@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,11 +15,14 @@ namespace QuanLyBenhVien
     public partial class MainForm : Form
     {
         string userID;
+        public bool LogoutTriggered { get; set; }
+        private readonly string connStr = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
         public MainForm(string userID)
         {
             InitializeComponent();
             CommonControls.InitializeTabControl(tabControl);
             this.userID = userID;
+            LogoutTriggered = false;
         }
 
         private void btnPatient_Click(object sender, EventArgs e)
@@ -131,6 +135,7 @@ namespace QuanLyBenhVien
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            LogoutTriggered = true;
             this.Close();
         }
 
@@ -144,6 +149,30 @@ namespace QuanLyBenhVien
         {
             AccountForm accountForm = new AccountForm();
             CommonControls.AddFormToTab(accountForm, accountForm.Text);
+        }
+
+        private void btnDeleteRemember_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE USERLOGIN SET Flag = 0 WHERE UserID = @UserID";
+            using (SqlConnection connection = new SqlConnection(connStr))
+            {
+                try
+                {
+                    connection.Open(); // Mở kết nối
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", userID);
+                        int rowsAffected = command.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Tắt nhớ mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý lỗi
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                }
+            }
         }
     }
 }
