@@ -16,17 +16,26 @@ namespace QuanLyBenhVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (SignIn signIn = new SignIn())
+            while (true)
             {
-                if (signIn.ShowDialog() == DialogResult.OK) // Check if login was successful
+                using (SignIn signIn = new SignIn())
                 {
-                    Application.Run(new MainForm(signIn.user));
+                    if (signIn.ShowDialog() == DialogResult.OK)
+                    {
+                        // If login successful, run the MainForm
+                        MainForm mainForm = new MainForm(signIn.user);
+                        Application.Run(mainForm);
+
+                        // If MainForm closes and Logout is triggered, loop back to LoginForm
+                        if (mainForm.LogoutTriggered)
+                        {
+                            continue;
+                        }
+                    }
                 }
-                else
-                {
-                    // Exit the application if login failed or was canceled
-                    Application.Exit();
-                }
+
+                // Exit the loop and application if login fails or user cancels
+                break;
             }
         }
     }

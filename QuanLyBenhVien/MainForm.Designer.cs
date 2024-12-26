@@ -43,7 +43,7 @@
             this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAppointment = new System.Windows.Forms.ToolStripMenuItem();
             this.btnWeeklyAssignment = new System.Windows.Forms.ToolStripMenuItem();
-            this.chămSócBệnhNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNurseCare = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStatistic = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicineReport = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuantityInStock = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +58,11 @@
             this.btnYearDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
+
             this.btnAccount = new System.Windows.Forms.ToolStripMenuItem();
+
+            this.btnDeleteRemeber = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +86,8 @@
             // 
             this.btnFunction.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnLogout,
-            this.btnChangePW});
+            this.btnChangePW,
+            this.btnDeleteRemeber});
             this.btnFunction.Name = "btnFunction";
             this.btnFunction.Size = new System.Drawing.Size(93, 24);
             this.btnFunction.Text = "Chức năng";
@@ -90,14 +95,14 @@
             // btnLogout
             // 
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(181, 26);
+            this.btnLogout.Size = new System.Drawing.Size(224, 26);
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnChangePW
             // 
             this.btnChangePW.Name = "btnChangePW";
-            this.btnChangePW.Size = new System.Drawing.Size(181, 26);
+            this.btnChangePW.Size = new System.Drawing.Size(224, 26);
             this.btnChangePW.Text = "Đổi mặt khẩu";
             this.btnChangePW.Click += new System.EventHandler(this.btnChangePW_Click);
             // 
@@ -163,8 +168,12 @@
             this.btnBill,
             this.btnAppointment,
             this.btnWeeklyAssignment,
+
             this.chămSócBệnhNhânToolStripMenuItem,
             this.btnAccount});
+
+            this.btnNurseCare});
+
             this.btnManager.Name = "btnManager";
             this.btnManager.Size = new System.Drawing.Size(73, 24);
             this.btnManager.Text = "Quản lý";
@@ -190,12 +199,12 @@
             this.btnWeeklyAssignment.Text = "Lịch làm việc";
             this.btnWeeklyAssignment.Click += new System.EventHandler(this.btnWeeklyAssignment_Click);
             // 
-            // chămSócBệnhNhânToolStripMenuItem
+            // btnNurseCare
             // 
-            this.chămSócBệnhNhânToolStripMenuItem.Name = "chămSócBệnhNhânToolStripMenuItem";
-            this.chămSócBệnhNhânToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
-            this.chămSócBệnhNhânToolStripMenuItem.Text = "Chăm sóc bệnh nhân";
-            this.chămSócBệnhNhânToolStripMenuItem.Click += new System.EventHandler(this.chămSócBệnhNhânToolStripMenuItem_Click);
+            this.btnNurseCare.Name = "btnNurseCare";
+            this.btnNurseCare.Size = new System.Drawing.Size(229, 26);
+            this.btnNurseCare.Text = "Chăm sóc bệnh nhân";
+            this.btnNurseCare.Click += new System.EventHandler(this.btnNurseCare_Click);
             // 
             // btnStatistic
             // 
@@ -213,7 +222,7 @@
             this.btnQuantityInStock,
             this.btnExpired});
             this.btnMedicineReport.Name = "btnMedicineReport";
-            this.btnMedicineReport.Size = new System.Drawing.Size(217, 26);
+            this.btnMedicineReport.Size = new System.Drawing.Size(224, 26);
             this.btnMedicineReport.Text = "Báo cáo thuốc ";
             // 
             // btnQuantityInStock
@@ -236,7 +245,7 @@
             this.btnMonthIncomeReport,
             this.btnYearIncomeReport});
             this.btnIncomeReport.Name = "btnIncomeReport";
-            this.btnIncomeReport.Size = new System.Drawing.Size(217, 26);
+            this.btnIncomeReport.Size = new System.Drawing.Size(224, 26);
             this.btnIncomeReport.Text = "Báo cáo doanh thu";
             // 
             // btnMonthIncomeReport
@@ -259,7 +268,7 @@
             this.btnWarning,
             this.btnmonANDyearDisease});
             this.btnDiseaseStat.Name = "btnDiseaseStat";
-            this.btnDiseaseStat.Size = new System.Drawing.Size(217, 26);
+            this.btnDiseaseStat.Size = new System.Drawing.Size(224, 26);
             this.btnDiseaseStat.Text = "Tình hình Bệnh";
             // 
             // btnWarning
@@ -310,12 +319,21 @@
             this.tabControl.Size = new System.Drawing.Size(1344, 712);
             this.tabControl.TabIndex = 1;
             // 
+
             // btnAccount
             // 
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(229, 26);
             this.btnAccount.Text = "Tài khoản";
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+
+            // btnDeleteRemeber
+            // 
+            this.btnDeleteRemeber.Name = "btnDeleteRemeber";
+            this.btnDeleteRemeber.Size = new System.Drawing.Size(224, 26);
+            this.btnDeleteRemeber.Text = "Xóa nhớ mật khẩu";
+            this.btnDeleteRemeber.Click += new System.EventHandler(this.btnDeleteRemeber_Click);
+
             // 
             // MainForm
             // 
@@ -371,8 +389,13 @@
         private System.Windows.Forms.ToolStripMenuItem btnmonANDyearDisease;
         private System.Windows.Forms.ToolStripMenuItem btnMonthDiseaseStat;
         private System.Windows.Forms.ToolStripMenuItem btnYearDiseaseStat;
+
         private System.Windows.Forms.ToolStripMenuItem chămSócBệnhNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnAccount;
+
+        private System.Windows.Forms.ToolStripMenuItem btnNurseCare;
+        private System.Windows.Forms.ToolStripMenuItem btnDeleteRemeber;
+
     }
 }
 
