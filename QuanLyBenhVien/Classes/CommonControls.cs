@@ -328,5 +328,29 @@ namespace QuanLyBenhVien.Classes
             dateTimePicker.CustomFormat = "dd/MM/yyyy"; // Định dạng ngày và giờ
             dateTimePicker.ShowUpDown = true; // Ẩn lịch, chỉ chọn giờ 
         }
+
+        public static void DisableRememberMe(string userID)
+        {
+            string query = "UPDATE USERLOGIN SET Flag = 0 WHERE UserID = @UserID";
+            using (SqlConnection connection = new SqlConnection(connStr))
+            {
+                try
+                {
+                    connection.Open(); // Mở kết nối
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", userID);
+                        int rowsAffected = command.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Tắt nhớ mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý lỗi
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                }
+            }
+        }
     }
 }

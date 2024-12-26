@@ -1,41 +1,77 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyBenhVien
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            while (true)
+
+            bool keepRunning = true;
+            while (keepRunning)
             {
                 using (SignIn signIn = new SignIn())
                 {
-                    if (signIn.ShowDialog() == DialogResult.OK)
+                    DialogResult result = signIn.ShowDialog();
+                    if (result == DialogResult.OK)
                     {
-                        // If login successful, run the MainForm
-                        MainForm mainForm = new MainForm(signIn.user);
-                        Application.Run(mainForm);
-
-                        // If MainForm closes and Logout is triggered, loop back to LoginForm
-                        if (mainForm.LogoutTriggered)
+                        try
                         {
-                            continue;
+                            Form formToRun = null;
+
+                            if (signIn.UserID == "admin")
+                            {
+                                formToRun = new MainForm(signIn.UserID);
+                            }
+                            else
+                            { 
+
+                                // Handle string comparison ignoring case
+                                string userType = signIn.UserType?.Trim().ToLower();
+
+                                switch (userType)
+                                {
+                                    case var type when type.Contains("bác sĩ"):
+                                        formToRun = new DoctorView(signIn.UserID);
+                                        break;
+                                    case var type when type.Contains("dược sĩ"):
+                                        formToRun = new PharmacistView(signIn.UserID, signIn.IsHeadDepartment);
+                                        break;
+                                    case var type when type.Contains("kế toán"):
+                                        formToRun = new Accountant(signIn.UserID);
+                                        break;
+                                    case var type when type.Contains("y tá"):
+                                        formToRun = new NurseVIew(signIn.UserID);
+                                        break;
+                                    default:
+                                        MessageBox.Show($"Unknown user type: '{signIn.UserType}'");
+                                        break;
+                                }
+                            }
+
+                            if (formToRun != null)
+                            {
+                                Application.Run(formToRun);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Could not create appropriate form for user type: " + signIn.UserType);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error creating form: {ex.Message}\nStack Trace: {ex.StackTrace}");
                         }
                     }
+                    else
+                    {
+                        keepRunning = false;
+                    }
                 }
-
-                // Exit the loop and application if login fails or user cancels
-                break;
             }
         }
     }

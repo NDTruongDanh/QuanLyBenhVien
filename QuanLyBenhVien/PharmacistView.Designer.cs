@@ -36,8 +36,9 @@
             this.thôngTinCáNhânToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicine = new System.Windows.Forms.ToolStripMenuItem();
             this.lịchTrựcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl = new System.Windows.Forms.TabControl();
             this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.btnDeleteRemember = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,28 +62,29 @@
             this.chứcNăngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinCáNhânToolStripMenuItem,
             this.đổiMặtKhẩuToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem});
+            this.đăngXuấtToolStripMenuItem,
+            this.btnDeleteRemember});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
-            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.chứcNăngToolStripMenuItem.Text = "Cài đặt";
+            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
+            this.chứcNăngToolStripMenuItem.Text = "Chức năng";
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             // 
             // đổiMặtKhẩuToolStripMenuItem
             // 
             this.đổiMặtKhẩuToolStripMenuItem.Name = "đổiMặtKhẩuToolStripMenuItem";
-            this.đổiMặtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.đổiMặtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đổiMặtKhẩuToolStripMenuItem.Text = "Đổi mặt khẩu";
             this.đổiMặtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMặtKhẩuToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -107,6 +109,13 @@
             this.lịchTrựcToolStripMenuItem.Text = "Lịch làm việc";
             this.lịchTrựcToolStripMenuItem.Click += new System.EventHandler(this.lịchTrựcToolStripMenuItem_Click);
             // 
+            // trợLýẢoToolStripMenuItem
+            // 
+            this.trợLýẢoToolStripMenuItem.Name = "trợLýẢoToolStripMenuItem";
+            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.trợLýẢoToolStripMenuItem.Text = "Trợ lý ảo";
+            this.trợLýẢoToolStripMenuItem.Click += new System.EventHandler(this.trợLýẢoToolStripMenuItem_Click);
+            // 
             // tabControl
             // 
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -118,12 +127,12 @@
             this.tabControl.Size = new System.Drawing.Size(800, 422);
             this.tabControl.TabIndex = 2;
             // 
-            // trợLýẢoToolStripMenuItem
+            // btnDeleteRemember
             // 
-            this.trợLýẢoToolStripMenuItem.Name = "trợLýẢoToolStripMenuItem";
-            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
-            this.trợLýẢoToolStripMenuItem.Text = "Trợ lý ảo";
-            this.trợLýẢoToolStripMenuItem.Click += new System.EventHandler(this.trợLýẢoToolStripMenuItem_Click);
+            this.btnDeleteRemember.Name = "btnDeleteRemember";
+            this.btnDeleteRemember.Size = new System.Drawing.Size(224, 26);
+            this.btnDeleteRemember.Text = "Tắt nhớ mật khẩu";
+            this.btnDeleteRemember.Click += new System.EventHandler(this.btnDeleteRemember_Click);
             // 
             // PharmacistView
             // 
@@ -153,5 +162,6 @@
         private System.Windows.Forms.ToolStripMenuItem lịchTrựcToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.ToolStripMenuItem trợLýẢoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnDeleteRemember;
     }
 }
