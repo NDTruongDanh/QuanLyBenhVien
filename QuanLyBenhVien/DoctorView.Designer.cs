@@ -40,7 +40,9 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabControl = new System.Windows.Forms.TabControl();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+
             this.btnChatbot = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,9 @@
             this.thôngTinCáNhânToolStripMenuItem1,
             this.lịchLàmViệcToolStripMenuItem,
             this.btnWeeklyAssignment,
+
             this.btnChatbot});
+
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -133,6 +137,7 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
+
             // btnChatbot
             // 
             this.btnChatbot.Name = "btnChatbot";
@@ -171,5 +176,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnChatbot;
+
     }
 }

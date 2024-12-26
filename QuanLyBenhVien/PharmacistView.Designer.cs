@@ -37,7 +37,9 @@
             this.btnMedicine = new System.Windows.Forms.ToolStripMenuItem();
             this.lịchTrựcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
+
             this.btnChatbot = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,9 @@
             this.thôngTinCáNhânToolStripMenuItem1,
             this.btnMedicine,
             this.lịchTrựcToolStripMenuItem,
+
             this.btnChatbot});
+
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -118,12 +122,14 @@
             this.tabControl.Size = new System.Drawing.Size(800, 422);
             this.tabControl.TabIndex = 2;
             // 
+
             // btnChatbot
             // 
             this.btnChatbot.Name = "btnChatbot";
             this.btnChatbot.Size = new System.Drawing.Size(80, 24);
             this.btnChatbot.Text = "Trợ lý ảo";
             this.btnChatbot.Click += new System.EventHandler(this.btnChatbot_Click);
+
             // 
             // PharmacistView
             // 
@@ -153,5 +159,6 @@
         private System.Windows.Forms.ToolStripMenuItem lịchTrựcToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.ToolStripMenuItem btnChatbot;
+
     }
 }

@@ -39,6 +39,7 @@
             this.btnMonth = new System.Windows.Forms.ToolStripMenuItem();
             this.btnYear = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,10 +50,11 @@
             this.chứcNăngToolStripMenuItem,
             this.thôngTinCáNhânToolStripMenuItem1,
             this.btnBill,
-            this.btnIncome});
+            this.btnIncome,
+            this.trợLýẢoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -63,26 +65,26 @@
             this.đổiMặtKhẩuToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
-            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
+            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.chứcNăngToolStripMenuItem.Text = "Cài đặt";
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             // 
             // đổiMặtKhẩuToolStripMenuItem
             // 
             this.đổiMặtKhẩuToolStripMenuItem.Name = "đổiMặtKhẩuToolStripMenuItem";
-            this.đổiMặtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đổiMặtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.đổiMặtKhẩuToolStripMenuItem.Text = "Đổi mặt khẩu";
             this.đổiMặtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMặtKhẩuToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -127,12 +129,19 @@
             // 
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.HotTrack = true;
-            this.tabControl.Location = new System.Drawing.Point(0, 30);
+            this.tabControl.Location = new System.Drawing.Point(0, 28);
             this.tabControl.Margin = new System.Windows.Forms.Padding(5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(800, 420);
+            this.tabControl.Size = new System.Drawing.Size(800, 422);
             this.tabControl.TabIndex = 3;
+            // 
+            // trợLýẢoToolStripMenuItem
+            // 
+            this.trợLýẢoToolStripMenuItem.Name = "trợLýẢoToolStripMenuItem";
+            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.trợLýẢoToolStripMenuItem.Text = "Trợ lý ảo";
+            this.trợLýẢoToolStripMenuItem.Click += new System.EventHandler(this.trợLýẢoToolStripMenuItem_Click);
             // 
             // Accountant
             // 
@@ -163,5 +172,6 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.ToolStripMenuItem btnMonth;
         private System.Windows.Forms.ToolStripMenuItem btnYear;
+        private System.Windows.Forms.ToolStripMenuItem trợLýẢoToolStripMenuItem;
     }
 }

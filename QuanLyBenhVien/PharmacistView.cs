@@ -68,7 +68,9 @@ namespace QuanLyBenhVien
             this.Close();
         }
 
+
         private void btnChatbot_Click(object sender, EventArgs e)
+
         {
             ChatBotForm chatBotForm = new ChatBotForm();
             CommonControls.AddFormToTab(chatBotForm, chatBotForm.Text);

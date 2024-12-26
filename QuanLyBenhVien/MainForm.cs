@@ -145,6 +145,12 @@ namespace QuanLyBenhVien
             CommonControls.AddFormToTab(nurseCare, nurseCare.Text);
         }
 
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            AccountForm accountForm = new AccountForm();
+            CommonControls.AddFormToTab(accountForm, accountForm.Text);
+
         private void btnDeleteRemeber_Click(object sender, EventArgs e)
         {
             string query  = "UPDATE USERLOGIN SET Flag = 0 WHERE UserID = @UserID";
@@ -159,6 +165,7 @@ namespace QuanLyBenhVien
                         command.Parameters.AddWithValue("@UserID", userID);
                         int rowsAffected = command.ExecuteNonQuery();
                     }
+                    MessageBox.Show("Xóa nhớ mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

@@ -40,6 +40,7 @@
             this.btnWeeklyAssignment = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+
             this.btnChatbot = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +65,7 @@
             this.btnPatientCare,
             this.btnWeeklyAssignment,
             this.btnChatbot});
+
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -133,12 +135,14 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
+
             // btnChatbot
             // 
             this.btnChatbot.Name = "btnChatbot";
             this.btnChatbot.Size = new System.Drawing.Size(80, 24);
             this.btnChatbot.Text = "Trợ lý ảo";
             this.btnChatbot.Click += new System.EventHandler(this.btnChatbot_Click);
+
             // 
             // NurseVIew
             // 
@@ -170,5 +174,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem btnChatbot;
+
     }
 }
