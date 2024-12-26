@@ -155,5 +155,11 @@ namespace QuanLyBenhVien
         {
             CommonControls.DisableRememberMe(userID); 
         }
+
+        private void btnHospitalize_Click(object sender, EventArgs e)
+        {
+            NhapVien nhapvien = new NhapVien();
+            CommonControls.AddFormToTab(nhapvien, nhapvien.Text);
+        }
     }
 }
