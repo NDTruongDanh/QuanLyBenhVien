@@ -54,7 +54,7 @@ namespace QuanLyBenhVien
 
         private void InitializeCmbNurseID()
         {
-            string query = "SELECT StaffID FROM STAFF WHERE TypeOfStaff LIKE N'%Y tá%'";
+            string query = "SELECT StaffID FROM STAFF WHERE TypeOfStaff LIKE N'%Điều dưỡng%'";
 
             try
             {
@@ -116,7 +116,7 @@ namespace QuanLyBenhVien
                     string sql = @"
                     SELECT 
                         CareID AS [Mã chăm sóc],
-                        NurseID AS [Mã y tá],
+                        NurseID AS [Mã điều dưỡng],
                         PatientID AS [Mã bệnh nhân],
                         RoomID AS [Mã phòng],
                         CareDateTime AS [Ngày bắt đầu chăm sóc],
