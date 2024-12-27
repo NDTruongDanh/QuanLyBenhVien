@@ -23,35 +23,31 @@ namespace QuanLyBenhVien
                         {
                             Form formToRun = null;
 
-                            if (signIn.UserID == "admin")
-                            {
-                                formToRun = new MainForm(signIn.UserID);
-                            }
-                            else
-                            { 
-
                                 // Handle string comparison ignoring case
                                 string userType = signIn.UserType?.Trim().ToLower();
 
-                                switch (userType)
-                                {
-                                    case var type when type.Contains("bác sĩ"):
-                                        formToRun = new DoctorView(signIn.UserID);
-                                        break;
-                                    case var type when type.Contains("dược sĩ"):
-                                        formToRun = new PharmacistView(signIn.UserID, signIn.IsHeadDepartment);
-                                        break;
-                                    case var type when type.Contains("kế toán"):
-                                        formToRun = new Accountant(signIn.UserID);
-                                        break;
-                                    case var type when type.Contains("y tá"):
-                                        formToRun = new NurseVIew(signIn.UserID);
-                                        break;
-                                    default:
-                                        MessageBox.Show($"Unknown user type: '{signIn.UserType}'");
-                                        break;
-                                }
+                            switch (userType)
+                            {
+                                case var type when type.Contains("admin"):
+                                    formToRun = new MainForm(signIn.UserID);
+                                    break;
+                                case var type when type.Contains("bác sĩ"):
+                                    formToRun = new DoctorView(signIn.UserID);
+                                    break;
+                                case var type when type.Contains("dược sĩ"):
+                                    formToRun = new PharmacistView(signIn.UserID, signIn.IsHeadDepartment);
+                                    break;
+                                case var type when type.Contains("kế toán"):
+                                    formToRun = new Accountant(signIn.UserID);
+                                    break;
+                                case var type when type.Contains("điều dưỡng"):
+                                    formToRun = new NurseVIew(signIn.UserID);
+                                    break;
+                                default:
+                                    MessageBox.Show($"Unknown user type: '{signIn.UserType}'");
+                                    break;
                             }
+                            
 
                             if (formToRun != null)
                             {
