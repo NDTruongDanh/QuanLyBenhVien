@@ -41,68 +41,42 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    if (txtUser.Text == "admin")
-                    {
-                        string adminSql = "SELECT * FROM USERLOGIN WHERE UserID = @UserID";
-                        using (SqlCommand cmd = new SqlCommand(adminSql, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@UserID", txtUser.Text);
-                            using (SqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                if (reader.Read())
-                                {
-                                    if (reader.GetString(reader.GetOrdinal("Pass")) == txtPassword.Text)
-                                    {
-                                        UserID = txtUser.Text;
-                                        UserType = "admin";
-                                        this.DialogResult = DialogResult.OK;
-                                        this.Close();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Password isn't correct!", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        string staffSql = @"SELECT UserID, Pass, TypeOfStaff, HeadDepartmentID 
+
+                    string staffSql = @"SELECT UserID, Pass, TypeOfStaff, HeadDepartmentID 
                                   FROM USERLOGIN ul 
                                   JOIN STAFF st ON ul.UserID = st.StaffID 
                                   JOIN DEPARTMENT d ON d.DepartmentID = st.DepartmentID 
                                   WHERE UserID = @UserID";
 
-                        using (SqlCommand cmd = new SqlCommand(staffSql, conn))
+                    using (SqlCommand cmd = new SqlCommand(staffSql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@UserID", txtUser.Text);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            cmd.Parameters.AddWithValue("@UserID", txtUser.Text);
-                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            if (reader.Read())
                             {
-                                if (reader.Read())
+                                if (reader.GetString(reader.GetOrdinal("Pass")) == txtPassword.Text)
                                 {
-                                    if (reader.GetString(reader.GetOrdinal("Pass")) == txtPassword.Text)
-                                    {
-                                        UserID = txtUser.Text;
-                                        UserType = reader.GetString(reader.GetOrdinal("TypeOfStaff"));
-                                        IsHeadDepartment = (txtUser.Text == reader.GetString(reader.GetOrdinal("HeadDepartmentID")));
+                                    UserID = txtUser.Text;
+                                    UserType = reader.GetString(reader.GetOrdinal("TypeOfStaff"));
+                                    IsHeadDepartment = (txtUser.Text == reader.GetString(reader.GetOrdinal("HeadDepartmentID")));
 
-                                        this.DialogResult = DialogResult.OK;
-                                        this.Close();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Password isn't correct!", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    }
+                                    this.DialogResult = DialogResult.OK;
+                                    this.Close();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("UserID not found", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("Password isn't correct!", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
+                            }
+                            else
+                            {
+                                MessageBox.Show("UserID not found", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
                 }
+
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error: {ex.Message}\nStack Trace: {ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

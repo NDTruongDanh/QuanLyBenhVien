@@ -198,7 +198,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(187, 42);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Mã y tá";
+            this.label1.Text = "Mã điều dưỡng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtCareID
