@@ -4,8 +4,6 @@ CREATE DATABASE HospitalDB
 
 USE HospitalDB
 
-SET DATEFORMAT YMD  --Thiết lập DATE theo thứ tự ngày->tháng->năm
-
 --Thống nhất tất cả các ID đều có đúng 6 ký tự bao gồm 2 chữ 4 số--
 CREATE TABLE PATIENT (
     PatientID CHAR(6) PRIMARY KEY,
@@ -356,6 +354,7 @@ VALUES
 
 INSERT INTO STAFF (StaffID, FullName, TypeOfStaff, Gender, DateOfBirth, PhoneNumber, DateOfJoining, Email, Salary, DepartmentID)
 VALUES
+('ST0000', N'ADMIN', N'ADMIN', N'Nam', '2005-01-15', '0912345678', '2024-10-01', 'admin@gmail.com', 999999999, 'KN')
 ('ST0001', N'Nguyễn Văn A', N'Bác sĩ Đa khoa', N'Nam', '1980-01-01', '0912345678', '2015-01-01', 'a.nguyen@example.com', 20000000, 'KN'),
 ('ST0002', N'Lê Thị B', N'Bác sĩ Nội khoa', N'Nữ', '1985-02-15', '0913456789', '2016-02-01', 'b.le@example.com', 22000000, 'KN'),
 ('ST0003', N'Trần Văn C', N'Bác sĩ Ngoại khoa', N'Nam', '1978-03-20', '0914567890', '2017-03-01', 'c.tran@example.com', 25000000, 'KNg'),
