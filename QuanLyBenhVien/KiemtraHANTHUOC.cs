@@ -48,7 +48,7 @@ namespace QuanLyBenhVien
                     conn.Open();
 
                     // Câu truy vấn SQL
-                    string query = $"SELECT MedicationID,MedicationName, ExpiryDate FROM MEDICATION WHERE ExpiryDate >= @ngayHientai AND ExpiryDate <= @NgayCanKiemTra";
+                    string query = $"SELECT MedicationID AS [Mã thuốc], MedicationName AS [Tên thuốc], ExpiryDate AS[Ngày hết hạn] FROM MEDICATION WHERE ExpiryDate >= @ngayHientai AND ExpiryDate <= @NgayCanKiemTra";
 
                     // Thực thi truy vấn
                     using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
@@ -63,9 +63,10 @@ namespace QuanLyBenhVien
 
                         // Hiển thị dữ liệu lên DataGridView
                         dgvExpireInfo.DataSource = dt;
+                        dgvExpireInfo.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
 
                         // Thông báo
-                     //   MessageBox.Show($"Đã tải danh sách các thuốc còn hạn trong {soNgay} ngày.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //   MessageBox.Show($"Đã tải danh sách các thuốc còn hạn trong {soNgay} ngày.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception ex)
@@ -95,7 +96,7 @@ namespace QuanLyBenhVien
                     conn.Open();
 
                     // Câu truy vấn SQL
-                    string query = $"SELECT MedicationID,MedicationName, ExpiryDate FROM MEDICATION WHERE ExpiryDate < @ngayHientai";
+                    string query = $"SELECT MedicationID AS [Mã thuốc], MedicationName AS [Tên thuốc], ExpiryDate AS [Ngày hết hạn] FROM MEDICATION WHERE ExpiryDate < @ngayHientai";
 
                     DateTime now = DateTime.Now;
                     string ngayHientai = now.ToString("yyyy-MM-dd");
