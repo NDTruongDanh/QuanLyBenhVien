@@ -55,19 +55,17 @@ namespace QuanLyBenhVien
 
             string query = @"IF EXISTS (SELECT 1 FROM WEEKLYASSIGNMENT WHERE AssignmentID = @AssignmentID)
                              UPDATE WEEKLYASSIGNMENT SET StaffID = @StaffID, ShiftType = @ShiftType, 
-                             WeekStartDate = @WeekStartDate, WeekEndDate = @WeekEndDate, DepartmentID = @DepartmentID
+                             AssignmentDate = @AssignmentDate, 
                              WHERE AssignmentID = @AssignmentID
                              ELSE
-                             INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, DepartmentID, WeekStartDate, WeekEndDate, ShiftType)
-                             VALUES (@AssignmentID, @StaffID, @DepartmentID, @WeekStartDate, @WeekEndDate, @ShiftType)";
+                             INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, DepartmentID, AssignmentDate, ShiftType)
+                             VALUES (@AssignmentID, @StaffID, @AssignmentDate, @ShiftType)";
 
             var parameters = new Dictionary<string, object>
             {
                 {"@AssignmentID", txtAssignmentID.Text},
                 {"@StaffID", cmbStaffID.Text},
-                {"@DepartmentID", cmbDepartmentID.Text},
-                {"@WeekStartDate", dtpWeekStartDate.Value},
-                {"@WeekEndDate", dtpWeekEndDate.Value},
+                {"@AssignmentDate", dtpAssignmentDate.Value},
                 {"@ShiftType", cmbShiftType.Text}
             };
 
@@ -85,11 +83,6 @@ namespace QuanLyBenhVien
             {
                 query += " AND AssignmentID = @AssignmentID";
                 parameters.Add("@AssignmentID", txtAssignmentID.Text);
-            }
-            if (!string.IsNullOrEmpty(cmbDepartmentID.Text))
-            {
-                query += " AND DepartmentID = @DepartmentID";
-                parameters.Add("@DepartmentID", cmbDepartmentID.Text);
             }
             if (!string.IsNullOrEmpty(cmbStaffID.Text))
             {
@@ -142,10 +135,8 @@ namespace QuanLyBenhVien
            CommonControls.ResetInputFields(Parent);
             txtAssignmentID.Clear();
             cmbStaffID.SelectedIndex = -1;
-            cmbDepartmentID.SelectedIndex = -1;
             cmbShiftType.Text = null;
-            dtpWeekEndDate.Value = DateTime.Now;
-            dtpWeekStartDate.Value = DateTime.Now;
+            dtpAssignmentDate.Value = DateTime.Now;
         }
 
         private void dgvWeeklyAssignment_SelectionChanged(object sender, EventArgs e)
@@ -155,9 +146,7 @@ namespace QuanLyBenhVien
                 DataGridViewRow selectedRow = dgvWeeklyAssigment.SelectedRows[0];
                 txtAssignmentID.Text = selectedRow.Cells[0].Value.ToString();
                 cmbStaffID.Text = selectedRow.Cells[1].Value.ToString();
-                cmbDepartmentID.Text = selectedRow.Cells[2].Value.ToString();
-                dtpWeekStartDate.Text = selectedRow.Cells[3].Value.ToString();
-                dtpWeekEndDate.Text = selectedRow.Cells[4].Value.ToString();
+                dtpAssignmentDate.Text = selectedRow.Cells[2].Value.ToString();
                 cmbShiftType.Text = selectedRow.Cells[5].Value.ToString();
             }
         }
