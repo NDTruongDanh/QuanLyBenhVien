@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -160,6 +161,13 @@ namespace QuanLyBenhVien
         {
             NhapVien nhapvien = new NhapVien();
             CommonControls.AddFormToTab(nhapvien, nhapvien.Text);
+        }
+        
+
+        private void btnWorkAssignment_Click(object sender, EventArgs e)
+        {
+            ShiftScheduler scheduler = new ShiftScheduler();
+            scheduler.AssignShifts(DateTime.Now.StartOfWeek(DayOfWeek.Monday));
         }
     }
 }

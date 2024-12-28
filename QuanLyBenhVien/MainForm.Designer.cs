@@ -36,6 +36,7 @@
             this.btnCatalogue = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPatient = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicalRecord = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHospitalize = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDepartment = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,7 @@
             this.btnYearDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.btnHospitalize = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnWorkAssignment = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1344, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1344, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -85,7 +86,8 @@
             this.btnFunction.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnLogout,
             this.btnChangePW,
-            this.btnDeleteRemember});
+            this.btnDeleteRemember,
+            this.btnWorkAssignment});
             this.btnFunction.Name = "btnFunction";
             this.btnFunction.Size = new System.Drawing.Size(93, 24);
             this.btnFunction.Text = "Chức năng";
@@ -93,21 +95,21 @@
             // btnLogout
             // 
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(207, 26);
+            this.btnLogout.Size = new System.Drawing.Size(224, 26);
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnChangePW
             // 
             this.btnChangePW.Name = "btnChangePW";
-            this.btnChangePW.Size = new System.Drawing.Size(207, 26);
+            this.btnChangePW.Size = new System.Drawing.Size(224, 26);
             this.btnChangePW.Text = "Đổi mặt khẩu";
             this.btnChangePW.Click += new System.EventHandler(this.btnChangePW_Click);
             // 
             // btnDeleteRemember
             // 
             this.btnDeleteRemember.Name = "btnDeleteRemember";
-            this.btnDeleteRemember.Size = new System.Drawing.Size(207, 26);
+            this.btnDeleteRemember.Size = new System.Drawing.Size(224, 26);
             this.btnDeleteRemember.Text = "Tắt nhớ mật khẩu";
             this.btnDeleteRemember.Click += new System.EventHandler(this.btnDeleteRemember_Click);
             // 
@@ -120,7 +122,7 @@
             this.btnDepartment,
             this.btnMedicine});
             this.btnCatalogue.Name = "btnCatalogue";
-            this.btnCatalogue.Size = new System.Drawing.Size(90, 26);
+            this.btnCatalogue.Size = new System.Drawing.Size(90, 24);
             this.btnCatalogue.Text = "Danh mục";
             // 
             // btnPatient
@@ -129,42 +131,49 @@
             this.btnMedicalRecord,
             this.btnHospitalize});
             this.btnPatient.Name = "btnPatient";
-            this.btnPatient.Size = new System.Drawing.Size(224, 26);
+            this.btnPatient.Size = new System.Drawing.Size(171, 26);
             this.btnPatient.Text = "Bệnh nhân";
             this.btnPatient.Click += new System.EventHandler(this.btnPatient_Click);
             // 
             // btnMedicalRecord
             // 
             this.btnMedicalRecord.Name = "btnMedicalRecord";
-            this.btnMedicalRecord.Size = new System.Drawing.Size(224, 26);
+            this.btnMedicalRecord.Size = new System.Drawing.Size(188, 26);
             this.btnMedicalRecord.Text = "Hồ sơ bệnh án";
             this.btnMedicalRecord.Click += new System.EventHandler(this.btnMedicalRecord_Click);
+            // 
+            // btnHospitalize
+            // 
+            this.btnHospitalize.Name = "btnHospitalize";
+            this.btnHospitalize.Size = new System.Drawing.Size(188, 26);
+            this.btnHospitalize.Text = "Nhập viện";
+            this.btnHospitalize.Click += new System.EventHandler(this.btnHospitalize_Click);
             // 
             // btnEmployee
             // 
             this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.Size = new System.Drawing.Size(224, 26);
+            this.btnEmployee.Size = new System.Drawing.Size(171, 26);
             this.btnEmployee.Text = "Nhân viên";
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnRoom
             // 
             this.btnRoom.Name = "btnRoom";
-            this.btnRoom.Size = new System.Drawing.Size(224, 26);
+            this.btnRoom.Size = new System.Drawing.Size(171, 26);
             this.btnRoom.Text = "Phòng bệnh";
             this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             // 
             // btnDepartment
             // 
             this.btnDepartment.Name = "btnDepartment";
-            this.btnDepartment.Size = new System.Drawing.Size(224, 26);
+            this.btnDepartment.Size = new System.Drawing.Size(171, 26);
             this.btnDepartment.Text = "Khoa";
             this.btnDepartment.Click += new System.EventHandler(this.btnDepartment_Click);
             // 
             // btnMedicine
             // 
             this.btnMedicine.Name = "btnMedicine";
-            this.btnMedicine.Size = new System.Drawing.Size(224, 26);
+            this.btnMedicine.Size = new System.Drawing.Size(171, 26);
             this.btnMedicine.Text = "Thuốc";
             this.btnMedicine.Click += new System.EventHandler(this.btnMedicine_Click);
             // 
@@ -321,19 +330,19 @@
             // 
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.HotTrack = true;
-            this.tabControl.Location = new System.Drawing.Point(0, 30);
+            this.tabControl.Location = new System.Drawing.Point(0, 28);
             this.tabControl.Margin = new System.Windows.Forms.Padding(5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1344, 710);
+            this.tabControl.Size = new System.Drawing.Size(1344, 712);
             this.tabControl.TabIndex = 1;
             // 
-            // btnHospitalize
+            // btnWorkAssignment
             // 
-            this.btnHospitalize.Name = "btnHospitalize";
-            this.btnHospitalize.Size = new System.Drawing.Size(224, 26);
-            this.btnHospitalize.Text = "Nhập viện";
-            this.btnHospitalize.Click += new System.EventHandler(this.btnHospitalize_Click);
+            this.btnWorkAssignment.Name = "btnWorkAssignment";
+            this.btnWorkAssignment.Size = new System.Drawing.Size(224, 26);
+            this.btnWorkAssignment.Text = "Tạo lịch trực";
+            this.btnWorkAssignment.Click += new System.EventHandler(this.btnWorkAssignment_Click);
             // 
             // MainForm
             // 
@@ -393,6 +402,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnAccount;
         private System.Windows.Forms.ToolStripMenuItem btnDeleteRemember;
         private System.Windows.Forms.ToolStripMenuItem btnHospitalize;
+        private System.Windows.Forms.ToolStripMenuItem btnWorkAssignment;
     }
 }
 
