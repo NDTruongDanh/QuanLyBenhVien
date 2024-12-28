@@ -705,7 +705,7 @@ VALUES
 
 
 
-INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, AssignmentDate, ShiftType)
+INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, DepartmentID, WeekStartDate, WeekEndDate, ShiftType)
 VALUES
 ('WA0001', 'ST0001', 'KN', '2024-12-01', '2024-12-07', N'Sáng'),
 ('WA0002', 'ST0002', 'KNg', '2024-12-01', '2024-12-07', N'Chiều'),

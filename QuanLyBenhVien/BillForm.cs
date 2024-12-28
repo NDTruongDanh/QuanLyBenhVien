@@ -75,8 +75,6 @@ namespace QuanLyBenhVien
                     var dataset = new DataSet();
                     adapter.Fill(dataset, "BILL");
                     dgvBill.DataSource = dataset.Tables["BILL"];
-                    dgvBill.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
-
                 }
                 catch (Exception ex)
                 {

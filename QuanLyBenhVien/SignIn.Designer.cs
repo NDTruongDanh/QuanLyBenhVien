@@ -87,7 +87,6 @@
             this.txtUser.SelectedText = "";
             this.txtUser.Size = new System.Drawing.Size(280, 38);
             this.txtUser.TabIndex = 14;
-            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // txtPassword
             // 
@@ -130,6 +129,7 @@
             // 
             // guna2Button1
             // 
+            this.guna2Button1.DefaultAutoSize = true;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -138,7 +138,7 @@
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Location = new System.Drawing.Point(472, 256);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(187, 40);
+            this.guna2Button1.Size = new System.Drawing.Size(155, 43);
             this.guna2Button1.TabIndex = 17;
             this.guna2Button1.Text = "Đăng nhập";
             this.guna2Button1.Click += new System.EventHandler(this.btnSignIn_Click);

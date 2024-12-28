@@ -42,11 +42,7 @@ namespace QuanLyBenhVien
                         {
                             dataAdapter.Fill(dataSet);
                             if (dataSet.Tables.Count > 0)
-                            {
                                 dgvPatientCare.DataSource = dataSet.Tables[0];
-                                dgvPatientCare.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
-
-                            }
                             else
                                 MessageBox.Show("Không có bệnh nhân!");
                         }

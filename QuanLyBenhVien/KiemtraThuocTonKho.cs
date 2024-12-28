@@ -28,7 +28,7 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string query = "SELECT MedicationID AS [Mã thuốc], MedicationName AS[Tên thuốc], QuantityInStock AS[Số lượng tồn kho] FROM MEDICATION  WHERE 1=1";
+                    string query = "SELECT MedicationID, MedicationName, QuantityInStock FROM MEDICATION  WHERE 1=1";
 
                     if (!string.IsNullOrEmpty(cmbCategory.Text))
                         query += $"AND Category = '{cmbCategory.Text}'";

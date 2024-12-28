@@ -54,7 +54,6 @@ namespace QuanLyBenhVien
                             if(dataSet.Tables.Count > 0 && dataSet.Tables[0].Rows.Count > 0) 
                             {
                                 dgvAppointment.DataSource = dataSet.Tables[0];
-                                dgvAppointment.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
 
                             }
                             else
