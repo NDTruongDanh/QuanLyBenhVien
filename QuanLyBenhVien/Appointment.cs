@@ -54,6 +54,8 @@ namespace QuanLyBenhVien
                     var dataset = new DataSet();
                     adapter.Fill(dataset, "APPOINTMENT");
                     dgvAppointment.DataSource = dataset.Tables["APPOINTMENT"];
+                    dgvAppointment.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
                 }
                 catch (Exception ex)
                 {

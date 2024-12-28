@@ -51,6 +51,8 @@ namespace QuanLyBenhVien
                     DataSet dataset = new DataSet();
                     adapter.Fill(dataset, "MEDICATION");
                     dgvMedicine.DataSource = dataset.Tables["MEDICATION"];
+                    dgvMedicine.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
                 }
                 catch (Exception ex)
                 {

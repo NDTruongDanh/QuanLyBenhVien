@@ -40,6 +40,8 @@ namespace QuanLyBenhVien
                     var dataset = new DataSet();
                     adapter.Fill(dataset, "BILLDETAIL");
                     dgvBillDetail.DataSource = dataset.Tables["BILLDETAIL"];
+                    dgvBillDetail.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
                 }
                 catch (Exception ex)
                 {

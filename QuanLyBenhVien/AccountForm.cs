@@ -37,6 +37,8 @@ namespace QuanLyBenhVien
                         {
                             adapter.Fill(dataSet, "USERLOGIN");
                             dgvAccount.DataSource = dataSet.Tables["USERLOGIN"];
+                            dgvAccount.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
                         }
                     }
                 }

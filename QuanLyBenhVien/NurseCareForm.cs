@@ -19,91 +19,10 @@ namespace QuanLyBenhVien
         public NurseCareForm()
         {
             InitializeComponent();
-            InitializeCmbPatientID();
-            InitializeCmbNurseID();
-            InitializeCmbRoomID();
+            CommonControls.InitializeCmbPatientID(cmbPatientID);
+            CommonControls.InitializeCmbNurseID(cmbNurseID);
+            CommonControls.InitializeCmbRoomID(cmbRoomID);
             LoadNurseCareData();
-        }
-
-        private void InitializeCmbPatientID()
-        {
-            string query = "SELECT PatientID FROM PATIENT";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                cmbPatientID.Items.Add(reader["PatientID"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
-        private void InitializeCmbNurseID()
-        {
-            string query = "SELECT StaffID FROM STAFF WHERE TypeOfStaff LIKE N'%Điều dưỡng%'";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                cmbNurseID.Items.Add(reader["StaffID"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
-        private void InitializeCmbRoomID()
-        {
-            string query = "SELECT RoomID FROM ROOM";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                cmbRoomID.Items.Add(reader["RoomID"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
         }
 
         private void LoadNurseCareData()
@@ -130,6 +49,8 @@ namespace QuanLyBenhVien
                         {
                             adapter.Fill(dataset, "NURSECARE");
                             dgvNurseCare.DataSource = dataset.Tables["NURSECARE"];
+                            dgvNurseCare.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
                         }
                     }
                 }
