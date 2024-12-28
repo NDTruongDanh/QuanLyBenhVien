@@ -33,6 +33,7 @@
             this.btnLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.btnChangePW = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDeleteRemember = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnWorkAssignment = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCatalogue = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPatient = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMedicalRecord = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,13 +61,13 @@
             this.btnMonthDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnYearDiseaseStat = new System.Windows.Forms.ToolStripMenuItem();
             this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.btnWorkAssignment = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl = new Guna.UI2.WinForms.Guna2TabControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnFunction,
@@ -76,8 +77,8 @@
             this.trợLýẢoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1344, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1176, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -89,29 +90,36 @@
             this.btnDeleteRemember,
             this.btnWorkAssignment});
             this.btnFunction.Name = "btnFunction";
-            this.btnFunction.Size = new System.Drawing.Size(93, 24);
+            this.btnFunction.Size = new System.Drawing.Size(93, 26);
             this.btnFunction.Text = "Chức năng";
             // 
             // btnLogout
             // 
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(224, 26);
+            this.btnLogout.Size = new System.Drawing.Size(207, 26);
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnChangePW
             // 
             this.btnChangePW.Name = "btnChangePW";
-            this.btnChangePW.Size = new System.Drawing.Size(224, 26);
+            this.btnChangePW.Size = new System.Drawing.Size(207, 26);
             this.btnChangePW.Text = "Đổi mặt khẩu";
             this.btnChangePW.Click += new System.EventHandler(this.btnChangePW_Click);
             // 
             // btnDeleteRemember
             // 
             this.btnDeleteRemember.Name = "btnDeleteRemember";
-            this.btnDeleteRemember.Size = new System.Drawing.Size(224, 26);
+            this.btnDeleteRemember.Size = new System.Drawing.Size(207, 26);
             this.btnDeleteRemember.Text = "Tắt nhớ mật khẩu";
             this.btnDeleteRemember.Click += new System.EventHandler(this.btnDeleteRemember_Click);
+            // 
+            // btnWorkAssignment
+            // 
+            this.btnWorkAssignment.Name = "btnWorkAssignment";
+            this.btnWorkAssignment.Size = new System.Drawing.Size(207, 26);
+            this.btnWorkAssignment.Text = "Tạo lịch trực";
+            this.btnWorkAssignment.Click += new System.EventHandler(this.btnWorkAssignment_Click);
             // 
             // btnCatalogue
             // 
@@ -122,7 +130,7 @@
             this.btnDepartment,
             this.btnMedicine});
             this.btnCatalogue.Name = "btnCatalogue";
-            this.btnCatalogue.Size = new System.Drawing.Size(90, 24);
+            this.btnCatalogue.Size = new System.Drawing.Size(90, 26);
             this.btnCatalogue.Text = "Danh mục";
             // 
             // btnPatient
@@ -186,7 +194,7 @@
             this.chămSócBệnhNhânToolStripMenuItem,
             this.btnAccount});
             this.btnManager.Name = "btnManager";
-            this.btnManager.Size = new System.Drawing.Size(73, 24);
+            this.btnManager.Size = new System.Drawing.Size(73, 26);
             this.btnManager.Text = "Quản lý";
             // 
             // btnBill
@@ -231,7 +239,7 @@
             this.btnIncomeReport,
             this.btnDiseaseStat});
             this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Size = new System.Drawing.Size(84, 24);
+            this.btnStatistic.Size = new System.Drawing.Size(84, 26);
             this.btnStatistic.Text = "Thống kê";
             // 
             // btnMedicineReport
@@ -322,38 +330,49 @@
             // trợLýẢoToolStripMenuItem
             // 
             this.trợLýẢoToolStripMenuItem.Name = "trợLýẢoToolStripMenuItem";
-            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
             this.trợLýẢoToolStripMenuItem.Text = "Trợ lý ảo ";
             this.trợLýẢoToolStripMenuItem.Click += new System.EventHandler(this.btnAIChatBot_Click);
             // 
             // tabControl
             // 
+            this.tabControl.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.HotTrack = true;
-            this.tabControl.Location = new System.Drawing.Point(0, 28);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(5);
+            this.tabControl.ItemSize = new System.Drawing.Size(150, 40);
+            this.tabControl.Location = new System.Drawing.Point(0, 36);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1344, 712);
+            this.tabControl.Size = new System.Drawing.Size(1176, 750);
+            this.tabControl.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.tabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.tabControl.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.tabControl.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
+            this.tabControl.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.tabControl.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
+            this.tabControl.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.tabControl.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.tabControl.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
+            this.tabControl.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.tabControl.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
+            this.tabControl.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+            this.tabControl.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.tabControl.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
+            this.tabControl.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
+            this.tabControl.TabButtonSize = new System.Drawing.Size(150, 40);
             this.tabControl.TabIndex = 1;
-            // 
-            // btnWorkAssignment
-            // 
-            this.btnWorkAssignment.Name = "btnWorkAssignment";
-            this.btnWorkAssignment.Size = new System.Drawing.Size(224, 26);
-            this.btnWorkAssignment.Text = "Tạo lịch trực";
-            this.btnWorkAssignment.Click += new System.EventHandler(this.btnWorkAssignment_Click);
+            this.tabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(1344, 740);
+            this.ClientSize = new System.Drawing.Size(1176, 786);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.Text = "QUẢN LÝ BỆNH VIỆN";
             this.menuStrip1.ResumeLayout(false);
@@ -379,7 +398,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnBill;
         private System.Windows.Forms.ToolStripMenuItem btnMedicineReport;
         private System.Windows.Forms.ToolStripMenuItem btnIncomeReport;
-        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.ToolStripMenuItem btnMedicalRecord;
         private System.Windows.Forms.ToolStripMenuItem btnDepartment;
 
@@ -403,6 +421,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnDeleteRemember;
         private System.Windows.Forms.ToolStripMenuItem btnHospitalize;
         private System.Windows.Forms.ToolStripMenuItem btnWorkAssignment;
+        private Guna.UI2.WinForms.Guna2TabControl tabControl;
     }
 }
 
