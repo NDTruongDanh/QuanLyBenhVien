@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.chứcNăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMặtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDeleteRemember = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhânToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lịchLàmViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnWeeklyAssignment = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +41,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabControl = new System.Windows.Forms.TabControl();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnDeleteRemember = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,19 +62,12 @@
             // chứcNăngToolStripMenuItem
             // 
             this.chứcNăngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thôngTinCáNhânToolStripMenuItem,
             this.đổiMặtKhẩuToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem,
             this.btnDeleteRemember});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
             this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.chứcNăngToolStripMenuItem.Text = "Chức năng";
-            // 
-            // thôngTinCáNhânToolStripMenuItem
-            // 
-            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             // 
             // đổiMặtKhẩuToolStripMenuItem
             // 
@@ -90,6 +82,13 @@
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            // 
+            // btnDeleteRemember
+            // 
+            this.btnDeleteRemember.Name = "btnDeleteRemember";
+            this.btnDeleteRemember.Size = new System.Drawing.Size(224, 26);
+            this.btnDeleteRemember.Text = "Tắt nhớ mật khẩu";
+            this.btnDeleteRemember.Click += new System.EventHandler(this.btnDeleteRemember_Click);
             // 
             // thôngTinCáNhânToolStripMenuItem1
             // 
@@ -142,13 +141,6 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
-            // btnDeleteRemember
-            // 
-            this.btnDeleteRemember.Name = "btnDeleteRemember";
-            this.btnDeleteRemember.Size = new System.Drawing.Size(224, 26);
-            this.btnDeleteRemember.Text = "Tắt nhớ mật khẩu";
-            this.btnDeleteRemember.Click += new System.EventHandler(this.btnDeleteRemember_Click);
-            // 
             // DoctorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,7 +150,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DoctorView";
-            this.Text = "DoctorView";
+            this.Text = "BÁC SĨ";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -178,7 +170,6 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.ToolStripMenuItem btnWeeklyAssignment;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trợLýẢoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnDeleteRemember;
     }

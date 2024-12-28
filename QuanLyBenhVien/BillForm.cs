@@ -22,8 +22,16 @@ namespace QuanLyBenhVien
             LoadBills();
             InitializeCmbRecordID();
             InitializeCmbStaffID();
+            SetupDateTimePickerCustom();
         }
         public string BillNumber => txtTransactionID.Text;
+
+        private void SetupDateTimePickerCustom()
+        {
+            dtpTransactionDate.Format = DateTimePickerFormat.Custom;
+            dtpTransactionDate.CustomFormat = "hh:mm tt dd/MM/yyyy"; // Định dạng ngày và giờ
+            dtpTransactionDate.ShowUpDown = true; // Ẩn lịch, chỉ chọn giờ
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!IsValidBill())
