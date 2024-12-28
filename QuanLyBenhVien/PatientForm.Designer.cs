@@ -256,7 +256,7 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Nữ",
             "Nam"});
-            this.cmbGender.Location = new System.Drawing.Point(174, 68);
+            this.cmbGender.Location = new System.Drawing.Point(174, 63);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(348, 33);
             this.cmbGender.TabIndex = 21;
@@ -264,6 +264,7 @@
             // dtpDateOfBirth
             // 
             this.dtpDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateOfBirth.Location = new System.Drawing.Point(694, 65);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(349, 30);

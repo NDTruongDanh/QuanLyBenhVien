@@ -149,7 +149,7 @@
             this.cmbDoctorID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDoctorID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDoctorID.FormattingEnabled = true;
-            this.cmbDoctorID.Location = new System.Drawing.Point(355, 138);
+            this.cmbDoctorID.Location = new System.Drawing.Point(355, 136);
             this.cmbDoctorID.Margin = new System.Windows.Forms.Padding(5);
             this.cmbDoctorID.Name = "cmbDoctorID";
             this.cmbDoctorID.Size = new System.Drawing.Size(190, 28);
@@ -217,6 +217,7 @@
             // 
             this.dtpVisitDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpVisitDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpVisitDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpVisitDate.Location = new System.Drawing.Point(355, 36);
             this.dtpVisitDate.Margin = new System.Windows.Forms.Padding(5);
             this.dtpVisitDate.Name = "dtpVisitDate";
@@ -229,7 +230,7 @@
             this.cmbPatientID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbPatientID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPatientID.FormattingEnabled = true;
-            this.cmbPatientID.Location = new System.Drawing.Point(90, 138);
+            this.cmbPatientID.Location = new System.Drawing.Point(90, 136);
             this.cmbPatientID.Margin = new System.Windows.Forms.Padding(5);
             this.cmbPatientID.Name = "cmbPatientID";
             this.cmbPatientID.Size = new System.Drawing.Size(189, 28);

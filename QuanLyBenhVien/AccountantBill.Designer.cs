@@ -226,7 +226,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AccountantBill";
-            this.Text = "AccountantBill";
+            this.Text = "TỔNG HỢP HOÁ ĐƠN";
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);

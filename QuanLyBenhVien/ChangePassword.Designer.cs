@@ -115,7 +115,7 @@
             this.Controls.Add(this.txtNewPass);
             this.Controls.Add(this.label1);
             this.Name = "ChangePassword";
-            this.Text = "ChangePassword";
+            this.Text = "ĐỔI MẬT KHẨU";
             this.ResumeLayout(false);
             this.PerformLayout();
 
