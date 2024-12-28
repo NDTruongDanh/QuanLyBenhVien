@@ -275,7 +275,7 @@ VALUES
 ('C00040', 'ST0042', 'PA0040', 'RO0010', '2024-12-30 11:30:00', 'Nutrition Assistance', 'Ensured balanced nutrition intake.');
 
 
-INSERT INTO USERLOGIN (UserID,Pass) VALUES ('admin','1') ---ADMIN
+INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0000','1') ---ADMIN
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0009','1') ----Điều dưỡng 
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0001','1') ---- Bác sĩ
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0002','1') ---- Kế toán
@@ -351,7 +351,7 @@ VALUES
 
 INSERT INTO STAFF (StaffID, FullName, TypeOfStaff, Gender, DateOfBirth, PhoneNumber, DateOfJoining, Email, Salary, DepartmentID)
 VALUES
-('ST0000', N'ADMIN', N'ADMIN', N'Nam', '2005-01-15', '0912345678', '2024-10-01', 'admin@gmail.com', 999999999, 'KN')
+('ST0000', N'ADMIN', N'ADMIN', N'Nam', '2005-01-15', '0912345678', '2024-10-01', 'admin@gmail.com', 999999999, 'KN'),
 ('ST0001', N'Nguyễn Văn A', N'Bác sĩ Đa khoa', N'Nam', '1980-01-01', '0912345678', '2015-01-01', 'a.nguyen@example.com', 20000000, 'KN'),
 ('ST0002', N'Lê Thị B', N'Bác sĩ Nội khoa', N'Nữ', '1985-02-15', '0913456789', '2016-02-01', 'b.le@example.com', 22000000, 'KN'),
 ('ST0003', N'Trần Văn C', N'Bác sĩ Ngoại khoa', N'Nam', '1978-03-20', '0914567890', '2017-03-01', 'c.tran@example.com', 25000000, 'KNg'),
