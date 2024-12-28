@@ -21,7 +21,7 @@ namespace QuanLyBenhVien
         public PatientCare(string userID)
         {
             InitializeComponent();
-            InitializeCmbRoomID();
+            CommonControls.InitializeCmbRoomID(cmbRoomID);
             this.userID = userID;
             LoadData();
         }
@@ -53,33 +53,6 @@ namespace QuanLyBenhVien
                 {
                     MessageBox.Show($"Error: {ex.Message}");
                 }
-            }
-        }
-
-        private void InitializeCmbRoomID()
-        {
-            string query = "SELECT RoomID FROM ROOM";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                cmbRoomID.Items.Add(reader["RoomID"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 

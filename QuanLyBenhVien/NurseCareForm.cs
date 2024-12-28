@@ -146,7 +146,7 @@ namespace QuanLyBenhVien
                 string.IsNullOrEmpty(cmbNurseID.Text) ||
                 string.IsNullOrEmpty(cmbPatientID.Text) ||
                 string.IsNullOrEmpty(cmbRoomID.Text) ||
-                string.IsNullOrEmpty(txtCaretype.Text))
+                string.IsNullOrEmpty(cmbCaretype.Text))
             {
                 return false;
             }
@@ -180,7 +180,7 @@ namespace QuanLyBenhVien
                 {"@PatientID", cmbPatientID.Text},
                 {"@RoomID", cmbRoomID.Text},
                 {"@CareDateTime", dtpCareDateTime.Value},
-                {"@CareType", txtCaretype.Text},
+                {"@CareType", cmbCaretype.Text},
                 {"@Notes", txtNotes.Text}
             };
 
@@ -274,7 +274,7 @@ namespace QuanLyBenhVien
                 cmbPatientID.Text = selectedRow.Cells[2].Value.ToString();
                 cmbRoomID.Text = selectedRow.Cells[3].Value.ToString();
                 dtpCareDateTime.Text = selectedRow.Cells[4].Value.ToString();
-                txtCaretype.Text = selectedRow.Cells[5].Value.ToString();
+                cmbCaretype.Text = selectedRow.Cells[5].Value.ToString();
                 txtNotes.Text = selectedRow.Cells[6].Value.ToString();
             }
         }

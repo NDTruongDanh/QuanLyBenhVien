@@ -29,72 +29,33 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSignIn = new System.Windows.Forms.Button();
-            this.chkRememberMe = new System.Windows.Forms.CheckBox();
             this.btnHidePass = new System.Windows.Forms.Button();
+            this.txtUser = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.chkRememberMe = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(116, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 32);
+            this.label1.Size = new System.Drawing.Size(206, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập:";
-            // 
-            // txtUser
-            // 
-            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(347, 139);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(280, 38);
-            this.txtUser.TabIndex = 1;
-            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(347, 198);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(232, 38);
-            this.txtPassword.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(125, 198);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 32);
+            this.label2.Size = new System.Drawing.Size(139, 38);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mật khẩu:";
-            // 
-            // btnSignIn
-            // 
-            this.btnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignIn.Location = new System.Drawing.Point(449, 304);
-            this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(168, 48);
-            this.btnSignIn.TabIndex = 4;
-            this.btnSignIn.Text = "Đăng nhập";
-            this.btnSignIn.UseVisualStyleBackColor = true;
-            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
-            // 
-            // chkRememberMe
-            // 
-            this.chkRememberMe.AutoSize = true;
-            this.chkRememberMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.chkRememberMe.Location = new System.Drawing.Point(361, 261);
-            this.chkRememberMe.Name = "chkRememberMe";
-            this.chkRememberMe.Size = new System.Drawing.Size(161, 29);
-            this.chkRememberMe.TabIndex = 6;
-            this.chkRememberMe.Text = "Remember me";
-            this.chkRememberMe.UseVisualStyleBackColor = true;
             // 
             // btnHidePass
             // 
@@ -102,25 +63,100 @@
             this.btnHidePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHidePass.Location = new System.Drawing.Point(585, 198);
             this.btnHidePass.Name = "btnHidePass";
-            this.btnHidePass.Size = new System.Drawing.Size(41, 38);
+            this.btnHidePass.Size = new System.Drawing.Size(42, 38);
             this.btnHidePass.TabIndex = 5;
             this.btnHidePass.UseVisualStyleBackColor = true;
             this.btnHidePass.Click += new System.EventHandler(this.btnHidePass_Click);
+            // 
+            // txtUser
+            // 
+            this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUser.DefaultText = "";
+            this.txtUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUser.Location = new System.Drawing.Point(347, 139);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.PasswordChar = '\0';
+            this.txtUser.PlaceholderText = "";
+            this.txtUser.SelectedText = "";
+            this.txtUser.Size = new System.Drawing.Size(280, 38);
+            this.txtUser.TabIndex = 14;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPassword.DefaultText = "";
+            this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPassword.Location = new System.Drawing.Point(347, 198);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PlaceholderText = "";
+            this.txtPassword.SelectedText = "";
+            this.txtPassword.Size = new System.Drawing.Size(232, 38);
+            this.txtPassword.TabIndex = 15;
+            // 
+            // chkRememberMe
+            // 
+            this.chkRememberMe.AutoSize = true;
+            this.chkRememberMe.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkRememberMe.CheckedState.BorderRadius = 0;
+            this.chkRememberMe.CheckedState.BorderThickness = 0;
+            this.chkRememberMe.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkRememberMe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRememberMe.ForeColor = System.Drawing.Color.Black;
+            this.chkRememberMe.Location = new System.Drawing.Point(276, 256);
+            this.chkRememberMe.Name = "chkRememberMe";
+            this.chkRememberMe.Size = new System.Drawing.Size(170, 32);
+            this.chkRememberMe.TabIndex = 16;
+            this.chkRememberMe.Text = "Nhớ mật khẩu";
+            this.chkRememberMe.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkRememberMe.UncheckedState.BorderRadius = 0;
+            this.chkRememberMe.UncheckedState.BorderThickness = 0;
+            this.chkRememberMe.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DefaultAutoSize = true;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(472, 256);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(155, 43);
+            this.guna2Button1.TabIndex = 17;
+            this.guna2Button1.Text = "Đăng nhập";
+            this.guna2Button1.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.chkRememberMe);
-            this.Controls.Add(this.btnHidePass);
-            this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.btnHidePass);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "SignIn";
-            this.Text = "SignIn";
+            this.Text = "ĐĂNG NHẬP";
             this.Load += new System.EventHandler(this.SignIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -130,11 +166,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnHidePass;
-        private System.Windows.Forms.CheckBox chkRememberMe;
+        private Guna.UI2.WinForms.Guna2TextBox txtUser;
+        private Guna.UI2.WinForms.Guna2TextBox txtPassword;
+        private Guna.UI2.WinForms.Guna2CheckBox chkRememberMe;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

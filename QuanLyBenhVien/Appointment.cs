@@ -19,9 +19,9 @@ namespace QuanLyBenhVien
         public Appointment()
         {
             InitializeComponent();
-            InitializeCmbDoctorID();
-            InitializeCmbPatientID();
-            InitializeCmbDepartmentID();
+            CommonControls.InitializeCmbDoctorID(cmbDoctorID);
+            CommonControls.InitializeCmbPatientID(cmbPatientID);
+            CommonControls.InitializeCmbDepartmentID(cmbDepartmentID);
             LoadAppointments();
             SetupDateTimePickerCustom();
         }
@@ -62,93 +62,12 @@ namespace QuanLyBenhVien
             }
         }
 
-        private void InitializeCmbPatientID()
-        {
-            string query = "SELECT PatientID FROM PATIENT";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                cmbPatientID.Items.Add(reader["PatientID"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
-        private void InitializeCmbDoctorID()
-        {
-            string query = "SELECT StaffID FROM STAFF WHERE TypeOfStaff LIKE N'%Bác sĩ%'";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                cmbDoctorID.Items.Add(reader["StaffID"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
-        private void InitializeCmbDepartmentID()
-        {
-            string query = "SELECT DepartmentID FROM DEPARTMENT";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                cmbDepartmentID.Items.Add(reader["DepartmentID"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
         private bool IsValidAppointment()
         {
             if (string.IsNullOrEmpty(txtAppointmentID.Text) ||
                 string.IsNullOrEmpty(cmbPatientID.Text) ||
                 string.IsNullOrEmpty(cmbDoctorID.Text) ||
-                string.IsNullOrEmpty(cmbDepartmentID.Text) ||
-                string.IsNullOrEmpty(txtAppointmentID.Text))
+                string.IsNullOrEmpty(cmbDepartmentID.Text))
             {
                 return false;
             }
