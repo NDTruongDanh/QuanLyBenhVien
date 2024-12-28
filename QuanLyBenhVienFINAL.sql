@@ -108,13 +108,11 @@ CREATE TABLE ROOM (
     RoomType NVARCHAR(50)  -- Loại phòng: thường, VIP, hồi sức, v.v.
 )
 
-
 CREATE TABLE WEEKLYASSIGNMENT (
     AssignmentID CHAR(6) PRIMARY KEY,
     StaffID CHAR(6),
     DepartmentID VARCHAR(6),
-    WeekStartDate DATE,
-    WeekEndDate DATE,
+    AssignmentDate DATE,
     ShiftType NVARCHAR(50)  -- Loại ca: Sáng, Chiều, Tối
 )
 
