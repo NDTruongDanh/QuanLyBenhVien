@@ -11,6 +11,8 @@ namespace QuanLyBenhVien
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+
+
             bool keepRunning = true;
             while (keepRunning)
             {
