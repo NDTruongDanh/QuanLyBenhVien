@@ -31,6 +31,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.lblDateOfJoining = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblDoctorID = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -130,6 +130,27 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(334, 348);
             this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // lblPhoneNumber
+            // 
+            this.lblPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoneNumber.Location = new System.Drawing.Point(170, 306);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(161, 42);
+            this.lblPhoneNumber.TabIndex = 19;
+            this.lblPhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 306);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 42);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Số điện thoại";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblEmail
             // 
@@ -320,27 +341,6 @@
             this.label3.Text = "Mã nhân viên:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 306);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 42);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Số điện thoại";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblPhoneNumber
-            // 
-            this.lblPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.Location = new System.Drawing.Point(170, 306);
-            this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(161, 42);
-            this.lblPhoneNumber.TabIndex = 19;
-            this.lblPhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -349,7 +349,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Information";
-            this.Text = "DoctorInformation";
+            this.Text = "THÔNG TIN CÁ NHÂN";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

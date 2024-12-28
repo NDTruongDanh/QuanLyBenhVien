@@ -14,57 +14,9 @@ namespace QuanLyBenhVien
         public WeeklyAssignmentForm()
         {
             InitializeComponent();
-            LoadDepartmentIDs();
-            LoadStaffID();
+            CommonControls.InitializeCmbStaffID(cmbStaffID);
             LoadData();
         }
-
-        private void LoadDepartmentIDs()
-        {
-            string query = "SELECT DepartmentID FROM DEPARTMENT";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        cmbDepartmentID.Items.Add(reader["DepartmentID"].ToString());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
-        private void LoadStaffID()
-        {
-            string query = "SELECT StaffID FROM STAFF";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        cmbStaffID.Items.Add(reader["StaffID"].ToString());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
 
         private void LoadData()
         {
@@ -90,7 +42,6 @@ namespace QuanLyBenhVien
         {
             return !string.IsNullOrEmpty(txtAssignmentID.Text) &&
                    !string.IsNullOrEmpty(cmbStaffID.Text) &&
-                   !string.IsNullOrEmpty(cmbDepartmentID.Text) &&
                    !string.IsNullOrEmpty(cmbShiftType.Text);
         }
 

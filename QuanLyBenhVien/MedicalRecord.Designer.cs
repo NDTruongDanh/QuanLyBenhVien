@@ -28,36 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvMedicalRecord = new System.Windows.Forms.DataGridView();
+            this.dgvMedicalRecord = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnRemove = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddOrUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
+            this.btnFind = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbDoctorID = new System.Windows.Forms.ComboBox();
+            this.dtpVisitDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.cmbDoctorID = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbPatientID = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtRecordID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtRecordID = new System.Windows.Forms.TextBox();
-            this.dtpVisitDate = new System.Windows.Forms.DateTimePicker();
-            this.cmbPatientID = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtTreatmentPlan = new System.Windows.Forms.TextBox();
+            this.txtTreatmentPlan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTestResults = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDiagnosis = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtTestResults = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtDiagnosis = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAddOrUpdate = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnFind = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicalRecord)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -68,8 +71,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Controls.Add(this.dgvMedicalRecord, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
@@ -84,20 +87,145 @@
             // dgvMedicalRecord
             // 
             this.dgvMedicalRecord.AllowUserToAddRows = false;
-            this.dgvMedicalRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMedicalRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvMedicalRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMedicalRecord.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvMedicalRecord.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedicalRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMedicalRecord.ColumnHeadersHeight = 4;
+            this.dgvMedicalRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMedicalRecord.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMedicalRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMedicalRecord.Location = new System.Drawing.Point(5, 281);
-            this.dgvMedicalRecord.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvMedicalRecord.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMedicalRecord.Location = new System.Drawing.Point(3, 279);
             this.dgvMedicalRecord.Name = "dgvMedicalRecord";
             this.dgvMedicalRecord.ReadOnly = true;
             this.dgvMedicalRecord.RowHeadersVisible = false;
             this.dgvMedicalRecord.RowHeadersWidth = 51;
             this.dgvMedicalRecord.RowTemplate.Height = 24;
-            this.dgvMedicalRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicalRecord.Size = new System.Drawing.Size(1121, 267);
-            this.dgvMedicalRecord.TabIndex = 0;
+            this.dgvMedicalRecord.Size = new System.Drawing.Size(1125, 271);
+            this.dgvMedicalRecord.TabIndex = 5;
+            this.dgvMedicalRecord.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMedicalRecord.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvMedicalRecord.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvMedicalRecord.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvMedicalRecord.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvMedicalRecord.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMedicalRecord.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMedicalRecord.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvMedicalRecord.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.dgvMedicalRecord.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMedicalRecord.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvMedicalRecord.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvMedicalRecord.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvMedicalRecord.ThemeStyle.ReadOnly = true;
+            this.dgvMedicalRecord.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMedicalRecord.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvMedicalRecord.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMedicalRecord.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvMedicalRecord.ThemeStyle.RowsStyle.Height = 24;
+            this.dgvMedicalRecord.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMedicalRecord.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvMedicalRecord.SelectionChanged += new System.EventHandler(this.dgvMedicalRecord_SelectionChanged);
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 4;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.Controls.Add(this.btnRemove, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnAddOrUpdate, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnRefresh, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnFind, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 225);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1123, 47);
+            this.tableLayoutPanel5.TabIndex = 4;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRemove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRemove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRemove.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.ForeColor = System.Drawing.Color.White;
+            this.btnRemove.Location = new System.Drawing.Point(843, 3);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(277, 41);
+            this.btnRemove.TabIndex = 7;
+            this.btnRemove.Text = "Xoá";
+            this.btnRemove.Click += new System.EventHandler(this.btnRemoveMedicalRecord_Click);
+            // 
+            // btnAddOrUpdate
+            // 
+            this.btnAddOrUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddOrUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddOrUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddOrUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddOrUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddOrUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddOrUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnAddOrUpdate.Location = new System.Drawing.Point(563, 3);
+            this.btnAddOrUpdate.Name = "btnAddOrUpdate";
+            this.btnAddOrUpdate.Size = new System.Drawing.Size(274, 41);
+            this.btnAddOrUpdate.TabIndex = 6;
+            this.btnAddOrUpdate.Text = "Thêm/Sửa";
+            this.btnAddOrUpdate.Click += new System.EventHandler(this.btnAddOrUpdateMedicalRecord_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(283, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(274, 41);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Làm mới";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnFind
+            // 
+            this.btnFind.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnFind.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnFind.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnFind.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnFind.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.ForeColor = System.Drawing.Color.White;
+            this.btnFind.Location = new System.Drawing.Point(3, 3);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(274, 41);
+            this.btnFind.TabIndex = 4;
+            this.btnFind.Text = "Tìm";
+            this.btnFind.Click += new System.EventHandler(this.btnFindMedicalRecord_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -124,14 +252,14 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.dtpVisitDate, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.cmbDoctorID, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.cmbPatientID, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txtRecordID, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.label4, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label2, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtRecordID, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.dtpVisitDate, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.cmbPatientID, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 5);
@@ -140,25 +268,83 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(550, 201);
             this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // dtpVisitDate
+            // 
+            this.dtpVisitDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpVisitDate.Checked = true;
+            this.dtpVisitDate.FillColor = System.Drawing.Color.White;
+            this.dtpVisitDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpVisitDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpVisitDate.Location = new System.Drawing.Point(353, 25);
+            this.dtpVisitDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpVisitDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpVisitDate.Name = "dtpVisitDate";
+            this.dtpVisitDate.Size = new System.Drawing.Size(194, 49);
+            this.dtpVisitDate.TabIndex = 39;
+            this.dtpVisitDate.Value = new System.DateTime(2024, 12, 28, 12, 16, 11, 507);
             // 
             // cmbDoctorID
             // 
             this.cmbDoctorID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbDoctorID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbDoctorID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbDoctorID.FormattingEnabled = true;
-            this.cmbDoctorID.Location = new System.Drawing.Point(355, 136);
-            this.cmbDoctorID.Margin = new System.Windows.Forms.Padding(5);
+            this.cmbDoctorID.BackColor = System.Drawing.Color.Transparent;
+            this.cmbDoctorID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbDoctorID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDoctorID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbDoctorID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbDoctorID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDoctorID.ForeColor = System.Drawing.Color.Black;
+            this.cmbDoctorID.ItemHeight = 30;
+            this.cmbDoctorID.Location = new System.Drawing.Point(353, 132);
             this.cmbDoctorID.Name = "cmbDoctorID";
-            this.cmbDoctorID.Size = new System.Drawing.Size(190, 28);
-            this.cmbDoctorID.TabIndex = 9;
+            this.cmbDoctorID.Size = new System.Drawing.Size(194, 36);
+            this.cmbDoctorID.TabIndex = 38;
+            // 
+            // cmbPatientID
+            // 
+            this.cmbPatientID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPatientID.BackColor = System.Drawing.Color.Transparent;
+            this.cmbPatientID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbPatientID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPatientID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbPatientID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbPatientID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPatientID.ForeColor = System.Drawing.Color.Black;
+            this.cmbPatientID.ItemHeight = 30;
+            this.cmbPatientID.Location = new System.Drawing.Point(88, 132);
+            this.cmbPatientID.Name = "cmbPatientID";
+            this.cmbPatientID.Size = new System.Drawing.Size(193, 36);
+            this.cmbPatientID.TabIndex = 37;
+            // 
+            // txtRecordID
+            // 
+            this.txtRecordID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRecordID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRecordID.DefaultText = "";
+            this.txtRecordID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRecordID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRecordID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRecordID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRecordID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRecordID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRecordID.ForeColor = System.Drawing.Color.Black;
+            this.txtRecordID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRecordID.Location = new System.Drawing.Point(89, 29);
+            this.txtRecordID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtRecordID.Name = "txtRecordID";
+            this.txtRecordID.PasswordChar = '\0';
+            this.txtRecordID.PlaceholderText = "";
+            this.txtRecordID.SelectedText = "";
+            this.txtRecordID.Size = new System.Drawing.Size(191, 42);
+            this.txtRecordID.TabIndex = 27;
             // 
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(289, 100);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
@@ -170,7 +356,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(5, 100);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
@@ -182,7 +368,7 @@
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(289, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
@@ -194,7 +380,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
@@ -203,49 +389,16 @@
             this.label1.Text = "Mã hồ sơ bệnh án";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtRecordID
-            // 
-            this.txtRecordID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRecordID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecordID.Location = new System.Drawing.Point(90, 35);
-            this.txtRecordID.Margin = new System.Windows.Forms.Padding(5);
-            this.txtRecordID.Name = "txtRecordID";
-            this.txtRecordID.Size = new System.Drawing.Size(189, 30);
-            this.txtRecordID.TabIndex = 1;
-            // 
-            // dtpVisitDate
-            // 
-            this.dtpVisitDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpVisitDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpVisitDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpVisitDate.Location = new System.Drawing.Point(355, 36);
-            this.dtpVisitDate.Margin = new System.Windows.Forms.Padding(5);
-            this.dtpVisitDate.Name = "dtpVisitDate";
-            this.dtpVisitDate.Size = new System.Drawing.Size(190, 27);
-            this.dtpVisitDate.TabIndex = 3;
-            // 
-            // cmbPatientID
-            // 
-            this.cmbPatientID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbPatientID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbPatientID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbPatientID.FormattingEnabled = true;
-            this.cmbPatientID.Location = new System.Drawing.Point(90, 136);
-            this.cmbPatientID.Margin = new System.Windows.Forms.Padding(5);
-            this.cmbPatientID.Name = "cmbPatientID";
-            this.cmbPatientID.Size = new System.Drawing.Size(189, 28);
-            this.cmbPatientID.TabIndex = 8;
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.txtTreatmentPlan, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label7, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.txtTestResults, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtDiagnosis, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label7, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(565, 5);
@@ -261,19 +414,79 @@
             // txtTreatmentPlan
             // 
             this.txtTreatmentPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTreatmentPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTreatmentPlan.Location = new System.Drawing.Point(107, 139);
-            this.txtTreatmentPlan.Margin = new System.Windows.Forms.Padding(5);
+            this.txtTreatmentPlan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTreatmentPlan.DefaultText = "";
+            this.txtTreatmentPlan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTreatmentPlan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTreatmentPlan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTreatmentPlan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTreatmentPlan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTreatmentPlan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTreatmentPlan.ForeColor = System.Drawing.Color.Black;
+            this.txtTreatmentPlan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTreatmentPlan.Location = new System.Drawing.Point(106, 146);
+            this.txtTreatmentPlan.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTreatmentPlan.Multiline = true;
             this.txtTreatmentPlan.Name = "txtTreatmentPlan";
+            this.txtTreatmentPlan.PasswordChar = '\0';
+            this.txtTreatmentPlan.PlaceholderText = "";
             this.txtTreatmentPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTreatmentPlan.Size = new System.Drawing.Size(439, 57);
-            this.txtTreatmentPlan.TabIndex = 8;
+            this.txtTreatmentPlan.SelectedText = "";
+            this.txtTreatmentPlan.Size = new System.Drawing.Size(441, 42);
+            this.txtTreatmentPlan.TabIndex = 30;
+            // 
+            // txtTestResults
+            // 
+            this.txtTestResults.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTestResults.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTestResults.DefaultText = "";
+            this.txtTestResults.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTestResults.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTestResults.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTestResults.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTestResults.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTestResults.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTestResults.ForeColor = System.Drawing.Color.Black;
+            this.txtTestResults.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTestResults.Location = new System.Drawing.Point(106, 79);
+            this.txtTestResults.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtTestResults.Multiline = true;
+            this.txtTestResults.Name = "txtTestResults";
+            this.txtTestResults.PasswordChar = '\0';
+            this.txtTestResults.PlaceholderText = "";
+            this.txtTestResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtTestResults.SelectedText = "";
+            this.txtTestResults.Size = new System.Drawing.Size(441, 42);
+            this.txtTestResults.TabIndex = 29;
+            // 
+            // txtDiagnosis
+            // 
+            this.txtDiagnosis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDiagnosis.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiagnosis.DefaultText = "";
+            this.txtDiagnosis.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDiagnosis.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDiagnosis.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiagnosis.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiagnosis.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiagnosis.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiagnosis.ForeColor = System.Drawing.Color.Black;
+            this.txtDiagnosis.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiagnosis.Location = new System.Drawing.Point(106, 12);
+            this.txtDiagnosis.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtDiagnosis.Multiline = true;
+            this.txtDiagnosis.Name = "txtDiagnosis";
+            this.txtDiagnosis.PasswordChar = '\0';
+            this.txtDiagnosis.PlaceholderText = "";
+            this.txtDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDiagnosis.SelectedText = "";
+            this.txtDiagnosis.Size = new System.Drawing.Size(441, 42);
+            this.txtDiagnosis.TabIndex = 28;
             // 
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(5, 134);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
@@ -282,22 +495,10 @@
             this.label7.Text = "Phương hướng chữa trị";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtTestResults
-            // 
-            this.txtTestResults.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTestResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTestResults.Location = new System.Drawing.Point(107, 72);
-            this.txtTestResults.Margin = new System.Windows.Forms.Padding(5);
-            this.txtTestResults.Multiline = true;
-            this.txtTestResults.Name = "txtTestResults";
-            this.txtTestResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTestResults.Size = new System.Drawing.Size(439, 56);
-            this.txtTestResults.TabIndex = 6;
-            // 
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(5, 67);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
@@ -306,22 +507,10 @@
             this.label6.Text = "Kết quả kiểm tra";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtDiagnosis
-            // 
-            this.txtDiagnosis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDiagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiagnosis.Location = new System.Drawing.Point(107, 5);
-            this.txtDiagnosis.Margin = new System.Windows.Forms.Padding(5);
-            this.txtDiagnosis.Multiline = true;
-            this.txtDiagnosis.Name = "txtDiagnosis";
-            this.txtDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDiagnosis.Size = new System.Drawing.Size(439, 56);
-            this.txtDiagnosis.TabIndex = 4;
-            // 
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(5, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
@@ -329,79 +518,6 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Chuẩn đoán";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 4;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.Controls.Add(this.btnDelete, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(this.btnAddOrUpdate, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.btnRefresh, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.btnFind, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 225);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1123, 47);
-            this.tableLayoutPanel5.TabIndex = 2;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDelete.Location = new System.Drawing.Point(846, 6);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(271, 35);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "Xoá";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnRemoveMedicalRecord_Click);
-            // 
-            // btnAddOrUpdate
-            // 
-            this.btnAddOrUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddOrUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAddOrUpdate.Location = new System.Drawing.Point(566, 6);
-            this.btnAddOrUpdate.Margin = new System.Windows.Forms.Padding(6);
-            this.btnAddOrUpdate.Name = "btnAddOrUpdate";
-            this.btnAddOrUpdate.Size = new System.Drawing.Size(268, 35);
-            this.btnAddOrUpdate.TabIndex = 7;
-            this.btnAddOrUpdate.Text = "Thêm/Sửa";
-            this.btnAddOrUpdate.UseVisualStyleBackColor = true;
-            this.btnAddOrUpdate.Click += new System.EventHandler(this.btnAddOrUpdateMedicalRecord_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnRefresh.Location = new System.Drawing.Point(286, 6);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(6);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(268, 35);
-            this.btnRefresh.TabIndex = 6;
-            this.btnRefresh.Text = "Làm mới";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnFind
-            // 
-            this.btnFind.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnFind.Location = new System.Drawing.Point(6, 6);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(6);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(268, 35);
-            this.btnFind.TabIndex = 5;
-            this.btnFind.Text = "Tìm";
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.btnFindMedicalRecord_Click);
             // 
             // MedicalRecord
             // 
@@ -415,12 +531,10 @@
             this.Text = "HỒ SƠ BỆNH ÁN";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicalRecord)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -428,7 +542,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dgvMedicalRecord;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label1;
@@ -436,20 +549,21 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtRecordID;
-        private System.Windows.Forms.DateTimePicker dtpVisitDate;
-        private System.Windows.Forms.TextBox txtTreatmentPlan;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtTestResults;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtDiagnosis;
         private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2TextBox txtRecordID;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbDoctorID;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbPatientID;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpVisitDate;
+        private Guna.UI2.WinForms.Guna2TextBox txtTreatmentPlan;
+        private Guna.UI2.WinForms.Guna2TextBox txtTestResults;
+        private Guna.UI2.WinForms.Guna2TextBox txtDiagnosis;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAddOrUpdate;
-        private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnFind;
-        private System.Windows.Forms.ComboBox cmbPatientID;
-        private System.Windows.Forms.ComboBox cmbDoctorID;
+        private Guna.UI2.WinForms.Guna2Button btnRemove;
+        private Guna.UI2.WinForms.Guna2Button btnAddOrUpdate;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
+        private Guna.UI2.WinForms.Guna2Button btnFind;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvMedicalRecord;
     }
 }

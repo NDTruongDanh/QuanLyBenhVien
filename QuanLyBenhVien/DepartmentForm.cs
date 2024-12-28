@@ -22,7 +22,7 @@ namespace QuanLyBenhVien
         private void DepartmentForm_Load(object sender, EventArgs e)
         {
             LoadData();
-            InitializeCmbHeadDepartmentID();
+            CommonControls.InitializeCmbStaffID(cmbHeadDepartmentID);
         }
 
         private void LoadData()
@@ -42,33 +42,6 @@ namespace QuanLyBenhVien
                 {
                     MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}");
                 }
-            }
-        }
-
-        private void InitializeCmbHeadDepartmentID()
-        {
-            string query = "SELECT StaffID FROM STAFF";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                cmbHeadDepartmentID.Items.Add(reader["StaffID"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -214,5 +187,6 @@ namespace QuanLyBenhVien
                 txtLocation.Text = selectedRow.Cells[5].Value.ToString();
             }
         }
+
     }
 }

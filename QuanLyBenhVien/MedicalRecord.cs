@@ -20,8 +20,8 @@ namespace QuanLyBenhVien
         {
             InitializeComponent();
             LoadMedicalRecords();
-            InitializeCmbPatientID();
-            InitializeCmbDoctorID();    
+            CommonControls.InitializeCmbPatientID(cmbPatientID);
+            CommonControls.InitializeCmbDoctorID(cmbDoctorID);    
         }
 
         private void LoadMedicalRecords()
@@ -44,59 +44,6 @@ namespace QuanLyBenhVien
             }
         }
 
-        private void InitializeCmbPatientID()
-        {
-            string query = "SELECT PatientID FROM PATIENT";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                cmbPatientID.Items.Add(reader["PatientID"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
-        private void InitializeCmbDoctorID()
-        {
-            string query = "SELECT StaffID FROM STAFF WHERE TypeOfStaff LIKE N'%Bác sĩ%'";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                cmbDoctorID.Items.Add(reader["StaffID"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
         private bool IsValidMedicalRecord()
         {
             if (string.IsNullOrEmpty(txtRecordID.Text) ||
