@@ -226,50 +226,50 @@ SELECT st.StaffID, FullName , ShiftType, WeekStartDate, WeekEndDate
 
 							   SELECT * FROM WEEKLYASSIGNMENT
 							   WHERE DepartmentID = 'DP0001'
-
+							  
 -- Example data for NURSECARE table
 INSERT INTO NURSECARE (CareID, NurseID, PatientID, RoomID, CareDateTime, CareType, Notes)
 VALUES
-('C00001', 'ST0009', 'PA0001', 'RO0001', '2024-12-20 09:00:00', 'Medication Administration', 'Administered antibiotics as prescribed.'),
-('C00002', 'ST0010', 'PA0002', 'RO0002', '2024-12-20 11:30:00', 'Wound Dressing', 'Changed dressing and cleaned wound. Healing well.'),
-('C00003', 'ST0011', 'PA0003', 'RO0003', '2024-12-20 14:00:00', 'Vital Signs Check', 'Blood pressure: 120/80, Temperature: 37°C.'),
-('C00004', 'ST0029', 'PA0004', 'RO0004', '2024-12-21 08:00:00', 'Patient Hygiene', 'Assisted patient with morning hygiene routine.'),
-('C00005', 'ST0031', 'PA0005', 'RO0005', '2024-12-21 10:15:00', 'IV Drip Monitoring', 'Checked IV line and adjusted flow rate as needed.'),
-('C00006', 'ST0039', 'PA0006', 'RO0006', '2024-12-21 13:30:00', 'Nutrition Assistance', 'Helped patient with lunch and ensured adequate hydration.'),
-('C00007', 'ST0042', 'PA0007', 'RO0007', '2024-12-21 15:45:00', 'Patient Education', 'Explained post-discharge care and medication regimen.'),
-('C00008', 'ST0047', 'PA0008', 'RO0008', '2024-12-22 09:00:00', 'Pain Management', 'Provided prescribed painkillers after confirming with the doctor.'),
-('C00009', 'ST0050', 'PA0009', 'RO0009', '2024-12-22 11:00:00', 'Patient Monitoring', 'Monitored patient’s vitals during post-surgery recovery.'),
-('C00010', 'ST0055', 'PA0010', 'RO0010', '2024-12-22 14:30:00', 'Emergency Response', 'Responded to a sudden drop in blood pressure, stabilized the patient.'),
-('C00011', 'ST0057', 'PA0011', 'RO0011', '2024-12-23 08:30:00', 'Medication Administration', 'Administered pain relief medication.'),
-('C00012', 'ST0009', 'PA0012', 'RO0012', '2024-12-23 10:45:00', 'Wound Dressing', 'Dressing changed, wound shows signs of improvement.'),
-('C00013', 'ST0010', 'PA0013', 'RO0013', '2024-12-23 13:00:00', 'Vital Signs Check', 'All vitals stable, patient feeling better.'),
-('C00014', 'ST0011', 'PA0014', 'RO0014', '2024-12-23 15:15:00', 'Patient Hygiene', 'Assisted with hygiene routine, patient comfortable.'),
-('C00015', 'ST0029', 'PA0015', 'RO0015', '2024-12-24 09:15:00', 'IV Drip Monitoring', 'IV line functioning properly.'),
-('C00016', 'ST0031', 'PA0016', 'RO0016', '2024-12-24 11:30:00', 'Nutrition Assistance', 'Encouraged patient to consume adequate nutrition.'),
-('C00017', 'ST0039', 'PA0017', 'RO0017', '2024-12-24 13:45:00', 'Patient Education', 'Discussed recovery goals with the patient.'),
-('C00018', 'ST0042', 'PA0018', 'RO0018', '2024-12-24 16:00:00', 'Pain Management', 'Administered prescribed pain medication.'),
-('C00019', 'ST0047', 'PA0019', 'RO0019', '2024-12-25 08:00:00', 'Medication Administration', 'Ensured timely administration of medicine.'),
-('C00020', 'ST0050', 'PA0020', 'RO0020', '2024-12-25 10:15:00', 'Wound Dressing', 'Cleaned and dressed surgical wound.'),
-('C00021', 'ST0055', 'PA0021', 'RO0021', '2024-12-25 12:30:00', 'Vital Signs Check', 'Vital signs within normal range.'),
-('C00022', 'ST0057', 'PA0022', 'RO0022', '2024-12-25 14:45:00', 'Patient Hygiene', 'Assisted patient with evening hygiene.'),
-('C00023', 'ST0009', 'PA0023', 'RO0023', '2024-12-26 09:00:00', 'IV Drip Monitoring', 'Ensured IV fluid was administered as prescribed.'),
-('C00024', 'ST0010', 'PA0024', 'RO0024', '2024-12-26 11:30:00', 'Nutrition Assistance', 'Helped patient with meals.'),
-('C00025', 'ST0011', 'PA0025', 'RO0025', '2024-12-26 13:45:00', 'Patient Education', 'Explained treatment plan to patient and family.'),
-('C00026', 'ST0029', 'PA0026', 'RO0026', '2024-12-26 16:00:00', 'Pain Management', 'Pain relief provided per doctor’s instructions.'),
-('C00027', 'ST0031', 'PA0027', 'RO0027', '2024-12-27 08:30:00', 'Medication Administration', 'Antibiotics administered as prescribed.'),
-('C00028', 'ST0039', 'PA0028', 'RO0028', '2024-12-27 10:45:00', 'Wound Dressing', 'Checked and cleaned dressing, patient improving.'),
-('C00029', 'ST0042', 'PA0029', 'RO0029', '2024-12-27 13:00:00', 'Vital Signs Check', 'Patient’s vitals stable.'),
-('C00030', 'ST0047', 'PA0030', 'RO0030', '2024-12-27 15:15:00', 'Patient Hygiene', 'Morning hygiene routine completed.'),
-('C00031', 'ST0050', 'PA0031', 'RO0001', '2024-12-28 09:00:00', 'IV Drip Monitoring', 'Ensured proper flow of IV fluids.'),
-('C00032', 'ST0055', 'PA0032', 'RO0002', '2024-12-28 11:15:00', 'Nutrition Assistance', 'Encouraged sufficient fluid intake.'),
-('C00033', 'ST0057', 'PA0033', 'RO0003', '2024-12-28 13:30:00', 'Patient Education', 'Discussed daily health goals.'),
-('C00034', 'ST0009', 'PA0034', 'RO0004', '2024-12-28 15:45:00', 'Pain Management', 'Pain medication given and documented.'),
-('C00035', 'ST0010', 'PA0035', 'RO0005', '2024-12-29 08:00:00', 'Medication Administration', 'Routine medications provided.'),
-('C00036', 'ST0011', 'PA0036', 'RO0006', '2024-12-29 10:30:00', 'Wound Dressing', 'Wound healing as expected.'),
-('C00037', 'ST0029', 'PA0037', 'RO0007', '2024-12-29 12:45:00', 'Vital Signs Check', 'Patient stable, no abnormalities detected.'),
-('C00038', 'ST0031', 'PA0038', 'RO0008', '2024-12-29 14:15:00', 'Patient Hygiene', 'Patient assisted with hygiene routine.'),
-('C00039', 'ST0039', 'PA0039', 'RO0009', '2024-12-30 09:00:00', 'IV Drip Monitoring', 'Checked IV line and patient comfort.'),
-('C00040', 'ST0042', 'PA0040', 'RO0010', '2024-12-30 11:30:00', 'Nutrition Assistance', 'Ensured balanced nutrition intake.');
+('C00001', 'ST0009', 'PA0001', 'RO0001', '2024-12-20 09:00:00', N'Cấp phát thuốc', N'Đã cấp phát kháng sinh theo chỉ định.'),
+('C00002', 'ST0010', 'PA0002', 'RO0002', '2024-12-20 11:30:00', N'Thay băng vết thương', N'Đã thay băng và làm sạch vết thương. Vết thương đang hồi phục tốt.'),
+('C00003', 'ST0011', 'PA0003', 'RO0003', '2024-12-20 14:00:00', N'Kiểm tra dấu hiệu sinh tồn', N'Huyết áp: 120/80, Nhiệt độ: 37°C.'),
+('C00004', 'ST0029', 'PA0004', 'RO0004', '2024-12-21 08:00:00', N'Vệ sinh bệnh nhân', N'Hỗ trợ bệnh nhân trong việc vệ sinh buổi sáng.'),
+('C00005', 'ST0031', 'PA0005', 'RO0005', '2024-12-21 10:15:00', N'Theo dõi truyền dịch', N'Kiểm tra đường truyền IV và điều chỉnh tốc độ truyền dịch khi cần.'),
+('C00006', 'ST0039', 'PA0006', 'RO0006', '2024-12-21 13:30:00', N'Hỗ trợ dinh dưỡng', N'Hỗ trợ bệnh nhân trong bữa ăn trưa và đảm bảo đủ nước.'),
+('C00007', 'ST0042', 'PA0007', 'RO0007', '2024-12-21 15:45:00', N'Giáo dục bệnh nhân', N'Giải thích các bước chăm sóc sau khi xuất viện và chế độ thuốc.'),
+('C00008', 'ST0047', 'PA0008', 'RO0008', '2024-12-22 09:00:00', N'Quản lý đau', N'Đã cấp phát thuốc giảm đau theo chỉ định của bác sĩ.'),
+('C00009', 'ST0050', 'PA0009', 'RO0009', '2024-12-22 11:00:00', N'Theo dõi bệnh nhân', N'Theo dõi các dấu hiệu sinh tồn của bệnh nhân sau khi phẫu thuật.'),
+('C00010', 'ST0055', 'PA0010', 'RO0010', '2024-12-22 14:30:00', N'Phản ứng cấp cứu', N'Đã phản ứng kịp thời với sự giảm huyết áp đột ngột và ổn định bệnh nhân.'),
+('C00011', 'ST0057', 'PA0011', 'RO0011', '2024-12-23 08:30:00', N'Cấp phát thuốc', N'Đã cấp phát thuốc giảm đau.'),
+('C00012', 'ST0009', 'PA0012', 'RO0012', '2024-12-23 10:45:00', N'Thay băng vết thương', N'Thay băng, vết thương có dấu hiệu phục hồi.'),
+('C00013', 'ST0010', 'PA0013', 'RO0013', '2024-12-23 13:00:00', N'Kiểm tra dấu hiệu sinh tồn', N'Tất cả dấu hiệu sinh tồn ổn định, bệnh nhân cảm thấy tốt hơn.'),
+('C00014', 'ST0011', 'PA0014', 'RO0014', '2024-12-23 15:15:00', N'Vệ sinh bệnh nhân', N'Hỗ trợ bệnh nhân trong việc vệ sinh, bệnh nhân cảm thấy thoải mái.'),
+('C00015', 'ST0029', 'PA0015', 'RO0015', '2024-12-24 09:15:00', N'Theo dõi truyền dịch', N'Đường truyền IV hoạt động tốt.'),
+('C00016', 'ST0031', 'PA0016', 'RO0016', '2024-12-24 11:30:00', N'Hỗ trợ dinh dưỡng', N'Khuyến khích bệnh nhân ăn uống đủ chất dinh dưỡng.'),
+('C00017', 'ST0039', 'PA0017', 'RO0017', '2024-12-24 13:45:00', N'Giáo dục bệnh nhân', N'Thảo luận về các mục tiêu phục hồi của bệnh nhân.'),
+('C00018', 'ST0042', 'PA0018', 'RO0018', '2024-12-24 16:00:00', N'Quản lý đau', N'Đã cấp phát thuốc giảm đau theo chỉ định.'),
+('C00019', 'ST0047', 'PA0019', 'RO0019', '2024-12-25 08:00:00', N'Cấp phát thuốc', N'Đảm bảo cấp phát thuốc đúng giờ.'),
+('C00020', 'ST0050', 'PA0020', 'RO0020', '2024-12-25 10:15:00', N'Thay băng vết thương', N'Làm sạch và thay băng vết thương sau phẫu thuật.'),
+('C00021', 'ST0055', 'PA0021', 'RO0021', '2024-12-25 12:30:00', N'Kiểm tra dấu hiệu sinh tồn', N'Dấu hiệu sinh tồn trong phạm vi bình thường.'),
+('C00022', 'ST0057', 'PA0022', 'RO0022', '2024-12-25 14:45:00', N'Vệ sinh bệnh nhân', N'Hỗ trợ bệnh nhân trong việc vệ sinh buổi tối.'),
+('C00023', 'ST0009', 'PA0023', 'RO0023', '2024-12-26 09:00:00', N'Theo dõi truyền dịch', N'Đảm bảo dịch truyền được cấp phát đúng theo chỉ định.'),
+('C00024', 'ST0010', 'PA0024', 'RO0024', '2024-12-26 11:30:00', N'Hỗ trợ dinh dưỡng', N'Giúp bệnh nhân trong bữa ăn.'),
+('C00025', 'ST0011', 'PA0025', 'RO0025', '2024-12-26 13:45:00', N'Giáo dục bệnh nhân', N'Giải thích kế hoạch điều trị cho bệnh nhân và gia đình.'),
+('C00026', 'ST0029', 'PA0026', 'RO0026', '2024-12-26 16:00:00', N'Quản lý đau', N'Đã cấp thuốc giảm đau theo chỉ định của bác sĩ.'),
+('C00027', 'ST0031', 'PA0027', 'RO0027', '2024-12-27 08:30:00', N'Cấp phát thuốc', N'Đã cấp kháng sinh theo chỉ định.'),
+('C00028', 'ST0039', 'PA0028', 'RO0028', '2024-12-27 10:45:00', N'Thay băng vết thương', N'Kiểm tra và làm sạch băng vết thương, bệnh nhân đang hồi phục.'),
+('C00029', 'ST0042', 'PA0029', 'RO0029', '2024-12-27 13:00:00', N'Kiểm tra dấu hiệu sinh tồn', N'Dấu hiệu sinh tồn của bệnh nhân ổn định.'),
+('C00030', 'ST0047', 'PA0030', 'RO0030', '2024-12-27 15:15:00', N'Vệ sinh bệnh nhân', N'Hoàn thành công tác vệ sinh buổi sáng.'),
+('C00031', 'ST0050', 'PA0031', 'RO0001', '2024-12-28 09:00:00', N'Theo dõi truyền dịch', N'Đảm bảo dòng chảy dịch truyền đúng cách.'),
+('C00032', 'ST0055', 'PA0032', 'RO0002', '2024-12-28 11:15:00', N'Hỗ trợ dinh dưỡng', N'Khuyến khích bệnh nhân uống đủ nước.'),
+('C00033', 'ST0057', 'PA0033', 'RO0003', '2024-12-28 13:30:00', N'Giáo dục bệnh nhân', N'Thảo luận về mục tiêu sức khỏe hàng ngày.'),
+('C00034', 'ST0009', 'PA0034', 'RO0004', '2024-12-28 15:45:00', N'Quản lý đau', N'Cấp phát thuốc giảm đau và ghi chép đầy đủ.'),
+('C00035', 'ST0010', 'PA0035', 'RO0005', '2024-12-29 08:00:00', N'Cấp phát thuốc', N'Cung cấp thuốc theo lịch trình.'),
+('C00036', 'ST0011', 'PA0036', 'RO0006', '2024-12-29 10:30:00', N'Thay băng vết thương', N'Vết thương đang hồi phục như mong đợi.'),
+('C00037', 'ST0029', 'PA0037', 'RO0007', '2024-12-29 12:45:00', N'Kiểm tra dấu hiệu sinh tồn', N'Bệnh nhân ổn định, không có bất thường.'),
+('C00038', 'ST0031', 'PA0038', 'RO0008', '2024-12-29 14:15:00', N'Vệ sinh bệnh nhân', N'Hỗ trợ bệnh nhân trong việc vệ sinh buổi sáng.'),
+('C00039', 'ST0039', 'PA0039', 'RO0009', '2024-12-30 09:00:00', N'Theo dõi truyền dịch', N'Kiểm tra đường truyền IV và sự thoải mái của bệnh nhân.'),
+('C00040', 'ST0042', 'PA0040', 'RO0010', '2024-12-30 11:30:00', N'Hỗ trợ dinh dưỡng', N'Đảm bảo bệnh nhân tiêu thụ đầy đủ dinh dưỡng.');
 
 
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0000','1') ---ADMIN
@@ -703,6 +703,50 @@ VALUES
 ('RO0048', 'KTK', 8, N'Khám ngoại trú'),
 ('RO0049', 'KDL', 6, N'Chăm sóc dài hạn'),
 ('RO0050', 'KN', 4, N'Sản khoa');
+
+
+CREATE TABLE HOSPITALIZATION
+(
+    HospitalizationID CHAR(6) PRIMARY KEY,
+    PatientID CHAR(6),
+    RoomID CHAR(6),
+    AdmissionDate DATETIME,
+    DischargeDate DATETIME
+);
+
+INSERT INTO HOSPITALIZATION (HospitalizationID, PatientID, RoomID, AdmissionDate, DischargeDate)
+VALUES
+('H00001', 'PA0001', 'RO0001', '2024-12-01 10:00:00', '2024-12-10 14:00:00'),
+('H00002', 'PA0002', 'RO0002', '2024-12-02 11:30:00', '2024-12-11 15:30:00'),
+('H00003', 'PA0003', 'RO0003', '2024-12-03 12:00:00', '2024-12-12 16:00:00'),
+('H00004', 'PA0004', 'RO0004', '2024-12-04 13:00:00', '2024-12-13 17:00:00'),
+('H00005', 'PA0005', 'RO0005', '2024-12-05 14:15:00', '2024-12-14 18:00:00'),
+('H00006', 'PA0006', 'RO0006', '2024-12-06 15:30:00', '2024-12-15 19:00:00'),
+('H00007', 'PA0007', 'RO0007', '2024-12-07 16:00:00', '2024-12-16 20:00:00'),
+('H00008', 'PA0008', 'RO0008', '2024-12-08 17:15:00', '2024-12-17 21:00:00'),
+('H00009', 'PA0009', 'RO0009', '2024-12-09 18:30:00', '2024-12-18 22:00:00'),
+('H00010', 'PA0010', 'RO0010', '2024-12-10 19:00:00', '2024-12-19 23:00:00'),
+('H00011', 'PA0011', 'RO0011', '2024-12-11 09:00:00', '2024-12-20 10:00:00'),
+('H00012', 'PA0012', 'RO0012', '2024-12-12 10:30:00', '2024-12-21 11:30:00'),
+('H00013', 'PA0013', 'RO0013', '2024-12-13 11:00:00', '2024-12-22 12:30:00'),
+('H00014', 'PA0014', 'RO0014', '2024-12-14 12:15:00', '2024-12-23 13:00:00'),
+('H00015', 'PA0015', 'RO0015', '2024-12-15 13:30:00', '2024-12-24 14:30:00'),
+('H00016', 'PA0016', 'RO0016', '2024-12-16 14:45:00', '2024-12-25 15:30:00'),
+('H00017', 'PA0017', 'RO0017', '2024-12-17 15:00:00', '2024-12-26 16:00:00'),
+('H00018', 'PA0018', 'RO0018', '2024-12-18 16:30:00', '2024-12-27 17:30:00'),
+('H00019', 'PA0019', 'RO0019', '2024-12-19 17:00:00', '2024-12-28 18:30:00'),
+('H00020', 'PA0020', 'RO0020', '2024-12-20 18:15:00', '2024-12-29 19:00:00'),
+('H00021', 'PA0021', 'RO0021', '2024-12-21 19:30:00', '2024-12-30 20:00:00'),
+('H00022', 'PA0022', 'RO0022', '2024-12-22 20:00:00', '2024-12-31 21:30:00'),
+('H00023', 'PA0023', 'RO0023', '2024-12-23 21:30:00', '2025-01-01 22:30:00'),
+('H00024', 'PA0024', 'RO0024', '2024-12-24 22:00:00', '2025-01-02 23:00:00'),
+('H00025', 'PA0025', 'RO0025', '2024-12-25 23:00:00', '2025-01-03 08:00:00'),
+('H00026', 'PA0026', 'RO0026', '2024-12-26 08:30:00', '2025-01-04 09:00:00'),
+('H00027', 'PA0027', 'RO0027', '2024-12-27 09:00:00', '2025-01-05 10:00:00'),
+('H00028', 'PA0028', 'RO0028', '2024-12-28 10:30:00', '2025-01-06 11:00:00'),
+('H00029', 'PA0029', 'RO0029', '2024-12-29 11:00:00', '2025-01-07 12:00:00'),
+('H00030', 'PA0030', 'RO0030', '2024-12-30 12:00:00', '2025-01-08 13:00:00');
+
 
 
 
