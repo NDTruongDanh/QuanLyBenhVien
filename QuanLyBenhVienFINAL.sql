@@ -111,7 +111,6 @@ CREATE TABLE ROOM (
 CREATE TABLE WEEKLYASSIGNMENT (
     AssignmentID CHAR(6) PRIMARY KEY,
     StaffID CHAR(6),
-    DepartmentID VARCHAR(6),
     AssignmentDate DATE,
     ShiftType NVARCHAR(50)  -- Loại ca: Sáng, Chiều, Tối
 )

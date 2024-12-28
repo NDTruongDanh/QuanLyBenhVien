@@ -7,247 +7,253 @@ using System.Windows.Forms;
 
 namespace QuanLyBenhVien.Classes
 {
+
     public class ShiftScheduler
     {
-        private readonly string connStr = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
+        private readonly string connectionString = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
+        private readonly string[] _shiftTypes = new[] { "Sáng", "Chiều", "Tối" };
+        private readonly int _staffPerShift = 5;
+        private const int BATCH_SIZE = 50;
 
-        private bool IsScheduleExist(DateTime startDate, DateTime endDate)
+        // Class để lưu thông tin assignment tạm thời
+        private class AssignmentData
         {
-            using (var connection = new SqlConnection(connStr))
-            {
-                connection.Open();
-                string query = @"
-            SELECT COUNT(*) 
-            FROM WEEKLYASSIGNMENT 
-            WHERE WeekStartDate >= @StartDate AND WeekEndDate <= @EndDate";
-
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@StartDate", startDate);
-                    command.Parameters.AddWithValue("@EndDate", endDate);
-
-                    int count = (int)command.ExecuteScalar();
-                    return count > 0;
-                }
-            }
+            public string AssignmentID { get; set; }
+            public string StaffID { get; set; }
+            public DateTime AssignmentDate { get; set; }
+            public string ShiftType { get; set; }
         }
 
-        private DateTime endDate;
-        private Dictionary<string, List<string>> GetPreviousWeekSchedule(DateTime startDate)
+        // Lấy danh sách tất cả nhân viên
+        private List<string> GetAllStaffIds()
         {
-            var previousWeekSchedule = new Dictionary<string, List<string>>();
-            DateTime previousWeekStart = startDate.AddDays(-7);
-            DateTime previousWeekEnd = previousWeekStart.AddDays(6);
-
-            using (var connection = new SqlConnection(connStr))
+            List<string> staffIds = new List<string>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                connection.Open();
-                string query = @"
-        SELECT StaffID, ShiftType 
-        FROM WEEKLYASSIGNMENT 
-        WHERE WeekStartDate >= @PreviousWeekStart AND WeekEndDate <= @PreviousWeekEnd";
-
-                using (var command = new SqlCommand(query, connection))
+                string query = "SELECT StaffID FROM STAFF WITH (NOLOCK)";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    command.Parameters.AddWithValue("@PreviousWeekStart", previousWeekStart);
-                    command.Parameters.AddWithValue("@PreviousWeekEnd", previousWeekEnd);
-
-                    using (var reader = command.ExecuteReader())
+                    cmd.CommandTimeout = 180;
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            string staffId = reader["StaffID"].ToString();
-                            string shiftType = reader["ShiftType"].ToString();
-
-                            if (!previousWeekSchedule.ContainsKey(staffId))
-                            {
-                                previousWeekSchedule[staffId] = new List<string>();
-                            }
-                            previousWeekSchedule[staffId].Add(shiftType);
+                            staffIds.Add(reader["StaffID"].ToString().Trim());
                         }
                     }
                 }
             }
-
-            return previousWeekSchedule;
+            return staffIds;
         }
 
-        public void AssignShifts(DateTime startDate)
+        // Kiểm tra xem ngày đã có lịch chưa
+        private bool IsScheduleExist(DateTime date)
         {
-            endDate = startDate.StartOfWeek(DayOfWeek.Monday).AddDays(6);
-
-            if (IsScheduleExist(startDate, endDate))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                return;
+                string query = "SELECT TOP 1 1 FROM WEEKLYASSIGNMENT WITH (NOLOCK) WHERE CONVERT(DATE, AssignmentDate) = @Date";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.CommandTimeout = 180;
+                    cmd.Parameters.AddWithValue("@Date", date.Date);
+                    conn.Open();
+                    return cmd.ExecuteScalar() != null;
+                }
             }
+        }
 
-            var staffList = GetStaffList();
-            var shifts = new[] { "Sáng", "Chiều", "Tối" };
-            int shiftIndex = 0;
-
-            // Lấy lịch trực tuần trước
-            var previousWeekSchedule = GetPreviousWeekSchedule(startDate);
-
-            var schedule = new List<(string StaffID, DateTime Date, string ShiftType)>();
-
-            foreach (var date in EachDay(startDate, endDate))
+        // Lấy danh sách nhân viên đã làm việc ngày hôm trước
+        private List<string> GetStaffWorkedPreviousDay(DateTime date)
+        {
+            List<string> staffIds = new List<string>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                var dailySchedule = new Dictionary<string, int>(); // StaffID -> số ca trong ngày
-                var shiftStaffCount = new Dictionary<string, int>(); // ShiftType -> số nhân viên trong ca
+                string query = @"SELECT DISTINCT StaffID 
+                           FROM WEEKLYASSIGNMENT WITH (NOLOCK)
+                           WHERE CONVERT(DATE, AssignmentDate) = @PreviousDate";
 
-                // Khởi tạo số nhân viên cho từng ca
-                foreach (var shift in shifts)
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    shiftStaffCount[shift] = 0;
-                }
-
-                foreach (var shift in shifts)
-                {
-                    while (shiftStaffCount[shift] < 5)
+                    cmd.CommandTimeout = 180;
+                    cmd.Parameters.AddWithValue("@PreviousDate", date.AddDays(-1).Date);
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        for (int attempt = 0; attempt < staffList.Count; attempt++)
+                        while (reader.Read())
                         {
-                            var staff = staffList[shiftIndex % staffList.Count];
-                            shiftIndex++;
-
-                            if (!dailySchedule.ContainsKey(staff.StaffID))
-                            {
-                                dailySchedule[staff.StaffID] = 0;
-                            }
-
-                            // Kiểm tra điều kiện phân ca
-                            bool isValidShift =
-                                (dailySchedule[staff.StaffID] < 2 || shiftStaffCount[shift] >= 5) // Điều kiện số ca trong ngày
-                                && (!previousWeekSchedule.ContainsKey(staff.StaffID) ||
-                                    !previousWeekSchedule[staff.StaffID].Contains(shift)); // Không trùng với tuần trước
-
-                            if (isValidShift)
-                            {
-                                schedule.Add((staff.StaffID, date, shift));
-                                dailySchedule[staff.StaffID]++;
-                                shiftStaffCount[shift]++;
-                                break;
-                            }
-                        }
-
-                        // Nếu đủ 5 nhân viên trong ca, thoát vòng lặp
-                        if (shiftStaffCount[shift] >= 5)
-                            break;
-                    }
-                }
-
-                // Đảm bảo nhân viên làm đủ 2 ca/ngày
-                foreach (var staff in staffList)
-                {
-                    if (dailySchedule.TryGetValue(staff.StaffID, out int shiftsAssigned) && shiftsAssigned < 2)
-                    {
-                        foreach (var shift in shifts)
-                        {
-                            if (shiftStaffCount[shift] < 5)
-                            {
-                                schedule.Add((staff.StaffID, date, shift));
-                                dailySchedule[staff.StaffID]++;
-                                shiftStaffCount[shift]++;
-                                if (dailySchedule[staff.StaffID] >= 2)
-                                    break;
-                            }
+                            staffIds.Add(reader["StaffID"].ToString().Trim());
                         }
                     }
                 }
             }
-
-            SaveScheduleToDatabase(schedule);
+            return staffIds;
         }
 
-        private List<Staff> GetStaffList()
+        // Tạo lịch cho một ngày
+        private List<AssignmentData> GenerateDailySchedule(DateTime date, List<string> allStaffIds)
         {
-            var staffList = new List<Staff>();
+            var assignments = new List<AssignmentData>();
+            var availableStaff = new List<string>(allStaffIds);
 
-            using (var connection = new SqlConnection(connStr))
+            // Loại bỏ nhân viên đã làm việc ngày hôm trước
+            var previousDayStaff = GetStaffWorkedPreviousDay(date);
+            foreach (var staff in previousDayStaff)
             {
-                connection.Open();
-                string query = "SELECT StaffID, FullName FROM STAFF";
-                using (var command = new SqlCommand(query, connection))
-                using (var reader = command.ExecuteReader())
+                availableStaff.Remove(staff);
+            }
+
+            // Nếu không đủ nhân viên, bổ sung thêm từ danh sách đã làm việc
+            int requiredStaff = _staffPerShift * _shiftTypes.Length;
+            if (availableStaff.Count < requiredStaff)
+            {
+                var additionalStaff = previousDayStaff
+                    .OrderBy(x => Guid.NewGuid())
+                    .Take(requiredStaff - availableStaff.Count);
+                availableStaff.AddRange(additionalStaff);
+            }
+
+            // Xáo trộn danh sách nhân viên
+            availableStaff = availableStaff.OrderBy(x => Guid.NewGuid()).ToList();
+
+            // Phân ca cho từng shift
+            var assignedStaffToday = new HashSet<string>();
+            foreach (var shift in _shiftTypes)
+            {
+                var staffForShift = availableStaff
+                    .Where(s => !assignedStaffToday.Contains(s) || assignedStaffToday.Count >= availableStaff.Count - _staffPerShift)
+                    .Take(_staffPerShift)
+                    .ToList();
+
+                foreach (var staffId in staffForShift)
                 {
-                    while (reader.Read())
+                    assignments.Add(new AssignmentData
                     {
-                        staffList.Add(new Staff
+                        AssignmentID = string.Empty, // Sẽ được gán khi lưu
+                        StaffID = staffId,
+                        AssignmentDate = date,
+                        ShiftType = shift
+                    });
+                    assignedStaffToday.Add(staffId);
+                }
+
+                // Cập nhật danh sách available
+                availableStaff = availableStaff.Except(staffForShift).ToList();
+            }
+
+            return assignments;
+        }
+
+        // Lưu lịch vào database
+        private void SaveAssignmentsBatch(List<AssignmentData> assignments)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlTransaction transaction = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        // Lấy ID cuối cùng để tạo ID mới
+                        string getLastIdQuery = @"SELECT ISNULL(MAX(CAST(SUBSTRING(AssignmentID, 3, LEN(AssignmentID) - 2) AS INT)), 0) 
+                                           FROM WEEKLYASSIGNMENT WITH (TABLOCKX)
+                                           WHERE AssignmentID LIKE 'WA%'";
+
+                        int startNumber;
+                        using (SqlCommand cmd = new SqlCommand(getLastIdQuery, conn, transaction))
                         {
-                            StaffID = reader["StaffID"].ToString(),
-                            FullName = reader["FullName"].ToString()
-                        });
+                            cmd.CommandTimeout = 180;
+                            startNumber = Convert.ToInt32(cmd.ExecuteScalar()) + 1;
+                        }
+
+                        // Gán ID cho tất cả assignments
+                        for (int i = 0; i < assignments.Count; i++)
+                        {
+                            assignments[i].AssignmentID = $"WA{(startNumber + i):D4}";
+                        }
+
+                        // Insert theo batch
+                        using (SqlCommand cmd = new SqlCommand())
+                        {
+                            cmd.Connection = conn;
+                            cmd.Transaction = transaction;
+                            cmd.CommandTimeout = 180;
+
+                            for (int i = 0; i < assignments.Count; i += BATCH_SIZE)
+                            {
+                                var batch = assignments.Skip(i).Take(BATCH_SIZE);
+                                var valueStrings = new List<string>();
+                                var parameters = new List<SqlParameter>();
+                                int paramCount = 0;
+
+                                foreach (var assignment in batch)
+                                {
+                                    valueStrings.Add($"(@id{paramCount}, @staff{paramCount}, @date{paramCount}, @shift{paramCount})");
+                                    parameters.Add(new SqlParameter($"@id{paramCount}", assignment.AssignmentID));
+                                    parameters.Add(new SqlParameter($"@staff{paramCount}", assignment.StaffID));
+                                    parameters.Add(new SqlParameter($"@date{paramCount}", assignment.AssignmentDate));
+                                    parameters.Add(new SqlParameter($"@shift{paramCount}", assignment.ShiftType));
+                                    paramCount++;
+                                }
+
+                                string query = $@"INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, AssignmentDate, ShiftType) 
+                                           VALUES {string.Join(",", valueStrings)}";
+
+                                cmd.CommandText = query;
+                                cmd.Parameters.Clear();
+                                cmd.Parameters.AddRange(parameters.ToArray());
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        transaction.Commit();
                     }
-                }
-            }
-
-            return staffList;
-        }
-
-        private void SaveScheduleToDatabase(List<(string StaffID, DateTime Date, string ShiftType)> schedule)
-        {
-            using (var connection = new SqlConnection(connStr))
-            {
-                connection.Open();
-
-                foreach (var entry in schedule)
-                {
-                    // Lấy DepartmentID của nhân viên từ bảng STAFF
-                    string departmentId = GetDepartmentID(connection, entry.StaffID);
-
-                    // Lấy số AssignmentID tiếp theo từ bảng WEEKLYASSIGNMENT
-                    string assignmentId = GenerateAssignmentID(connection);
-
-                    string query = @"
-                INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, DepartmentID, WeekStartDate, WeekEndDate, ShiftType)
-                VALUES (@AssignmentID, @StaffID, @DepartmentID, @WeekStartDate, @WeekEndDate, @ShiftType)";
-
-                    using (var command = new SqlCommand(query, connection))
+                    catch
                     {
-                        command.Parameters.AddWithValue("@AssignmentID", assignmentId);
-                        command.Parameters.AddWithValue("@StaffID", entry.StaffID);
-                        command.Parameters.AddWithValue("@DepartmentID", departmentId); // Chèn DepartmentID
-                        command.Parameters.AddWithValue("@WeekStartDate", entry.Date);
-                        command.Parameters.AddWithValue("@WeekEndDate", endDate); // Tuần kết thúc sau 6 ngày
-                        command.Parameters.AddWithValue("@ShiftType", entry.ShiftType);
-
-                        command.ExecuteNonQuery();
+                        transaction.Rollback();
+                        throw;
                     }
                 }
             }
         }
 
-        private string GetDepartmentID(SqlConnection connection, string staffId)
+        // Phương thức chính để tạo lịch
+        public void GenerateSchedule(DateTime startDate)
         {
-            // Truy vấn để lấy DepartmentID từ bảng STAFF
-            string query = "SELECT DepartmentID FROM STAFF WHERE StaffID = @StaffID";
-            using (var command = new SqlCommand(query, connection))
+            var allStaffIds = GetAllStaffIds();
+            if (!allStaffIds.Any())
             {
-                command.Parameters.AddWithValue("@StaffID", staffId);
-                return (string)command.ExecuteScalar();
+                throw new Exception("Không có nhân viên nào trong hệ thống!");
+            }
+
+            // Kiểm tra số lượng nhân viên tối thiểu
+            int minRequiredStaff = _staffPerShift * _shiftTypes.Length / 2;
+            if (allStaffIds.Count < minRequiredStaff)
+            {
+                throw new Exception($"Cần tối thiểu {minRequiredStaff} nhân viên để lập lịch! Hiện tại chỉ có {allStaffIds.Count} nhân viên.");
+            }
+
+            // Lấy ngày đầu tuần
+            DateTime weekStart = startDate.Date.AddDays(-(int)startDate.DayOfWeek + (int)DayOfWeek.Monday);
+            DateTime weekEnd = weekStart.AddDays(6);
+
+            var allAssignments = new List<AssignmentData>();
+
+            // Tạo lịch cho từng ngày trong tuần
+            for (DateTime date = weekStart; date <= weekEnd; date = date.AddDays(1))
+            {
+                if (!IsScheduleExist(date))
+                {
+                    var dailyAssignments = GenerateDailySchedule(date, allStaffIds);
+                    allAssignments.AddRange(dailyAssignments);
+                }
+            }
+
+            // Lưu tất cả assignments vào database
+            if (allAssignments.Any())
+            {
+                SaveAssignmentsBatch(allAssignments);
             }
         }
-        private string GenerateAssignmentID(SqlConnection connection)
-        {
-            // Lấy số ID Assignment hiện tại từ bảng WEEKLYASSIGNMENT
-            string query = "SELECT ISNULL(MAX(CAST(SUBSTRING(AssignmentID, 3, 4) AS INT)), 0) + 1 FROM WEEKLYASSIGNMENT";
-            using (var command = new SqlCommand(query, connection))
-            {
-                int nextId = (int)command.ExecuteScalar();
-                return $"WA{nextId:D4}";  // Định dạng 'WA' và số 4 chữ số (ví dụ: 'WA0001')
-            }
-        }
-
-        private IEnumerable<DateTime> EachDay(DateTime start, DateTime end)
-        {
-            for (var day = start.Date; day <= end.Date; day = day.AddDays(1))
-                yield return day;
-        }
-    }
-
-    public class Staff
-    {
-        public string StaffID { get; set; }
-        public string FullName { get; set; }
     }
 }

@@ -166,16 +166,36 @@ namespace QuanLyBenhVien
 
         private void btnWorkAssignment_Click(object sender, EventArgs e)
         {
-            ShiftScheduler scheduler = new ShiftScheduler();
             try
             {
-                scheduler.AssignShifts(DateTime.Now.StartOfWeek(DayOfWeek.Monday));
-                scheduler.AssignShifts(DateTime.Now.StartOfWeek(DayOfWeek.Monday).AddDays(7));
-                MessageBox.Show("Tạo lịch thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Cursor = Cursors.WaitCursor;
+
+                // Lấy ngày hiện tại
+                DateTime currentDate = DateTime.Now;
+
+                // Tạo lịch trực
+                var scheduler = new ShiftScheduler();
+                scheduler.GenerateSchedule(currentDate);
+
+                MessageBox.Show(
+                    $"Đã tạo lịch trực thành công!\nNgày tạo: {currentDate:dd/MM/yyyy}",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra!");
+                MessageBox.Show(
+                    $"Có lỗi xảy ra: {ex.Message}",
+                    "Lỗi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
             }
         }
     }
