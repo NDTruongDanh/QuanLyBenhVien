@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBenhVien.Classes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -209,6 +210,38 @@ namespace QuanLyBenhVien
             if (result != "0")
             {
                 txtPassword.Text = password;
+            }
+        }
+
+        private void SignIn_Load(object sender, EventArgs e)
+        {
+            if(DateTime.Now.DayOfWeek >= DayOfWeek.Thursday)
+            {
+                try
+                {
+                    Cursor = Cursors.WaitCursor;
+
+                    // Lấy ngày hiện tại
+                    DateTime currentDate = DateTime.Now;
+
+                    // Tạo lịch trực
+                    var scheduler = new ShiftScheduler();
+                    scheduler.GenerateSchedule(currentDate.AddDays(6));
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        $"Có lỗi xảy ra: {ex.Message}",
+                        "Lỗi",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+                finally
+                {
+                    Cursor = Cursors.Default;
+                }
             }
         }
     }

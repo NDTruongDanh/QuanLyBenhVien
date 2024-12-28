@@ -26,7 +26,6 @@ namespace QuanLyBenhVien
         }
         public StaffAssignment(string userID)
         {
-            MessageBox.Show($"{userID}");
             InitializeComponent();
             staffID = userID;
             cmbSelection.Text = "Tuần này";
@@ -45,21 +44,19 @@ namespace QuanLyBenhVien
                     string sql = null;
                     if (cmbSelection.SelectedIndex == 1)
                     {
-                        sql = $@"SELECT st.StaffID, FullName, ShiftType, WeekStartDate, WeekEndDate 
+                        sql = $@"SELECT st.StaffID, FullName, AssignmentDate, ShiftType 
                                FROM WEEKLYASSIGNMENT w JOIN STAFF st ON w.StaffID = st.StaffID
-                               WHERE WeekStartDate > DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) 
-                                      AND WeekEndDate <= DATEADD(DAY, 15 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
-	                                  AND w.DepartmentID IN (SELECT st1.DepartmentID FROM STAFF st1 WHERE st1.StaffID = '{staffID}')
-                               ORDER BY ShiftType, WeekStartDate";
+                               WHERE AssignmentDate > DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) 
+                                      AND AssignmentDate <= DATEADD(DAY, 15 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
+                               ORDER BY ShiftType, AssignmentDate";
                     }
                     else
                     {
-                        sql = $@"SELECT st.StaffID, FullName, ShiftType, WeekStartDate, WeekEndDate 
+                        sql = $@"SELECT st.StaffID, FullName, AssignmentDate, ShiftType 
                                FROM WEEKLYASSIGNMENT w JOIN STAFF st ON w.StaffID = st.StaffID
-                               WHERE WeekStartDate > DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) 
-                                      AND WeekEndDate <= DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
-	                                  AND w.DepartmentID IN (SELECT st1.DepartmentID FROM STAFF st1 WHERE st1.StaffID = '{staffID}')
-                               ORDER BY ShiftType, WeekStartDate";
+                               WHERE AssignmentDate > DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) 
+                                      AND AssignmentDate <= DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
+                               ORDER BY ShiftType, AssignmentDate";
                     }
                         
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -80,8 +77,7 @@ namespace QuanLyBenhVien
                             string staffIDs = reader["StaffID"].ToString();
                             string staffNames = reader["FullName"].ToString();
                             string shiftType = reader["ShiftType"].ToString();
-                            DateTime weekStartDate = (DateTime)reader["WeekStartDate"];
-                            DateTime weekEndDate = (DateTime)reader["WeekEndDate"];
+                            DateTime assignmentDate = (DateTime)reader["AssignmentDate"];
 
                             // Map ShiftType to the appropriate row index
                             int rowIndex = Array.IndexOf(shifts, shiftType);
@@ -93,18 +89,18 @@ namespace QuanLyBenhVien
 
 
                             // Map Day of the Week to column index
-                            for (DateTime date = weekStartDate; date <= weekEndDate; date = date.AddDays(1))
+
+                            int columnIndex = ((int)assignmentDate.DayOfWeek == 0 ? 6 : (int)assignmentDate.DayOfWeek - 1) + 1;
+                            if (columnIndex >= 1 && columnIndex <= 7) // Ensure within range
                             {
-                                int columnIndex = ((int)date.DayOfWeek == 0 ? 6 : (int)date.DayOfWeek - 1) + 1;
-                                if (columnIndex >= 1 && columnIndex <= 7) // Ensure within range
+                                if (!string.IsNullOrEmpty(dgvAssignment.Rows[rowIndex].Cells[columnIndex].Value?.ToString()))
                                 {
-                                    if (!string.IsNullOrEmpty(dgvAssignment.Rows[rowIndex].Cells[columnIndex].Value?.ToString()))
-                                    {
-                                        dgvAssignment.Rows[rowIndex].Cells[columnIndex].Value += "\n";
-                                    }
-                                    dgvAssignment.Rows[rowIndex].Cells[columnIndex].Value += staffNames;
+                                    dgvAssignment.Rows[rowIndex].Cells[columnIndex].Value += "\n";
                                 }
+                                dgvAssignment.Rows[rowIndex].Cells[columnIndex].Value += staffNames;
+
                             }
+               
                             if (staffID == staffIDs)
                             {
                                 HighlightCellsWithString(staffNames);

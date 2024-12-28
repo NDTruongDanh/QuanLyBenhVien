@@ -43,6 +43,7 @@ namespace QuanLyBenhVien.Classes
             }
         }
 
+
         public static void InitializeTabControl(TabControl tabCtrl)
         {
             tabControl = tabCtrl;
