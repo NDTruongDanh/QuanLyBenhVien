@@ -162,12 +162,21 @@ namespace QuanLyBenhVien
             NhapVien nhapvien = new NhapVien();
             CommonControls.AddFormToTab(nhapvien, nhapvien.Text);
         }
-        
+
 
         private void btnWorkAssignment_Click(object sender, EventArgs e)
         {
             ShiftScheduler scheduler = new ShiftScheduler();
-            scheduler.AssignShifts(DateTime.Now.StartOfWeek(DayOfWeek.Monday));
+            try
+            {
+                scheduler.AssignShifts(DateTime.Now.StartOfWeek(DayOfWeek.Monday));
+                scheduler.AssignShifts(DateTime.Now.StartOfWeek(DayOfWeek.Monday).AddDays(7));
+                MessageBox.Show("Tạo lịch thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra!");
+            }
         }
     }
 }

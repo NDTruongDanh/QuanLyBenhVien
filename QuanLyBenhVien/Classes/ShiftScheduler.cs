@@ -33,15 +33,51 @@ namespace QuanLyBenhVien.Classes
         }
 
         private DateTime endDate;
+        private Dictionary<string, List<string>> GetPreviousWeekSchedule(DateTime startDate)
+        {
+            var previousWeekSchedule = new Dictionary<string, List<string>>();
+            DateTime previousWeekStart = startDate.AddDays(-7);
+            DateTime previousWeekEnd = previousWeekStart.AddDays(6);
+
+            using (var connection = new SqlConnection(connStr))
+            {
+                connection.Open();
+                string query = @"
+        SELECT StaffID, ShiftType 
+        FROM WEEKLYASSIGNMENT 
+        WHERE WeekStartDate >= @PreviousWeekStart AND WeekEndDate <= @PreviousWeekEnd";
+
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PreviousWeekStart", previousWeekStart);
+                    command.Parameters.AddWithValue("@PreviousWeekEnd", previousWeekEnd);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string staffId = reader["StaffID"].ToString();
+                            string shiftType = reader["ShiftType"].ToString();
+
+                            if (!previousWeekSchedule.ContainsKey(staffId))
+                            {
+                                previousWeekSchedule[staffId] = new List<string>();
+                            }
+                            previousWeekSchedule[staffId].Add(shiftType);
+                        }
+                    }
+                }
+            }
+
+            return previousWeekSchedule;
+        }
+
         public void AssignShifts(DateTime startDate)
         {
             endDate = startDate.StartOfWeek(DayOfWeek.Monday).AddDays(6);
-            MessageBox.Show(endDate.ToString());
 
-            // Kiểm tra nếu lịch trực đã tồn tại
             if (IsScheduleExist(startDate, endDate))
             {
-                MessageBox.Show("Lịch trực đã tồn tại. Không cần chia thêm.");
                 return;
             }
 
@@ -49,39 +85,79 @@ namespace QuanLyBenhVien.Classes
             var shifts = new[] { "Sáng", "Chiều", "Tối" };
             int shiftIndex = 0;
 
+            // Lấy lịch trực tuần trước
+            var previousWeekSchedule = GetPreviousWeekSchedule(startDate);
+
             var schedule = new List<(string StaffID, DateTime Date, string ShiftType)>();
 
             foreach (var date in EachDay(startDate, endDate))
             {
-                var dailySchedule = new Dictionary<string, int>(); // StaffID -> số ca hôm đó
+                var dailySchedule = new Dictionary<string, int>(); // StaffID -> số ca trong ngày
+                var shiftStaffCount = new Dictionary<string, int>(); // ShiftType -> số nhân viên trong ca
+
+                // Khởi tạo số nhân viên cho từng ca
+                foreach (var shift in shifts)
+                {
+                    shiftStaffCount[shift] = 0;
+                }
 
                 foreach (var shift in shifts)
                 {
-                    // Tìm nhân viên phù hợp theo Round-Robin
-                    for (int attempt = 0; attempt < staffList.Count; attempt++)
+                    while (shiftStaffCount[shift] < 5)
                     {
-                        var staff = staffList[shiftIndex % staffList.Count];
-                        shiftIndex++;
-
-                        if (!dailySchedule.ContainsKey(staff.StaffID))
+                        for (int attempt = 0; attempt < staffList.Count; attempt++)
                         {
-                            dailySchedule[staff.StaffID] = 0;
+                            var staff = staffList[shiftIndex % staffList.Count];
+                            shiftIndex++;
+
+                            if (!dailySchedule.ContainsKey(staff.StaffID))
+                            {
+                                dailySchedule[staff.StaffID] = 0;
+                            }
+
+                            // Kiểm tra điều kiện phân ca
+                            bool isValidShift =
+                                (dailySchedule[staff.StaffID] < 2 || shiftStaffCount[shift] >= 5) // Điều kiện số ca trong ngày
+                                && (!previousWeekSchedule.ContainsKey(staff.StaffID) ||
+                                    !previousWeekSchedule[staff.StaffID].Contains(shift)); // Không trùng với tuần trước
+
+                            if (isValidShift)
+                            {
+                                schedule.Add((staff.StaffID, date, shift));
+                                dailySchedule[staff.StaffID]++;
+                                shiftStaffCount[shift]++;
+                                break;
+                            }
                         }
 
-                        if (dailySchedule[staff.StaffID] < 2) // Không quá 2 ca/ngày
-                        {
-                            schedule.Add((staff.StaffID, date, shift));
-                            dailySchedule[staff.StaffID]++;
+                        // Nếu đủ 5 nhân viên trong ca, thoát vòng lặp
+                        if (shiftStaffCount[shift] >= 5)
                             break;
+                    }
+                }
+
+                // Đảm bảo nhân viên làm đủ 2 ca/ngày
+                foreach (var staff in staffList)
+                {
+                    if (dailySchedule.TryGetValue(staff.StaffID, out int shiftsAssigned) && shiftsAssigned < 2)
+                    {
+                        foreach (var shift in shifts)
+                        {
+                            if (shiftStaffCount[shift] < 5)
+                            {
+                                schedule.Add((staff.StaffID, date, shift));
+                                dailySchedule[staff.StaffID]++;
+                                shiftStaffCount[shift]++;
+                                if (dailySchedule[staff.StaffID] >= 2)
+                                    break;
+                            }
                         }
                     }
                 }
             }
 
             SaveScheduleToDatabase(schedule);
-            MessageBox.Show("Lịch trực đã được chia.");
         }
-        
 
         private List<Staff> GetStaffList()
         {
