@@ -714,6 +714,7 @@ CREATE TABLE HOSPITALIZATION
     DischargeDate DATETIME
 );
 
+
 INSERT INTO HOSPITALIZATION (HospitalizationID, PatientID, RoomID, AdmissionDate, DischargeDate)
 VALUES
 ('H00001', 'PA0001', 'RO0001', '2024-12-01 10:00:00', '2024-12-10 14:00:00'),

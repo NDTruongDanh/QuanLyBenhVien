@@ -37,6 +37,8 @@ namespace QuanLyBenhVien
                     DataSet dataSet = new DataSet();
                     adapter.Fill(dataSet, "DEPARTMENT");
                     dgvDepartment.DataSource = dataSet.Tables["DEPARTMENT"];
+                    dgvDepartment.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
                 }
                 catch (Exception ex)
                 {

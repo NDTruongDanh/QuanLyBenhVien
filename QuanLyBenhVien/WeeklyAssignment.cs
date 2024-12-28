@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace QuanLyBenhVien
@@ -20,7 +21,7 @@ namespace QuanLyBenhVien
 
         private void LoadData()
         {
-            string query = "SELECT * FROM WEEKLYASSIGNMENT";
+            string query = "SELECT AssignmentID AS[Mã lịch trực], StaffID AS[Mã nhân viên], AssignmentDate AS [Ngày trực], ShiftType AS[Ca trực]  FROM WEEKLYASSIGNMENT";
 
             try
             {
@@ -30,6 +31,7 @@ namespace QuanLyBenhVien
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet, "WEEKLYASSIGNMENT");
                     dgvWeeklyAssigment.DataSource = dataSet.Tables["WEEKLYASSIGNMENT"];
+                    dgvWeeklyAssigment.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
                 }
             }
             catch (Exception ex)
@@ -147,7 +149,7 @@ namespace QuanLyBenhVien
                 txtAssignmentID.Text = selectedRow.Cells[0].Value.ToString();
                 cmbStaffID.Text = selectedRow.Cells[1].Value.ToString();
                 dtpAssignmentDate.Text = selectedRow.Cells[2].Value.ToString();
-                cmbShiftType.Text = selectedRow.Cells[5].Value.ToString();
+                cmbShiftType.Text = selectedRow.Cells[3].Value.ToString();
             }
         }
     }

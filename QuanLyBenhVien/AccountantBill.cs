@@ -52,6 +52,8 @@ namespace QuanLyBenhVien
                         {
                             adapter.Fill(dataset, "BILL");
                             dgvAccountantBill.DataSource = dataset.Tables["BILL"];
+                            dgvAccountantBill.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
                         }
                     }
 

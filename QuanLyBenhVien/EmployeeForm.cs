@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 using QuanLyBenhVien.Classes;
 
 namespace QuanLyBenhVien
@@ -40,6 +41,8 @@ namespace QuanLyBenhVien
                     var dataset = new DataSet();
                     adapter.Fill(dataset, "STAFF");
                     dgvEmployee.DataSource = dataset.Tables["STAFF"];
+                    dgvEmployee.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
                 }
                 catch (Exception ex)
                 {
