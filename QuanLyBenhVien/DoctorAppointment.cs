@@ -57,10 +57,7 @@ namespace QuanLyBenhVien
                                 dgvAppointment.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
 
                             }
-                            else
-                            {
-                                MessageBox.Show($"No appointments found for this {cmbSelection.Text}");
-                            }
+
                         }
                     }
                 }
