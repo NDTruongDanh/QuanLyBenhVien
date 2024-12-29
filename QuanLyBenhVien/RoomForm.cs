@@ -19,6 +19,7 @@ namespace QuanLyBenhVien
         {
             InitializeComponent();
             CommonControls.InitializeCmbDepartmentID(cmbDepartmentID);
+            CommonControls.InitializeCmbTypeOfRoom(cmbRoomType);
         }
 
         private void RoomForm_Load(object sender, EventArgs e)

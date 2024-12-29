@@ -71,13 +71,13 @@ namespace QuanLyBenhVien
         private void btnMonthIncomeReport_Click(object sender, EventArgs e)
         {
             DoanhthuTHANG dtt = new DoanhthuTHANG();
-            dtt.Show();
+            CommonControls.AddFormToTab(dtt,dtt.Text);
         }
 
         private void btnYearIncomeReport_Click(object sender, EventArgs e)
         {
             DoanhthuNAM dtn = new DoanhthuNAM();
-            dtn.Show();
+            CommonControls.AddFormToTab(dtn, dtn.Text);
         }
 
         private void btnAIChatBot_Click(object sender, EventArgs e)
@@ -95,19 +95,19 @@ namespace QuanLyBenhVien
         private void btnQuantityInStock_Click(object sender, EventArgs e)
         {
             KiemtraThuocTonKho ktt = new KiemtraThuocTonKho();
-            ktt.Show();
+            CommonControls.AddFormToTab(ktt, ktt.Text);
         }
 
         private void btnExpired_Click(object sender, EventArgs e)
         {
             KiemtraHANTHUOC ktht = new KiemtraHANTHUOC();
-            ktht.Show();
+            CommonControls.AddFormToTab(ktht, ktht.Text);
         }
 
         private void btnWarning_Click(object sender, EventArgs e)
         {
             EpidemicSituation epidemic = new EpidemicSituation();
-            epidemic.Show();
+            CommonControls.AddFormToTab(epidemic, epidemic.Text);
         }
 
 
