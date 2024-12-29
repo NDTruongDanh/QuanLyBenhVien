@@ -207,6 +207,8 @@ namespace QuanLyBenhVien
                 txtEmail.Text = selectedRow.Cells[6].Value.ToString();
             }
         }
+
+
     }
 
 

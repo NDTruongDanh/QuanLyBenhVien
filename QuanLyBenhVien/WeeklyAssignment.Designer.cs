@@ -37,10 +37,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtAssignmentID = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtpAssignmentDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cmbStaffID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbShiftType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtAssignmentID = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvWeeklyAssigment = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -59,10 +59,10 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(398, 87);
+            this.label3.Location = new System.Drawing.Point(398, 24);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 87);
+            this.label3.Size = new System.Drawing.Size(147, 25);
             this.label3.TabIndex = 12;
             this.label3.Text = "Ca";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -72,10 +72,10 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 87);
+            this.label2.Location = new System.Drawing.Point(4, 24);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 87);
+            this.label2.Size = new System.Drawing.Size(141, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Mã nhân viên";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,7 +88,7 @@
             this.label1.Location = new System.Drawing.Point(398, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 87);
+            this.label1.Size = new System.Drawing.Size(147, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "Ngày làm việc";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -101,7 +101,7 @@
             this.label6.Location = new System.Drawing.Point(4, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(141, 87);
+            this.label6.Size = new System.Drawing.Size(141, 24);
             this.label6.TabIndex = 6;
             this.label6.Text = "Mã lịch trực";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -113,10 +113,10 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.txtAssignmentID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.dtpAssignmentDate, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.cmbStaffID, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.cmbShiftType, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtAssignmentID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 2, 0);
@@ -127,29 +127,50 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 174);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 49);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // txtAssignmentID
+            // 
+            this.txtAssignmentID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAssignmentID.DefaultText = "";
+            this.txtAssignmentID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAssignmentID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAssignmentID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAssignmentID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAssignmentID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAssignmentID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAssignmentID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAssignmentID.ForeColor = System.Drawing.Color.Black;
+            this.txtAssignmentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAssignmentID.Location = new System.Drawing.Point(153, 6);
+            this.txtAssignmentID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtAssignmentID.Name = "txtAssignmentID";
+            this.txtAssignmentID.PasswordChar = '\0';
+            this.txtAssignmentID.PlaceholderText = "";
+            this.txtAssignmentID.SelectedText = "";
+            this.txtAssignmentID.Size = new System.Drawing.Size(237, 12);
+            this.txtAssignmentID.TabIndex = 39;
             // 
             // dtpAssignmentDate
             // 
-            this.dtpAssignmentDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpAssignmentDate.Checked = true;
+            this.dtpAssignmentDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpAssignmentDate.FillColor = System.Drawing.Color.White;
             this.dtpAssignmentDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpAssignmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAssignmentDate.Location = new System.Drawing.Point(552, 19);
+            this.dtpAssignmentDate.Location = new System.Drawing.Point(552, 3);
             this.dtpAssignmentDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpAssignmentDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpAssignmentDate.Name = "dtpAssignmentDate";
-            this.dtpAssignmentDate.Size = new System.Drawing.Size(239, 49);
+            this.dtpAssignmentDate.Size = new System.Drawing.Size(239, 18);
             this.dtpAssignmentDate.TabIndex = 38;
             this.dtpAssignmentDate.Value = new System.DateTime(2024, 12, 28, 12, 16, 11, 507);
             // 
             // cmbStaffID
             // 
-            this.cmbStaffID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbStaffID.BackColor = System.Drawing.Color.Transparent;
+            this.cmbStaffID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbStaffID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbStaffID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStaffID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -157,15 +178,15 @@
             this.cmbStaffID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStaffID.ForeColor = System.Drawing.Color.Black;
             this.cmbStaffID.ItemHeight = 30;
-            this.cmbStaffID.Location = new System.Drawing.Point(152, 112);
+            this.cmbStaffID.Location = new System.Drawing.Point(152, 27);
             this.cmbStaffID.Name = "cmbStaffID";
             this.cmbStaffID.Size = new System.Drawing.Size(239, 36);
             this.cmbStaffID.TabIndex = 36;
             // 
             // cmbShiftType
             // 
-            this.cmbShiftType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbShiftType.BackColor = System.Drawing.Color.Transparent;
+            this.cmbShiftType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbShiftType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbShiftType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbShiftType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -177,32 +198,10 @@
             "Sáng",
             "Chiều",
             "Tối"});
-            this.cmbShiftType.Location = new System.Drawing.Point(552, 112);
+            this.cmbShiftType.Location = new System.Drawing.Point(552, 27);
             this.cmbShiftType.Name = "cmbShiftType";
             this.cmbShiftType.Size = new System.Drawing.Size(239, 36);
             this.cmbShiftType.TabIndex = 35;
-            // 
-            // txtAssignmentID
-            // 
-            this.txtAssignmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAssignmentID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAssignmentID.DefaultText = "";
-            this.txtAssignmentID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAssignmentID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAssignmentID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAssignmentID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAssignmentID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAssignmentID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAssignmentID.ForeColor = System.Drawing.Color.Black;
-            this.txtAssignmentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAssignmentID.Location = new System.Drawing.Point(153, 22);
-            this.txtAssignmentID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtAssignmentID.Name = "txtAssignmentID";
-            this.txtAssignmentID.PasswordChar = '\0';
-            this.txtAssignmentID.PlaceholderText = "";
-            this.txtAssignmentID.SelectedText = "";
-            this.txtAssignmentID.Size = new System.Drawing.Size(237, 42);
-            this.txtAssignmentID.TabIndex = 26;
             // 
             // tableLayoutPanel1
             // 
@@ -216,9 +215,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.22222F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.77778F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -249,7 +248,7 @@
             this.dgvWeeklyAssigment.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvWeeklyAssigment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWeeklyAssigment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvWeeklyAssigment.Location = new System.Drawing.Point(3, 228);
+            this.dgvWeeklyAssigment.Location = new System.Drawing.Point(3, 103);
             this.dgvWeeklyAssigment.Name = "dgvWeeklyAssigment";
             this.dgvWeeklyAssigment.ReadOnly = true;
             this.dgvWeeklyAssigment.RowHeadersVisible = false;
@@ -257,7 +256,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvWeeklyAssigment.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWeeklyAssigment.RowTemplate.Height = 24;
-            this.dgvWeeklyAssigment.Size = new System.Drawing.Size(794, 219);
+            this.dgvWeeklyAssigment.Size = new System.Drawing.Size(794, 344);
             this.dgvWeeklyAssigment.TabIndex = 4;
             this.dgvWeeklyAssigment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvWeeklyAssigment.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -294,7 +293,7 @@
             this.tableLayoutPanel3.Controls.Add(this.btnRefresh, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnFind, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 184);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 59);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -391,7 +390,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private Guna.UI2.WinForms.Guna2TextBox txtAssignmentID;
         private Guna.UI2.WinForms.Guna2ComboBox cmbStaffID;
         private Guna.UI2.WinForms.Guna2ComboBox cmbShiftType;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpAssignmentDate;
@@ -401,5 +399,6 @@
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private Guna.UI2.WinForms.Guna2Button btnFind;
         private Guna.UI2.WinForms.Guna2DataGridView dgvWeeklyAssigment;
+        private Guna.UI2.WinForms.Guna2TextBox txtAssignmentID;
     }
 }

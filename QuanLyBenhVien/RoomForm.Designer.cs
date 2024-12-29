@@ -68,9 +68,9 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.16632F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.97921F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.85447F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 481);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -101,7 +101,7 @@
             this.dgvRoom.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRoom.Location = new System.Drawing.Point(3, 243);
+            this.dgvRoom.Location = new System.Drawing.Point(3, 148);
             this.dgvRoom.Name = "dgvRoom";
             this.dgvRoom.ReadOnly = true;
             this.dgvRoom.RowHeadersVisible = false;
@@ -109,7 +109,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvRoom.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRoom.RowTemplate.Height = 24;
-            this.dgvRoom.Size = new System.Drawing.Size(1061, 235);
+            this.dgvRoom.Size = new System.Drawing.Size(1061, 330);
             this.dgvRoom.TabIndex = 4;
             this.dgvRoom.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvRoom.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -146,7 +146,7 @@
             this.tableLayoutPanel3.Controls.Add(this.btnRefresh, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnFind, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 196);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 101);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -246,7 +246,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1059, 184);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1059, 89);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // cmbDepartmentID
@@ -260,7 +260,7 @@
             this.cmbDepartmentID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDepartmentID.ForeColor = System.Drawing.Color.Black;
             this.cmbDepartmentID.ItemHeight = 30;
-            this.cmbDepartmentID.Location = new System.Drawing.Point(760, 12);
+            this.cmbDepartmentID.Location = new System.Drawing.Point(760, 3);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
             this.cmbDepartmentID.Size = new System.Drawing.Size(296, 36);
             this.cmbDepartmentID.TabIndex = 38;
@@ -276,75 +276,75 @@
             this.cmbRoomType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRoomType.ForeColor = System.Drawing.Color.Black;
             this.cmbRoomType.ItemHeight = 30;
-            this.cmbRoomType.Location = new System.Drawing.Point(234, 73);
+            this.cmbRoomType.Location = new System.Drawing.Point(234, 32);
             this.cmbRoomType.Name = "cmbRoomType";
             this.cmbRoomType.Size = new System.Drawing.Size(295, 36);
             this.cmbRoomType.TabIndex = 37;
             // 
             // txtEmptyBed
             // 
-            this.txtEmptyBed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmptyBed.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmptyBed.DefaultText = "";
             this.txtEmptyBed.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtEmptyBed.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtEmptyBed.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmptyBed.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmptyBed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmptyBed.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmptyBed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmptyBed.ForeColor = System.Drawing.Color.Black;
             this.txtEmptyBed.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmptyBed.Location = new System.Drawing.Point(235, 132);
+            this.txtEmptyBed.Location = new System.Drawing.Point(235, 64);
             this.txtEmptyBed.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtEmptyBed.Name = "txtEmptyBed";
             this.txtEmptyBed.PasswordChar = '\0';
             this.txtEmptyBed.PlaceholderText = "";
             this.txtEmptyBed.SelectedText = "";
-            this.txtEmptyBed.Size = new System.Drawing.Size(293, 42);
+            this.txtEmptyBed.Size = new System.Drawing.Size(293, 19);
             this.txtEmptyBed.TabIndex = 28;
             // 
             // txtBedCount
             // 
-            this.txtBedCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBedCount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBedCount.DefaultText = "";
             this.txtBedCount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtBedCount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtBedCount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtBedCount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBedCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBedCount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBedCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBedCount.ForeColor = System.Drawing.Color.Black;
             this.txtBedCount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBedCount.Location = new System.Drawing.Point(761, 70);
+            this.txtBedCount.Location = new System.Drawing.Point(761, 35);
             this.txtBedCount.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtBedCount.Name = "txtBedCount";
             this.txtBedCount.PasswordChar = '\0';
             this.txtBedCount.PlaceholderText = "";
             this.txtBedCount.SelectedText = "";
-            this.txtBedCount.Size = new System.Drawing.Size(294, 42);
+            this.txtBedCount.Size = new System.Drawing.Size(294, 17);
             this.txtBedCount.TabIndex = 27;
             // 
             // txtRoomID
             // 
-            this.txtRoomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRoomID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRoomID.DefaultText = "";
             this.txtRoomID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtRoomID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtRoomID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtRoomID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRoomID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtRoomID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRoomID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomID.ForeColor = System.Drawing.Color.Black;
             this.txtRoomID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRoomID.Location = new System.Drawing.Point(235, 9);
+            this.txtRoomID.Location = new System.Drawing.Point(235, 6);
             this.txtRoomID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtRoomID.Name = "txtRoomID";
             this.txtRoomID.PasswordChar = '\0';
             this.txtRoomID.PlaceholderText = "";
             this.txtRoomID.SelectedText = "";
-            this.txtRoomID.Size = new System.Drawing.Size(293, 42);
+            this.txtRoomID.Size = new System.Drawing.Size(293, 17);
             this.txtRoomID.TabIndex = 26;
             // 
             // label5
@@ -352,10 +352,10 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(4, 125);
+            this.label5.Location = new System.Drawing.Point(4, 58);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(223, 56);
+            this.label5.Size = new System.Drawing.Size(223, 31);
             this.label5.TabIndex = 11;
             this.label5.Text = "Giường trống";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -365,10 +365,10 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(536, 63);
+            this.label4.Location = new System.Drawing.Point(536, 29);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(217, 56);
+            this.label4.Size = new System.Drawing.Size(217, 29);
             this.label4.TabIndex = 10;
             this.label4.Text = "Tổng giường";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -378,10 +378,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(4, 2);
+            this.label1.Location = new System.Drawing.Point(4, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 56);
+            this.label1.Size = new System.Drawing.Size(223, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã phòng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -391,10 +391,10 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(4, 63);
+            this.label3.Location = new System.Drawing.Point(4, 29);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(223, 56);
+            this.label3.Size = new System.Drawing.Size(223, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Loại phòng";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -404,9 +404,9 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(535, 2);
+            this.label2.Location = new System.Drawing.Point(535, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(219, 56);
+            this.label2.Size = new System.Drawing.Size(219, 29);
             this.label2.TabIndex = 7;
             this.label2.Text = "Thuộc khoa";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
