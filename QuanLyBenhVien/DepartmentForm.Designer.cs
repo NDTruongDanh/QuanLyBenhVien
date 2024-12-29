@@ -40,6 +40,11 @@
             this.btnFind = new Guna.UI2.WinForms.Guna2Button();
             this.dgvDepartment = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtDepartmentName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtLocation = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEmployeeNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDepartmentID = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbHeadDepartmentID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,11 +52,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtDepartmentID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtEmployeeNumber = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtLocation = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtDepartmentName = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).BeginInit();
@@ -91,12 +91,12 @@
             this.tableLayoutPanel3.Controls.Add(this.btnRefresh, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnFind, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 121);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 120);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1059, 42);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
@@ -191,7 +191,7 @@
             this.dgvDepartment.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDepartment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDepartment.Location = new System.Drawing.Point(3, 170);
+            this.dgvDepartment.Location = new System.Drawing.Point(3, 169);
             this.dgvDepartment.Name = "dgvDepartment";
             this.dgvDepartment.ReadOnly = true;
             this.dgvDepartment.RowHeadersVisible = false;
@@ -199,7 +199,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDepartment.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDepartment.RowTemplate.Height = 24;
-            this.dgvDepartment.Size = new System.Drawing.Size(1061, 381);
+            this.dgvDepartment.Size = new System.Drawing.Size(1061, 382);
             this.dgvDepartment.TabIndex = 5;
             this.dgvDepartment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDepartment.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -252,8 +252,118 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1059, 109);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1059, 108);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // txtDepartmentName
+            // 
+            this.txtDepartmentName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDepartmentName.DefaultText = "";
+            this.txtDepartmentName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDepartmentName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDepartmentName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDepartmentName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDepartmentName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDepartmentName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDepartmentName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartmentName.ForeColor = System.Drawing.Color.Black;
+            this.txtDepartmentName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDepartmentName.Location = new System.Drawing.Point(766, 6);
+            this.txtDepartmentName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtDepartmentName.Name = "txtDepartmentName";
+            this.txtDepartmentName.PasswordChar = '\0';
+            this.txtDepartmentName.PlaceholderText = "";
+            this.txtDepartmentName.SelectedText = "";
+            this.txtDepartmentName.Size = new System.Drawing.Size(289, 24);
+            this.txtDepartmentName.TabIndex = 44;
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhoneNumber.DefaultText = "";
+            this.txtPhoneNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPhoneNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPhoneNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPhoneNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPhoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.ForeColor = System.Drawing.Color.Black;
+            this.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPhoneNumber.Location = new System.Drawing.Point(766, 42);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.PasswordChar = '\0';
+            this.txtPhoneNumber.PlaceholderText = "";
+            this.txtPhoneNumber.SelectedText = "";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(289, 24);
+            this.txtPhoneNumber.TabIndex = 43;
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLocation.DefaultText = "";
+            this.txtLocation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtLocation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtLocation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLocation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLocation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLocation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocation.ForeColor = System.Drawing.Color.Black;
+            this.txtLocation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLocation.Location = new System.Drawing.Point(766, 78);
+            this.txtLocation.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.PasswordChar = '\0';
+            this.txtLocation.PlaceholderText = "";
+            this.txtLocation.SelectedText = "";
+            this.txtLocation.Size = new System.Drawing.Size(289, 24);
+            this.txtLocation.TabIndex = 42;
+            // 
+            // txtEmployeeNumber
+            // 
+            this.txtEmployeeNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmployeeNumber.DefaultText = "";
+            this.txtEmployeeNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmployeeNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmployeeNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmployeeNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmployeeNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEmployeeNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmployeeNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeeNumber.ForeColor = System.Drawing.Color.Black;
+            this.txtEmployeeNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmployeeNumber.Location = new System.Drawing.Point(268, 78);
+            this.txtEmployeeNumber.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtEmployeeNumber.Name = "txtEmployeeNumber";
+            this.txtEmployeeNumber.PasswordChar = '\0';
+            this.txtEmployeeNumber.PlaceholderText = "";
+            this.txtEmployeeNumber.SelectedText = "";
+            this.txtEmployeeNumber.Size = new System.Drawing.Size(289, 24);
+            this.txtEmployeeNumber.TabIndex = 41;
+            // 
+            // txtDepartmentID
+            // 
+            this.txtDepartmentID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDepartmentID.DefaultText = "";
+            this.txtDepartmentID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDepartmentID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDepartmentID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDepartmentID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDepartmentID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDepartmentID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDepartmentID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartmentID.ForeColor = System.Drawing.Color.Black;
+            this.txtDepartmentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDepartmentID.Location = new System.Drawing.Point(268, 6);
+            this.txtDepartmentID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtDepartmentID.Name = "txtDepartmentID";
+            this.txtDepartmentID.PasswordChar = '\0';
+            this.txtDepartmentID.PlaceholderText = "";
+            this.txtDepartmentID.SelectedText = "";
+            this.txtDepartmentID.Size = new System.Drawing.Size(289, 24);
+            this.txtDepartmentID.TabIndex = 40;
             // 
             // cmbHeadDepartmentID
             // 
@@ -292,7 +402,7 @@
             this.label3.Location = new System.Drawing.Point(4, 72);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(256, 37);
+            this.label3.Size = new System.Drawing.Size(256, 36);
             this.label3.TabIndex = 19;
             this.label3.Text = "Số lượng NV";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -345,120 +455,10 @@
             this.label6.Location = new System.Drawing.Point(565, 72);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(193, 37);
+            this.label6.Size = new System.Drawing.Size(193, 36);
             this.label6.TabIndex = 5;
             this.label6.Text = "Vị trí";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtDepartmentID
-            // 
-            this.txtDepartmentID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDepartmentID.DefaultText = "";
-            this.txtDepartmentID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDepartmentID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDepartmentID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDepartmentID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDepartmentID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDepartmentID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDepartmentID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartmentID.ForeColor = System.Drawing.Color.Black;
-            this.txtDepartmentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDepartmentID.Location = new System.Drawing.Point(268, 6);
-            this.txtDepartmentID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtDepartmentID.Name = "txtDepartmentID";
-            this.txtDepartmentID.PasswordChar = '\0';
-            this.txtDepartmentID.PlaceholderText = "";
-            this.txtDepartmentID.SelectedText = "";
-            this.txtDepartmentID.Size = new System.Drawing.Size(289, 24);
-            this.txtDepartmentID.TabIndex = 40;
-            // 
-            // txtEmployeeNumber
-            // 
-            this.txtEmployeeNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmployeeNumber.DefaultText = "";
-            this.txtEmployeeNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEmployeeNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEmployeeNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmployeeNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmployeeNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEmployeeNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmployeeNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeeNumber.ForeColor = System.Drawing.Color.Black;
-            this.txtEmployeeNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmployeeNumber.Location = new System.Drawing.Point(268, 78);
-            this.txtEmployeeNumber.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtEmployeeNumber.Name = "txtEmployeeNumber";
-            this.txtEmployeeNumber.PasswordChar = '\0';
-            this.txtEmployeeNumber.PlaceholderText = "";
-            this.txtEmployeeNumber.SelectedText = "";
-            this.txtEmployeeNumber.Size = new System.Drawing.Size(289, 25);
-            this.txtEmployeeNumber.TabIndex = 41;
-            // 
-            // txtLocation
-            // 
-            this.txtLocation.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLocation.DefaultText = "";
-            this.txtLocation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtLocation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtLocation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLocation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLocation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLocation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocation.ForeColor = System.Drawing.Color.Black;
-            this.txtLocation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLocation.Location = new System.Drawing.Point(766, 78);
-            this.txtLocation.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.PasswordChar = '\0';
-            this.txtLocation.PlaceholderText = "";
-            this.txtLocation.SelectedText = "";
-            this.txtLocation.Size = new System.Drawing.Size(289, 25);
-            this.txtLocation.TabIndex = 42;
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhoneNumber.DefaultText = "";
-            this.txtPhoneNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPhoneNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPhoneNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhoneNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPhoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNumber.ForeColor = System.Drawing.Color.Black;
-            this.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(766, 42);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.PasswordChar = '\0';
-            this.txtPhoneNumber.PlaceholderText = "";
-            this.txtPhoneNumber.SelectedText = "";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(289, 24);
-            this.txtPhoneNumber.TabIndex = 43;
-            // 
-            // txtDepartmentName
-            // 
-            this.txtDepartmentName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDepartmentName.DefaultText = "";
-            this.txtDepartmentName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDepartmentName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDepartmentName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDepartmentName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDepartmentName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDepartmentName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDepartmentName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartmentName.ForeColor = System.Drawing.Color.Black;
-            this.txtDepartmentName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDepartmentName.Location = new System.Drawing.Point(766, 6);
-            this.txtDepartmentName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtDepartmentName.Name = "txtDepartmentName";
-            this.txtDepartmentName.PasswordChar = '\0';
-            this.txtDepartmentName.PlaceholderText = "";
-            this.txtDepartmentName.SelectedText = "";
-            this.txtDepartmentName.Size = new System.Drawing.Size(289, 24);
-            this.txtDepartmentName.TabIndex = 44;
             // 
             // DepartmentForm
             // 
