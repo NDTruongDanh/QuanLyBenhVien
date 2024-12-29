@@ -160,7 +160,6 @@
     <Compile Include="Classes\CommonChecks.cs" />
     <Compile Include="Classes\CommonControls.cs" />
     <Compile Include="Classes\CommonQuery.cs" />
-    <Compile Include="Classes\DateTimeExtensions.cs" />
     <Compile Include="Classes\ShiftScheduler.cs" />
     <Compile Include="DepartmentForm.cs">
       <SubType>Form</SubType>
