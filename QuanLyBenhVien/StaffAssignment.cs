@@ -90,6 +90,7 @@ namespace QuanLyBenhVien
 
                             // Map Day of the Week to column index
 
+                            dgvAssignment.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                             int columnIndex = ((int)assignmentDate.DayOfWeek == 0 ? 6 : (int)assignmentDate.DayOfWeek - 1) + 1;
                             if (columnIndex >= 1 && columnIndex <= 7) // Ensure within range
                             {
