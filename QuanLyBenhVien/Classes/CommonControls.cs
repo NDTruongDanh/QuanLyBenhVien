@@ -289,6 +289,32 @@ namespace QuanLyBenhVien.Classes
             }
         }
 
+        public static void InitializeCmbTypeOfRoom(ComboBox cmbTypeOfRoom)
+        {
+            string query = "SELECT RoomType FROM ROOM";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbTypeOfRoom.Items.Add(reader["RoomType"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
         public static void InitializeCmbRoomID(ComboBox cmbRoomID)
         {
             string query = "SELECT RoomID FROM ROOM";

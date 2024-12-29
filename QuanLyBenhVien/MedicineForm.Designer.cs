@@ -104,7 +104,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvMedicine.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMedicine.ColumnHeadersHeight = 4;
+            this.dgvMedicine.ColumnHeadersHeight = 35;
             this.dgvMedicine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -146,7 +146,7 @@
             this.dgvMedicine.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvMedicine.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvMedicine.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvMedicine.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvMedicine.ThemeStyle.HeaderStyle.Height = 35;
             this.dgvMedicine.ThemeStyle.ReadOnly = true;
             this.dgvMedicine.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvMedicine.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;

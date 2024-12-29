@@ -125,9 +125,7 @@ namespace QuanLyBenhVien
                                     bn.Gender AS ""Giới tính"", 
                                     bn.PhoneNumber AS ""Số điện thoại"", 
                                     bn.AddressPatient AS ""Địa chỉ"", 
-                                    bn.Email AS ""Email"", 
-                                    bn.AdmissionDate AS ""Ngày nhập viện"", 
-                                    bn.DischargeDate AS ""Ngày xuất viện""
+                                    bn.Email AS ""Email""
                                 FROM 
                                     PATIENT AS bn
                                  WHERE 1=1";
