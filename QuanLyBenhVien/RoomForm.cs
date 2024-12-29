@@ -35,7 +35,15 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string query = "SELECT \r\n    phong.RoomID AS \"Mã phòng\", \r\n    phong.DepartmentID AS \"Mã khoa\", \r\n    phong.BedCount AS \"Số giường\", \r\n    phong.RoomType AS \"Loại phòng\"\r\nFROM \r\n    ROOM AS phong;\r\n";
+                    string query = @"SELECT 
+                                    phong.RoomID AS ""Mã phòng"", 
+                                    phong.DepartmentID AS ""Mã khoa"", 
+                                    phong.BedCount AS ""Số giường"", 
+                                    phong.RoomType AS ""Loại phòng"",
+                                    phong.EmptyBed AS ""Giường trống""
+                                FROM 
+                                    ROOM AS phong;
+                                ";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     DataSet dataSet = new DataSet();
                     adapter.Fill(dataSet, "ROOM");
@@ -72,18 +80,19 @@ namespace QuanLyBenhVien
 
             string query = @"IF EXISTS (SELECT 1 FROM ROOM WHERE RoomID = @RoomID)
                      UPDATE ROOM 
-                     SET DepartmentID = @DepartmentID, BedCount = @BedCount, RoomType = @RoomType 
+                     SET DepartmentID = @DepartmentID, BedCount = @BedCount, RoomType = @RoomType, EmptyBed = @EmptyBed 
                      WHERE RoomID = @RoomID
                      ELSE
-                     INSERT INTO ROOM (RoomID, DepartmentID, BedCount, RoomType) 
-                     VALUES (@RoomID, @DepartmentID, @BedCount, @RoomType)";
+                     INSERT INTO ROOM (RoomID, DepartmentID, BedCount, RoomType, EmptyBed) 
+                     VALUES (@RoomID, @DepartmentID, @BedCount, @RoomType, @EmptyBed)";
 
             var parameters = new Dictionary<string, object>
             {
                 { "@RoomID", txtRoomID.Text.Trim() },
                 { "@DepartmentID",cmbDepartmentID.Text.Trim() },
                 { "@BedCount", int.Parse(txtBedCount.Text.Trim()) },
-                { "@RoomType", cmbRoomType.Text.Trim() }
+                { "@RoomType", cmbRoomType.Text.Trim() },
+                { "@EmptyBed", int.Parse(txtEmptyBed.Text.Trim()) },
             };
 
             CommonQuery.ExecuteQuery(query, parameters);
@@ -103,7 +112,15 @@ namespace QuanLyBenhVien
                 {
                     conn.Open();
 
-                    string query = "SELECT \r\n    phong.RoomID AS \"Mã phòng\", \r\n    phong.DepartmentID AS \"Mã khoa\", \r\n    phong.BedCount AS \"Số giường\", \r\n    phong.RoomType AS \"Loại phòng\"\r\nFROM \r\n    ROOM AS phong\r\n WHERE 1=1";
+                    string query = @"SELECT 
+                                    phong.RoomID AS ""Mã phòng"", 
+                                    phong.DepartmentID AS ""Mã khoa"", 
+                                    phong.BedCount AS ""Số giường"", 
+                                    phong.RoomType AS ""Loại phòng""
+                                    phong.EmptyBed AS ""Giường trống""
+                                FROM 
+                                    ROOM AS phong
+                                 WHERE 1=1";
                     var parameters = new Dictionary<string, object>();
 
                     if (!string.IsNullOrEmpty(txtRoomID.Text))
@@ -120,6 +137,12 @@ namespace QuanLyBenhVien
                     {
                         query += " AND RoomType LIKE @RoomType";
                         parameters.Add("@RoomType", $"%{cmbRoomType.Text.Trim()}%");
+                    }
+                    
+                    if (int.TryParse(txtEmptyBed.Text, out int result))
+                    {
+                        query += " AND EmptyBed = @EmptyBed";
+                        parameters.Add("@EmptyBed", result);
                     }
 
                     using (SqlCommand command = new SqlCommand(query, conn))
@@ -175,6 +198,7 @@ namespace QuanLyBenhVien
                 cmbDepartmentID.Text = selectedRow.Cells[1].Value.ToString();
                 txtBedCount.Text = selectedRow.Cells[2].Value.ToString();
                 cmbRoomType.Text = selectedRow.Cells[3].Value.ToString();
+                txtEmptyBed.Text = selectedRow.Cells[4].Value.ToString();
             }
         }
     }

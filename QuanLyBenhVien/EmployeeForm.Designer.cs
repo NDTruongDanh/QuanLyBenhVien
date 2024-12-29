@@ -104,7 +104,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEmployee.ColumnHeadersHeight = 35;
+            this.dgvEmployee.ColumnHeadersHeight = 45;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -146,7 +146,7 @@
             this.dgvEmployee.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvEmployee.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvEmployee.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvEmployee.ThemeStyle.HeaderStyle.Height = 35;
+            this.dgvEmployee.ThemeStyle.HeaderStyle.Height = 45;
             this.dgvEmployee.ThemeStyle.ReadOnly = true;
             this.dgvEmployee.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvEmployee.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -390,12 +390,13 @@
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(154, 132);
+            this.txtEmail.Location = new System.Drawing.Point(155, 132);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
-            this.txtEmail.Size = new System.Drawing.Size(369, 30);
+            this.txtEmail.Size = new System.Drawing.Size(367, 30);
             this.txtEmail.TabIndex = 39;
             // 
             // cmbTypeOfStaff

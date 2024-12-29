@@ -42,7 +42,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.cmbDepartmentID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbRoomType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEmptyBed = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtBedCount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtRoomID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -230,7 +230,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.cmbDepartmentID, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.cmbRoomType, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.guna2TextBox2, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txtEmptyBed, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtBedCount, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtRoomID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 2);
@@ -281,27 +281,27 @@
             this.cmbRoomType.Size = new System.Drawing.Size(295, 36);
             this.cmbRoomType.TabIndex = 37;
             // 
-            // guna2TextBox2
+            // txtEmptyBed
             // 
-            this.guna2TextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(235, 132);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(293, 42);
-            this.guna2TextBox2.TabIndex = 28;
+            this.txtEmptyBed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmptyBed.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmptyBed.DefaultText = "";
+            this.txtEmptyBed.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmptyBed.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmptyBed.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmptyBed.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmptyBed.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmptyBed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmptyBed.ForeColor = System.Drawing.Color.Black;
+            this.txtEmptyBed.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmptyBed.Location = new System.Drawing.Point(235, 132);
+            this.txtEmptyBed.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtEmptyBed.Name = "txtEmptyBed";
+            this.txtEmptyBed.PasswordChar = '\0';
+            this.txtEmptyBed.PlaceholderText = "";
+            this.txtEmptyBed.SelectedText = "";
+            this.txtEmptyBed.Size = new System.Drawing.Size(293, 42);
+            this.txtEmptyBed.TabIndex = 28;
             // 
             // txtBedCount
             // 
@@ -438,7 +438,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmptyBed;
         private Guna.UI2.WinForms.Guna2TextBox txtBedCount;
         private Guna.UI2.WinForms.Guna2TextBox txtRoomID;
         private Guna.UI2.WinForms.Guna2ComboBox cmbDepartmentID;
