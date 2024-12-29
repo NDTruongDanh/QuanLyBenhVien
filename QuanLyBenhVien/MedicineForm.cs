@@ -19,6 +19,8 @@ namespace QuanLyBenhVien
         public MedicineForm()
         {
             InitializeComponent();
+            CommonControls.InitializeCmbDosageUnint(cmbDosageUnit);
+            CommonControls.InitializeCmbCategory(cmbCategory);  
         }
 
         private void MedicineForm_Load(object sender, EventArgs e)

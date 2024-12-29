@@ -342,6 +342,60 @@ namespace QuanLyBenhVien.Classes
             }
         }
 
+        public static void InitializeCmbDosageUnint(ComboBox cmbDosageUnit)
+        {
+            string query = "SELECT DosageUnit FROM MEDICATION";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbDosageUnit.Items.Add(reader["DosageUnit"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        public static void InitializeCmbCategory(ComboBox cmbCategory)
+        {
+            string query = "SELECT Category FROM MEDICATION";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbCategory.Items.Add(reader["Category"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
         public static void SetupDateTimePickerCustom_Time(DateTimePicker dateTimePicker)
         {
             dateTimePicker.Format = DateTimePickerFormat.Custom;
