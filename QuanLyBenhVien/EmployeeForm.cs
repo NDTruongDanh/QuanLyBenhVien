@@ -224,5 +224,59 @@ namespace QuanLyBenhVien
             }
         }
 
+        private void dgvEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtStaffID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbDepartmentID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpDateOfJoining_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSalary_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dtpBirthday_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFullName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

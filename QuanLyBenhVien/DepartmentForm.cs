@@ -32,7 +32,16 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = "SELECT \r\n    khoa.DepartmentID AS \"Mã khoa\", \r\n    khoa.DepartmentName AS \"Tên khoa\", \r\n    khoa.EmployeeNumber AS \"Số lượng nhân viên\", \r\n    khoa.HeadDepartmentID AS \"Mã trưởng khoa\", \r\n    khoa.PhoneNumber AS \"Số điện thoại\", \r\n    khoa.LocationDPM AS \"Vị trí\"\r\nFROM \r\n    DEPARTMENT AS khoa;\r\n";
+                    string sql = @"SELECT 
+                                    khoa.DepartmentID AS ""Mã khoa"", 
+                                    khoa.DepartmentName AS ""Tên khoa"", 
+                                    khoa.EmployeeNumber AS ""Số lượng nhân viên"", 
+                                    khoa.HeadDepartmentID AS ""Mã trưởng khoa"", 
+                                    khoa.PhoneNumber AS ""Số điện thoại"", 
+                                    khoa.LocationDPM AS ""Vị trí""
+                                FROM 
+                                    DEPARTMENT AS khoa;
+                                ";
                     SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
                     DataSet dataSet = new DataSet();
                     adapter.Fill(dataSet, "DEPARTMENT");

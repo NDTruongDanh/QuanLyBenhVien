@@ -61,9 +61,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.55556F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.55556F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.88889F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -95,7 +95,7 @@
             this.dgvAccount.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAccount.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvAccount.Location = new System.Drawing.Point(3, 146);
+            this.dgvAccount.Location = new System.Drawing.Point(3, 107);
             this.dgvAccount.Name = "dgvAccount";
             this.dgvAccount.ReadOnly = true;
             this.dgvAccount.RowHeadersVisible = false;
@@ -103,7 +103,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvAccount.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAccount.RowTemplate.Height = 24;
-            this.dgvAccount.Size = new System.Drawing.Size(794, 301);
+            this.dgvAccount.Size = new System.Drawing.Size(794, 340);
             this.dgvAccount.TabIndex = 5;
             this.dgvAccount.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvAccount.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -140,12 +140,12 @@
             this.tableLayoutPanel3.Controls.Add(this.btnRefresh, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnFind, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 97);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 56);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(792, 42);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(792, 44);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // btnRemove
@@ -159,7 +159,7 @@
             this.btnRemove.ForeColor = System.Drawing.Color.White;
             this.btnRemove.Location = new System.Drawing.Point(597, 3);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(192, 36);
+            this.btnRemove.Size = new System.Drawing.Size(192, 38);
             this.btnRemove.TabIndex = 7;
             this.btnRemove.Text = "Xoá";
             this.btnRemove.Click += new System.EventHandler(this.btnDelete_Click);
@@ -175,7 +175,7 @@
             this.btnAddOrUpdate.ForeColor = System.Drawing.Color.White;
             this.btnAddOrUpdate.Location = new System.Drawing.Point(399, 3);
             this.btnAddOrUpdate.Name = "btnAddOrUpdate";
-            this.btnAddOrUpdate.Size = new System.Drawing.Size(192, 36);
+            this.btnAddOrUpdate.Size = new System.Drawing.Size(192, 38);
             this.btnAddOrUpdate.TabIndex = 6;
             this.btnAddOrUpdate.Text = "Thêm/Sửa";
             this.btnAddOrUpdate.Click += new System.EventHandler(this.btnAddOrUpdate_Click);
@@ -191,7 +191,7 @@
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.Location = new System.Drawing.Point(201, 3);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(192, 36);
+            this.btnRefresh.Size = new System.Drawing.Size(192, 38);
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -207,7 +207,7 @@
             this.btnFind.ForeColor = System.Drawing.Color.White;
             this.btnFind.Location = new System.Drawing.Point(3, 3);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(192, 36);
+            this.btnFind.Size = new System.Drawing.Size(192, 38);
             this.btnFind.TabIndex = 4;
             this.btnFind.Text = "Tìm";
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -228,51 +228,51 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 87);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 46);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultText = "";
             this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(509, 22);
+            this.txtPassword.Location = new System.Drawing.Point(509, 6);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.PlaceholderText = "";
             this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(281, 42);
+            this.txtPassword.Size = new System.Drawing.Size(281, 34);
             this.txtPassword.TabIndex = 28;
             // 
             // txtUserID
             // 
-            this.txtUserID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUserID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUserID.DefaultText = "";
             this.txtUserID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtUserID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtUserID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUserID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUserID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUserID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserID.ForeColor = System.Drawing.Color.Black;
             this.txtUserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUserID.Location = new System.Drawing.Point(153, 22);
+            this.txtUserID.Location = new System.Drawing.Point(153, 6);
             this.txtUserID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.PasswordChar = '\0';
             this.txtUserID.PlaceholderText = "";
             this.txtUserID.SelectedText = "";
-            this.txtUserID.Size = new System.Drawing.Size(238, 42);
+            this.txtUserID.Size = new System.Drawing.Size(238, 34);
             this.txtUserID.TabIndex = 27;
             // 
             // label1
@@ -283,7 +283,7 @@
             this.label1.Location = new System.Drawing.Point(399, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 87);
+            this.label1.Size = new System.Drawing.Size(102, 46);
             this.label1.TabIndex = 12;
             this.label1.Text = "Mật khẩu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -296,7 +296,7 @@
             this.label6.Location = new System.Drawing.Point(4, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(141, 87);
+            this.label6.Size = new System.Drawing.Size(141, 46);
             this.label6.TabIndex = 7;
             this.label6.Text = "Mã nhân viên";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
