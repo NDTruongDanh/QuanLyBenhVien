@@ -176,7 +176,8 @@ namespace QuanLyBenhVien
                 // Tạo lịch trực
                 var scheduler = new ShiftScheduler();
                 scheduler.GenerateSchedule(currentDate);
-
+                scheduler.GenerateSchedule(currentDate.AddDays(7));
+                MessageBox.Show("Đã tạo lịch trực thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
