@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBenhVien.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +18,8 @@ namespace QuanLyBenhVien
         public KiemtraThuocTonKho()
         {
             InitializeComponent();
+            CommonControls.InitializeCmbCategory(cmbCategory);
         }
-
 
         string connectionString = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
         private void btnOK_Click(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace QuanLyBenhVien
                     string query = "SELECT MedicationID AS [Mã thuốc], MedicationName AS[Tên thuốc], QuantityInStock AS[Số lượng tồn kho] FROM MEDICATION  WHERE 1=1";
 
                     if (!string.IsNullOrEmpty(cmbCategory.Text))
-                        query += $"AND Category = '{cmbCategory.Text}'";
+                        query += $"AND Category = N'{cmbCategory.Text}'";
                     if (!string.IsNullOrEmpty(txtQuantityInStock.Text))
                         query += $"AND QuantityInStock <= {txtQuantityInStock.Text}";
 
