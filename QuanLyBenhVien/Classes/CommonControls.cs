@@ -371,7 +371,7 @@ namespace QuanLyBenhVien.Classes
 
         public static void InitializeCmbCategory(ComboBox cmbCategory)
         {
-            string query = "SELECT Category FROM MEDICATION";
+            string query = "SELECT DISTINCT Category FROM MEDICATION";
 
             try
             {
