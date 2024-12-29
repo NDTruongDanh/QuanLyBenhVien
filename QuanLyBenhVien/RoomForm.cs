@@ -116,7 +116,7 @@ namespace QuanLyBenhVien
                                     phong.RoomID AS ""Mã phòng"", 
                                     phong.DepartmentID AS ""Mã khoa"", 
                                     phong.BedCount AS ""Số giường"", 
-                                    phong.RoomType AS ""Loại phòng""
+                                    phong.RoomType AS ""Loại phòng"",
                                     phong.EmptyBed AS ""Giường trống""
                                 FROM 
                                     ROOM AS phong
