@@ -749,6 +749,17 @@ VALUES
 ('H00030', 'PA0030', 'RO0030', '2024-12-30 12:00:00', '2025-01-08 13:00:00');
 
 
+--THUAT TOAN TIM GIUONG TRONG--
+DECLARE @sogiuongcoBN INT;
+SET @sogiuongcoBN =	(SELECT COUNT(*)
+					FROM NURSECARE 
+					WHERE RoomID='RO0001');
+
+SELECT RoomID, BedCount - @sogiuongcoBN AS EmptyBed
+FROM ROOM
+WHERE RoomID = 'RO0001'
+
+
 
 
 
