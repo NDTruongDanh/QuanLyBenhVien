@@ -105,8 +105,11 @@ CREATE TABLE ROOM (
     RoomID CHAR(6) PRIMARY KEY,
     DepartmentID VARCHAR(6),
     BedCount INT,  -- Số giường trong phòng
-    RoomType NVARCHAR(50)  -- Loại phòng: thường, VIP, hồi sức, v.v.
+    RoomType NVARCHAR(50) , -- Loại phòng: thường, VIP, hồi sức, v.v.
+	EmptyBed INT
 )
+
+
 
 CREATE TABLE WEEKLYASSIGNMENT (
     AssignmentID CHAR(6) PRIMARY KEY,
@@ -226,7 +229,8 @@ SELECT st.StaffID, FullName , ShiftType, WeekStartDate, WeekEndDate
 
 							   SELECT * FROM WEEKLYASSIGNMENT
 							   WHERE DepartmentID = 'DP0001'
-							  
+
+
 -- Example data for NURSECARE table
 INSERT INTO NURSECARE (CareID, NurseID, PatientID, RoomID, CareDateTime, CareType, Notes)
 VALUES
@@ -758,6 +762,40 @@ SET @sogiuongcoBN =	(SELECT COUNT(*)
 SELECT RoomID, BedCount - @sogiuongcoBN AS EmptyBed
 FROM ROOM
 WHERE RoomID = 'RO0001'
+
+
+CREATE Trigger t1 ON ROOM
+FOR INSERT
+AS
+BEGIN
+		UPDATE ROOM 
+		SET EmptyBed = BedCount
+END
+
+CREATE Trigger t2 ON ROOM
+FOR UPDATE
+AS
+BEGIN
+		IF UPDATE(EmptyBed) AND @@NestLevel = 1
+				BEGIN
+					print 'Khong duoc tu y sua EmptyBed'
+					ROLLBACK TRAN
+				END
+END
+
+
+CREATE Trigger t3 ON NURSECARE 
+AFTER INSERT, DELETE, UPDATE
+AS
+BEGIN
+		UPDATE ROOM
+		SET EmptyBed =BedCount - (SELECT COUNT (*)
+						FROM NURSECARE N
+						WHERE ROOM.RoomID = N.RoomID)
+END
+
+
+
 
 
 
