@@ -156,8 +156,8 @@ namespace QuanLyBenhVien.Classes
                     {
                         // Lấy ID cuối cùng để tạo ID mới
                         string getLastIdQuery = @"SELECT ISNULL(MAX(CAST(SUBSTRING(AssignmentID, 3, LEN(AssignmentID) - 2) AS INT)), 0) 
-                                           FROM WEEKLYASSIGNMENT WITH (TABLOCKX)
-                                           WHERE AssignmentID LIKE 'WA%'";
+                                                   FROM WEEKLYASSIGNMENT WITH (TABLOCKX)
+                                                   WHERE AssignmentID LIKE 'WA%'";
 
                         int startNumber;
                         using (SqlCommand cmd = new SqlCommand(getLastIdQuery, conn, transaction))
@@ -172,38 +172,28 @@ namespace QuanLyBenhVien.Classes
                             assignments[i].AssignmentID = $"WA{(startNumber + i):D4}";
                         }
 
-                        // Insert theo batch
-                        using (SqlCommand cmd = new SqlCommand())
+                        // Create a DataTable to hold the assignment data
+                        DataTable assignmentTable = new DataTable();
+                        assignmentTable.Columns.Add("AssignmentID", typeof(string));
+                        assignmentTable.Columns.Add("StaffID", typeof(string));
+                        assignmentTable.Columns.Add("AssignmentDate", typeof(DateTime));
+                        assignmentTable.Columns.Add("ShiftType", typeof(string));
+
+                        // Populate the DataTable with assignment data
+                        foreach (var assignment in assignments)
                         {
-                            cmd.Connection = conn;
-                            cmd.Transaction = transaction;
-                            cmd.CommandTimeout = 180;
+                            assignmentTable.Rows.Add(assignment.AssignmentID, assignment.StaffID, assignment.AssignmentDate, assignment.ShiftType);
+                        }
 
-                            for (int i = 0; i < assignments.Count; i += BATCH_SIZE)
-                            {
-                                var batch = assignments.Skip(i).Take(BATCH_SIZE);
-                                var valueStrings = new List<string>();
-                                var parameters = new List<SqlParameter>();
-                                int paramCount = 0;
-
-                                foreach (var assignment in batch)
-                                {
-                                    valueStrings.Add($"(@id{paramCount}, @staff{paramCount}, @date{paramCount}, @shift{paramCount})");
-                                    parameters.Add(new SqlParameter($"@id{paramCount}", assignment.AssignmentID));
-                                    parameters.Add(new SqlParameter($"@staff{paramCount}", assignment.StaffID));
-                                    parameters.Add(new SqlParameter($"@date{paramCount}", assignment.AssignmentDate));
-                                    parameters.Add(new SqlParameter($"@shift{paramCount}", assignment.ShiftType));
-                                    paramCount++;
-                                }
-
-                                string query = $@"INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, AssignmentDate, ShiftType) 
-                                           VALUES {string.Join(",", valueStrings)}";
-
-                                cmd.CommandText = query;
-                                cmd.Parameters.Clear();
-                                cmd.Parameters.AddRange(parameters.ToArray());
-                                cmd.ExecuteNonQuery();
-                            }
+                        // Use SqlBulkCopy to insert the data
+                        using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn, SqlBulkCopyOptions.Default, transaction))
+                        {
+                            bulkCopy.DestinationTableName = "WEEKLYASSIGNMENT";
+                            bulkCopy.ColumnMappings.Add("AssignmentID", "AssignmentID");
+                            bulkCopy.ColumnMappings.Add("StaffID", "StaffID");
+                            bulkCopy.ColumnMappings.Add("AssignmentDate", "AssignmentDate");
+                            bulkCopy.ColumnMappings.Add("ShiftType", "ShiftType");
+                            bulkCopy.WriteToServer(assignmentTable);
                         }
 
                         transaction.Commit();
