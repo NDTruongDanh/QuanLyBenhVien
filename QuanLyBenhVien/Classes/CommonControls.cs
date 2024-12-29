@@ -344,7 +344,7 @@ namespace QuanLyBenhVien.Classes
 
         public static void InitializeCmbDosageUnint(ComboBox cmbDosageUnit)
         {
-            string query = "SELECT DosageUnit FROM MEDICATION";
+            string query = "SELECT DISTINCT DosageUnit FROM MEDICATION";
 
             try
             {
