@@ -291,7 +291,7 @@ namespace QuanLyBenhVien.Classes
 
         public static void InitializeCmbTypeOfRoom(ComboBox cmbTypeOfRoom)
         {
-            string query = "SELECT RoomType FROM ROOM";
+            string query = "SELECT DISTINCT RoomType FROM ROOM";
             try
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
