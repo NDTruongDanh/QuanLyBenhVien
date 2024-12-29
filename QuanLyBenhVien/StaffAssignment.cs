@@ -30,6 +30,8 @@ namespace QuanLyBenhVien
             staffID = userID;
             cmbSelection.Text = "Tuần này";
             LoadWeeklyAssignments();
+            dgvAssignment.SelectionChanged += dgvAssignment_SelectionChanged;
+
         }
 
         private void LoadWeeklyAssignments()
@@ -130,11 +132,15 @@ namespace QuanLyBenhVien
                     if (cell.Value != null && cell.Value.ToString().Contains(searchString))
                     {
                         cell.Style.BackColor = Color.Yellow;
+                        cell.Tag = "highlighted";
                     }
                 }
             }
         }
-
+        private void dgvAssignment_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvAssignment.ClearSelection(); // Xóa bất kỳ lựa chọn nào
+        }
 
     }
 }
