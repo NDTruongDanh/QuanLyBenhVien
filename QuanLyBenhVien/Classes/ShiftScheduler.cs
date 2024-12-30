@@ -30,7 +30,7 @@ namespace QuanLyBenhVien.Classes
             List<string> staffIds = new List<string>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT StaffID FROM STAFF WITH (NOLOCK)";
+                string query = "SELECT StaffID FROM STAFF WITH (NOLOCK) WHERE LOWER(TypeOfStaff) != 'admin'";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.CommandTimeout = 180;
