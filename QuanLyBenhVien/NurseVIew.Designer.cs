@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.chứcNăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMặtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDeleteRemember = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,19 +63,12 @@
             // chứcNăngToolStripMenuItem
             // 
             this.chứcNăngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thôngTinCáNhânToolStripMenuItem,
             this.đổiMặtKhẩuToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem,
-            this.btnDeleteRemember});
+            this.btnDeleteRemember,
+            this.đăngXuấtToolStripMenuItem});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
             this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(119, 32);
             this.chứcNăngToolStripMenuItem.Text = "Chức năng";
-            // 
-            // thôngTinCáNhânToolStripMenuItem
-            // 
-            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(254, 32);
-            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             // 
             // đổiMặtKhẩuToolStripMenuItem
             // 
@@ -116,8 +108,8 @@
             // btnWeeklyAssignment
             // 
             this.btnWeeklyAssignment.Name = "btnWeeklyAssignment";
-            this.btnWeeklyAssignment.Size = new System.Drawing.Size(136, 32);
-            this.btnWeeklyAssignment.Text = "Lịch làm việc";
+            this.btnWeeklyAssignment.Size = new System.Drawing.Size(100, 32);
+            this.btnWeeklyAssignment.Text = "Lịch trực";
             this.btnWeeklyAssignment.Click += new System.EventHandler(this.btnWeeklyAssignment_Click);
             // 
             // trợLýẢoToolStripMenuItem
@@ -186,7 +178,6 @@
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem chứcNăngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đổiMặtKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem1;

@@ -64,8 +64,8 @@
             // 
             this.chứcNăngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.đổiMặtKhẩuToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem,
-            this.btnDeleteRemember});
+            this.btnDeleteRemember,
+            this.đăngXuấtToolStripMenuItem});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
             this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(119, 32);
             this.chứcNăngToolStripMenuItem.Text = "Chức năng";
@@ -108,8 +108,8 @@
             // btnWeeklyAssignment
             // 
             this.btnWeeklyAssignment.Name = "btnWeeklyAssignment";
-            this.btnWeeklyAssignment.Size = new System.Drawing.Size(136, 32);
-            this.btnWeeklyAssignment.Text = "Lịch làm việc";
+            this.btnWeeklyAssignment.Size = new System.Drawing.Size(105, 32);
+            this.btnWeeklyAssignment.Text = "Lịch trực ";
             this.btnWeeklyAssignment.Click += new System.EventHandler(this.btnWeeklyAssignment_Click);
             // 
             // trợLýẢoToolStripMenuItem
