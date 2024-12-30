@@ -70,7 +70,7 @@ namespace QuanLyBenhVien
                         {
                             int rowIndex = dgvAssignment.Rows.Add(shift);
                             DataGridViewCell cell = dgvAssignment.Rows[rowIndex].Cells[0];
-                            cell.Style.BackColor = Color.FromArgb(100, 88, 255);
+                            cell.Style.BackColor = Color.FromArgb(33, 42, 57);
                             cell.Style.ForeColor = Color.White;
                             cell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         }

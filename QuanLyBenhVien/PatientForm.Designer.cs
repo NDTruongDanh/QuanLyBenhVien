@@ -79,13 +79,13 @@
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(624, 70);
+            this.txtEmail.Location = new System.Drawing.Point(596, 70);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
-            this.txtEmail.Size = new System.Drawing.Size(287, 19);
+            this.txtEmail.Size = new System.Drawing.Size(315, 19);
             this.txtEmail.TabIndex = 38;
             // 
             // tableLayoutPanel2
@@ -131,7 +131,7 @@
             this.label7.Location = new System.Drawing.Point(465, 64);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 31);
+            this.label7.Size = new System.Drawing.Size(123, 31);
             this.label7.TabIndex = 45;
             this.label7.Text = "Email";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -144,7 +144,7 @@
             this.label6.Location = new System.Drawing.Point(465, 33);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 31);
+            this.label6.Size = new System.Drawing.Size(123, 31);
             this.label6.TabIndex = 44;
             this.label6.Text = "Ngày sinh";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,7 +157,7 @@
             this.label5.Location = new System.Drawing.Point(465, 2);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 31);
+            this.label5.Size = new System.Drawing.Size(123, 31);
             this.label5.TabIndex = 43;
             this.label5.Text = "Tên bệnh nhân";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -170,7 +170,7 @@
             this.label3.Location = new System.Drawing.Point(15, 95);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 31);
+            this.label3.Size = new System.Drawing.Size(120, 31);
             this.label3.TabIndex = 42;
             this.label3.Text = "Số điện thoại";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,7 +183,7 @@
             this.label2.Location = new System.Drawing.Point(15, 64);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 31);
+            this.label2.Size = new System.Drawing.Size(120, 31);
             this.label2.TabIndex = 41;
             this.label2.Text = "Địa chỉ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,7 +196,7 @@
             this.label1.Location = new System.Drawing.Point(15, 33);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 31);
+            this.label1.Size = new System.Drawing.Size(120, 31);
             this.label1.TabIndex = 40;
             this.label1.Text = "Giới tính";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -209,7 +209,7 @@
             this.label4.Location = new System.Drawing.Point(15, 2);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 31);
+            this.label4.Size = new System.Drawing.Size(120, 31);
             this.label4.TabIndex = 39;
             this.label4.Text = "Mã bệnh nhân";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -229,13 +229,13 @@
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFullName.ForeColor = System.Drawing.Color.Black;
             this.txtFullName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFullName.Location = new System.Drawing.Point(624, 8);
+            this.txtFullName.Location = new System.Drawing.Point(596, 8);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.PasswordChar = '\0';
             this.txtFullName.PlaceholderText = "";
             this.txtFullName.SelectedText = "";
-            this.txtFullName.Size = new System.Drawing.Size(287, 19);
+            this.txtFullName.Size = new System.Drawing.Size(315, 19);
             this.txtFullName.TabIndex = 36;
             // 
             // txtPhoneNumber
@@ -253,13 +253,13 @@
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.ForeColor = System.Drawing.Color.Black;
             this.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(171, 101);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(143, 101);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.PasswordChar = '\0';
             this.txtPhoneNumber.PlaceholderText = "";
             this.txtPhoneNumber.SelectedText = "";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(286, 19);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(314, 19);
             this.txtPhoneNumber.TabIndex = 35;
             // 
             // txtAddress
@@ -277,13 +277,13 @@
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress.Location = new System.Drawing.Point(171, 70);
+            this.txtAddress.Location = new System.Drawing.Point(143, 70);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderText = "";
             this.txtAddress.SelectedText = "";
-            this.txtAddress.Size = new System.Drawing.Size(286, 19);
+            this.txtAddress.Size = new System.Drawing.Size(314, 19);
             this.txtAddress.TabIndex = 34;
             // 
             // txtPatientID
@@ -301,13 +301,13 @@
             this.txtPatientID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatientID.ForeColor = System.Drawing.Color.Black;
             this.txtPatientID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPatientID.Location = new System.Drawing.Point(171, 8);
+            this.txtPatientID.Location = new System.Drawing.Point(143, 8);
             this.txtPatientID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPatientID.Name = "txtPatientID";
             this.txtPatientID.PasswordChar = '\0';
             this.txtPatientID.PlaceholderText = "";
             this.txtPatientID.SelectedText = "";
-            this.txtPatientID.Size = new System.Drawing.Size(286, 19);
+            this.txtPatientID.Size = new System.Drawing.Size(314, 19);
             this.txtPatientID.TabIndex = 25;
             // 
             // cmbGender
@@ -326,9 +326,9 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cmbGender.Location = new System.Drawing.Point(170, 36);
+            this.cmbGender.Location = new System.Drawing.Point(142, 36);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(288, 36);
+            this.cmbGender.Size = new System.Drawing.Size(316, 36);
             this.cmbGender.TabIndex = 33;
             // 
             // dtpDateOfBirth
@@ -340,11 +340,11 @@
             this.dtpDateOfBirth.FillColor = System.Drawing.SystemColors.Control;
             this.dtpDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateOfBirth.Location = new System.Drawing.Point(623, 36);
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(595, 36);
             this.dtpDateOfBirth.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDateOfBirth.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(289, 25);
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(317, 25);
             this.dtpDateOfBirth.TabIndex = 37;
             this.dtpDateOfBirth.Value = new System.DateTime(2024, 12, 28, 12, 16, 11, 507);
             // 
@@ -355,6 +355,7 @@
             this.btnRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnRemove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnRemove.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemove.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
             this.btnRemove.Location = new System.Drawing.Point(696, 3);
@@ -371,6 +372,7 @@
             this.btnAddOrUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAddOrUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAddOrUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddOrUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.btnAddOrUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddOrUpdate.ForeColor = System.Drawing.Color.White;
             this.btnAddOrUpdate.Location = new System.Drawing.Point(465, 3);
@@ -387,6 +389,7 @@
             this.btnRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.Location = new System.Drawing.Point(234, 3);
@@ -403,6 +406,7 @@
             this.btnFind.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnFind.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnFind.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFind.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.btnFind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.Color.White;
             this.btnFind.Location = new System.Drawing.Point(3, 3);
@@ -460,10 +464,10 @@
             this.dgvPatient.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPatient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPatient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -473,8 +477,8 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPatient.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPatient.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -525,7 +529,7 @@
             // 
             // PatientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 589);
             this.Controls.Add(this.tableLayoutPanel1);

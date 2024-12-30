@@ -207,8 +207,10 @@ namespace QuanLyBenhVien
                 txtAddress.Text = selectedRow.Cells[5].Value.ToString();
                 txtEmail.Text = selectedRow.Cells[6].Value.ToString();
             }
-        }
 
+            DataGridView dgv = sender as DataGridView;
+            dgv.Invalidate();
+        }
 
     }
 
