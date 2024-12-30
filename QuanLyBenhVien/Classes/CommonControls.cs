@@ -262,6 +262,35 @@ namespace QuanLyBenhVien.Classes
             }
         }
 
+        public static void InitializeCmbHeadID(ComboBox cmbHeadID, string departmentID)
+        {
+            cmbHeadID.Items.Clear();
+            string query = $"SELECT StaffID FROM STAFF WHERE DepartmentID = '{departmentID}'";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cmbHeadID.Items.Add(reader["StaffID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+
         public static void InitializeCmbNurseID(ComboBox cmbNurseID)
         {
             string query = "SELECT StaffID FROM STAFF WHERE TypeOfStaff LIKE N'%Điều dưỡng%'";

@@ -22,7 +22,6 @@ namespace QuanLyBenhVien
         private void DepartmentForm_Load(object sender, EventArgs e)
         {
             LoadData();
-            CommonControls.InitializeCmbStaffID(cmbHeadDepartmentID);
         }
 
         private void LoadData()
@@ -199,5 +198,9 @@ namespace QuanLyBenhVien
             }
         }
 
+        private void txtDepartmentID_TextChanged(object sender, EventArgs e)
+        {
+            CommonControls.InitializeCmbHeadID(cmbHeadDepartmentID, txtDepartmentID.Text);
+        }
     }
 }
