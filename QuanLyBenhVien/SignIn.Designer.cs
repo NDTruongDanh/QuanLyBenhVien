@@ -140,7 +140,7 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(256, 168);
+            this.guna2Button1.Location = new System.Drawing.Point(246, 168);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(187, 40);
             this.guna2Button1.TabIndex = 17;
@@ -149,6 +149,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.txtUser);
             this.panel1.Controls.Add(this.chkRememberMe);
             this.panel1.Controls.Add(this.guna2Button1);
@@ -156,18 +158,18 @@
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.btnHidePass);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(147, 109);
+            this.panel1.Location = new System.Drawing.Point(165, 142);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(503, 221);
+            this.panel1.Size = new System.Drawing.Size(503, 232);
             this.panel1.TabIndex = 18;
             // 
             // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::QuanLyBenhVien.Properties.Resources.hospital_building_vector_22070527;
+            this.BackgroundImage = global::QuanLyBenhVien.Properties.Resources.anhBV;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(856, 512);
             this.Controls.Add(this.panel1);
             this.Name = "SignIn";
             this.Text = "ĐĂNG NHẬP";
