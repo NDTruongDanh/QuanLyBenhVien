@@ -264,7 +264,7 @@ namespace QuanLyBenhVien.Classes
 
         public static void InitializeCmbNurseID(ComboBox cmbNurseID)
         {
-            string query = "SELECT StaffID FROM STAFF WHERE TypeOfStaff LIKE N'%Y tá%'";
+            string query = "SELECT StaffID FROM STAFF WHERE TypeOfStaff LIKE N'%Điều dưỡng%'";
 
             try
             {
