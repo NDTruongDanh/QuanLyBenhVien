@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace QuanLyBenhVien
@@ -31,7 +32,7 @@ namespace QuanLyBenhVien
             cmbSelection.Text = "Tuần này";
             LoadWeeklyAssignments();
             dgvAssignment.SelectionChanged += dgvAssignment_SelectionChanged;
-
+            dgvAssignment.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
         }
 
         private void LoadWeeklyAssignments()
@@ -42,7 +43,6 @@ namespace QuanLyBenhVien
                 {
                     conn.Open();
 
-                    // Query to fetch assignments for the current week
                     string sql = null;
                     if (cmbSelection.SelectedIndex == 1)
                     {
@@ -64,14 +64,15 @@ namespace QuanLyBenhVien
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        // Clear existing data
                         dgvAssignment.Rows.Clear();
-
-                        // Create rows for each shift type
                         string[] shifts = { "Sáng", "Chiều", "Tối" };
                         foreach (string shift in shifts)
                         {
-                            dgvAssignment.Rows.Add(shift);
+                            int rowIndex = dgvAssignment.Rows.Add(shift);
+                            DataGridViewCell cell = dgvAssignment.Rows[rowIndex].Cells[0];
+                            cell.Style.BackColor = Color.FromArgb(100, 88, 255);
+                            cell.Style.ForeColor = Color.White;
+                            cell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         }
 
                         while (reader.Read())
@@ -81,7 +82,6 @@ namespace QuanLyBenhVien
                             string shiftType = reader["ShiftType"].ToString();
                             DateTime assignmentDate = (DateTime)reader["AssignmentDate"];
 
-                            // Map ShiftType to the appropriate row index
                             int rowIndex = Array.IndexOf(shifts, shiftType);
                             if (rowIndex == -1)
                             {
@@ -90,11 +90,10 @@ namespace QuanLyBenhVien
                             }
 
 
-                            // Map Day of the Week to column index
 
                             dgvAssignment.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                             int columnIndex = ((int)assignmentDate.DayOfWeek == 0 ? 6 : (int)assignmentDate.DayOfWeek - 1) + 1;
-                            if (columnIndex >= 1 && columnIndex <= 7) // Ensure within range
+                            if (columnIndex >= 1 && columnIndex <= 7)
                             {
                                 if (!string.IsNullOrEmpty(dgvAssignment.Rows[rowIndex].Cells[columnIndex].Value?.ToString()))
                                 {
@@ -139,7 +138,7 @@ namespace QuanLyBenhVien
         }
         private void dgvAssignment_SelectionChanged(object sender, EventArgs e)
         {
-            dgvAssignment.ClearSelection(); // Xóa bất kỳ lựa chọn nào
+            dgvAssignment.ClearSelection();
         }
 
     }
