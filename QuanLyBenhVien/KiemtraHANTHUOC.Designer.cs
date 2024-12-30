@@ -58,13 +58,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1161, 624);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(871, 507);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvExpireInfo
@@ -75,10 +74,10 @@
             this.dgvExpireInfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvExpireInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvExpireInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -88,13 +87,14 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvExpireInfo.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvExpireInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvExpireInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvExpireInfo.Location = new System.Drawing.Point(3, 189);
+            this.dgvExpireInfo.Location = new System.Drawing.Point(2, 153);
+            this.dgvExpireInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvExpireInfo.Name = "dgvExpireInfo";
             this.dgvExpireInfo.ReadOnly = true;
             this.dgvExpireInfo.RowHeadersVisible = false;
@@ -102,7 +102,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvExpireInfo.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvExpireInfo.RowTemplate.Height = 24;
-            this.dgvExpireInfo.Size = new System.Drawing.Size(1155, 432);
+            this.dgvExpireInfo.Size = new System.Drawing.Size(867, 352);
             this.dgvExpireInfo.TabIndex = 7;
             this.dgvExpireInfo.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvExpireInfo.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -134,11 +134,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1155, 118);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(867, 97);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // tableLayoutPanel3
@@ -151,11 +152,12 @@
             this.tableLayoutPanel3.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(234, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(175, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(687, 112);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(516, 93);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // txtHanThuoc
@@ -171,13 +173,13 @@
             this.txtHanThuoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHanThuoc.ForeColor = System.Drawing.Color.Black;
             this.txtHanThuoc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHanThuoc.Location = new System.Drawing.Point(150, 35);
-            this.txtHanThuoc.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtHanThuoc.Location = new System.Drawing.Point(120, 29);
+            this.txtHanThuoc.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtHanThuoc.Name = "txtHanThuoc";
             this.txtHanThuoc.PasswordChar = '\0';
             this.txtHanThuoc.PlaceholderText = "";
             this.txtHanThuoc.SelectedText = "";
-            this.txtHanThuoc.Size = new System.Drawing.Size(469, 42);
+            this.txtHanThuoc.Size = new System.Drawing.Size(341, 34);
             this.txtHanThuoc.TabIndex = 26;
             // 
             // label3
@@ -185,9 +187,10 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(626, 0);
+            this.label3.Location = new System.Drawing.Point(466, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 112);
+            this.label3.Size = new System.Drawing.Size(48, 93);
             this.label3.TabIndex = 7;
             this.label3.Text = "ngày";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -197,9 +200,10 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(2, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 112);
+            this.label2.Size = new System.Drawing.Size(113, 93);
             this.label2.TabIndex = 5;
             this.label2.Text = "Còn lại trong:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -214,11 +218,12 @@
             this.tableLayoutPanel4.Controls.Add(this.guna2Button2, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.guna2Button1, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 127);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 103);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1155, 56);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(867, 46);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
             // guna2Button2
@@ -228,11 +233,13 @@
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(579, 3);
+            this.guna2Button2.Location = new System.Drawing.Point(434, 2);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(282, 50);
+            this.guna2Button2.Size = new System.Drawing.Size(212, 42);
             this.guna2Button2.TabIndex = 7;
             this.guna2Button2.Text = "Đã hết hạn";
             this.guna2Button2.Click += new System.EventHandler(this.btnExpired_Click);
@@ -244,23 +251,24 @@
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(291, 3);
+            this.guna2Button1.Location = new System.Drawing.Point(218, 2);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(282, 50);
+            this.guna2Button1.Size = new System.Drawing.Size(212, 42);
             this.guna2Button1.TabIndex = 6;
             this.guna2Button1.Text = "Tìm";
             this.guna2Button1.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // KiemtraHANTHUOC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1161, 624);
+            this.ClientSize = new System.Drawing.Size(871, 507);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KiemtraHANTHUOC";
             this.Text = "KIỂM TRA HẠN SỬ DỤNG THUỐC";
             this.Load += new System.EventHandler(this.KiemtraHANTHUOC_Load);
