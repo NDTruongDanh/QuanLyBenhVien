@@ -196,40 +196,6 @@ ADD CONSTRAINT FK_N_R FOREIGN KEY (RoomID) REFERENCES ROOM(RoomID)
 
 
 
-CREATE TRIGGER TOTALMONEY_BD_IU
-ON BILLDETAIL
-AFTER INSERT, DELETE, UPDATE
-AS
-	UPDATE BILL
-	SET Total = (SELECT SUM(Amount*Price) 
-				FROM BILLDETAIL b JOIN MEDICATION m ON b.MedicationID = m.MedicationID 
-				WHERE BILL.TransactionID=b.TransactionID)
-
-
-ALTER TABLE APPOINTMENT
-DROP CONSTRAINT FK_AP_DE
-
-
-SELECT AppointmentDateTime, FullName
-FROM APPOINTMENT a JOIN PATIENT p ON a.PatientID = p.PatientID
-WHERE AppointmentDateTime > DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) -- Start of the week (Monday)
-  AND AppointmentDateTime <= DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) -- End of the week (Sunday);
-ORDER BY AppointmentDateTime
-
-
-SELECT st.StaffID, FullName , ShiftType, WeekStartDate, WeekEndDate 
-                               FROM WEEKLYASSIGNMENT w JOIN STAFF st ON w.StaffID = st.StaffID
-                               WHERE WeekStartDate > DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) 
-                                      AND WeekEndDate <= DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
-	                                  AND w.DepartmentID IN (SELECT st1.DepartmentID FROM STAFF st1 WHERE st1.StaffID = 'ST0001')
-                               ORDER BY ShiftType, WeekStartDate
-
-							   SELECT * FROM STAFF
-							   WHERE DepartmentID = 'DP0001'
-
-							   SELECT * FROM WEEKLYASSIGNMENT
-							   WHERE DepartmentID = 'DP0001'
-
 
 -- Example data for NURSECARE table
 INSERT INTO NURSECARE (CareID, NurseID, PatientID, RoomID, CareDateTime, CareType, Notes)
@@ -794,6 +760,52 @@ BEGIN
 						WHERE ROOM.RoomID = N.RoomID)
 END
 
+
+
+
+--Ngày sinh nhân viên nhỏ hơn ngày gia nhập--
+ALTER TABLE STAFF
+ADD CONSTRAINT CK_DOB_DOJ CHECK (DateOfBirth < DateOfJoining)
+
+--Salary của nhân viên lớn hơn 0--
+ALTER TABLE STAFF
+ADD CONSTRAINT CK_SALARY CHECK (Salary > 0)
+
+--Kiểm tra số nhân viên của 1 KHOA--
+CREATE Trigger t5 ON DEPARTMENT
+FOR INSERT
+AS
+BEGIN
+		IF EXISTS (SELECT 1
+					FROM inserted 
+					WHERE EmployeeNumber <> 0 )
+			BEGIN
+				print N'Không được khởi tạo số lượng nhân viên khác 0 cho KHOA'
+				ROLLBACK TRAN
+			END
+END
+
+CREATE Trigger t6 ON DEPARTMENT
+FOR UPDATE
+AS
+BEGIN
+		IF UPDATE(EmployeeNumber) AND @@NestLevel = 1
+			BEGIN
+				print N'Không được tự ý sửa EmployeeNumber'
+				ROLLBACK TRAN
+			END
+END 
+
+
+CREATE Trigger t7 ON STAFF
+FOR INSERT, DELETE, UPDATE
+AS
+BEGIN
+		UPDATE DEPARTMENT
+		SET EmployeeNumber = (SELECT COUNT(*)
+								FROM STAFF S
+								WHERE DEPARTMENT.DepartmentID = S.DepartmentID )
+END
 
 
 
