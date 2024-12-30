@@ -69,11 +69,11 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.760207F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.88889F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.777778F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.22222F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 366);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -104,7 +104,7 @@
             this.dgvPatientCare.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPatientCare.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPatientCare.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPatientCare.Location = new System.Drawing.Point(79, 116);
+            this.dgvPatientCare.Location = new System.Drawing.Point(79, 68);
             this.dgvPatientCare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPatientCare.Name = "dgvPatientCare";
             this.dgvPatientCare.ReadOnly = true;
@@ -113,7 +113,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvPatientCare.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPatientCare.RowTemplate.Height = 24;
-            this.dgvPatientCare.Size = new System.Drawing.Size(434, 217);
+            this.dgvPatientCare.Size = new System.Drawing.Size(434, 270);
             this.dgvPatientCare.TabIndex = 19;
             this.dgvPatientCare.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvPatientCare.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -157,7 +157,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(434, 28);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(434, 18);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // cmbRoomID
@@ -196,7 +196,7 @@
             this.txtPatientName.PasswordChar = '\0';
             this.txtPatientName.PlaceholderText = "";
             this.txtPatientName.SelectedText = "";
-            this.txtPatientName.Size = new System.Drawing.Size(148, 17);
+            this.txtPatientName.Size = new System.Drawing.Size(148, 8);
             this.txtPatientName.TabIndex = 27;
             // 
             // label1
@@ -206,7 +206,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 28);
+            this.label1.Size = new System.Drawing.Size(123, 18);
             this.label1.TabIndex = 22;
             this.label1.Text = "Tên bệnh nhân";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -218,7 +218,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(292, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 28);
+            this.label3.Size = new System.Drawing.Size(60, 18);
             this.label3.TabIndex = 19;
             this.label3.Text = "Phòng";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -230,7 +230,7 @@
             this.lblCareID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCareID.Location = new System.Drawing.Point(3, 0);
             this.lblCareID.Name = "lblCareID";
-            this.lblCareID.Size = new System.Drawing.Size(1, 28);
+            this.lblCareID.Size = new System.Drawing.Size(1, 18);
             this.lblCareID.TabIndex = 7;
             this.lblCareID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -242,12 +242,12 @@
             this.tableLayoutPanel3.Controls.Add(this.txtNotes, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(79, 34);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(79, 24);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(434, 43);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(434, 18);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // txtNotes
@@ -271,7 +271,7 @@
             this.txtNotes.PlaceholderText = "";
             this.txtNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtNotes.SelectedText = "";
-            this.txtNotes.Size = new System.Drawing.Size(354, 32);
+            this.txtNotes.Size = new System.Drawing.Size(354, 8);
             this.txtNotes.TabIndex = 27;
             // 
             // label2
@@ -281,7 +281,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 43);
+            this.label2.Size = new System.Drawing.Size(68, 18);
             this.label2.TabIndex = 8;
             this.label2.Text = "Ghi chú";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -300,12 +300,12 @@
             this.tableLayoutPanel4.Controls.Add(this.guna2Button3, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.guna2Button1, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(79, 81);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(79, 46);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(434, 31);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(434, 18);
             this.tableLayoutPanel4.TabIndex = 11;
             // 
             // guna2Button6
@@ -321,7 +321,7 @@
             this.guna2Button6.Location = new System.Drawing.Point(307, 2);
             this.guna2Button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(84, 27);
+            this.guna2Button6.Size = new System.Drawing.Size(84, 14);
             this.guna2Button6.TabIndex = 38;
             this.guna2Button6.Text = "Làm mới";
             this.guna2Button6.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -339,7 +339,7 @@
             this.guna2Button3.Location = new System.Drawing.Point(183, 2);
             this.guna2Button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(87, 27);
+            this.guna2Button3.Size = new System.Drawing.Size(87, 14);
             this.guna2Button3.TabIndex = 35;
             this.guna2Button3.Text = "Cập nhật";
             this.guna2Button3.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -357,7 +357,7 @@
             this.guna2Button1.Location = new System.Drawing.Point(56, 2);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(85, 27);
+            this.guna2Button1.Size = new System.Drawing.Size(85, 14);
             this.guna2Button1.TabIndex = 33;
             this.guna2Button1.Text = "Tìm";
             this.guna2Button1.Click += new System.EventHandler(this.btnFind_Click);

@@ -469,5 +469,11 @@
   <ItemGroup>
     <None Include="Resources\hospital-building-vector-220705271.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignInBackGround.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2302.w015.n003.1151B.p15.1151.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
