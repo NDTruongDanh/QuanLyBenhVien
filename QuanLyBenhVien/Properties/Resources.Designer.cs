@@ -153,6 +153,16 @@ namespace QuanLyBenhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hospital_building_vector_220705271 {
+            get {
+                object obj = ResourceManager.GetObject("hospital-building-vector-220705271", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MedicineImage {
             get {
                 object obj = ResourceManager.GetObject("MedicineImage", resourceCulture);
