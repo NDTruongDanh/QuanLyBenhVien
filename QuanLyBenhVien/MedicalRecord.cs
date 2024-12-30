@@ -178,6 +178,7 @@ namespace QuanLyBenhVien
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            LoadMedicalRecords();
             CommonControls.ResetInputFields(Parent);
         }
     }

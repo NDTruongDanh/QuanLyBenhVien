@@ -113,8 +113,8 @@ namespace QuanLyBenhVien
 
         private void btnWeeklyAssignment_Click(object sender, EventArgs e)
         {
-            WeeklyAssignmentForm weeklyAssignment = new WeeklyAssignmentForm();
-            CommonControls.AddFormToTab(weeklyAssignment, weeklyAssignment.Text);
+            StaffAssignment staffAssignment = new StaffAssignment();
+            CommonControls.AddFormToTab(staffAssignment, staffAssignment.Text); 
         }
         private void btnMonthDiseaseStat_Click(object sender, EventArgs e)
         {
@@ -192,6 +192,9 @@ namespace QuanLyBenhVien
             {
                 Cursor = Cursors.Default;
             }
+
+            WeeklyAssignmentForm weeklyAssignment = new WeeklyAssignmentForm();
+            CommonControls.AddFormToTab(weeklyAssignment, weeklyAssignment.Text);
         }
     }
 }
