@@ -65,11 +65,9 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.15038F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.56391F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(649, 432);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -100,7 +98,7 @@
             this.dgvBillDetail.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBillDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBillDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvBillDetail.Location = new System.Drawing.Point(2, 106);
+            this.dgvBillDetail.Location = new System.Drawing.Point(2, 88);
             this.dgvBillDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvBillDetail.Name = "dgvBillDetail";
             this.dgvBillDetail.ReadOnly = true;
@@ -109,7 +107,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvBillDetail.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvBillDetail.RowTemplate.Height = 24;
-            this.dgvBillDetail.Size = new System.Drawing.Size(645, 324);
+            this.dgvBillDetail.Size = new System.Drawing.Size(645, 342);
             this.dgvBillDetail.TabIndex = 12;
             this.dgvBillDetail.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBillDetail.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -146,7 +144,7 @@
             this.tableLayoutPanel3.Controls.Add(this.btnRefresh, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnFind, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 64);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 46);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -246,7 +244,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(645, 57);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(645, 39);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // txtAmount
@@ -262,13 +260,13 @@
             this.txtAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.ForeColor = System.Drawing.Color.Black;
             this.txtAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAmount.Location = new System.Drawing.Point(464, 11);
+            this.txtAmount.Location = new System.Drawing.Point(464, 5);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.PasswordChar = '\0';
             this.txtAmount.PlaceholderText = "";
             this.txtAmount.SelectedText = "";
-            this.txtAmount.Size = new System.Drawing.Size(178, 34);
+            this.txtAmount.Size = new System.Drawing.Size(178, 29);
             this.txtAmount.TabIndex = 38;
             // 
             // cmbMedicationID
@@ -282,7 +280,7 @@
             this.cmbMedicationID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMedicationID.ForeColor = System.Drawing.Color.Black;
             this.cmbMedicationID.ItemHeight = 30;
-            this.cmbMedicationID.Location = new System.Drawing.Point(196, 10);
+            this.cmbMedicationID.Location = new System.Drawing.Point(196, 2);
             this.cmbMedicationID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbMedicationID.Name = "cmbMedicationID";
             this.cmbMedicationID.Size = new System.Drawing.Size(180, 36);
@@ -296,7 +294,7 @@
             this.label3.Location = new System.Drawing.Point(380, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 57);
+            this.label3.Size = new System.Drawing.Size(79, 39);
             this.label3.TabIndex = 4;
             this.label3.Text = "Số lượng";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -309,7 +307,7 @@
             this.label2.Location = new System.Drawing.Point(110, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 57);
+            this.label2.Size = new System.Drawing.Size(82, 39);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mã thuốc";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -321,7 +319,7 @@
             this.lblTransactionID.Location = new System.Drawing.Point(106, 0);
             this.lblTransactionID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransactionID.Name = "lblTransactionID";
-            this.lblTransactionID.Size = new System.Drawing.Size(1, 57);
+            this.lblTransactionID.Size = new System.Drawing.Size(1, 39);
             this.lblTransactionID.TabIndex = 1;
             this.lblTransactionID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -333,7 +331,7 @@
             this.label1.Location = new System.Drawing.Point(2, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 57);
+            this.label1.Size = new System.Drawing.Size(100, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Số hoá đơn:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

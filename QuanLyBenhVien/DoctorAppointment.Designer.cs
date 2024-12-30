@@ -53,9 +53,8 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.75F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 366);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -86,7 +85,7 @@
             this.dgvAppointment.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAppointment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvAppointment.Location = new System.Drawing.Point(2, 75);
+            this.dgvAppointment.Location = new System.Drawing.Point(2, 24);
             this.dgvAppointment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvAppointment.Name = "dgvAppointment";
             this.dgvAppointment.ReadOnly = true;
@@ -95,7 +94,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvAppointment.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAppointment.RowTemplate.Height = 24;
-            this.dgvAppointment.Size = new System.Drawing.Size(596, 289);
+            this.dgvAppointment.Size = new System.Drawing.Size(596, 340);
             this.dgvAppointment.TabIndex = 4;
             this.dgvAppointment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvAppointment.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -135,7 +134,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(596, 69);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(596, 18);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // cmbSelection
@@ -152,7 +151,7 @@
             this.cmbSelection.Items.AddRange(new object[] {
             "Tuần này",
             "Tuần sau"});
-            this.cmbSelection.Location = new System.Drawing.Point(298, 16);
+            this.cmbSelection.Location = new System.Drawing.Point(298, 2);
             this.cmbSelection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbSelection.Name = "cmbSelection";
             this.cmbSelection.Size = new System.Drawing.Size(161, 36);
@@ -167,7 +166,7 @@
             this.label2.Location = new System.Drawing.Point(143, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 69);
+            this.label2.Size = new System.Drawing.Size(151, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Lịch khám";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
