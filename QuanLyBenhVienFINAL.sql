@@ -811,5 +811,70 @@ END
 
 
 
+---------Tính tiền hoá đơn khi thêm/sửa/xoá CTHD
+CREATE TRIGGER TOTALMONEY_BD_IU
+ON BILLDETAIL
+AFTER INSERT, DELETE, UPDATE
+AS
+	UPDATE BILL
+	SET Total = (SELECT SUM(Amount*Price) 
+				FROM BILLDETAIL b JOIN MEDICATION m ON b.MedicationID = m.MedicationID 
+				WHERE BILL.TransactionID=b.TransactionID)
+
+
+----Khi tạo mới hoặc sửa số lượng thuốc trong BillDetail thì cập nhật số lượng tồn kho
+CREATE TRIGGER QUANTITYINSTOCK_MEDICATION_BILL
+ON BILLDETAIL
+AFTER INSERT, UPDATE
+AS
+	UPDATE MEDICATION
+	SET QuantityInStock = QuantityInStock + (SELECT SUM(d.Amount)               
+											FROM deleted d JOIN MEDICATION m1 
+											ON d.MedicationID = m1.MedicationID)
+	WHERE MedicationID IN (SELECT MedicationID FROM deleted)
+
+	IF (EXISTS(SELECT QuantityInStock FROM MEDICATION m JOIN inserted i ON m.MedicationID = i.MedicationID WHERE i.Amount > QuantityInStock))
+	BEGIN
+		ROLLBACK TRAN
+		PRINT N'Số lượng thuốc tồn kho không đủ!'
+	END
+	ELSE
+	BEGIN
+		UPDATE MEDICATION
+		SET QuantityInStock = QuantityInStock - (SELECT SUM(i.Amount)               
+												FROM inserted i JOIN MEDICATION m2 
+												ON i.MedicationID = m2.MedicationID)
+		WHERE MedicationID IN (SELECT MedicationID FROM inserted)
+	END
+
+
+---- Kiểm tra ngày tháng
+ALTER TABLE MEDICATION
+ADD CONSTRAINT CHK_DATE_MEDICATION CHECK (ExpiryDate > ManufacturingDate)
+
+ALTER TABLE PATIENT
+ADD CONSTRAINT CHK_DATE_PATIENT CHECK ((DateOfBirth <= AdmissionDate) AND (AdmissionDate <= DischargeDate))
+
+ALTER TABLE STAFF
+ADD CONSTRAINT CHK_DATE_STAFF CHECK (DateOfBirth < DateOfJoining)
+
+
+-----Ngày hoá đơn phải lớn hơn ngày khám bệnh
+CREATE TRIGGER CHK_TransactionDate_BILL_MEDICALRECORD
+ON BILL
+AFTER INSERT, UPDATE
+AS 
+	IF (EXISTS(SELECT * FROM inserted i JOIN MEDICALRECORD m ON i.RecordID = m.RecordID WHERE i.TransactionDate < m.VisitDate))
+	BEGIN
+		ROLLBACK TRAN
+	END
+
+----------------Giá thuốc phải > 0
+ALTER TABLE MEDICATION
+ADD CONSTRAINT CHK_PRICE_MEDICATION CHECK (Price > 0)
+
+------Kiểm tra giường
+ALTER TABLE ROOM
+ADD CONSTRAINT CK_BED_ROOM CHECK (BedCount > 0 AND EmptyBed >= 0)
 
 
