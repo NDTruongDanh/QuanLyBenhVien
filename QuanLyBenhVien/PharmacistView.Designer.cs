@@ -61,8 +61,8 @@
             // 
             this.chứcNăngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.đổiMặtKhẩuToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem,
-            this.btnDeleteRemember});
+            this.btnDeleteRemember,
+            this.đăngXuấtToolStripMenuItem});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
             this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(119, 32);
             this.chứcNăngToolStripMenuItem.Text = "Chức năng";
@@ -105,8 +105,8 @@
             // lịchTrựcToolStripMenuItem
             // 
             this.lịchTrựcToolStripMenuItem.Name = "lịchTrựcToolStripMenuItem";
-            this.lịchTrựcToolStripMenuItem.Size = new System.Drawing.Size(136, 32);
-            this.lịchTrựcToolStripMenuItem.Text = "Lịch làm việc";
+            this.lịchTrựcToolStripMenuItem.Size = new System.Drawing.Size(100, 32);
+            this.lịchTrựcToolStripMenuItem.Text = "Lịch trực";
             this.lịchTrựcToolStripMenuItem.Click += new System.EventHandler(this.lịchTrựcToolStripMenuItem_Click);
             // 
             // trợLýẢoToolStripMenuItem

@@ -85,39 +85,39 @@
             // btnFunction
             // 
             this.btnFunction.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnLogout,
+            this.btnWorkAssignment,
             this.btnChangePW,
             this.btnDeleteRemember,
-            this.btnWorkAssignment});
+            this.btnLogout});
             this.btnFunction.Name = "btnFunction";
-            this.btnFunction.Size = new System.Drawing.Size(93, 26);
+            this.btnFunction.Size = new System.Drawing.Size(119, 32);
             this.btnFunction.Text = "Chức năng";
             // 
             // btnLogout
             // 
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(207, 26);
+            this.btnLogout.Size = new System.Drawing.Size(250, 32);
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnChangePW
             // 
             this.btnChangePW.Name = "btnChangePW";
-            this.btnChangePW.Size = new System.Drawing.Size(207, 26);
+            this.btnChangePW.Size = new System.Drawing.Size(250, 32);
             this.btnChangePW.Text = "Đổi mặt khẩu";
             this.btnChangePW.Click += new System.EventHandler(this.btnChangePW_Click);
             // 
             // btnDeleteRemember
             // 
             this.btnDeleteRemember.Name = "btnDeleteRemember";
-            this.btnDeleteRemember.Size = new System.Drawing.Size(207, 26);
+            this.btnDeleteRemember.Size = new System.Drawing.Size(250, 32);
             this.btnDeleteRemember.Text = "Tắt nhớ mật khẩu";
             this.btnDeleteRemember.Click += new System.EventHandler(this.btnDeleteRemember_Click);
             // 
             // btnWorkAssignment
             // 
             this.btnWorkAssignment.Name = "btnWorkAssignment";
-            this.btnWorkAssignment.Size = new System.Drawing.Size(207, 26);
+            this.btnWorkAssignment.Size = new System.Drawing.Size(250, 32);
             this.btnWorkAssignment.Text = "Tạo lịch trực";
             this.btnWorkAssignment.Click += new System.EventHandler(this.btnWorkAssignment_Click);
             // 
@@ -130,7 +130,7 @@
             this.btnDepartment,
             this.btnMedicine});
             this.btnCatalogue.Name = "btnCatalogue";
-            this.btnCatalogue.Size = new System.Drawing.Size(90, 26);
+            this.btnCatalogue.Size = new System.Drawing.Size(114, 32);
             this.btnCatalogue.Text = "Danh mục";
             // 
             // btnPatient
@@ -139,96 +139,96 @@
             this.btnMedicalRecord,
             this.btnHospitalize});
             this.btnPatient.Name = "btnPatient";
-            this.btnPatient.Size = new System.Drawing.Size(171, 26);
+            this.btnPatient.Size = new System.Drawing.Size(224, 32);
             this.btnPatient.Text = "Bệnh nhân";
             this.btnPatient.Click += new System.EventHandler(this.btnPatient_Click);
             // 
             // btnMedicalRecord
             // 
             this.btnMedicalRecord.Name = "btnMedicalRecord";
-            this.btnMedicalRecord.Size = new System.Drawing.Size(188, 26);
+            this.btnMedicalRecord.Size = new System.Drawing.Size(224, 32);
             this.btnMedicalRecord.Text = "Hồ sơ bệnh án";
             this.btnMedicalRecord.Click += new System.EventHandler(this.btnMedicalRecord_Click);
             // 
             // btnHospitalize
             // 
             this.btnHospitalize.Name = "btnHospitalize";
-            this.btnHospitalize.Size = new System.Drawing.Size(188, 26);
+            this.btnHospitalize.Size = new System.Drawing.Size(224, 32);
             this.btnHospitalize.Text = "Nhập viện";
             this.btnHospitalize.Click += new System.EventHandler(this.btnHospitalize_Click);
             // 
             // btnEmployee
             // 
             this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.Size = new System.Drawing.Size(171, 26);
+            this.btnEmployee.Size = new System.Drawing.Size(224, 32);
             this.btnEmployee.Text = "Nhân viên";
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnRoom
             // 
             this.btnRoom.Name = "btnRoom";
-            this.btnRoom.Size = new System.Drawing.Size(171, 26);
+            this.btnRoom.Size = new System.Drawing.Size(224, 32);
             this.btnRoom.Text = "Phòng bệnh";
             this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             // 
             // btnDepartment
             // 
             this.btnDepartment.Name = "btnDepartment";
-            this.btnDepartment.Size = new System.Drawing.Size(171, 26);
+            this.btnDepartment.Size = new System.Drawing.Size(224, 32);
             this.btnDepartment.Text = "Khoa";
             this.btnDepartment.Click += new System.EventHandler(this.btnDepartment_Click);
             // 
             // btnMedicine
             // 
             this.btnMedicine.Name = "btnMedicine";
-            this.btnMedicine.Size = new System.Drawing.Size(171, 26);
+            this.btnMedicine.Size = new System.Drawing.Size(224, 32);
             this.btnMedicine.Text = "Thuốc";
             this.btnMedicine.Click += new System.EventHandler(this.btnMedicine_Click);
             // 
             // btnManager
             // 
             this.btnManager.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAccount,
             this.btnBill,
-            this.btnAppointment,
             this.btnWeeklyAssignment,
-            this.chămSócBệnhNhânToolStripMenuItem,
-            this.btnAccount});
+            this.btnAppointment,
+            this.chămSócBệnhNhânToolStripMenuItem});
             this.btnManager.Name = "btnManager";
-            this.btnManager.Size = new System.Drawing.Size(73, 26);
+            this.btnManager.Size = new System.Drawing.Size(93, 32);
             this.btnManager.Text = "Quản lý";
             // 
             // btnBill
             // 
             this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(229, 26);
+            this.btnBill.Size = new System.Drawing.Size(279, 32);
             this.btnBill.Text = "Hóa đơn";
             this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
             // btnAppointment
             // 
             this.btnAppointment.Name = "btnAppointment";
-            this.btnAppointment.Size = new System.Drawing.Size(229, 26);
-            this.btnAppointment.Text = "Lịch Khám";
+            this.btnAppointment.Size = new System.Drawing.Size(279, 32);
+            this.btnAppointment.Text = "Lịch khám bệnh ";
             this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
             // 
             // btnWeeklyAssignment
             // 
             this.btnWeeklyAssignment.Name = "btnWeeklyAssignment";
-            this.btnWeeklyAssignment.Size = new System.Drawing.Size(229, 26);
-            this.btnWeeklyAssignment.Text = "Lịch làm việc";
+            this.btnWeeklyAssignment.Size = new System.Drawing.Size(279, 32);
+            this.btnWeeklyAssignment.Text = "Lịch trực ";
             this.btnWeeklyAssignment.Click += new System.EventHandler(this.btnWeeklyAssignment_Click);
             // 
             // chămSócBệnhNhânToolStripMenuItem
             // 
             this.chămSócBệnhNhânToolStripMenuItem.Name = "chămSócBệnhNhânToolStripMenuItem";
-            this.chămSócBệnhNhânToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.chămSócBệnhNhânToolStripMenuItem.Size = new System.Drawing.Size(279, 32);
             this.chămSócBệnhNhânToolStripMenuItem.Text = "Chăm sóc bệnh nhân";
             this.chămSócBệnhNhânToolStripMenuItem.Click += new System.EventHandler(this.chămSócBệnhNhânToolStripMenuItem_Click);
             // 
             // btnAccount
             // 
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(229, 26);
+            this.btnAccount.Size = new System.Drawing.Size(279, 32);
             this.btnAccount.Text = "Tài khoản";
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
@@ -239,7 +239,7 @@
             this.btnIncomeReport,
             this.btnDiseaseStat});
             this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Size = new System.Drawing.Size(84, 26);
+            this.btnStatistic.Size = new System.Drawing.Size(107, 32);
             this.btnStatistic.Text = "Thống kê";
             // 
             // btnMedicineReport
@@ -248,20 +248,20 @@
             this.btnQuantityInStock,
             this.btnExpired});
             this.btnMedicineReport.Name = "btnMedicineReport";
-            this.btnMedicineReport.Size = new System.Drawing.Size(217, 26);
+            this.btnMedicineReport.Size = new System.Drawing.Size(262, 32);
             this.btnMedicineReport.Text = "Báo cáo thuốc ";
             // 
             // btnQuantityInStock
             // 
             this.btnQuantityInStock.Name = "btnQuantityInStock";
-            this.btnQuantityInStock.Size = new System.Drawing.Size(176, 26);
+            this.btnQuantityInStock.Size = new System.Drawing.Size(209, 32);
             this.btnQuantityInStock.Text = "Tồn kho";
             this.btnQuantityInStock.Click += new System.EventHandler(this.btnQuantityInStock_Click);
             // 
             // btnExpired
             // 
             this.btnExpired.Name = "btnExpired";
-            this.btnExpired.Size = new System.Drawing.Size(176, 26);
+            this.btnExpired.Size = new System.Drawing.Size(209, 32);
             this.btnExpired.Text = "Hạn sử dụng";
             this.btnExpired.Click += new System.EventHandler(this.btnExpired_Click);
             // 
@@ -271,20 +271,20 @@
             this.btnMonthIncomeReport,
             this.btnYearIncomeReport});
             this.btnIncomeReport.Name = "btnIncomeReport";
-            this.btnIncomeReport.Size = new System.Drawing.Size(217, 26);
+            this.btnIncomeReport.Size = new System.Drawing.Size(262, 32);
             this.btnIncomeReport.Text = "Báo cáo doanh thu";
             // 
             // btnMonthIncomeReport
             // 
             this.btnMonthIncomeReport.Name = "btnMonthIncomeReport";
-            this.btnMonthIncomeReport.Size = new System.Drawing.Size(133, 26);
+            this.btnMonthIncomeReport.Size = new System.Drawing.Size(152, 32);
             this.btnMonthIncomeReport.Text = "Tháng";
             this.btnMonthIncomeReport.Click += new System.EventHandler(this.btnMonthIncomeReport_Click);
             // 
             // btnYearIncomeReport
             // 
             this.btnYearIncomeReport.Name = "btnYearIncomeReport";
-            this.btnYearIncomeReport.Size = new System.Drawing.Size(133, 26);
+            this.btnYearIncomeReport.Size = new System.Drawing.Size(152, 32);
             this.btnYearIncomeReport.Text = "Năm";
             this.btnYearIncomeReport.Click += new System.EventHandler(this.btnYearIncomeReport_Click);
             // 
@@ -294,13 +294,13 @@
             this.btnWarning,
             this.btnmonANDyearDisease});
             this.btnDiseaseStat.Name = "btnDiseaseStat";
-            this.btnDiseaseStat.Size = new System.Drawing.Size(217, 26);
+            this.btnDiseaseStat.Size = new System.Drawing.Size(262, 32);
             this.btnDiseaseStat.Text = "Tình hình Bệnh";
             // 
             // btnWarning
             // 
             this.btnWarning.Name = "btnWarning";
-            this.btnWarning.Size = new System.Drawing.Size(224, 26);
+            this.btnWarning.Size = new System.Drawing.Size(272, 32);
             this.btnWarning.Text = "Cảnh báo dịch bệnh";
             this.btnWarning.Click += new System.EventHandler(this.btnWarning_Click);
             // 
@@ -310,27 +310,27 @@
             this.btnMonthDiseaseStat,
             this.btnYearDiseaseStat});
             this.btnmonANDyearDisease.Name = "btnmonANDyearDisease";
-            this.btnmonANDyearDisease.Size = new System.Drawing.Size(224, 26);
+            this.btnmonANDyearDisease.Size = new System.Drawing.Size(272, 32);
             this.btnmonANDyearDisease.Text = "Thống Kê";
             // 
             // btnMonthDiseaseStat
             // 
             this.btnMonthDiseaseStat.Name = "btnMonthDiseaseStat";
-            this.btnMonthDiseaseStat.Size = new System.Drawing.Size(133, 26);
+            this.btnMonthDiseaseStat.Size = new System.Drawing.Size(152, 32);
             this.btnMonthDiseaseStat.Text = "Tháng";
             this.btnMonthDiseaseStat.Click += new System.EventHandler(this.btnMonthDiseaseStat_Click);
             // 
             // btnYearDiseaseStat
             // 
             this.btnYearDiseaseStat.Name = "btnYearDiseaseStat";
-            this.btnYearDiseaseStat.Size = new System.Drawing.Size(133, 26);
+            this.btnYearDiseaseStat.Size = new System.Drawing.Size(152, 32);
             this.btnYearDiseaseStat.Text = "Năm";
             this.btnYearDiseaseStat.Click += new System.EventHandler(this.btnYearDiseaseStat_Click);
             // 
             // trợLýẢoToolStripMenuItem
             // 
             this.trợLýẢoToolStripMenuItem.Name = "trợLýẢoToolStripMenuItem";
-            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.trợLýẢoToolStripMenuItem.Size = new System.Drawing.Size(105, 32);
             this.trợLýẢoToolStripMenuItem.Text = "Trợ lý ảo ";
             this.trợLýẢoToolStripMenuItem.Click += new System.EventHandler(this.btnAIChatBot_Click);
             // 
