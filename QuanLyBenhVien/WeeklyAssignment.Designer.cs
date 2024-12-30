@@ -62,7 +62,7 @@
             this.label3.Location = new System.Drawing.Point(398, 24);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 25);
+            this.label3.Size = new System.Drawing.Size(147, 24);
             this.label3.TabIndex = 12;
             this.label3.Text = "Ca";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,7 +75,7 @@
             this.label2.Location = new System.Drawing.Point(4, 24);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 25);
+            this.label2.Size = new System.Drawing.Size(141, 24);
             this.label2.TabIndex = 10;
             this.label2.Text = "Mã nhân viên";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,7 +127,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 49);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 48);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txtAssignmentID
@@ -248,7 +248,7 @@
             this.dgvWeeklyAssigment.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvWeeklyAssigment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWeeklyAssigment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvWeeklyAssigment.Location = new System.Drawing.Point(3, 103);
+            this.dgvWeeklyAssigment.Location = new System.Drawing.Point(3, 102);
             this.dgvWeeklyAssigment.Name = "dgvWeeklyAssigment";
             this.dgvWeeklyAssigment.ReadOnly = true;
             this.dgvWeeklyAssigment.RowHeadersVisible = false;
@@ -256,7 +256,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvWeeklyAssigment.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWeeklyAssigment.RowTemplate.Height = 24;
-            this.dgvWeeklyAssigment.Size = new System.Drawing.Size(794, 344);
+            this.dgvWeeklyAssigment.Size = new System.Drawing.Size(794, 345);
             this.dgvWeeklyAssigment.TabIndex = 4;
             this.dgvWeeklyAssigment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvWeeklyAssigment.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -293,7 +293,7 @@
             this.tableLayoutPanel3.Controls.Add(this.btnRefresh, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnFind, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 59);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 58);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;

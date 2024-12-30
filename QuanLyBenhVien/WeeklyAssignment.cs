@@ -57,10 +57,10 @@ namespace QuanLyBenhVien
 
             string query = @"IF EXISTS (SELECT 1 FROM WEEKLYASSIGNMENT WHERE AssignmentID = @AssignmentID)
                              UPDATE WEEKLYASSIGNMENT SET StaffID = @StaffID, ShiftType = @ShiftType, 
-                             AssignmentDate = @AssignmentDate, 
+                             AssignmentDate = @AssignmentDate
                              WHERE AssignmentID = @AssignmentID
                              ELSE
-                             INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, DepartmentID, AssignmentDate, ShiftType)
+                             INSERT INTO WEEKLYASSIGNMENT (AssignmentID, StaffID, AssignmentDate, ShiftType)
                              VALUES (@AssignmentID, @StaffID, @AssignmentDate, @ShiftType)";
 
             var parameters = new Dictionary<string, object>
@@ -139,6 +139,7 @@ namespace QuanLyBenhVien
             cmbStaffID.SelectedIndex = -1;
             cmbShiftType.Text = null;
             dtpAssignmentDate.Value = DateTime.Now;
+            LoadData();
         }
 
         private void dgvWeeklyAssignment_SelectionChanged(object sender, EventArgs e)
