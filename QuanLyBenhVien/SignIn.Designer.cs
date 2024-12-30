@@ -35,25 +35,27 @@
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.chkRememberMe = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(116, 139);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(17, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 38);
+            this.label1.Size = new System.Drawing.Size(178, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(125, 198);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(73, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 38);
+            this.label2.Size = new System.Drawing.Size(122, 31);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mật khẩu:";
             // 
@@ -61,7 +63,7 @@
             // 
             this.btnHidePass.BackgroundImage = global::QuanLyBenhVien.Properties.Resources.mo;
             this.btnHidePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHidePass.Location = new System.Drawing.Point(585, 198);
+            this.btnHidePass.Location = new System.Drawing.Point(439, 86);
             this.btnHidePass.Name = "btnHidePass";
             this.btnHidePass.Size = new System.Drawing.Size(42, 38);
             this.btnHidePass.TabIndex = 5;
@@ -78,8 +80,9 @@
             this.txtUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.ForeColor = System.Drawing.Color.Black;
             this.txtUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUser.Location = new System.Drawing.Point(347, 139);
+            this.txtUser.Location = new System.Drawing.Point(201, 31);
             this.txtUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUser.Name = "txtUser";
             this.txtUser.PasswordChar = '\0';
@@ -99,8 +102,9 @@
             this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(347, 198);
+            this.txtPassword.Location = new System.Drawing.Point(201, 85);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
@@ -118,7 +122,7 @@
             this.chkRememberMe.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkRememberMe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRememberMe.ForeColor = System.Drawing.Color.Black;
-            this.chkRememberMe.Location = new System.Drawing.Point(276, 256);
+            this.chkRememberMe.Location = new System.Drawing.Point(201, 130);
             this.chkRememberMe.Name = "chkRememberMe";
             this.chkRememberMe.Size = new System.Drawing.Size(170, 32);
             this.chkRememberMe.TabIndex = 16;
@@ -136,29 +140,40 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(472, 256);
+            this.guna2Button1.Location = new System.Drawing.Point(256, 168);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(187, 40);
             this.guna2Button1.TabIndex = 17;
             this.guna2Button1.Text = "Đăng nhập";
             this.guna2Button1.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtUser);
+            this.panel1.Controls.Add(this.chkRememberMe);
+            this.panel1.Controls.Add(this.guna2Button1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtPassword);
+            this.panel1.Controls.Add(this.btnHidePass);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(147, 109);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(503, 221);
+            this.panel1.TabIndex = 18;
+            // 
             // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QuanLyBenhVien.Properties.Resources.hospital_building_vector_22070527;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.chkRememberMe);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.btnHidePass);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Name = "SignIn";
             this.Text = "ĐĂNG NHẬP";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -171,5 +186,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2CheckBox chkRememberMe;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
