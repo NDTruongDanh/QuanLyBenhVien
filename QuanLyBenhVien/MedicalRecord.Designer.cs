@@ -67,10 +67,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.dgvMedicalRecord, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
@@ -79,9 +76,9 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.87884F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.679928F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.44123F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.22704F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.306761F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.46619F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1131, 553);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -112,7 +109,7 @@
             this.dgvMedicalRecord.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMedicalRecord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMedicalRecord.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvMedicalRecord.Location = new System.Drawing.Point(3, 266);
+            this.dgvMedicalRecord.Location = new System.Drawing.Point(3, 176);
             this.dgvMedicalRecord.Name = "dgvMedicalRecord";
             this.dgvMedicalRecord.ReadOnly = true;
             this.dgvMedicalRecord.RowHeadersVisible = false;
@@ -120,7 +117,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvMedicalRecord.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMedicalRecord.RowTemplate.Height = 24;
-            this.dgvMedicalRecord.Size = new System.Drawing.Size(1125, 284);
+            this.dgvMedicalRecord.Size = new System.Drawing.Size(1125, 374);
             this.dgvMedicalRecord.TabIndex = 5;
             this.dgvMedicalRecord.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvMedicalRecord.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -157,13 +154,13 @@
             this.tableLayoutPanel5.Controls.Add(this.btnRefresh, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnFind, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 219);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 143);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1123, 40);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1123, 26);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
             // btnRemove
@@ -178,7 +175,7 @@
             this.btnRemove.ForeColor = System.Drawing.Color.White;
             this.btnRemove.Location = new System.Drawing.Point(843, 3);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(277, 34);
+            this.btnRemove.Size = new System.Drawing.Size(277, 20);
             this.btnRemove.TabIndex = 7;
             this.btnRemove.Text = "Xoá";
             this.btnRemove.Click += new System.EventHandler(this.btnRemoveMedicalRecord_Click);
@@ -195,7 +192,7 @@
             this.btnAddOrUpdate.ForeColor = System.Drawing.Color.White;
             this.btnAddOrUpdate.Location = new System.Drawing.Point(563, 3);
             this.btnAddOrUpdate.Name = "btnAddOrUpdate";
-            this.btnAddOrUpdate.Size = new System.Drawing.Size(274, 34);
+            this.btnAddOrUpdate.Size = new System.Drawing.Size(274, 20);
             this.btnAddOrUpdate.TabIndex = 6;
             this.btnAddOrUpdate.Text = "Thêm/Sửa";
             this.btnAddOrUpdate.Click += new System.EventHandler(this.btnAddOrUpdateMedicalRecord_Click);
@@ -212,7 +209,7 @@
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.Location = new System.Drawing.Point(283, 3);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(274, 34);
+            this.btnRefresh.Size = new System.Drawing.Size(274, 20);
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -229,7 +226,7 @@
             this.btnFind.ForeColor = System.Drawing.Color.White;
             this.btnFind.Location = new System.Drawing.Point(3, 3);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(274, 34);
+            this.btnFind.Size = new System.Drawing.Size(274, 20);
             this.btnFind.TabIndex = 4;
             this.btnFind.Text = "Tìm";
             this.btnFind.Click += new System.EventHandler(this.btnFindMedicalRecord_Click);
@@ -249,7 +246,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1121, 205);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1121, 129);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -276,7 +273,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(550, 195);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(550, 119);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // dtpVisitDate
@@ -286,7 +283,7 @@
             this.dtpVisitDate.FillColor = System.Drawing.Color.White;
             this.dtpVisitDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpVisitDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpVisitDate.Location = new System.Drawing.Point(353, 30);
+            this.dtpVisitDate.Location = new System.Drawing.Point(353, 11);
             this.dtpVisitDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpVisitDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpVisitDate.Name = "dtpVisitDate";
@@ -305,7 +302,7 @@
             this.cmbDoctorID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDoctorID.ForeColor = System.Drawing.Color.Black;
             this.cmbDoctorID.ItemHeight = 30;
-            this.cmbDoctorID.Location = new System.Drawing.Point(353, 128);
+            this.cmbDoctorID.Location = new System.Drawing.Point(353, 71);
             this.cmbDoctorID.Name = "cmbDoctorID";
             this.cmbDoctorID.Size = new System.Drawing.Size(194, 36);
             this.cmbDoctorID.TabIndex = 38;
@@ -321,7 +318,7 @@
             this.cmbPatientID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPatientID.ForeColor = System.Drawing.Color.Black;
             this.cmbPatientID.ItemHeight = 30;
-            this.cmbPatientID.Location = new System.Drawing.Point(88, 128);
+            this.cmbPatientID.Location = new System.Drawing.Point(88, 71);
             this.cmbPatientID.Name = "cmbPatientID";
             this.cmbPatientID.Size = new System.Drawing.Size(193, 36);
             this.cmbPatientID.TabIndex = 37;
@@ -339,7 +336,7 @@
             this.txtRecordID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecordID.ForeColor = System.Drawing.Color.Black;
             this.txtRecordID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRecordID.Location = new System.Drawing.Point(89, 27);
+            this.txtRecordID.Location = new System.Drawing.Point(89, 8);
             this.txtRecordID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtRecordID.Name = "txtRecordID";
             this.txtRecordID.PasswordChar = '\0';
@@ -352,10 +349,10 @@
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(289, 97);
+            this.label4.Location = new System.Drawing.Point(289, 59);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 98);
+            this.label4.Size = new System.Drawing.Size(56, 60);
             this.label4.TabIndex = 6;
             this.label4.Text = "Mã bác sĩ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,10 +361,10 @@
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 97);
+            this.label3.Location = new System.Drawing.Point(5, 59);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 98);
+            this.label3.Size = new System.Drawing.Size(75, 60);
             this.label3.TabIndex = 4;
             this.label3.Text = "Mã bệnh nhân";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -379,7 +376,7 @@
             this.label2.Location = new System.Drawing.Point(289, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 97);
+            this.label2.Size = new System.Drawing.Size(56, 59);
             this.label2.TabIndex = 2;
             this.label2.Text = "Ngày Khám";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -391,7 +388,7 @@
             this.label1.Location = new System.Drawing.Point(5, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 97);
+            this.label1.Size = new System.Drawing.Size(75, 59);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã hồ sơ bệnh án";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -415,7 +412,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(551, 195);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(551, 119);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // txtTreatmentPlan
@@ -431,7 +428,7 @@
             this.txtTreatmentPlan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTreatmentPlan.ForeColor = System.Drawing.Color.Black;
             this.txtTreatmentPlan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTreatmentPlan.Location = new System.Drawing.Point(106, 136);
+            this.txtTreatmentPlan.Location = new System.Drawing.Point(106, 84);
             this.txtTreatmentPlan.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTreatmentPlan.Multiline = true;
             this.txtTreatmentPlan.Name = "txtTreatmentPlan";
@@ -439,7 +436,7 @@
             this.txtTreatmentPlan.PlaceholderText = "";
             this.txtTreatmentPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtTreatmentPlan.SelectedText = "";
-            this.txtTreatmentPlan.Size = new System.Drawing.Size(441, 53);
+            this.txtTreatmentPlan.Size = new System.Drawing.Size(441, 29);
             this.txtTreatmentPlan.TabIndex = 30;
             // 
             // txtTestResults
@@ -455,7 +452,7 @@
             this.txtTestResults.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTestResults.ForeColor = System.Drawing.Color.Black;
             this.txtTestResults.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTestResults.Location = new System.Drawing.Point(106, 71);
+            this.txtTestResults.Location = new System.Drawing.Point(106, 45);
             this.txtTestResults.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTestResults.Multiline = true;
             this.txtTestResults.Name = "txtTestResults";
@@ -463,7 +460,7 @@
             this.txtTestResults.PlaceholderText = "";
             this.txtTestResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtTestResults.SelectedText = "";
-            this.txtTestResults.Size = new System.Drawing.Size(441, 53);
+            this.txtTestResults.Size = new System.Drawing.Size(441, 27);
             this.txtTestResults.TabIndex = 29;
             // 
             // txtDiagnosis
@@ -487,17 +484,17 @@
             this.txtDiagnosis.PlaceholderText = "";
             this.txtDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDiagnosis.SelectedText = "";
-            this.txtDiagnosis.Size = new System.Drawing.Size(441, 53);
+            this.txtDiagnosis.Size = new System.Drawing.Size(441, 27);
             this.txtDiagnosis.TabIndex = 28;
             // 
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(5, 130);
+            this.label7.Location = new System.Drawing.Point(5, 78);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 65);
+            this.label7.Size = new System.Drawing.Size(92, 41);
             this.label7.TabIndex = 7;
             this.label7.Text = "Phương hướng chữa trị";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -506,10 +503,10 @@
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 65);
+            this.label6.Location = new System.Drawing.Point(5, 39);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 65);
+            this.label6.Size = new System.Drawing.Size(92, 39);
             this.label6.TabIndex = 5;
             this.label6.Text = "Kết quả kiểm tra";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -521,7 +518,7 @@
             this.label5.Location = new System.Drawing.Point(5, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 65);
+            this.label5.Size = new System.Drawing.Size(92, 39);
             this.label5.TabIndex = 3;
             this.label5.Text = "Chuẩn đoán";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

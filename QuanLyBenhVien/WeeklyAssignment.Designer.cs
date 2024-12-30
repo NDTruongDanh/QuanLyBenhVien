@@ -61,7 +61,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(298, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 20);
+            this.label3.Size = new System.Drawing.Size(119, 21);
             this.label3.TabIndex = 12;
             this.label3.Text = "Ca";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -73,7 +73,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 20);
+            this.label2.Size = new System.Drawing.Size(114, 21);
             this.label2.TabIndex = 10;
             this.label2.Text = "Mã nhân viên";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,7 +124,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(596, 40);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(596, 41);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txtAssignmentID
@@ -206,8 +206,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.dgvWeeklyAssigment, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
@@ -216,9 +215,9 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.22222F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.77778F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 366);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -249,7 +248,7 @@
             this.dgvWeeklyAssigment.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvWeeklyAssigment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWeeklyAssigment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvWeeklyAssigment.Location = new System.Drawing.Point(2, 82);
+            this.dgvWeeklyAssigment.Location = new System.Drawing.Point(2, 69);
             this.dgvWeeklyAssigment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvWeeklyAssigment.Name = "dgvWeeklyAssigment";
             this.dgvWeeklyAssigment.ReadOnly = true;
@@ -258,7 +257,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvWeeklyAssigment.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWeeklyAssigment.RowTemplate.Height = 24;
-            this.dgvWeeklyAssigment.Size = new System.Drawing.Size(596, 282);
+            this.dgvWeeklyAssigment.Size = new System.Drawing.Size(596, 295);
             this.dgvWeeklyAssigment.TabIndex = 4;
             this.dgvWeeklyAssigment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvWeeklyAssigment.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -295,12 +294,12 @@
             this.tableLayoutPanel3.Controls.Add(this.btnRefresh, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnFind, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 47);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 48);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(594, 30);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(594, 16);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // btnRemove
@@ -316,7 +315,7 @@
             this.btnRemove.Location = new System.Drawing.Point(446, 2);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(146, 26);
+            this.btnRemove.Size = new System.Drawing.Size(146, 12);
             this.btnRemove.TabIndex = 7;
             this.btnRemove.Text = "Xoá";
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
@@ -334,7 +333,7 @@
             this.btnAddOrUpdate.Location = new System.Drawing.Point(298, 2);
             this.btnAddOrUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddOrUpdate.Name = "btnAddOrUpdate";
-            this.btnAddOrUpdate.Size = new System.Drawing.Size(144, 26);
+            this.btnAddOrUpdate.Size = new System.Drawing.Size(144, 12);
             this.btnAddOrUpdate.TabIndex = 6;
             this.btnAddOrUpdate.Text = "Thêm/Sửa";
             this.btnAddOrUpdate.Click += new System.EventHandler(this.btnAddOrUpdate_Click);
@@ -352,7 +351,7 @@
             this.btnRefresh.Location = new System.Drawing.Point(150, 2);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(144, 26);
+            this.btnRefresh.Size = new System.Drawing.Size(144, 12);
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -370,7 +369,7 @@
             this.btnFind.Location = new System.Drawing.Point(2, 2);
             this.btnFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(144, 26);
+            this.btnFind.Size = new System.Drawing.Size(144, 12);
             this.btnFind.TabIndex = 4;
             this.btnFind.Text = "Tìm";
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);

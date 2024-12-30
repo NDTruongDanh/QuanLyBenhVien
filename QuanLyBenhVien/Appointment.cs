@@ -271,5 +271,25 @@ namespace QuanLyBenhVien
             LoadAppointments();
             CommonControls.ResetInputFields(Parent);
         }
+
+        private void cmbDoctorID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbDepartmentID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAppointmentID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpAppointmentDateTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

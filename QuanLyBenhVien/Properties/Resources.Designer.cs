@@ -63,6 +63,26 @@ namespace QuanLyBenhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2302_w015_n003_1151B_p15_1151 {
+            get {
+                object obj = ResourceManager.GetObject("2302.w015.n003.1151B.p15.1151", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2302_w015_n003_1151B_p151 {
+            get {
+                object obj = ResourceManager.GetObject("2302.w015.n003.1151B.p151", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _55498790_1988019174827777_3981126884560732160_n {
             get {
                 object obj = ResourceManager.GetObject("55498790_1988019174827777_3981126884560732160_n", resourceCulture);
@@ -176,6 +196,16 @@ namespace QuanLyBenhVien.Properties {
         internal static System.Drawing.Bitmap mo {
             get {
                 object obj = ResourceManager.GetObject("mo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SignInBackGround {
+            get {
+                object obj = ResourceManager.GetObject("SignInBackGround", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

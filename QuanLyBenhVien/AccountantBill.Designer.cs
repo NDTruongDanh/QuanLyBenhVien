@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.lblRevenue = new System.Windows.Forms.Label();
@@ -60,11 +60,12 @@
             this.tableLayoutPanel4.Controls.Add(this.materialLabel5, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.lblRevenue, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(131, 379);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(98, 344);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(542, 68);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(407, 20);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // materialLabel5
@@ -72,12 +73,13 @@
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(46, 0);
+            this.materialLabel5.Location = new System.Drawing.Point(34, 0);
+            this.materialLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(208, 68);
+            this.materialLabel5.Size = new System.Drawing.Size(156, 20);
             this.materialLabel5.TabIndex = 26;
             this.materialLabel5.Text = "Tổng doanh thu";
             this.materialLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,9 +90,10 @@
             this.lblRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblRevenue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRevenue.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblRevenue.Location = new System.Drawing.Point(260, 0);
+            this.lblRevenue.Location = new System.Drawing.Point(194, 0);
+            this.lblRevenue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRevenue.Name = "lblRevenue";
-            this.lblRevenue.Size = new System.Drawing.Size(241, 68);
+            this.lblRevenue.Size = new System.Drawing.Size(181, 20);
             this.lblRevenue.TabIndex = 5;
             this.lblRevenue.Text = "0 VNĐ";
             this.lblRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,12 +114,13 @@
             this.tableLayoutPanel3.Controls.Add(this.materialLabel3, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.materialLabel1, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(131, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(98, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(542, 92);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(407, 18);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // txtYear
@@ -132,13 +136,13 @@
             this.txtYear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYear.ForeColor = System.Drawing.Color.Black;
             this.txtYear.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtYear.Location = new System.Drawing.Point(309, 25);
-            this.txtYear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtYear.Location = new System.Drawing.Point(231, 5);
+            this.txtYear.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtYear.Name = "txtYear";
             this.txtYear.PasswordChar = '\0';
             this.txtYear.PlaceholderText = "";
             this.txtYear.SelectedText = "";
-            this.txtYear.Size = new System.Drawing.Size(93, 42);
+            this.txtYear.Size = new System.Drawing.Size(70, 8);
             this.txtYear.TabIndex = 32;
             // 
             // txtMonth
@@ -154,13 +158,13 @@
             this.txtMonth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMonth.ForeColor = System.Drawing.Color.Black;
             this.txtMonth.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMonth.Location = new System.Drawing.Point(157, 25);
-            this.txtMonth.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtMonth.Location = new System.Drawing.Point(117, 5);
+            this.txtMonth.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtMonth.Name = "txtMonth";
             this.txtMonth.PasswordChar = '\0';
             this.txtMonth.PlaceholderText = "";
             this.txtMonth.SelectedText = "";
-            this.txtMonth.Size = new System.Drawing.Size(68, 42);
+            this.txtMonth.Size = new System.Drawing.Size(51, 8);
             this.txtMonth.TabIndex = 31;
             // 
             // btnOK
@@ -171,11 +175,13 @@
             this.btnOK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnOK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnOK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(409, 29);
+            this.btnOK.Location = new System.Drawing.Point(306, 2);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(59, 34);
+            this.btnOK.Size = new System.Drawing.Size(44, 14);
             this.btnOK.TabIndex = 29;
             this.btnOK.Text = "OK";
             // 
@@ -184,12 +190,13 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(232, 0);
+            this.materialLabel3.Location = new System.Drawing.Point(173, 0);
+            this.materialLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(70, 92);
+            this.materialLabel3.Size = new System.Drawing.Size(53, 18);
             this.materialLabel3.TabIndex = 27;
             this.materialLabel3.Text = "Năm";
             this.materialLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -199,12 +206,13 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(67, 0);
+            this.materialLabel1.Location = new System.Drawing.Point(50, 0);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(83, 92);
+            this.materialLabel1.Size = new System.Drawing.Size(62, 18);
             this.materialLabel1.TabIndex = 26;
             this.materialLabel1.Text = "Tháng";
             this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,66 +220,68 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.375F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.02003F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.58573F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.39424F));
             this.tableLayoutPanel1.Controls.Add(this.dgvAccountantBill, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.06383F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.93617F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 366);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvAccountantBill
             // 
             this.dgvAccountantBill.AllowUserToAddRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dgvAccountantBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvAccountantBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAccountantBill.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAccountantBill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAccountantBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAccountantBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAccountantBill.ColumnHeadersHeight = 35;
             this.dgvAccountantBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAccountantBill.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAccountantBill.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAccountantBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAccountantBill.GridColor = System.Drawing.Color.White;
-            this.dgvAccountantBill.Location = new System.Drawing.Point(131, 101);
+            this.dgvAccountantBill.Location = new System.Drawing.Point(98, 24);
+            this.dgvAccountantBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvAccountantBill.Name = "dgvAccountantBill";
             this.dgvAccountantBill.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAccountantBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAccountantBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAccountantBill.RowHeadersVisible = false;
             this.dgvAccountantBill.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvAccountantBill.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvAccountantBill.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAccountantBill.RowTemplate.Height = 24;
-            this.dgvAccountantBill.Size = new System.Drawing.Size(542, 272);
+            this.dgvAccountantBill.Size = new System.Drawing.Size(407, 316);
             this.dgvAccountantBill.TabIndex = 8;
             this.dgvAccountantBill.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvAccountantBill.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -297,10 +307,11 @@
             // 
             // AccountantBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AccountantBill";
             this.Text = "TỔNG HỢP HOÁ ĐƠN";
             this.tableLayoutPanel4.ResumeLayout(false);
