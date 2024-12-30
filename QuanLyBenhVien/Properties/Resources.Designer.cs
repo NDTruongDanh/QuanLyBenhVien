@@ -93,6 +93,16 @@ namespace QuanLyBenhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anhBV {
+            get {
+                object obj = ResourceManager.GetObject("anhBV", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap anhphongbenh {
             get {
                 object obj = ResourceManager.GetObject("anhphongbenh", resourceCulture);
