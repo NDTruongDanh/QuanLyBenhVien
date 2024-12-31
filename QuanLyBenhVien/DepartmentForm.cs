@@ -180,6 +180,7 @@ namespace QuanLyBenhVien
 
         private void btnRefreshDepartment_Click(object sender, EventArgs e)
         {
+            LoadData();
             CommonControls.ResetInputFields(Parent);
         }
 

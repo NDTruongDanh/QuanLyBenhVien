@@ -190,6 +190,7 @@ namespace QuanLyBenhVien
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            LoadBillDetailData();
             ResetInputField();
         }
     }
