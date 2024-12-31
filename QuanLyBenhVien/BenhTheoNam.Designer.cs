@@ -124,7 +124,7 @@
             // txtYears
             // 
             this.txtYears.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtYears.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYears.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYears.Location = new System.Drawing.Point(73, 3);
             this.txtYears.Multiline = true;
             this.txtYears.Name = "txtYears";
@@ -196,7 +196,7 @@
             // lstDiagnosis
             // 
             this.lstDiagnosis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstDiagnosis.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstDiagnosis.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstDiagnosis.FormattingEnabled = true;
             this.lstDiagnosis.ItemHeight = 37;
             this.lstDiagnosis.Items.AddRange(new object[] {
