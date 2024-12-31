@@ -75,6 +75,7 @@
             this.txtUser.SelectedText = "";
             this.txtUser.Size = new System.Drawing.Size(280, 38);
             this.txtUser.TabIndex = 14;
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // chkRememberMe
             // 
@@ -113,6 +114,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(184, 43);
             this.guna2Button1.TabIndex = 17;
             this.guna2Button1.Text = "Đăng nhập";
+            this.guna2Button1.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // label1
             // 
@@ -156,6 +158,7 @@
             this.btnHidePass.Size = new System.Drawing.Size(43, 38);
             this.btnHidePass.TabIndex = 5;
             this.btnHidePass.UseVisualStyleBackColor = true;
+            this.btnHidePass.Click += new System.EventHandler(this.btnHidePass_Click);
             // 
             // label2
             // 
@@ -177,7 +180,9 @@
             this.ClientSize = new System.Drawing.Size(873, 534);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "SignIn";
             this.Text = "ĐĂNG NHẬP";
             this.panel1.ResumeLayout(false);

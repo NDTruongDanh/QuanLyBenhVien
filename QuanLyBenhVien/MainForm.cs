@@ -133,7 +133,7 @@ namespace QuanLyBenhVien
         private void btnChangePW_Click(object sender, EventArgs e)
         {
             ChangePassword changePassword = new ChangePassword(userID);
-            CommonControls.AddFormToTab(changePassword, changePassword.Text);
+            changePassword.ShowDialog();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

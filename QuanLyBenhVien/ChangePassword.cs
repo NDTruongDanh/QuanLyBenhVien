@@ -26,6 +26,7 @@ namespace QuanLyBenhVien
             this.userID = userID;
             LoadData();
             oldPw = dataTable.Rows[0]["Pass"].ToString();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void LoadData()
