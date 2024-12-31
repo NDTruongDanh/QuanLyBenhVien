@@ -18,7 +18,7 @@ namespace QuanLyBenhVien
         public DoanhthuNAM()
         {
             InitializeComponent();
-           
+
         }
 
         private void DoanhthuNAM_Load(object sender, EventArgs e)
@@ -119,40 +119,40 @@ namespace QuanLyBenhVien
                 chartMonth.Series.Add(series);
             }
 
+            // Cấu hình trục biểu đồ
+            chartMonth.ChartAreas[0].AxisX.Title = "Tháng";
+            chartMonth.ChartAreas[0].AxisY.Title = "Tổng số tiền";
+            chartMonth.ChartAreas[0].AxisX.TitleFont = new Font("Segoe UI", 11F, FontStyle.Regular);
+            chartMonth.ChartAreas[0].AxisY.TitleFont = new Font("Segoe UI", 11F, FontStyle.Regular);
             chartMonth.ChartAreas[0].AxisX.Minimum = 1;
             chartMonth.ChartAreas[0].AxisX.Maximum = 12;
 
-            chartMonth.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
-            chartMonth.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
-
             chartMonth.Titles.Clear();
-            chartMonth.Titles.Add("Biểu đồ đường - Tổng tiền theo tháng của từng năm (VNĐ)");
-
-            chartMonth.Titles[0].Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-
+            chartMonth.Titles.Add("Biểu đồ đường - Tổng tiền theo tháng của từng năm");
             if (chartMonth.Legends.Count > 0)
             {
                 chartMonth.Legends[0].Font = new Font("Segoe UI", 11F, FontStyle.Regular);
             }
 
+            chartMonth.Titles[0].Font = new Font("Segoe UI", 14F, FontStyle.Bold);
         }
         private void DisplayYearTotalChart(DataTable dataTable)
         {
-            chartYear.Series.Clear(); // Clear old data
+            chartYear.Series.Clear(); // Xóa dữ liệu cũ
             chartYear.Titles.Clear();
 
-            // Add title
-            chartYear.Titles.Add("Tổng tiền từng năm (VNĐ)");
+            // Thêm tiêu đề
+            chartYear.Titles.Add("Tổng tiền từng năm");
 
-            // Create Series for column chart
-            Series yearTotalSeries = new Series("Tổng tiền nè")
+            // Tạo Series biểu đồ cột
+            Series yearTotalSeries = new Series("Tổng tiền")
             {
                 ChartType = SeriesChartType.Column,
                 Color = Color.Orange,
-                Font = new Font("Segoe UI", 11F, FontStyle.Regular)
+                // IsValueShownAsLabel = true // Hiển thị giá trị tổng tiền trên cột
             };
 
-            // Calculate total amount for each year
+            // Tính tổng tiền từng năm
             var yearGroups = dataTable.AsEnumerable()
                                       .GroupBy(row => row.Field<int>("Year"))
                                       .Select(g => new
@@ -161,7 +161,7 @@ namespace QuanLyBenhVien
                                           Total = g.Sum(row => row.Field<decimal>("TotalAmount"))
                                       });
 
-            // Add total amount data to Series
+            // Thêm dữ liệu tổng tiền từng năm vào Series
             foreach (var yearGroup in yearGroups)
             {
                 yearTotalSeries.Points.AddXY($"Năm {yearGroup.Year}", yearGroup.Total);
@@ -169,32 +169,20 @@ namespace QuanLyBenhVien
 
             chartYear.Series.Add(yearTotalSeries);
 
-            // Ensure the chart area exists
-            if (chartYear.ChartAreas.Count == 0)
-            {
-                chartYear.ChartAreas.Add(new ChartArea());
-            }
-
-
+            // Cấu hình biểu đồ con
+            chartYear.ChartAreas[0].AxisX.Title = "Năm";
+            chartYear.ChartAreas[0].AxisY.Title = "Tổng số tiền (VND)";
             chartYear.ChartAreas[0].AxisX.Interval = 1;
-     
-            // Set font for chart title
-            chartYear.Titles[0].Font = new Font("Segoe UI", 14F, FontStyle.Bold);
 
-            // Set font for chart legend
+            chartYear.ChartAreas[0].AxisX.TitleFont = new Font("Segoe UI", 11F, FontStyle.Regular);
+            chartYear.ChartAreas[0].AxisY.TitleFont = new Font("Segoe UI", 11F, FontStyle.Regular);
+
             if (chartYear.Legends.Count > 0)
             {
                 chartYear.Legends[0].Font = new Font("Segoe UI", 11F, FontStyle.Regular);
             }
 
-            // Set font for X-axis labels
-            chartYear.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
-
-            // Set font for Y-axis labels
-            chartYear.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
-
-            // Force a redraw of the chart
-            chartYear.Invalidate();
+            chartYear.Titles[0].Font = new Font("Segoe UI", 14F, FontStyle.Bold);
         }
     }
 }
