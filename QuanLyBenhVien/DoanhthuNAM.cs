@@ -119,32 +119,40 @@ namespace QuanLyBenhVien
                 chartMonth.Series.Add(series);
             }
 
-            // Cấu hình trục biểu đồ
-            chartMonth.ChartAreas[0].AxisX.Title = "Tháng";
-            chartMonth.ChartAreas[0].AxisY.Title = "Tổng số tiền";
             chartMonth.ChartAreas[0].AxisX.Minimum = 1;
             chartMonth.ChartAreas[0].AxisX.Maximum = 12;
 
+            chartMonth.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+            chartMonth.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+
             chartMonth.Titles.Clear();
-            chartMonth.Titles.Add("Biểu đồ đường - Tổng tiền theo tháng của từng năm");
+            chartMonth.Titles.Add("Biểu đồ đường - Tổng tiền theo tháng của từng năm (VNĐ)");
+
+            chartMonth.Titles[0].Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+
+            if (chartMonth.Legends.Count > 0)
+            {
+                chartMonth.Legends[0].Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+            }
+
         }
         private void DisplayYearTotalChart(DataTable dataTable)
         {
-            chartYear.Series.Clear(); // Xóa dữ liệu cũ
+            chartYear.Series.Clear(); // Clear old data
             chartYear.Titles.Clear();
 
-            // Thêm tiêu đề
-            chartYear.Titles.Add("Tổng tiền từng năm");
+            // Add title
+            chartYear.Titles.Add("Tổng tiền từng năm (VNĐ)");
 
-            // Tạo Series biểu đồ cột
-            Series yearTotalSeries = new Series("Tổng tiền")
+            // Create Series for column chart
+            Series yearTotalSeries = new Series("Tổng tiền nè")
             {
                 ChartType = SeriesChartType.Column,
                 Color = Color.Orange,
-                // IsValueShownAsLabel = true // Hiển thị giá trị tổng tiền trên cột
+                Font = new Font("Segoe UI", 11F, FontStyle.Regular)
             };
 
-            // Tính tổng tiền từng năm
+            // Calculate total amount for each year
             var yearGroups = dataTable.AsEnumerable()
                                       .GroupBy(row => row.Field<int>("Year"))
                                       .Select(g => new
@@ -153,7 +161,7 @@ namespace QuanLyBenhVien
                                           Total = g.Sum(row => row.Field<decimal>("TotalAmount"))
                                       });
 
-            // Thêm dữ liệu tổng tiền từng năm vào Series
+            // Add total amount data to Series
             foreach (var yearGroup in yearGroups)
             {
                 yearTotalSeries.Points.AddXY($"Năm {yearGroup.Year}", yearGroup.Total);
@@ -161,10 +169,32 @@ namespace QuanLyBenhVien
 
             chartYear.Series.Add(yearTotalSeries);
 
-            // Cấu hình biểu đồ con
-            chartYear.ChartAreas[0].AxisX.Title = "Năm";
-            chartYear.ChartAreas[0].AxisY.Title = "Tổng số tiền (VND)";
+            // Ensure the chart area exists
+            if (chartYear.ChartAreas.Count == 0)
+            {
+                chartYear.ChartAreas.Add(new ChartArea());
+            }
+
+
             chartYear.ChartAreas[0].AxisX.Interval = 1;
+     
+            // Set font for chart title
+            chartYear.Titles[0].Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+
+            // Set font for chart legend
+            if (chartYear.Legends.Count > 0)
+            {
+                chartYear.Legends[0].Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+            }
+
+            // Set font for X-axis labels
+            chartYear.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+
+            // Set font for Y-axis labels
+            chartYear.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+
+            // Force a redraw of the chart
+            chartYear.Invalidate();
         }
     }
 }

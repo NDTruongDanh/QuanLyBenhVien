@@ -24,6 +24,8 @@ namespace QuanLyBenhVien
             CommonControls.InitializeTabControl(tabControl);
             this.userID = userID;
             LogoutTriggered = false;
+            this.WindowState = FormWindowState.Maximized;
+
         }
 
         private void btnPatient_Click(object sender, EventArgs e)
@@ -113,25 +115,25 @@ namespace QuanLyBenhVien
 
         private void btnWeeklyAssignment_Click(object sender, EventArgs e)
         {
-            StaffAssignment staffAssignment = new StaffAssignment();
-            CommonControls.AddFormToTab(staffAssignment, staffAssignment.Text); 
+            WeeklyAssignmentForm weeklyAssignmentForm = new WeeklyAssignmentForm();
+            CommonControls.AddFormToTab(weeklyAssignmentForm, weeklyAssignmentForm.Text);
         }
         private void btnMonthDiseaseStat_Click(object sender, EventArgs e)
         {
             BenhTheoThang btt = new BenhTheoThang();
-            btt.Show();
+            CommonControls.AddFormToTab(btt, btt.Text);
         }
 
         private void btnYearDiseaseStat_Click(object sender, EventArgs e)
         {
             BenhTheoNam btn = new BenhTheoNam();
-            btn.Show();
+            CommonControls.AddFormToTab(btn, btn.Text);
         }
 
         private void btnChangePW_Click(object sender, EventArgs e)
         {
             ChangePassword changePassword = new ChangePassword(userID);
-            changePassword.ShowDialog();
+            CommonControls.AddFormToTab(changePassword, changePassword.Text);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -192,9 +194,12 @@ namespace QuanLyBenhVien
             {
                 Cursor = Cursors.Default;
             }
+        }
 
-            WeeklyAssignmentForm weeklyAssignment = new WeeklyAssignmentForm();
-            CommonControls.AddFormToTab(weeklyAssignment, weeklyAssignment.Text);
+        private void thờiKhoáBiểuTrựcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaffAssignment staffAssignment = new StaffAssignment();
+            CommonControls.AddFormToTab(staffAssignment, staffAssignment.Text);
         }
     }
 }
