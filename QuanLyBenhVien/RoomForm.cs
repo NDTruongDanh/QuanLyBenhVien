@@ -185,6 +185,7 @@ namespace QuanLyBenhVien
 
         private void btnRefreshRoom_Click(object sender, EventArgs e)
         {
+            LoadRoomData();
             CommonControls.ResetInputFields(Parent);
         }
 

@@ -134,12 +134,12 @@ namespace QuanLyBenhVien
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-           CommonControls.ResetInputFields(Parent);
+            LoadData();
+            CommonControls.ResetInputFields(Parent);
             txtAssignmentID.Clear();
             cmbStaffID.SelectedIndex = -1;
             cmbShiftType.Text = null;
             dtpAssignmentDate.Value = DateTime.Now;
-            LoadData();
         }
 
         private void dgvWeeklyAssignment_SelectionChanged(object sender, EventArgs e)

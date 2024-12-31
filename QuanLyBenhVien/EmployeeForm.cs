@@ -202,6 +202,7 @@ namespace QuanLyBenhVien
     
         private void btnRefreshStaff_Click(object sender, EventArgs e)
         {
+            LoadData();
             CommonControls.ResetInputFields(Parent);
         }
 
