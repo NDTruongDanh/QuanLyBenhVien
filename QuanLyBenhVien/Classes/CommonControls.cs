@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -360,6 +361,33 @@ namespace QuanLyBenhVien.Classes
                             while (reader.Read())
                             {
                                 cmbRoomID.Items.Add(reader["RoomID"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        public static void InitializelstDiagnosis(ListBox lstDiagnosis)
+        {
+            string query = "SELECT DISTINCT Diagnosis FROM MEDICALRECORD";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                lstDiagnosis.Items.Add(reader["Diagnosis"].ToString());
                             }
                         }
                     }

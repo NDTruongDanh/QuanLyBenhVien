@@ -199,13 +199,6 @@
             this.lstDiagnosis.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstDiagnosis.FormattingEnabled = true;
             this.lstDiagnosis.ItemHeight = 37;
-            this.lstDiagnosis.Items.AddRange(new object[] {
-            "Bệnh tim mạch",
-            "Cảm cúm",
-            "Đau dạ dày",
-            "Viêm phổi",
-            "Mệt",
-            "Mỏi"});
             this.lstDiagnosis.Location = new System.Drawing.Point(4, 48);
             this.lstDiagnosis.Margin = new System.Windows.Forms.Padding(4);
             this.lstDiagnosis.Name = "lstDiagnosis";
