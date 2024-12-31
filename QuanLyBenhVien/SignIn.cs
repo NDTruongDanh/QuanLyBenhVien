@@ -27,6 +27,7 @@ namespace QuanLyBenhVien
         {
             InitializeComponent();
             txtPassword.UseSystemPasswordChar = true;
+            this.DoubleBuffered = true;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
