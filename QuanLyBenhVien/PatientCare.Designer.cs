@@ -70,9 +70,9 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.75F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -104,7 +104,7 @@
             this.dgvPatientCare.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPatientCare.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPatientCare.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPatientCare.Location = new System.Drawing.Point(106, 86);
+            this.dgvPatientCare.Location = new System.Drawing.Point(106, 114);
             this.dgvPatientCare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPatientCare.Name = "dgvPatientCare";
             this.dgvPatientCare.ReadOnly = true;
@@ -113,7 +113,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvPatientCare.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPatientCare.RowTemplate.Height = 24;
-            this.dgvPatientCare.Size = new System.Drawing.Size(578, 333);
+            this.dgvPatientCare.Size = new System.Drawing.Size(578, 305);
             this.dgvPatientCare.TabIndex = 19;
             this.dgvPatientCare.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvPatientCare.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -179,24 +179,24 @@
             // 
             // txtPatientName
             // 
-            this.txtPatientName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPatientName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPatientName.DefaultText = "";
             this.txtPatientName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPatientName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPatientName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPatientName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPatientName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPatientName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPatientName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatientName.ForeColor = System.Drawing.Color.Black;
             this.txtPatientName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPatientName.Location = new System.Drawing.Point(171, 7);
+            this.txtPatientName.Location = new System.Drawing.Point(171, 6);
             this.txtPatientName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPatientName.Name = "txtPatientName";
             this.txtPatientName.PasswordChar = '\0';
             this.txtPatientName.PlaceholderText = "";
             this.txtPatientName.SelectedText = "";
-            this.txtPatientName.Size = new System.Drawing.Size(210, 10);
+            this.txtPatientName.Size = new System.Drawing.Size(210, 12);
             this.txtPatientName.TabIndex = 27;
             // 
             // label1
@@ -250,23 +250,23 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(578, 24);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(578, 52);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // txtNotes
             // 
-            this.txtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNotes.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNotes.DefaultText = "";
             this.txtNotes.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtNotes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtNotes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtNotes.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNotes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNotes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNotes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNotes.ForeColor = System.Drawing.Color.Black;
             this.txtNotes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNotes.Location = new System.Drawing.Point(96, 7);
+            this.txtNotes.Location = new System.Drawing.Point(96, 6);
             this.txtNotes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
@@ -274,7 +274,7 @@
             this.txtNotes.PlaceholderText = "";
             this.txtNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtNotes.SelectedText = "";
-            this.txtNotes.Size = new System.Drawing.Size(478, 10);
+            this.txtNotes.Size = new System.Drawing.Size(478, 40);
             this.txtNotes.TabIndex = 27;
             // 
             // label2
@@ -285,7 +285,7 @@
             this.label2.Location = new System.Drawing.Point(4, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 24);
+            this.label2.Size = new System.Drawing.Size(84, 52);
             this.label2.TabIndex = 8;
             this.label2.Text = "Ghi chú";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -304,7 +304,7 @@
             this.tableLayoutPanel4.Controls.Add(this.guna2Button3, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.guna2Button1, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(106, 58);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(106, 86);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
