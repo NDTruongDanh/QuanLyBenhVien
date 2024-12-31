@@ -67,7 +67,7 @@
             // rtxtEpimedic
             // 
             this.rtxtEpimedic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtxtEpimedic.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtxtEpimedic.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtEpimedic.Location = new System.Drawing.Point(3, 49);
             this.rtxtEpimedic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtxtEpimedic.Name = "rtxtEpimedic";
