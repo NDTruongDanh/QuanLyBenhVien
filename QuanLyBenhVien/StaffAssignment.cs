@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,6 +66,25 @@ namespace QuanLyBenhVien
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         dgvAssignment.Rows.Clear();
+                        dgvAssignment.ColumnCount = 8;
+                        dgvAssignment.Columns[0].Name = "Ca";
+                        dgvAssignment.Columns[1].Name = "Thứ hai";
+                        dgvAssignment.Columns[2].Name = "Thứ ba";
+                        dgvAssignment.Columns[3].Name = "Thứ tư";
+                        dgvAssignment.Columns[4].Name = "Thứ năm";
+                        dgvAssignment.Columns[5].Name = "Thứ sáu";
+                        dgvAssignment.Columns[6].Name = "Thứ bảy";
+                        dgvAssignment.Columns[7].Name = "Chủ nhật";
+
+                        dgvAssignment.Font = new Font("Segoe UI", 12F, FontStyle.Regular);
+                        foreach (DataGridViewColumn column in dgvAssignment.Columns)
+                        {
+                            column.DefaultCellStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular);
+                        }
+
+
+
+
                         string[] shifts = { "Sáng", "Chiều", "Tối" };
                         foreach (string shift in shifts)
                         {
@@ -141,5 +161,9 @@ namespace QuanLyBenhVien
             dgvAssignment.ClearSelection();
         }
 
+        private void dgvAssignment_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            e.CellStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular);
+        }
     }
 }
