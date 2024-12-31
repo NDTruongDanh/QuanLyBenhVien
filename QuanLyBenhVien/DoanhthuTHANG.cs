@@ -81,6 +81,9 @@ namespace QuanLyBenhVien
             lblDate.Text = $"Tổng Doanh Thu Tháng {thang}/{nam}:";
             lblTotal.Text = $" {tongDoanhThu:N0} VND";
 
+            chart1.Titles[0].Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+
+
 
         }
         private void btnOk_Click(object sender, EventArgs e)
