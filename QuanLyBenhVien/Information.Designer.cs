@@ -31,6 +31,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTypeOfStaff = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblDateOfJoining = new System.Windows.Forms.Label();
@@ -44,11 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblDoctorID = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lblTypeOfStaff = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -131,10 +131,69 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(326, 350);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
+            // lblTypeOfStaff
+            // 
+            this.lblTypeOfStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTypeOfStaff.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTypeOfStaff.ForeColor = System.Drawing.Color.Black;
+            this.lblTypeOfStaff.Location = new System.Drawing.Point(166, 190);
+            this.lblTypeOfStaff.Name = "lblTypeOfStaff";
+            this.lblTypeOfStaff.Size = new System.Drawing.Size(157, 38);
+            this.lblTypeOfStaff.TabIndex = 25;
+            this.lblTypeOfStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label11
+            // 
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(3, 304);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(157, 46);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Số điện thoại:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(3, 266);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(157, 38);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Email:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(3, 228);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(157, 38);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Ngày vào làm:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(3, 190);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 38);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Loại nhân viên:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhoneNumber.ForeColor = System.Drawing.Color.Black;
             this.lblPhoneNumber.Location = new System.Drawing.Point(166, 304);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
@@ -145,7 +204,7 @@
             // lblEmail
             // 
             this.lblEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
             this.lblEmail.Location = new System.Drawing.Point(166, 266);
             this.lblEmail.Name = "lblEmail";
@@ -156,7 +215,7 @@
             // lblDateOfJoining
             // 
             this.lblDateOfJoining.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDateOfJoining.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfJoining.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfJoining.ForeColor = System.Drawing.Color.Black;
             this.lblDateOfJoining.Location = new System.Drawing.Point(166, 228);
             this.lblDateOfJoining.Name = "lblDateOfJoining";
@@ -167,7 +226,7 @@
             // lblDepartmentName
             // 
             this.lblDepartmentName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDepartmentName.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartmentName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartmentName.ForeColor = System.Drawing.Color.Black;
             this.lblDepartmentName.Location = new System.Drawing.Point(166, 152);
             this.lblDepartmentName.Name = "lblDepartmentName";
@@ -178,7 +237,7 @@
             // label10
             // 
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(3, 152);
             this.label10.Name = "label10";
@@ -190,7 +249,7 @@
             // lblDateOfBirth
             // 
             this.lblDateOfBirth.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirth.ForeColor = System.Drawing.Color.Black;
             this.lblDateOfBirth.Location = new System.Drawing.Point(166, 114);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
@@ -201,7 +260,7 @@
             // label8
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(3, 114);
             this.label8.Name = "label8";
@@ -213,7 +272,7 @@
             // lblGender
             // 
             this.lblGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.Black;
             this.lblGender.Location = new System.Drawing.Point(166, 76);
             this.lblGender.Name = "lblGender";
@@ -224,7 +283,7 @@
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(3, 76);
             this.label6.Name = "label6";
@@ -236,7 +295,7 @@
             // lblFullName
             // 
             this.lblFullName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullName.ForeColor = System.Drawing.Color.Black;
             this.lblFullName.Location = new System.Drawing.Point(166, 38);
             this.lblFullName.Name = "lblFullName";
@@ -247,7 +306,7 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(3, 38);
             this.label4.Name = "label4";
@@ -259,7 +318,7 @@
             // lblDoctorID
             // 
             this.lblDoctorID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDoctorID.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoctorID.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDoctorID.ForeColor = System.Drawing.Color.Black;
             this.lblDoctorID.Location = new System.Drawing.Point(166, 0);
             this.lblDoctorID.Name = "lblDoctorID";
@@ -270,7 +329,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
@@ -278,65 +337,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã nhân viên:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(3, 190);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 38);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Loại nhân viên:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label7
-            // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(3, 228);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(157, 38);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Ngày vào làm:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(3, 266);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(157, 38);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Email:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label11
-            // 
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(3, 304);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(157, 46);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Số điện thoại:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTypeOfStaff
-            // 
-            this.lblTypeOfStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTypeOfStaff.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTypeOfStaff.ForeColor = System.Drawing.Color.Black;
-            this.lblTypeOfStaff.Location = new System.Drawing.Point(166, 190);
-            this.lblTypeOfStaff.Name = "lblTypeOfStaff";
-            this.lblTypeOfStaff.Size = new System.Drawing.Size(157, 38);
-            this.lblTypeOfStaff.TabIndex = 25;
-            this.lblTypeOfStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Information
             // 
