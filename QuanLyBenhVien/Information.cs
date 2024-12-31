@@ -21,7 +21,9 @@ namespace QuanLyBenhVien
         {
             this.userID = userID;
             InitializeComponent();
-            LoadData(); 
+            LoadData();
+            this.DoubleBuffered = true;
+
         }
 
         private void LoadData()
@@ -31,7 +33,7 @@ namespace QuanLyBenhVien
                 try
                 {
                     conn.Open();
-                    string sql = $@"SELECT st.StaffID, st.FullName, st.Gender, st.DateOfBirth, st.TypeOfStaff, HeadDepartmentID, DepartmentName, st.DateOfJoining, st.Email, st.PhoneNumber
+                    string sql = $@"SELECT st.StaffID, st.FullName, st.Gender, st.DateOfBirth, st.TypeOfStaff, DepartmentName, st.DateOfJoining, st.Email, st.PhoneNumber
                                    FROM STAFF st JOIN DEPARTMENT d ON st.DepartmentID = d.DepartmentID 
                                    WHERE StaffID = '{userID}'";
                     using (SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, conn))
@@ -48,17 +50,10 @@ namespace QuanLyBenhVien
                                 lblGender.Text = row["Gender"].ToString();
                                 lblDateOfBirth.Text = Convert.ToDateTime(row["DateOfBirth"]).ToString("dd/MM/yyyy");
                                 lblTypeOfStaff.Text = row["TypeOfStaff"].ToString();
-                                string headDepartmenID = row["HeadDepartmentID"].ToString();
-                                if (headDepartmenID == userID)
-                                {
-                                    lblHeadDepartment.Text = "Trưởng phòng";
-                                }
                                 lblDepartmentName.Text = row["DepartmentName"].ToString();
                                 lblDateOfJoining.Text = Convert.ToDateTime(row["DateOfJoining"]).ToString("dd/MM/yyyy");
                                 lblEmail.Text = row["Email"].ToString();
                                 lblPhoneNumber.Text = row["PhoneNumber"].ToString();
-
-                                
                             }
                             else
                             {
@@ -73,5 +68,7 @@ namespace QuanLyBenhVien
                 }   
             }
         }
+
+
     }
 }

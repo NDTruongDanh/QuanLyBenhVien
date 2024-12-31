@@ -68,6 +68,7 @@ namespace QuanLyBenhVien
                 lblCareID.Text = row.Cells[0].Value.ToString();
                 txtPatientName.Text = row.Cells[1].Value.ToString();
                 cmbRoomID.Text = row.Cells[2].Value.ToString();
+                txtTypeOfCare.Text = row.Cells[4].Value.ToString();
                 txtNotes.Text = row.Cells[5].Value.ToString();
             }
         }
@@ -80,7 +81,7 @@ namespace QuanLyBenhVien
                 {
                     conn.Open();
                     string sql = $@"UPDATE NURSECARE
-                                    SET Notes = '{txtNotes.Text}', RoomID = '{cmbRoomID.Text}'
+                                    SET Notes = '{txtNotes.Text}', RoomID = '{cmbRoomID.Text}', CareType = '{txtTypeOfCare.Text}'
                                     WHERE CareID = '{lblCareID.Text}'";
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
@@ -139,6 +140,12 @@ namespace QuanLyBenhVien
                         sql += " AND RoomID = @RoomID";
                         command.Parameters.AddWithValue("@RoomID", cmbRoomID.Text);
                     }
+                    if (!string.IsNullOrEmpty(txtTypeOfCare.Text))
+                    {
+                        sql += " AND CareType = @CareType";
+                        command.Parameters.AddWithValue("@CareType", txtTypeOfCare.Text);
+                    }
+
 
                     command.CommandText = sql;
 
