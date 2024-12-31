@@ -129,7 +129,7 @@
             this.chkRememberMe.Location = new System.Drawing.Point(430, 237);
             this.chkRememberMe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkRememberMe.Name = "chkRememberMe";
-            this.chkRememberMe.Size = new System.Drawing.Size(268, 50);
+            this.chkRememberMe.Size = new System.Drawing.Size(264, 49);
             this.chkRememberMe.TabIndex = 16;
             this.chkRememberMe.Text = "Nhớ mật khẩu";
             this.chkRememberMe.UncheckedState.BorderColor = System.Drawing.Color.White;
@@ -178,7 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLyBenhVien.Properties.Resources._2302_w015_n003_1151B_p15_1151;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(873, 534);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
