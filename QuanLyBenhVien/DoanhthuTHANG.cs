@@ -55,6 +55,7 @@ namespace QuanLyBenhVien
             chart1.Series["DoanhThu"].MarkerStyle = MarkerStyle.Circle;
             chart1.Series["DoanhThu"].MarkerSize = 9;
             chart1.Series["DoanhThu"].BorderWidth = 3;
+            chart1.Series["DoanhThu"].Font = new Font("Segoe UI", 14F, FontStyle.Bold);
 
 
             foreach (DataRow row in dt.Rows)
@@ -69,7 +70,16 @@ namespace QuanLyBenhVien
 
             chart1.ChartAreas[0].AxisX.Title = "Ngày";
             chart1.ChartAreas[0].AxisY.Title = "Doanh Thu (VND)";
-            lblTotal.Text = $"Tổng Doanh Thu Tháng {thang}/{nam}: {tongDoanhThu:N0} VND";
+            chart1.ChartAreas[0].AxisX.TitleFont = new Font("Segoe UI", 11F, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.TitleFont = new Font("Segoe UI", 11F, FontStyle.Regular);
+
+            if (chart1.Legends.Count > 0)
+            {
+                chart1.Legends[0].Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+            }
+
+            lblDate.Text = $"Tổng Doanh Thu Tháng {thang}/{nam}:";
+            lblTotal.Text = $" {tongDoanhThu:N0} VND";
 
 
         }

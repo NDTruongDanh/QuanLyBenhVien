@@ -97,13 +97,18 @@ namespace QuanLyBenhVien
 
 
 
-            // Thiết lập trục x và y
-            chart1.ChartAreas[0].AxisX.Title = "Ngày";
-            chart1.ChartAreas[0].AxisY.Title = "Số lượng ca bệnh";
-            chart1.Titles.Clear();
-            chart1.Titles.Add("Thống kê số lượng ca bệnh theo ngày");
+            chart1.Titles[0].Font = new Font("Segoe UI", 14F, FontStyle.Bold);
 
-        }
+            if (chart1.Legends.Count > 0)
+            {
+                chart1.Legends[0].Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+            }
+
+            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+
+            chart1.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+
+    }
 
         private DataTable LayDuLieuLoaiBenh(string loaiBenh, int thang, int nam)
         {

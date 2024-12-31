@@ -27,6 +27,8 @@ namespace QuanLyBenhVien
             this.isDepartment = isDepartment;
             InitializeComponent();
             CommonControls.InitializeTabControl(tabControl);
+            this.WindowState = FormWindowState.Maximized;
+
         }
 
 

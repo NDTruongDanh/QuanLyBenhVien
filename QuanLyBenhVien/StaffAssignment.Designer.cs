@@ -33,8 +33,16 @@ namespace QuanLyBenhVien
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvAssignment = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ShiftType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,10 +87,9 @@ namespace QuanLyBenhVien
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvAssignment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAssignment.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvAssignment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -99,14 +106,14 @@ namespace QuanLyBenhVien
             this.Friday,
             this.Saturday,
             this.Sunday});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAssignment.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAssignment.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvAssignment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAssignment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAssignment.Location = new System.Drawing.Point(3, 24);
@@ -116,9 +123,9 @@ namespace QuanLyBenhVien
             this.dgvAssignment.ReadOnly = true;
             this.dgvAssignment.RowHeadersVisible = false;
             this.dgvAssignment.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAssignment.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAssignment.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.tableLayoutPanel1.SetRowSpan(this.dgvAssignment, 5);
             this.dgvAssignment.RowTemplate.Height = 24;
             this.dgvAssignment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -132,7 +139,7 @@ namespace QuanLyBenhVien
             this.dgvAssignment.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.dgvAssignment.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAssignment.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvAssignment.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.dgvAssignment.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvAssignment.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvAssignment.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvAssignment.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
@@ -149,6 +156,9 @@ namespace QuanLyBenhVien
             // 
             // ShiftType
             // 
+            this.ShiftType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShiftType.DefaultCellStyle = dataGridViewCellStyle3;
             this.ShiftType.HeaderText = "Ca";
             this.ShiftType.MinimumWidth = 6;
             this.ShiftType.Name = "ShiftType";
@@ -156,6 +166,9 @@ namespace QuanLyBenhVien
             // 
             // Monday
             // 
+            this.Monday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.Monday.DefaultCellStyle = dataGridViewCellStyle4;
             this.Monday.HeaderText = "Thứ hai";
             this.Monday.MinimumWidth = 6;
             this.Monday.Name = "Monday";
@@ -163,6 +176,9 @@ namespace QuanLyBenhVien
             // 
             // Tuesday
             // 
+            this.Tuesday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.Tuesday.DefaultCellStyle = dataGridViewCellStyle5;
             this.Tuesday.HeaderText = "Thứ ba";
             this.Tuesday.MinimumWidth = 6;
             this.Tuesday.Name = "Tuesday";
@@ -170,6 +186,9 @@ namespace QuanLyBenhVien
             // 
             // Wednesday
             // 
+            this.Wednesday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Wednesday.DefaultCellStyle = dataGridViewCellStyle6;
             this.Wednesday.HeaderText = "Thứ tư";
             this.Wednesday.MinimumWidth = 6;
             this.Wednesday.Name = "Wednesday";
@@ -177,6 +196,8 @@ namespace QuanLyBenhVien
             // 
             // Thursday
             // 
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.Thursday.DefaultCellStyle = dataGridViewCellStyle7;
             this.Thursday.HeaderText = "Thứ năm";
             this.Thursday.MinimumWidth = 6;
             this.Thursday.Name = "Thursday";
@@ -184,6 +205,9 @@ namespace QuanLyBenhVien
             // 
             // Friday
             // 
+            this.Friday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.Friday.DefaultCellStyle = dataGridViewCellStyle8;
             this.Friday.HeaderText = "Thứ sáu";
             this.Friday.MinimumWidth = 6;
             this.Friday.Name = "Friday";
@@ -191,6 +215,9 @@ namespace QuanLyBenhVien
             // 
             // Saturday
             // 
+            this.Saturday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.Saturday.DefaultCellStyle = dataGridViewCellStyle9;
             this.Saturday.HeaderText = "Thứ bảy";
             this.Saturday.MinimumWidth = 6;
             this.Saturday.Name = "Saturday";
@@ -198,6 +225,8 @@ namespace QuanLyBenhVien
             // 
             // Sunday
             // 
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.Sunday.DefaultCellStyle = dataGridViewCellStyle10;
             this.Sunday.HeaderText = "Chủ nhật";
             this.Sunday.MinimumWidth = 6;
             this.Sunday.Name = "Sunday";
@@ -218,7 +247,7 @@ namespace QuanLyBenhVien
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 18);
             this.tableLayoutPanel2.TabIndex = 1;
             // 

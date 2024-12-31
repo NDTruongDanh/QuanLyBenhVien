@@ -24,6 +24,7 @@ namespace QuanLyBenhVien
             this.userID = userID;
             InitializeComponent();
             CommonControls.InitializeTabControl(tabControl);
+            this.WindowState = FormWindowState.Maximized;
         }
         private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
         {
