@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.chartMonth = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -80,24 +84,36 @@
             // 
             // chartMonth
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartMonth.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ChartArea1";
+            this.chartMonth.ChartAreas.Add(chartArea1);
             this.chartMonth.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chartMonth.Legends.Add(legend1);
             this.chartMonth.Location = new System.Drawing.Point(3, 2);
             this.chartMonth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chartMonth.Name = "chartMonth";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartMonth.Series.Add(series1);
             this.chartMonth.Size = new System.Drawing.Size(588, 586);
             this.chartMonth.TabIndex = 0;
             this.chartMonth.Text = "chart1";
             // 
             // chartYear
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartYear.ChartAreas.Add(chartArea4);
+            chartArea2.Name = "ChartArea1";
+            this.chartYear.ChartAreas.Add(chartArea2);
             this.chartYear.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.chartYear.Legends.Add(legend2);
             this.chartYear.Location = new System.Drawing.Point(597, 2);
             this.chartYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chartYear.Name = "chartYear";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartYear.Series.Add(series2);
             this.chartYear.Size = new System.Drawing.Size(589, 586);
             this.chartYear.TabIndex = 1;
             this.chartYear.Text = "chart2";
