@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Data.SqlClient;
+using QuanLyBenhVien.Classes;
 
 namespace QuanLyBenhVien
 {
@@ -18,6 +19,7 @@ namespace QuanLyBenhVien
         public BenhTheoThang()
         {
             InitializeComponent();
+            CommonControls.InitializelstDiagnosis(lstDiagnosis);
         }
 
         string connectionString = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
