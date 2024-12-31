@@ -85,12 +85,23 @@ namespace QuanLyBenhVien
                 return;
             }
 
-            string query = @"IF EXISTS (SELECT 1 FROM APPOINTMENT WHERE AppointmentID = @AppointmentID)
+            string query = null;
+            if (cmbStatus.Text != "Đang chờ xử lý") {
+                query = $@"IF EXISTS (SELECT 1 FROM APPOINTMENT WHERE AppointmentID = @AppointmentID)
+                     UPDATE APPOINTMENT 
+                     SET PatientID = @PatientID, DoctorID = @DoctorID, DepartmentID = @DepartmentID, 
+                         AppointmentDateTime = @AppointmentDateTime, AppointmentStatus = @AppointmentStatus
+                     WHERE AppointmentID = @AppointmentID";
+            }
+            else {
+                query = @"IF EXISTS (SELECT 1 FROM APPOINTMENT WHERE AppointmentID = @AppointmentID)
                      UPDATE APPOINTMENT 
                      SET PatientID = @PatientID, DoctorID = @DoctorID, DepartmentID = @DepartmentID, 
                          AppointmentDateTime = @AppointmentDateTime
-                     WHERE AppointmentID = @AppointmentID
-                     ELSE
+                     WHERE AppointmentID = @AppointmentID";
+            }
+
+            query += @" ELSE
                      INSERT INTO APPOINTMENT 
                      (AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDateTime, AppointmentStatus)
                      VALUES 
@@ -102,7 +113,8 @@ namespace QuanLyBenhVien
                 {"@PatientID", cmbPatientID.Text},
                 {"@DoctorID", cmbDoctorID.Text},
                 {"@DepartmentID", cmbDepartmentID.Text},
-                {"@AppointmentDateTime", dtpAppointmentDateTime.Value}
+                {"@AppointmentDateTime", dtpAppointmentDateTime.Value},
+                {"@AppointmentStatus", cmbStatus.Text}
             };
 
             CommonQuery.ExecuteQuery(query, parameters);
@@ -159,10 +171,12 @@ namespace QuanLyBenhVien
                         parameters.Add("@DepartmentID", cmbDepartmentID.Text);
                     }
 
+                    if (!string.IsNullOrEmpty(cmbStatus.Text))
+                    {
 
-                    string status = Status();
-                    query += $" AND AppointmentStatus = @AppointmentStatus";
-                    parameters.Add("@AppointmentStatus", status);
+                        query += $" AND AppointmentStatus = @AppointmentStatus";
+                        parameters.Add("@AppointmentStatus", cmbStatus.Text);
+                    }
                    
 
                     using (SqlCommand command = new SqlCommand(query, conn))
@@ -201,58 +215,17 @@ namespace QuanLyBenhVien
                 cmbDoctorID.Text = selectedRow.Cells[2].Value.ToString();
                 cmbDepartmentID.Text = selectedRow.Cells[3].Value.ToString();
                 dtpAppointmentDateTime.Text = selectedRow.Cells[4].Value.ToString();
-
-                if (selectedRow.Cells[5].Value.ToString() == "Chấp thuận")
-                    rbtnAccept.Checked = true;
-                else if(selectedRow.Cells[5].Value.ToString() == "Từ chối")
-                    rbtnDecline.Checked = true;
-                else
-                {
-                    rbtnDecline.Checked = false;
-                    rbtnAccept.Checked = false;
-                }
+                cmbStatus.Text = selectedRow.Cells[5].Value.ToString();
             }
-        }
-
-        private void rbtnAccept_Click(object sender, EventArgs e)
-        {
-            rbtnAccept.Checked = !rbtnAccept.Checked;
-        }
-
-        private void rbtnDecline_Click(object sender, EventArgs e)
-        {
-            rbtnDecline.Checked = !rbtnDecline.Checked;
-        }
-
-        private void rbtnDecline_CheckedChanged(object sender, EventArgs e)
-        {
-            if(rbtnDecline.Checked)
-                rbtnAccept.Checked = false;
-        }
-
-        private void rbtnAccept_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbtnAccept.Checked)
-                rbtnDecline.Checked = false;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadAppointments();
-            rbtnAccept.Checked = false;
-            rbtnDecline.Checked = false;
             CommonControls.ResetInputFields(Parent);
         }
 
-        private string Status()
-        {
-            if (rbtnAccept.Checked)
-                return "Chấp thuận";
-            else if (rbtnDecline.Checked)
-                return "Từ chối";
-            return "Đang chờ xử lý";
-        }
-
+  
         private void btnOK_Click(object sender, EventArgs e)
         {
             string query = @"UPDATE APPOINTMENT 
@@ -264,32 +237,12 @@ namespace QuanLyBenhVien
             var parameters = new Dictionary<string, object>
             {
                 {"@AppointmentID", txtAppointmentID.Text},
-                {"@AppointmentStatus", Status()}
+                {"@AppointmentStatus", cmbStatus.Text}
             };
 
             CommonQuery.ExecuteQuery(query, parameters);
             LoadAppointments();
             CommonControls.ResetInputFields(Parent);
-        }
-
-        private void cmbDoctorID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbDepartmentID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAppointmentID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpAppointmentDateTime_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

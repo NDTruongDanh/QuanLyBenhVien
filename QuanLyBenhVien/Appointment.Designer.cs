@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvAppointment = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -40,6 +40,7 @@
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.btnFind = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbPatientID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbDepartmentID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbDoctorID = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -51,17 +52,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.rbtnDecline = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rbtnAccept = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -85,28 +79,28 @@
             // dgvAppointment
             // 
             this.dgvAppointment.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvAppointment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvAppointment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAppointment.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAppointment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAppointment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAppointment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAppointment.ColumnHeadersHeight = 35;
             this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAppointment.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAppointment.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAppointment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAppointment.Location = new System.Drawing.Point(3, 177);
@@ -115,8 +109,8 @@
             this.dgvAppointment.ReadOnly = true;
             this.dgvAppointment.RowHeadersVisible = false;
             this.dgvAppointment.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvAppointment.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvAppointment.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAppointment.RowTemplate.Height = 24;
             this.dgvAppointment.Size = new System.Drawing.Size(983, 381);
             this.dgvAppointment.TabIndex = 11;
@@ -156,7 +150,7 @@
             this.tableLayoutPanel3.Controls.Add(this.btnFind, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 144);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -242,6 +236,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.cmbStatus, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.cmbPatientID, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.cmbDepartmentID, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.cmbDoctorID, 1, 1);
@@ -253,7 +248,6 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 3, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 2);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -264,6 +258,27 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(983, 136);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cmbStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.ForeColor = System.Drawing.Color.Black;
+            this.cmbStatus.ItemHeight = 30;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Đang chờ xử lý",
+            "Chấp thuận",
+            "Từ chối"});
+            this.cmbStatus.Location = new System.Drawing.Point(644, 95);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(335, 36);
+            this.cmbStatus.TabIndex = 43;
             // 
             // cmbPatientID
             // 
@@ -276,10 +291,10 @@
             this.cmbPatientID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPatientID.ForeColor = System.Drawing.Color.Black;
             this.cmbPatientID.ItemHeight = 30;
-            this.cmbPatientID.Location = new System.Drawing.Point(650, 4);
-            this.cmbPatientID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbPatientID.Location = new System.Drawing.Point(644, 4);
+            this.cmbPatientID.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPatientID.Name = "cmbPatientID";
-            this.cmbPatientID.Size = new System.Drawing.Size(329, 36);
+            this.cmbPatientID.Size = new System.Drawing.Size(335, 36);
             this.cmbPatientID.TabIndex = 42;
             // 
             // cmbDepartmentID
@@ -294,11 +309,10 @@
             this.cmbDepartmentID.ForeColor = System.Drawing.Color.Black;
             this.cmbDepartmentID.ItemHeight = 30;
             this.cmbDepartmentID.Location = new System.Drawing.Point(145, 95);
-            this.cmbDepartmentID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDepartmentID.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDepartmentID.Name = "cmbDepartmentID";
-            this.cmbDepartmentID.Size = new System.Drawing.Size(328, 36);
+            this.cmbDepartmentID.Size = new System.Drawing.Size(335, 36);
             this.cmbDepartmentID.TabIndex = 41;
-            this.cmbDepartmentID.SelectedIndexChanged += new System.EventHandler(this.cmbDepartmentID_SelectedIndexChanged);
             // 
             // cmbDoctorID
             // 
@@ -312,11 +326,10 @@
             this.cmbDoctorID.ForeColor = System.Drawing.Color.Black;
             this.cmbDoctorID.ItemHeight = 30;
             this.cmbDoctorID.Location = new System.Drawing.Point(145, 49);
-            this.cmbDoctorID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDoctorID.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDoctorID.Name = "cmbDoctorID";
-            this.cmbDoctorID.Size = new System.Drawing.Size(328, 36);
+            this.cmbDoctorID.Size = new System.Drawing.Size(335, 36);
             this.cmbDoctorID.TabIndex = 40;
-            this.cmbDoctorID.SelectedIndexChanged += new System.EventHandler(this.cmbDoctorID_SelectedIndexChanged);
             // 
             // dtpAppointmentDateTime
             // 
@@ -325,15 +338,14 @@
             this.dtpAppointmentDateTime.FillColor = System.Drawing.Color.White;
             this.dtpAppointmentDateTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpAppointmentDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAppointmentDateTime.Location = new System.Drawing.Point(647, 46);
+            this.dtpAppointmentDateTime.Location = new System.Drawing.Point(641, 46);
             this.dtpAppointmentDateTime.Margin = new System.Windows.Forms.Padding(1);
             this.dtpAppointmentDateTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpAppointmentDateTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpAppointmentDateTime.Name = "dtpAppointmentDateTime";
-            this.dtpAppointmentDateTime.Size = new System.Drawing.Size(335, 42);
+            this.dtpAppointmentDateTime.Size = new System.Drawing.Size(341, 42);
             this.dtpAppointmentDateTime.TabIndex = 39;
             this.dtpAppointmentDateTime.Value = new System.DateTime(2024, 12, 28, 12, 16, 11, 507);
-            this.dtpAppointmentDateTime.ValueChanged += new System.EventHandler(this.dtpAppointmentDateTime_ValueChanged);
             // 
             // txtAppointmentID
             // 
@@ -354,21 +366,20 @@
             this.txtAppointmentID.PasswordChar = '\0';
             this.txtAppointmentID.PlaceholderText = "";
             this.txtAppointmentID.SelectedText = "";
-            this.txtAppointmentID.Size = new System.Drawing.Size(334, 42);
+            this.txtAppointmentID.Size = new System.Drawing.Size(341, 42);
             this.txtAppointmentID.TabIndex = 26;
-            this.txtAppointmentID.TextChanged += new System.EventHandler(this.txtAppointmentID_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(481, 90);
+            this.label5.Location = new System.Drawing.Point(488, 90);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 46);
+            this.label5.Size = new System.Drawing.Size(148, 46);
             this.label5.TabIndex = 24;
-            this.label5.Text = "Xử lý trạng thái";
+            this.label5.Text = "Trạng thái";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -389,10 +400,10 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(481, 45);
+            this.label3.Location = new System.Drawing.Point(488, 45);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 45);
+            this.label3.Size = new System.Drawing.Size(148, 45);
             this.label3.TabIndex = 12;
             this.label3.Text = "Ngày khám";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -415,10 +426,10 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(481, 0);
+            this.label1.Location = new System.Drawing.Point(488, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 45);
+            this.label1.Size = new System.Drawing.Size(148, 45);
             this.label1.TabIndex = 8;
             this.label1.Text = "Mã bệnh nhân";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -436,108 +447,6 @@
             this.label6.Text = "Mã cuộc hẹn";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.12195F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.87805F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.guna2Button1, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(649, 92);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(331, 42);
-            this.tableLayoutPanel4.TabIndex = 25;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.rbtnDecline, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.rbtnAccept, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(6, 5);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(219, 32);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // rbtnDecline
-            // 
-            this.rbtnDecline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbtnDecline.AutoSize = true;
-            this.rbtnDecline.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbtnDecline.CheckedState.BorderThickness = 0;
-            this.rbtnDecline.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbtnDecline.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbtnDecline.CheckedState.InnerOffset = -4;
-            this.rbtnDecline.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnDecline.Location = new System.Drawing.Point(7, 21);
-            this.rbtnDecline.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.rbtnDecline.Name = "rbtnDecline";
-            this.rbtnDecline.Size = new System.Drawing.Size(205, 4);
-            this.rbtnDecline.TabIndex = 1;
-            this.rbtnDecline.Text = "Từ chối";
-            this.rbtnDecline.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbtnDecline.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbtnDecline.UncheckedState.BorderThickness = 2;
-            this.rbtnDecline.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbtnDecline.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbtnDecline.CheckedChanged += new System.EventHandler(this.rbtnDecline_CheckedChanged);
-            // 
-            // rbtnAccept
-            // 
-            this.rbtnAccept.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbtnAccept.AutoSize = true;
-            this.rbtnAccept.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbtnAccept.CheckedState.BorderThickness = 0;
-            this.rbtnAccept.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbtnAccept.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbtnAccept.CheckedState.InnerOffset = -4;
-            this.rbtnAccept.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnAccept.Location = new System.Drawing.Point(6, 5);
-            this.rbtnAccept.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbtnAccept.Name = "rbtnAccept";
-            this.rbtnAccept.Size = new System.Drawing.Size(207, 7);
-            this.rbtnAccept.TabIndex = 0;
-            this.rbtnAccept.Text = "Chấp thuận";
-            this.rbtnAccept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbtnAccept.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbtnAccept.UncheckedState.BorderThickness = 2;
-            this.rbtnAccept.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbtnAccept.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbtnAccept.CheckedChanged += new System.EventHandler(this.rbtnAccept_CheckedChanged);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button1.DefaultAutoSize = true;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(234, 5);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(91, 32);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.Text = "OK";
-            this.guna2Button1.Click += new System.EventHandler(this.btnOK_Click);
-            // 
             // Appointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -552,10 +461,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -581,10 +486,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private Guna.UI2.WinForms.Guna2RadioButton rbtnDecline;
-        private Guna.UI2.WinForms.Guna2RadioButton rbtnAccept;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbStatus;
     }
 }
