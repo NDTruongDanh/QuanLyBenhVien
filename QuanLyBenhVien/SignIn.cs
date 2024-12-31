@@ -27,7 +27,7 @@ namespace QuanLyBenhVien
         {
             InitializeComponent();
             txtPassword.UseSystemPasswordChar = true;
-            this.WindowState = FormWindowState.Maximized;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void AuthenticateByStaffID()
