@@ -50,12 +50,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.75F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 366);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvAppointment
@@ -79,14 +79,14 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAppointment.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAppointment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvAppointment.Location = new System.Drawing.Point(2, 24);
-            this.dgvAppointment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAppointment.Location = new System.Drawing.Point(3, 30);
+            this.dgvAppointment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAppointment.Name = "dgvAppointment";
             this.dgvAppointment.ReadOnly = true;
             this.dgvAppointment.RowHeadersVisible = false;
@@ -94,7 +94,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvAppointment.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAppointment.RowTemplate.Height = 24;
-            this.dgvAppointment.Size = new System.Drawing.Size(596, 340);
+            this.dgvAppointment.Size = new System.Drawing.Size(794, 418);
             this.dgvAppointment.TabIndex = 4;
             this.dgvAppointment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvAppointment.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -128,13 +128,13 @@
             this.tableLayoutPanel2.Controls.Add(this.cmbSelection, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(596, 18);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 24);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // cmbSelection
@@ -151,10 +151,10 @@
             this.cmbSelection.Items.AddRange(new object[] {
             "Tuần này",
             "Tuần sau"});
-            this.cmbSelection.Location = new System.Drawing.Point(298, 2);
-            this.cmbSelection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSelection.Location = new System.Drawing.Point(399, 2);
+            this.cmbSelection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbSelection.Name = "cmbSelection";
-            this.cmbSelection.Size = new System.Drawing.Size(161, 36);
+            this.cmbSelection.Size = new System.Drawing.Size(214, 36);
             this.cmbSelection.TabIndex = 38;
             this.cmbSelection.SelectedIndexChanged += new System.EventHandler(this.cmbSelection_SelectedIndexChanged);
             // 
@@ -163,21 +163,20 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(143, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(192, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 18);
+            this.label2.Size = new System.Drawing.Size(201, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Lịch khám";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DoctorAppointment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DoctorAppointment";
             this.Text = "LỊCH KHÁM";
             this.tableLayoutPanel1.ResumeLayout(false);
