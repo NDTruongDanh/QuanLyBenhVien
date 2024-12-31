@@ -85,12 +85,12 @@
             this.chkRememberMe.CheckedState.BorderRadius = 0;
             this.chkRememberMe.CheckedState.BorderThickness = 0;
             this.chkRememberMe.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkRememberMe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRememberMe.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRememberMe.ForeColor = System.Drawing.Color.White;
-            this.chkRememberMe.Location = new System.Drawing.Point(263, 129);
+            this.chkRememberMe.Location = new System.Drawing.Point(263, 144);
             this.chkRememberMe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkRememberMe.Name = "chkRememberMe";
-            this.chkRememberMe.Size = new System.Drawing.Size(170, 32);
+            this.chkRememberMe.Size = new System.Drawing.Size(189, 35);
             this.chkRememberMe.TabIndex = 16;
             this.chkRememberMe.Text = "Nhớ mật khẩu";
             this.chkRememberMe.UncheckedState.BorderColor = System.Drawing.Color.White;
@@ -108,10 +108,10 @@
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(360, 165);
+            this.guna2Button1.Location = new System.Drawing.Point(363, 183);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(184, 43);
+            this.guna2Button1.Size = new System.Drawing.Size(180, 42);
             this.guna2Button1.TabIndex = 17;
             this.guna2Button1.Text = "Đăng nhập";
             this.guna2Button1.Click += new System.EventHandler(this.btnSignIn_Click);
@@ -119,11 +119,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(59, 39);
+            this.label1.Location = new System.Drawing.Point(24, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 31);
+            this.label1.Size = new System.Drawing.Size(219, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập:";
             // 
@@ -139,7 +139,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(263, 84);
+            this.txtPassword.Location = new System.Drawing.Point(263, 100);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
@@ -152,10 +152,10 @@
             // 
             this.btnHidePass.BackgroundImage = global::QuanLyBenhVien.Properties.Resources.mo;
             this.btnHidePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHidePass.Location = new System.Drawing.Point(501, 84);
+            this.btnHidePass.Location = new System.Drawing.Point(503, 100);
             this.btnHidePass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHidePass.Name = "btnHidePass";
-            this.btnHidePass.Size = new System.Drawing.Size(43, 38);
+            this.btnHidePass.Size = new System.Drawing.Size(40, 38);
             this.btnHidePass.TabIndex = 5;
             this.btnHidePass.UseVisualStyleBackColor = true;
             this.btnHidePass.Click += new System.EventHandler(this.btnHidePass_Click);
@@ -163,11 +163,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(115, 91);
+            this.label2.Location = new System.Drawing.Point(78, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 31);
+            this.label2.Size = new System.Drawing.Size(151, 38);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mật khẩu:";
             // 
