@@ -178,12 +178,18 @@ namespace QuanLyBenhVien
                 {
 
                     // Thêm thông báo vào RichTextBox
-                    AppendFormattedText("Loại bệnh: ",Color.Black, FontStyle.Bold);
-                    AppendFormattedText($"{record.Diagnosis}\n", Color.Black, FontStyle.Regular);
-                    AppendFormattedText("Số ca mắc bệnh tăng từ: ", Color.Black, FontStyle.Bold);
-                    AppendFormattedText($"{record.previousCaseCount} ({record.PreviousPeriod}) đến {record.currentCaseCount} ({record.CurrentPeriod})\n", Color.Black, FontStyle.Regular);
-                    AppendFormattedText("Tỷ lệ gia tăng: ", Color.Black, FontStyle.Bold);
-                    AppendFormattedText($"{record.ChangeRate:F2}%\n\n", Color.Black, FontStyle.Regular);
+                    // Loại bệnh
+                    AppendFormattedText("Loại bệnh: ", Color.Black, FontStyle.Bold);
+                    AppendFormattedText($"{record.Diagnosis}\n", Color.Red, FontStyle.Bold);
+
+                    // Số ca bệnh
+                    AppendFormattedText("Số ca mắc bệnh tăng từ: ", Color.Black, FontStyle.Regular);
+                    AppendFormattedText($"{record.previousCaseCount} ({record.PreviousPeriod}) ", Color.Blue, FontStyle.Regular);
+                    AppendFormattedText($"đến {record.currentCaseCount} ({record.CurrentPeriod})\n", Color.Green, FontStyle.Regular);
+
+                    // Tỷ lệ gia tăng
+                    AppendFormattedText("Tỷ lệ gia tăng: ", Color.Black, FontStyle.Regular);
+                    AppendFormattedText($"{record.ChangeRate:F2}%\n\n", Color.OrangeRed, FontStyle.Bold);
                 }
             }
             else
