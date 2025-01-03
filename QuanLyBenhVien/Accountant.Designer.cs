@@ -91,8 +91,8 @@
             // btnBill
             // 
             this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(102, 32);
-            this.btnBill.Text = "Hoá đơn";
+            this.btnBill.Size = new System.Drawing.Size(189, 32);
+            this.btnBill.Text = "Tổng hợp hoá đơn";
             this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
             // btnIncome

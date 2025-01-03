@@ -245,11 +245,11 @@ VALUES
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0000','1') ---ADMIN
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0009','1') ----Điều dưỡng 
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0001','1') ---- Bác sĩ
-INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0002','1') ---- Kế toán
-INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0007','1') ---- Dược sĩ (trưởng khoa)
+INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0019','1') ---- Kế toán
+INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0015','1') ---- Dược sĩ (trưởng khoa)
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0008','1') ---- Dược sĩ
 
-
+SELECT * FROM BILL
 
 INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email)
 VALUES 
@@ -312,7 +312,10 @@ VALUES
 ('KRHM', N'Khoa Răng Hàm Mặt', 2, 'ST0035', '0123456700', N'Tầng 12'),
 ('KCDHA', N'Khoa Chẩn đoán hình ảnh', 2, 'ST0013', '0123456701', N'Tầng 13'),
 ('KXN', N'Khoa Xét nghiệm', 2, 'ST0012', '0123456702', N'Tầng 14'),
-('KVLTL', N'Khoa Vật lý trị liệu – Phục hồi chức năng', 1, 'ST0021', '0123456703', N'Tầng 15')
+('KVLTL', N'Khoa Vật lý trị liệu – Phục hồi chức năng', 1, 'ST0021', '0123456703', N'Tầng 15'),
+
+
+
 
 
 
@@ -675,16 +678,6 @@ VALUES
 ('RO0050', 'KN', 4, N'Sản khoa');
 
 
-CREATE TABLE HOSPITALIZATION
-(
-    HospitalizationID CHAR(6) PRIMARY KEY,
-    PatientID CHAR(6),
-    RoomID CHAR(6),
-    AdmissionDate DATETIME,
-    DischargeDate DATETIME
-);
-
-
 INSERT INTO HOSPITALIZATION (HospitalizationID, PatientID, RoomID, AdmissionDate, DischargeDate)
 VALUES
 ('H00001', 'PA0001', 'RO0001', '2024-12-01 10:00:00', '2024-12-10 14:00:00'),
@@ -724,10 +717,6 @@ DECLARE @sogiuongcoBN INT;
 SET @sogiuongcoBN =	(SELECT COUNT(*)
 					FROM NURSECARE 
 					WHERE RoomID='RO0001');
-
-SELECT RoomID, BedCount - @sogiuongcoBN AS EmptyBed
-FROM ROOM
-WHERE RoomID = 'RO0001'
 
 
 CREATE Trigger t1 ON ROOM
