@@ -81,7 +81,7 @@ namespace QuanLyBenhVien
                 {
                     conn.Open();
                     string sql = $@"UPDATE NURSECARE
-                                    SET Notes = '{txtNotes.Text}', RoomID = '{cmbRoomID.Text}', CareType = '{txtTypeOfCare.Text}'
+                                    SET Notes = N'{txtNotes.Text}', RoomID = '{cmbRoomID.Text}', CareType = N'{txtTypeOfCare.Text}'
                                     WHERE CareID = '{lblCareID.Text}'";
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {

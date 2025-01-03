@@ -36,7 +36,7 @@ namespace QuanLyBenhVien
 
         private void lịchLàmViệcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DoctorAppointment doctorAppointment = new DoctorAppointment();
+            DoctorAppointment doctorAppointment = new DoctorAppointment(userID);
             CommonControls.AddFormToTab(doctorAppointment, doctorAppointment.Text);
         }
 
