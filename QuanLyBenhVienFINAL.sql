@@ -247,9 +247,8 @@ INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0009','1') ----Điều dưỡng
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0001','1') ---- Bác sĩ
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0019','1') ---- Kế toán
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0015','1') ---- Dược sĩ (trưởng khoa)
-INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0008','1') ---- Dược sĩ
+INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0061','1') ---- Dược sĩ
 
-SELECT * FROM BILL
 
 INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email)
 VALUES 
@@ -306,13 +305,16 @@ VALUES
 ('KUB', N'Khoa Ung bướu', 6, 'ST0007', '0123456794', N'Tầng 6'),
 ('KTM', N'Khoa Tim mạch', 5, 'ST0004', '0123456795', N'Tầng 7'),
 ('KTK', N'Khoa Thần kinh', 2, 'ST0005', '0123456796', N'Tầng 8'),
-('KDL', N'Khoa Da liễu', 5, 'ST0006', '0123456797', N'Tầng 9'),
+('KDL', N'Khoa Da liễu', 4, 'ST0006', '0123456797', N'Tầng 9'),
 ('KTMH', N'Khoa Tai Mũi Họng', 2, 'ST0024', '0123456798', N'Tầng 10'),
 ('KM', N'Khoa Mắt', 1, 'ST0018', '0123456799', N'Tầng 11'),
 ('KRHM', N'Khoa Răng Hàm Mặt', 2, 'ST0035', '0123456700', N'Tầng 12'),
 ('KCDHA', N'Khoa Chẩn đoán hình ảnh', 2, 'ST0013', '0123456701', N'Tầng 13'),
 ('KXN', N'Khoa Xét nghiệm', 2, 'ST0012', '0123456702', N'Tầng 14'),
 ('KVLTL', N'Khoa Vật lý trị liệu – Phục hồi chức năng', 1, 'ST0021', '0123456703', N'Tầng 15'),
+('KD', N'Khoa Dược', 2, 'ST0015', '0123756703', N'Tầng 16')
+
+
 
 
 
@@ -336,7 +338,7 @@ VALUES
 ('ST0012', N'Vũ Văn L', N'Kỹ thuật viên Xét nghiệm', N'Nam', '1988-12-10', '0913456789', '2016-12-01', 'l.vu@example.com', 18000000, 'KXN'),
 ('ST0013', N'Phạm Thị M', N'Kỹ thuật viên Hình ảnh', N'Nữ', '1993-01-15', '0914567890', '2017-01-01', 'm.pham@example.com', 19000000, 'KCDHA'),
 ('ST0014', N'Trần Văn N', N'Bác sĩ Hồi sức cấp cứu', N'Nam', '1995-02-20', '0915678901', '2018-02-01', 'n.tran@example.com', 17000000, 'KHSCC'),
-('ST0015', N'Ngô Thị O', N'Dược sĩ', N'Nữ', '1997-03-25', '0916789012', '2019-03-01', 'o.ngo@example.com', 20000000, 'KDL'),
+('ST0015', N'Ngô Thị O', N'Dược sĩ', N'Nữ', '1997-03-25', '0916789012', '2019-03-01', 'o.ngo@example.com', 20000000, 'KD'),
 ('ST0016', N'Phan Văn P', N'Hộ lý', N'Nam', '1980-04-30', '0917890123', '2020-04-01', 'p.phan@example.com', 14000000, 'KHSCC'),
 ('ST0017', N'Lê Thị Q', N'Nhân viên Nghiên cứu Y khoa', N'Nữ', '1983-05-10', '0918901234', '2021-05-01', 'q.le@example.com', 25000000, 'KUB'),
 ('ST0018', N'Vũ Văn R', N'Bác sĩ Mắt', N'Nam', '1985-06-15', '0919012345', '2022-06-01', 'r.vu@example.com', 30000000, 'KM'),
@@ -381,7 +383,8 @@ VALUES
 ('ST0057', N'Nguyễn Thị DD1', N'Điều dưỡng Tổng quát', N'Nữ', '1994-08-20', '0923456797', '2023-08-01', 'dd1.nguyen@example.com', 15000000, 'KN'),
 ('ST0058', N'Trần Văn EE1', N'Bác sĩ Da liễu', N'Nam', '1983-09-15', '0923456798', '2015-09-01', 'ee1.tran@example.com', 22000000, 'KDL'),
 ('ST0059', N'Lê Thị FF1', N'Bác sĩ Ung bướu', N'Nữ', '1981-10-10', '0923456799', '2016-10-01', 'ff1.le@example.com', 26000000, 'KUB'),
-('ST0060', N'Vũ Văn GG1', N'Bác sĩ Tim mạch', N'Nam', '1988-11-25', '0923456800', '2017-11-01', 'gg1.vu@example.com', 23000000, 'KTM');
+('ST0060', N'Vũ Văn GG1', N'Bác sĩ Tim mạch', N'Nam', '1988-11-25', '0923456800', '2017-11-01', 'gg1.vu@example.com', 23000000, 'KTM'),
+('ST0061', N'Vũ Văn HH1', N'Dược sĩ', N'Nam', '1987-11-25', '0923356800', '2017-11-01', 'gg1.vu@example.com', 23500000, 'KD');
 
 
 
@@ -472,21 +475,67 @@ VALUES
 ('MR0036', 'PA0003', 'ST0003', '2024-12-01', N'Viêm phổi', N'Khó thở, ho có đờm, đau ngực', N'Dùng kháng sinh, nghỉ ngơi'), 
 ('MR0037', 'PA0004', 'ST0001', '2024-12-02', N'Cảm cúm', N'Sốt cao, đau đầu, nghẹt mũi', N'Uống thuốc giảm đau, xịt mũi'), 
 ('MR0038', 'PA0005', 'ST0002', '2024-12-03', N'Covid-19', N'Khó thở, ho, mệt mỏi', N'Chăm sóc tại nhà, điều trị triệu chứng'), 
-('MR0039', 'PA0006', 'ST0004', '2024-12-04', N'Viêm phổi', N'Phổi tổn thương nhẹ, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
-('MR0040', 'PA0007', 'ST0003', '2024-12-05', N'Cảm cúm', N'Ho, đau họng, sốt nhẹ', N'Uống thuốc giảm đau, uống nhiều nước'), 
-('MR0041', 'PA0008', 'ST0005', '2024-12-06', N'Covid-19', N'Xét nghiệm PCR dương tính, mệt mỏi', N'Chăm sóc tại nhà, điều trị hỗ trợ'), 
-('MR0042', 'PA0009', 'ST0002', '2024-12-07', N'Viêm phổi', N'Khó thở, ho nhiều, đau ngực', N'Kháng sinh, theo dõi tại bệnh viện'), 
-('MR0043', 'PA0010', 'ST0004', '2024-12-08', N'Cảm cúm', N'Sốt cao, ho, đau cơ', N'Uống thuốc hạ sốt, nghỉ ngơi'), 
-('MR0044', 'PA0011', 'ST0001', '2024-12-09', N'Covid-19', N'Mệt mỏi, ho, sốt nhẹ', N'Chăm sóc tại nhà, thuốc giảm sốt'), 
-('MR0045', 'PA0012', 'ST0002', '2024-12-10', N'Viêm phổi', N'Phổi có dấu hiệu viêm, ho, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
-('MR0046', 'PA0013', 'ST0003', '2024-12-11', N'Cảm cúm', N'Ho, sốt, đau họng', N'Uống thuốc hạ sốt, xịt mũi'), 
-('MR0047', 'PA0014', 'ST0005', '2024-12-12', N'Covid-19', N'Mệt mỏi, khó thở nhẹ', N'Chăm sóc tại nhà, thuốc giảm đau'), 
-('MR0048', 'PA0015', 'ST0004', '2024-12-13', N'Viêm phổi', N'Khó thở, đau ngực, ho khan', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
-('MR0049', 'PA0016', 'ST0001', '2024-12-14', N'Cảm cúm', N'Sốt, ho, mệt mỏi', N'Uống thuốc giảm đau, uống nhiều nước'), 
-('MR0050', 'PA0017', 'ST0002', '2024-12-14', N'Covid-19', N'Mệt mỏi, khó thở nhẹ, ho', N'Chăm sóc tại nhà, điều trị triệu chứng'), 
-('MR0051', 'PA0001', 'ST0001', '2024-11-30', N'Cảm cúm', N'Sốt, ho khan, mệt mỏi', N'Ist, uống thuốc hạ sốt, nghỉ ngơi');
 
 
+('MR0039', 'PA0006', 'ST0004', '2024-12-30', N'Viêm phổi', N'Phổi tổn thương nhẹ, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
+('MR0040', 'PA0007', 'ST0003', '2024-12-26', N'Cảm cúm', N'Ho, đau họng, sốt nhẹ', N'Uống thuốc giảm đau, uống nhiều nước'), 
+('MR0041', 'PA0008', 'ST0005', '2024-12-24', N'Covid-19', N'Xét nghiệm PCR dương tính, mệt mỏi', N'Chăm sóc tại nhà, điều trị hỗ trợ'), 
+('MR0042', 'PA0009', 'ST0002', '2024-12-24', N'Viêm phổi', N'Khó thở, ho nhiều, đau ngực', N'Kháng sinh, theo dõi tại bệnh viện'), 
+('MR0043', 'PA0010', 'ST0004', '2024-12-24', N'Cảm cúm', N'Sốt cao, ho, đau cơ', N'Uống thuốc hạ sốt, nghỉ ngơi'), 
+('MR0044', 'PA0011', 'ST0001', '2024-12-24', N'Covid-19', N'Mệt mỏi, ho, sốt nhẹ', N'Chăm sóc tại nhà, thuốc giảm sốt'), 
+('MR0045', 'PA0012', 'ST0002', '2024-12-25', N'Covid-19', N'Phổi có dấu hiệu viêm, ho, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
+('MR0046', 'PA0013', 'ST0003', '2024-12-25', N'Cảm cúm', N'Ho, sốt, đau họng', N'Uống thuốc hạ sốt, xịt mũi'), 
+('MR0047', 'PA0014', 'ST0005', '2024-12-24', N'Covid-19', N'Mệt mỏi, khó thở nhẹ', N'Chăm sóc tại nhà, thuốc giảm đau'), 
+('MR0048', 'PA0015', 'ST0004', '2024-12-30', N'Viêm phổi', N'Khó thở, đau ngực, ho khan', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
+('MR0049', 'PA0016', 'ST0001', '2024-12-20', N'Cảm cúm', N'Sốt, ho, mệt mỏi', N'Uống thuốc giảm đau, uống nhiều nước'), 
+('MR0050', 'PA0017', 'ST0002', '2024-12-20', N'Covid-19', N'Mệt mỏi, khó thở nhẹ, ho', N'Chăm sóc tại nhà, điều trị triệu chứng'), 
+('MR0051', 'PA0001', 'ST0001', '2024-12-30', N'Cảm cúm', N'Sốt, ho khan, mệt mỏi', N'Ist, uống thuốc hạ sốt, nghỉ ngơi'),
+('MR0052', 'PA0012', 'ST0002', '2024-12-20', N'Cảm cúm', N'Phổi có dấu hiệu viêm, ho, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
+('MR0053', 'PA0013', 'ST0003', '2024-12-20', N'Cảm cúm', N'Ho, sốt, đau họng', N'Uống thuốc hạ sốt, xịt mũi'), 
+('MR0054', 'PA0014', 'ST0005', '2024-12-21', N'Cảm cúm', N'Mệt mỏi, khó thở nhẹ', N'Chăm sóc tại nhà, thuốc giảm đau'), 
+('MR0055', 'PA0015', 'ST0004', '2024-12-21', N'Viêm phổi', N'Khó thở, đau ngực, ho khan', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
+('MR0056', 'PA0016', 'ST0001', '2024-12-21', N'Cảm cúm', N'Sốt, ho, mệt mỏi', N'Uống thuốc giảm đau, uống nhiều nước'), 
+('MR0057', 'PA0017', 'ST0002', '2024-12-20', N'Covid-19', N'Mệt mỏi, khó thở nhẹ, ho', N'Chăm sóc tại nhà, điều trị triệu chứng'), 
+('MR0058', 'PA0001', 'ST0001', '2024-12-30', N'Cảm cúm', N'Sốt, ho khan, mệt mỏi', N'Ist, uống thuốc hạ sốt, nghỉ ngơi'),
+('MR0059', 'PA0012', 'ST0002', '2024-12-20', N'Cảm cúm', N'Phổi có dấu hiệu viêm, ho, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
+('MR0060', 'PA0013', 'ST0003', '2024-12-25', N'Cảm cúm', N'Ho, sốt, đau họng', N'Uống thuốc hạ sốt, xịt mũi'), 
+('MR0061', 'PA0014', 'ST0005', '2024-12-26', N'Cảm cúm', N'Mệt mỏi, khó thở nhẹ', N'Chăm sóc tại nhà, thuốc giảm đau'), 
+('MR0062', 'PA0015', 'ST0004', '2024-12-25', N'Viêm phổi', N'Khó thở, đau ngực, ho khan', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
+('MR0063', 'PA0016', 'ST0001', '2024-12-26', N'Cảm cúm', N'Sốt, ho, mệt mỏi', N'Uống thuốc giảm đau, uống nhiều nước'), 
+('MR0064', 'PA0017', 'ST0002', '2024-12-25', N'Covid-19', N'Mệt mỏi, khó thở nhẹ, ho', N'Chăm sóc tại nhà, điều trị triệu chứng'), 
+('MR0065', 'PA0001', 'ST0001', '2024-12-30', N'Cảm cúm', N'Sốt, ho khan, mệt mỏi', N'Ist, uống thuốc hạ sốt, nghỉ ngơi'),
+('MR0066', 'PA0012', 'ST0002', '2025-11-12', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0067', 'PA0012', 'ST0002', '2024-11-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0068', 'PA0012', 'ST0002', '2024-12-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0069', 'PA0012', 'ST0002', '2024-12-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0070', 'PA0012', 'ST0002', '2024-12-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0071', 'PA0012', 'ST0002', '2024-11-12', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0072', 'PA0012', 'ST0002', '2024-12-12', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0073', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0074', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0075', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0076', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0077', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0078', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0079', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0080', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0081', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0082', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0083', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0084', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0085', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0086', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0087', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0088', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+('MR0089', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh')
+
+
+DELETE FROM MEDICALRECORD
+
+SELECT *
+FROM MEDICALRECORD 
+WHERE Diagnosis = N'Tiêu chảy do nhiễm khuẩn'
+GROUP BY VisitDate
 
 
 INSERT INTO MEDICATION (MedicationID, MedicationName, Dosage, DosageUnit, Category, QuantityInStock, Price, ExpiryDate, ManufacturingDate, Manufacturer)
