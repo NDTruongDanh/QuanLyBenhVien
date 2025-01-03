@@ -80,5 +80,17 @@ namespace QuanLyBenhVien
         {
             CommonControls.DisableRememberMe(userID);
         }
+
+        private void tồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KiemtraThuocTonKho kiemtraThuocTonKho = new KiemtraThuocTonKho();
+            CommonControls.AddFormToTab(kiemtraThuocTonKho, kiemtraThuocTonKho.Text);
+        }
+
+        private void hạnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KiemtraHANTHUOC kiemtraHANTHUOC = new KiemtraHANTHUOC();
+            CommonControls.AddFormToTab(kiemtraHANTHUOC, kiemtraHANTHUOC.Text);
+        }
     }
 }
