@@ -37,9 +37,10 @@
             this.btnMedicine = new System.Windows.Forms.ToolStripMenuItem();
             this.lịchTrựcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợLýẢoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl = new Guna.UI2.WinForms.Guna2TabControl();
-            this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.tồnKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hạnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,7 +102,10 @@
             // btnMedicine
             // 
             this.btnMedicine.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tồnKhoToolStripMenuItem});
+
+            this.tồnKhoToolStripMenuItem,
+            this.hạnSửDụngToolStripMenuItem});
+
             this.btnMedicine.Name = "btnMedicine";
             this.btnMedicine.Size = new System.Drawing.Size(116, 32);
             this.btnMedicine.Text = "Kho thuốc";
@@ -149,17 +153,22 @@
             this.tabControl.TabIndex = 2;
             this.tabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             // 
-            // thốngKêToolStripMenuItem
-            // 
-            this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(107, 32);
-            this.thốngKêToolStripMenuItem.Text = "Thống kê";
-            // 
+
             // tồnKhoToolStripMenuItem
             // 
             this.tồnKhoToolStripMenuItem.Name = "tồnKhoToolStripMenuItem";
             this.tồnKhoToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.tồnKhoToolStripMenuItem.Text = "Tồn Kho";
+
+            this.tồnKhoToolStripMenuItem.Click += new System.EventHandler(this.tồnKhoToolStripMenuItem_Click);
+            // 
+            // hạnSửDụngToolStripMenuItem
+            // 
+            this.hạnSửDụngToolStripMenuItem.Name = "hạnSửDụngToolStripMenuItem";
+            this.hạnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.hạnSửDụngToolStripMenuItem.Text = "Hạn sử dụng";
+            this.hạnSửDụngToolStripMenuItem.Click += new System.EventHandler(this.hạnSửDụngToolStripMenuItem_Click);
+
             // 
             // PharmacistView
             // 
@@ -189,7 +198,9 @@
         private System.Windows.Forms.ToolStripMenuItem trợLýẢoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnDeleteRemember;
         private Guna.UI2.WinForms.Guna2TabControl tabControl;
-        private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
+
         private System.Windows.Forms.ToolStripMenuItem tồnKhoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hạnSửDụngToolStripMenuItem;
+
     }
 }
