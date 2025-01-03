@@ -317,10 +317,6 @@ VALUES
 
 
 
-
-
-
-
 INSERT INTO STAFF (StaffID, FullName, TypeOfStaff, Gender, DateOfBirth, PhoneNumber, DateOfJoining, Email, Salary, DepartmentID)
 VALUES
 ('ST0000', N'ADMIN', N'ADMIN', N'Nam', '2005-01-15', '0912345678', '2024-10-01', 'admin@gmail.com', 999999999, 'KN'),
@@ -528,14 +524,6 @@ VALUES
 ('MR0087', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
 ('MR0088', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
 ('MR0089', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh')
-
-
-DELETE FROM MEDICALRECORD
-
-SELECT *
-FROM MEDICALRECORD 
-WHERE Diagnosis = N'Tiêu chảy do nhiễm khuẩn'
-GROUP BY VisitDate
 
 
 INSERT INTO MEDICATION (MedicationID, MedicationName, Dosage, DosageUnit, Category, QuantityInStock, Price, ExpiryDate, ManufacturingDate, Manufacturer)
@@ -761,11 +749,6 @@ VALUES
 ('H00030', 'PA0030', 'RO0030', '2024-12-30 12:00:00', '2025-01-08 13:00:00');
 
 
---THUAT TOAN TIM GIUONG TRONG--
-DECLARE @sogiuongcoBN INT;
-SET @sogiuongcoBN =	(SELECT COUNT(*)
-					FROM NURSECARE 
-					WHERE RoomID='RO0001');
 
 
 CREATE Trigger t1 ON ROOM
@@ -916,15 +899,20 @@ ADD CONSTRAINT CHK_PRICE_MEDICATION CHECK (Price > 0)
 ALTER TABLE ROOM
 ADD CONSTRAINT CK_BED_ROOM CHECK (BedCount > 0 AND EmptyBed >= 0)
 
-
 CREATE TRIGGER CreateAccount_USERLOGIN
-ON STAFF
+ON STAFF   
 AFTER INSERT
 AS
 BEGIN
     INSERT INTO USERLOGIN (UserID, Pass)
     SELECT StaffID, '1'
-    FROM inserted;
-END;'
+    FROM inserted
+    WHERE TypeOfStaff LIKE N'ADMIN'
+          OR TypeOfStaff LIKE N'%Bác sĩ%'
+          OR TypeOfStaff LIKE N'%Điều dưỡng%'
+          OR TypeOfStaff LIKE N'%Dược sĩ%'
+          OR TypeOfStaff LIKE N'%Kế toán%';
+	END;
+
 
 
