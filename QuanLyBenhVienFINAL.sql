@@ -899,7 +899,6 @@ ADD CONSTRAINT CHK_PRICE_MEDICATION CHECK (Price > 0)
 ALTER TABLE ROOM
 ADD CONSTRAINT CK_BED_ROOM CHECK (BedCount > 0 AND EmptyBed >= 0)
 
-
 CREATE TRIGGER CreateAccount_USERLOGIN
 ON STAFF   
 AFTER INSERT
@@ -914,4 +913,6 @@ BEGIN
           OR TypeOfStaff LIKE N'%Dược sĩ%'
           OR TypeOfStaff LIKE N'%Kế toán%';
 	END;
+
+
 
