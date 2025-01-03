@@ -242,12 +242,14 @@ VALUES
 ('C00040', 'ST0042', 'PA0040', 'RO0010', '2024-12-30 11:30:00', N'Hỗ trợ dinh dưỡng', N'Đảm bảo bệnh nhân tiêu thụ đầy đủ dinh dưỡng.');
 
 
+
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0000','1') ---ADMIN
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0009','1') ----Điều dưỡng 
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0001','1') ---- Bác sĩ
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0019','1') ---- Kế toán
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0015','1') ---- Dược sĩ (trưởng khoa)
 INSERT INTO USERLOGIN (UserID,Pass) VALUES ('ST0061','1') ---- Dược sĩ
+
 
 
 INSERT INTO PATIENT (PatientID, FullName, DateOfBirth, Gender, PhoneNumber, AddressPatient, Email)
@@ -295,6 +297,7 @@ VALUES
 
 
 
+
 INSERT INTO DEPARTMENT (DepartmentID, DepartmentName, EmployeeNumber, HeadDepartmentID, PhoneNumber, LocationDPM)
 VALUES
 ('KN', N'Khoa Nội', 11, 'ST0002', '0123456789', N'Tầng 1'),
@@ -313,6 +316,7 @@ VALUES
 ('KXN', N'Khoa Xét nghiệm', 2, 'ST0012', '0123456702', N'Tầng 14'),
 ('KVLTL', N'Khoa Vật lý trị liệu – Phục hồi chức năng', 1, 'ST0021', '0123456703', N'Tầng 15'),
 ('KD', N'Khoa Dược', 2, 'ST0015', '0123756703', N'Tầng 16')
+
 
 
 
@@ -384,6 +388,7 @@ VALUES
 
 
 
+
 INSERT INTO APPOINTMENT (AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDateTime, AppointmentStatus)
 VALUES
 ('AP0001', 'PA0001', 'ST0001', 'KN', '2025-01-04 08:00:00', N'Chấp thuận'),
@@ -430,6 +435,7 @@ VALUES
 
 
 
+
 INSERT INTO MEDICALRECORD (RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TestResults, TreatmentPlan) 
 VALUES 
 ('MR0001', 'PA0001', 'ST0001', '2023-12-01', N'Viêm phổi', N'X-ray bình thường', N'Điều trị kháng sinh'), 
@@ -471,8 +477,6 @@ VALUES
 ('MR0036', 'PA0003', 'ST0003', '2024-12-01', N'Viêm phổi', N'Khó thở, ho có đờm, đau ngực', N'Dùng kháng sinh, nghỉ ngơi'), 
 ('MR0037', 'PA0004', 'ST0001', '2024-12-02', N'Cảm cúm', N'Sốt cao, đau đầu, nghẹt mũi', N'Uống thuốc giảm đau, xịt mũi'), 
 ('MR0038', 'PA0005', 'ST0002', '2024-12-03', N'Covid-19', N'Khó thở, ho, mệt mỏi', N'Chăm sóc tại nhà, điều trị triệu chứng'), 
-
-
 ('MR0039', 'PA0006', 'ST0004', '2024-12-30', N'Viêm phổi', N'Phổi tổn thương nhẹ, khó thở', N'Kháng sinh, nghỉ ngơi tại bệnh viện'), 
 ('MR0040', 'PA0007', 'ST0003', '2024-12-26', N'Cảm cúm', N'Ho, đau họng, sốt nhẹ', N'Uống thuốc giảm đau, uống nhiều nước'), 
 ('MR0041', 'PA0008', 'ST0005', '2024-12-24', N'Covid-19', N'Xét nghiệm PCR dương tính, mệt mỏi', N'Chăm sóc tại nhà, điều trị hỗ trợ'), 
@@ -507,6 +511,7 @@ VALUES
 ('MR0070', 'PA0012', 'ST0002', '2024-12-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
 ('MR0071', 'PA0012', 'ST0002', '2024-11-12', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
 ('MR0072', 'PA0012', 'ST0002', '2024-12-12', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
+--2025--
 ('MR0073', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
 ('MR0074', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
 ('MR0075', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
@@ -524,6 +529,8 @@ VALUES
 ('MR0087', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
 ('MR0088', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh'),
 ('MR0089', 'PA0012', 'ST0002', '2025-1-1', N'Tiêu chảy do nhiễm khuẩn', N'Mất nước nhẹ, sốt', N'Bù nước, dùng thuốc kháng sinh')
+
+
 
 
 INSERT INTO MEDICATION (MedicationID, MedicationName, Dosage, DosageUnit, Category, QuantityInStock, Price, ExpiryDate, ManufacturingDate, Manufacturer)
@@ -558,6 +565,8 @@ VALUES
 ('ME0028', N'Zinc', N'50mg', N'viên', N'Bổ sung', 200, 25000, '2025-05-10', '2024-02-25', N'Ấn Độ'),
 ('ME0029', N'Amphotericin', N'100mg', N'chai', N'Nấm', 55, 120000, '2025-06-15', '2024-03-12', N'Nhật Bản'),
 ('ME0030', N'Amitriptyline', N'25mg', N'viên', N'Trầm cảm', 70, 95000, '2025-08-20', '2024-04-22', N'Trung Quốc');
+
+
 
 
 
@@ -626,6 +635,8 @@ VALUES
 
 
 
+
+
 INSERT INTO BILL (TransactionID, RecordID, StaffID, TransactionDate, PaymentMethod, Total)
 VALUES
 ('BI0001', 'MR0001', 'ST0004', '2023-01-15', N'Tiền mặt', 180000), -- Paracetamol (2 viên), Amoxicillin (1 viên)
@@ -658,6 +669,7 @@ VALUES
 ('BI0028', 'MR0028', 'ST0006', '2024-12-30', N'Thẻ tín dụng', 395000), -- Simvastatin (3 viên), Tramadol (2 viên)
 ('BI0029', 'MR0029', 'ST0007', '2024-12-31', N'Bảo hiểm', 305000), -- Warfarin (2 viên), Zinc (4 viên)
 ('BI0030', 'MR0030', 'ST0003', '2024-12-31', N'Tiền mặt', 680000); -- Amphotericin (4 viên), Amitriptyline (2 viên)
+
 
 
 
@@ -715,6 +727,8 @@ VALUES
 ('RO0050', 'KN', 4, N'Sản khoa');
 
 
+
+
 INSERT INTO HOSPITALIZATION (HospitalizationID, PatientID, RoomID, AdmissionDate, DischargeDate)
 VALUES
 ('H00001', 'PA0001', 'RO0001', '2024-12-01 10:00:00', '2024-12-10 14:00:00'),
@@ -759,6 +773,7 @@ BEGIN
 		SET EmptyBed = BedCount
 END
 
+
 CREATE Trigger t2 ON ROOM
 FOR UPDATE
 AS
@@ -769,6 +784,7 @@ BEGIN
 					ROLLBACK TRAN
 				END
 END
+
 
 
 CREATE Trigger t3 ON NURSECARE 
@@ -784,6 +800,7 @@ END
 
 
 
+
 --Ngày sinh nhân viên nhỏ hơn ngày gia nhập--
 ALTER TABLE STAFF
 ADD CONSTRAINT CK_DOB_DOJ CHECK (DateOfBirth < DateOfJoining)
@@ -791,6 +808,8 @@ ADD CONSTRAINT CK_DOB_DOJ CHECK (DateOfBirth < DateOfJoining)
 --Salary của nhân viên lớn hơn 0--
 ALTER TABLE STAFF
 ADD CONSTRAINT CK_SALARY CHECK (Salary > 0)
+
+
 
 --Kiểm tra số nhân viên của 1 KHOA--
 CREATE Trigger t5 ON DEPARTMENT
@@ -805,6 +824,8 @@ BEGIN
 				ROLLBACK TRAN
 			END
 END
+
+
 
 CREATE Trigger t6 ON DEPARTMENT
 FOR UPDATE
@@ -843,6 +864,7 @@ AS
 				WHERE BILL.TransactionID=b.TransactionID)
 
 
+
 ----Khi tạo mới hoặc sửa số lượng thuốc trong BillDetail thì cập nhật số lượng tồn kho
 CREATE TRIGGER QUANTITYINSTOCK_MEDICATION_BILL
 ON BILLDETAIL
@@ -868,7 +890,8 @@ AS
 		WHERE MedicationID IN (SELECT MedicationID FROM inserted)
 	END
 
-	DROP TRIGGER QUANTITYINSTOCK_MEDICATION_BILL
+
+
 
 ---- Kiểm tra ngày tháng
 ALTER TABLE MEDICATION
@@ -878,6 +901,7 @@ ADD CONSTRAINT CHK_DATE_MEDICATION CHECK (ExpiryDate > ManufacturingDate)
 
 ALTER TABLE STAFF
 ADD CONSTRAINT CHK_DATE_STAFF CHECK (DateOfBirth < DateOfJoining)
+
 
 
 -----Ngày hoá đơn phải lớn hơn ngày khám bệnh
@@ -890,7 +914,7 @@ AS
 		ROLLBACK TRAN
 	END
 
-DROP TRIGGER CHK_TransactionDate_BILL_MEDICALRECORD
+
 ----------------Giá thuốc phải > 0
 ALTER TABLE MEDICATION
 ADD CONSTRAINT CHK_PRICE_MEDICATION CHECK (Price > 0)
@@ -898,6 +922,8 @@ ADD CONSTRAINT CHK_PRICE_MEDICATION CHECK (Price > 0)
 ------Kiểm tra giường
 ALTER TABLE ROOM
 ADD CONSTRAINT CK_BED_ROOM CHECK (BedCount > 0 AND EmptyBed >= 0)
+
+
 
 CREATE TRIGGER CreateAccount_USERLOGIN
 ON STAFF   
