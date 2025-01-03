@@ -173,7 +173,7 @@
             this.dtpTransactionDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTransactionDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTransactionDate.Location = new System.Drawing.Point(667, 4);
-            this.dtpTransactionDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTransactionDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTransactionDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpTransactionDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpTransactionDate.Name = "dtpTransactionDate";
@@ -193,7 +193,7 @@
             this.cmbStaffID.ForeColor = System.Drawing.Color.Black;
             this.cmbStaffID.ItemHeight = 30;
             this.cmbStaffID.Location = new System.Drawing.Point(667, 34);
-            this.cmbStaffID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbStaffID.Margin = new System.Windows.Forms.Padding(4);
             this.cmbStaffID.Name = "cmbStaffID";
             this.cmbStaffID.Size = new System.Drawing.Size(204, 36);
             this.cmbStaffID.TabIndex = 39;
@@ -215,7 +215,7 @@
             "Bảo hiểm",
             "Ví điện tử"});
             this.cmbPaymentMethod.Location = new System.Drawing.Point(255, 64);
-            this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPaymentMethod.Name = "cmbPaymentMethod";
             this.cmbPaymentMethod.Size = new System.Drawing.Size(203, 36);
             this.cmbPaymentMethod.TabIndex = 38;
@@ -232,7 +232,7 @@
             this.cmbRecordID.ForeColor = System.Drawing.Color.Black;
             this.cmbRecordID.ItemHeight = 30;
             this.cmbRecordID.Location = new System.Drawing.Point(255, 34);
-            this.cmbRecordID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbRecordID.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRecordID.Name = "cmbRecordID";
             this.cmbRecordID.Size = new System.Drawing.Size(203, 36);
             this.cmbRecordID.TabIndex = 37;

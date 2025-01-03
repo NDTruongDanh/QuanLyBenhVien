@@ -77,13 +77,13 @@ namespace QuanLyBenhVien
                 return;
             }
 
-            string query = @"IF EXISTS (SELECT 1 FROM DEPARTMENT WHERE DepartmentID = @DepartmentID)
+            string query = $@"IF EXISTS (SELECT 1 FROM DEPARTMENT WHERE DepartmentID = @DepartmentID)
                      UPDATE DEPARTMENT SET DepartmentName = @DepartmentName, EmployeeNumber = @EmployeeNumber, 
                      HeadDepartmentID = @HeadDepartmentID, PhoneNumber = @PhoneNumber, LocationDPM = @LocationDPM 
                      WHERE DepartmentID = @DepartmentID
                      ELSE
                      INSERT INTO DEPARTMENT (DepartmentID, DepartmentName, EmployeeNumber, HeadDepartmentID, PhoneNumber, LocationDPM)
-                     VALUES (@DepartmentID, @DepartmentName, @EmployeeNumber, @HeadDepartmentID, @PhoneNumber, @LocationDPM)";
+                     VALUES (@DepartmentID, @DepartmentName, @EmployeeNumber, 'ST0000', @PhoneNumber, @LocationDPM)";
             var parameters = new Dictionary<string, object>
             {
                 { "@DepartmentID", txtDepartmentID.Text },

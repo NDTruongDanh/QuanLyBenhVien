@@ -15,9 +15,11 @@ namespace QuanLyBenhVien
     {
         private readonly string connStr = "Data Source=ADMIN-PC;Initial Catalog=HospitalDB;Integrated Security=True;";
 
-        public DoctorAppointment()
+        private string userID = null;
+        public DoctorAppointment(string userID)
         {
             InitializeComponent();
+            this.userID = userID;
             cmbSelection.Text = "Tuần này";
             LoadData();
         }
@@ -32,15 +34,15 @@ namespace QuanLyBenhVien
                     string sql = null;
                     if (cmbSelection.SelectedIndex == 1) //Next Week
                     {
-                        sql = @"SELECT AppointmentDateTime AS [Ngày khám], FullName AS [Tên bệnh nhân] FROM APPOINTMENT a JOIN PATIENT p ON a.PatientID = p.PatientID 
-                                   WHERE AppointmentDateTime > DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) -- Start of the week (Monday)
+                        sql = $@"SELECT AppointmentDateTime AS [Ngày khám], FullName AS [Tên bệnh nhân] FROM APPOINTMENT a JOIN PATIENT p ON a.PatientID = p.PatientID 
+                                   WHERE DoctorID = '{userID}' AND AppointmentDateTime > DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) -- Start of the week (Monday)
                                    AND AppointmentDateTime <= DATEADD(DAY, 15 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) -- End of the week (Sunday);
                                    ORDER BY AppointmentDateTime";
                     }
                     else // Current week    
                     {
-                        sql = @"SELECT AppointmentDateTime AS [Ngày khám], FullName AS [Tên bệnh nhân] FROM APPOINTMENT a JOIN PATIENT p ON a.PatientID = p.PatientID 
-                                   WHERE AppointmentDateTime > DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) -- Start of the week (Monday)
+                        sql = $@"SELECT AppointmentDateTime AS [Ngày khám], FullName AS [Tên bệnh nhân] FROM APPOINTMENT a JOIN PATIENT p ON a.PatientID = p.PatientID 
+                                   WHERE DoctorID = '{userID}' AND AppointmentDateTime > DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) -- Start of the week (Monday)
                                    AND AppointmentDateTime <= DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) -- End of the week (Sunday);
                                    ORDER BY AppointmentDateTime";
                     }
