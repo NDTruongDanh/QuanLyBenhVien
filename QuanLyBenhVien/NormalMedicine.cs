@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyBenhVien.Classes;
 
 namespace QuanLyBenhVien
 {
@@ -20,6 +21,7 @@ namespace QuanLyBenhVien
         {
             InitializeComponent();
             LoadData();
+            CommonControls.InitializeCmbCategory(cmbCategory);
         }
         private void LoadData()
         {
@@ -114,6 +116,22 @@ namespace QuanLyBenhVien
                     MessageBox.Show($"Lỗi khi tìm kiếm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void dgvMedicine_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvMedicine.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvMedicine.SelectedRows[0];
+                txtMedicineName.Text = selectedRow.Cells[1].Value.ToString();
+                cmbCategory.Text = selectedRow.Cells[4].Value.ToString();
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            LoadData();
+            CommonControls.ResetInputFields(Parent);
         }
     }
 }
