@@ -125,4 +125,14 @@ This project is for educational purposes.
 
 ---
 
+## 👥 Credits
+
+| Name                     | Email                       |
+|--------------------------|-----------------------------|
+| Nguyễn Đại Trường Danh   | 23520242@gm.uit.edu.vn      |
+| Lê Hùng Chính            | 23520187@gm.uit.edu.vn      |
+| Lưu Bình                 | to be added                 |
+
+---
+
 *For questions or contributions, open an issue or pull request on GitHub!*
